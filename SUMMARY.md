@@ -4,7 +4,22 @@
 
 * [Java]()
     - [Java内存分区](/Java/1-01.java内存分区.md)
-    - [Java 常量池相关](/Java/1-02.java 常量池相关 String Integer.md)
+    - [Java 常量池](/Java/1-02.java 常量池相关 String Integer.md)
+    - [Java内存模型](/Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.md)
+    - [Java类加载](/Java/1-04.Java类加载.md)
+    - [GC](/Java/1-05.Java GC 垃圾回收.md)
+    - [接口、抽象类](/Java/1-06.接口、抽象类.md)
+    - [动态代理](/Java/1-07.Java 动态代理 静态代理.md.md)
+    - [锁 死锁](/Java/2-01.锁.md)
+    - [Volatile](/Java/2-02.Volatile.md)
+    - [Synchronized](/Java/2-03.Synchronized.md)
+    - [线程简介](/Java/2-04-1.线程分类、状态、创建、阻塞.md)
+    - [线程中断](/Java/2-04-2.线程中断.md)
+    - [线程协作](/Java/2-04-3.线程间协作.md)
+    - [线程池](/Java/2-05.线程池.md)
+    - [ThreadLocal](/Java/2-06.ThreadLocal.md)
+    - [Java 容器](/Java/3-01.Java 容器.md)
+    - [设计模式](/Java/3-02.设计模式.md)
 
 
 * [Tool]()
