@@ -25,3 +25,7 @@
 * [Tool]()
     - [Git使用](/Tools/使用Gitpages发布GitBook.md)
     - [Android Debug Tools](/Tools/Android Debug Tools.md)
+    - [VNC](/Tools/VNC使用.md)
+    - [Mac使用](/Tools/Mac使用.md)
+    - [Ubuntu编译](/Tools/Ubuntu 环境 编译.md)
+    - [GitBook](/Tools/使用Gitpages发布GitBook.md)

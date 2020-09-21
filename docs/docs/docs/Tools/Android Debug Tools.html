@@ -1,0 +1,460 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Android Debug Tools · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="使用Gitpages发布GitBook.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    Java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Java/1-02.java 常量池相关 String Integer.html">
+            
+                <a href="../Java/1-02.java 常量池相关 String Integer.html">
+            
+                    
+                    Java 常量池相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tool
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="使用Gitpages发布GitBook.html">
+            
+                <a href="使用Gitpages发布GitBook.html">
+            
+                    
+                    Git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.2" data-path="Android Debug Tools.html">
+            
+                <a href="Android Debug Tools.html">
+            
+                    
+                    Android Debug Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Android Debug Tools</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="1bugreport">1.bugreport</h3>
+<blockquote>
+<p>java &#x2013;jar chkbugreport.jar bugreport.txt</p>
+</blockquote>
+<p>&#x811A;&#x672C;</p>
+<blockquote>
+<p>chkbugreport.sh bugreportxxx.txt</p>
+</blockquote>
+<p><a href="https://github.com/sonyxperiadev/ChkBugReport/wiki" target="_blank">ChkBugReport</a></p>
+<p><a href="http://gityuan.com/2016/06/11/bugreport-2/" target="_blank">bugreport&#x5B9E;&#x6218;&#x7BC7;</a></p>
+<hr>
+<h3 id="2simpleperf">2.simpleperf</h3>
+<h2 id="simpleperf"><a href="https://developer.android.com/ndk/guides/simpleperf" target="_blank">simpleperf</a></h2>
+<h3 id="3-mat">3. MAT</h3>
+<p>&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x53D6;hprof&#x6587;&#x4EF6;</p>
+<ol>
+<li>adb shell am dumpheap <processname> <filename></filename></processname></li>
+<li>adb pull <filename> <dir></dir></filename></li>
+<li>/android-sdk/platform-tools/hprof-conv <filename> <newfilename>.hprof</newfilename></filename></li>
+<li>&#x4F7F;&#x7528;MAT&#x5206;&#x6790;</li>
+</ol>
+<pre><code>Error opening heap dump &apos;memory-20190216T171338.hprof&apos;. Check the error log for further details. Error opening heap dump &apos;memory-20190216T171338.hprof&apos;. Check the error log for further details. Unknown HPROF Version (JAVA PROFILE 1.0.3) (java.io.IOException) Unknown HPROF Version (JAVA PROFILE 1.0.3)
+</code></pre><p>&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x662F;&#x56E0;&#x4E3A;Android&#x5BFC;&#x51FA;&#x7684;hprof&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x4E0E;&#x6807;&#x51C6;&#x7684;JAVA hprof&#x683C;&#x5F0F;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6839;&#x672C;&#x539F;&#x56E0;&#x662F;&#x865A;&#x62DF;&#x673A;&#x4E0D;&#x4E00;&#x6837;&#x9020;&#x6210;&#x7684;&#xFF0C;&#x5728;&#x5BFC;&#x5165;MAT&#x524D;&#x9700;&#x8981;&#x7528;AndroidSDK/tools/hprof-conf.exe&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF1A; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code> /Users/tracyliu/Library/Android/sdk/platform-tools/hprof-conv memory-20200618T145927.hprof settings_memory.hprof
+</code></pre><h4 id="&#x4F7F;&#x7528;mat&#xFF1A;">&#x4F7F;&#x7528;MAT&#xFF1A;</h4>
+<ol>
+<li><p>&#x5728;&#x4F7F;&#x7528;MAT&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x4F7F;&#x7528;as&#x7684;Profile&#x4E2D;&#x7684;Memory&#x53BB;&#x83B7;&#x53D6;&#x8981;&#x5206;&#x6790;&#x7684;&#x5806;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x6587;&#x4EF6;.hprof&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6D4B;&#x8BD5;&#x67D0;&#x4E2A;&#x9875;&#x9762;&#x662F;&#x5426;&#x4EA7;&#x751F;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;dump&#x51FA;&#x6CA1;&#x8FDB;&#x5165;&#x8BE5;&#x9875;&#x9762;&#x7684;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x6587;&#x4EF6;.hprof&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x901A;&#x5E38;&#x6267;&#x884C;5&#x6B21;&#x8FDB;&#x5165;/&#x9000;&#x51FA;&#x8BE5;&#x9875;&#x9762;&#xFF0C;&#x7136;&#x540E;&#x518D;dump&#x51FA;&#x6B64;&#x523B;&#x7684;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x6587;&#x4EF6;.hprof&#xFF0C;&#x6700;&#x540E;&#xFF0C;&#x5C06;&#x4E24;&#x8005;&#x6BD4;&#x8F83;&#xFF0C;&#x5982;&#x679C;&#x5185;&#x5B58;&#x76F8;&#x9664;&#x660E;&#x663E;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x3002;&#xFF08;&#x6CE8;&#x610F;:MAT&#x9700;&#x8981;&#x6807;&#x51C6;&#x7684;.hprof&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#x5728;as&#x7684;Profiler&#x4E2D;GC&#x540E;dump&#x51FA;&#x7684;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x6587;&#x4EF6;.hprof&#x5FC5;&#x987B;&#x624B;&#x52A8;&#x4F7F;&#x7528;android sdk platform-tools&#x4E0B;&#x7684;hprof-conv&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x624D;&#x80FD;&#x88AB;MAT&#x6253;&#x5F00;&#xFF09;</p>
+</li>
+<li><p>&#x7136;&#x540E;&#xFF0C;&#x4F7F;&#x7528;MAT&#x6253;&#x5F00;&#x524D;&#x9762;&#x4FDD;&#x5B58;&#x7684;2&#x4EFD;.hprof&#x6587;&#x4EF6;&#xFF0C;&#x6253;&#x5F00;Overview&#x754C;&#x9762;&#xFF0C;&#x5728;Overview&#x754C;&#x9762;&#x4E0B;&#x9762;&#x6709;4&#x4E2D;action&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x662F;Histogram&#x548C;Dominator Tree&#x3002;</p>
+</li>
+<li><p>Dominator Tree&#xFF1A;&#x652F;&#x914D;&#x6811;&#xFF0C;&#x6309;&#x5BF9;&#x8C61;&#x5927;&#x5C0F;&#x964D;&#x5E8F;&#x5217;&#x51FA;&#x5BF9;&#x8C61;&#x548C;&#x5176;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x6CE8;&#x91CD;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x5206;&#x6790;&#x3002;&#x9009;&#x62E9;Group by package&#xFF0C;&#x627E;&#x5230;&#x5F53;&#x524D;&#x8981;&#x68C0;&#x6D4B;&#x7684;&#x7C7B;&#xFF08;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x9876;&#x90E8;&#x7684;Regex&#x76F4;&#x63A5;&#x641C;&#x7D22;&#xFF09;&#xFF0C;&#x67E5;&#x770B;&#x5B83;&#x7684;Object&#x6570;&#x76EE;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x4E86;&#xFF0C;&#x5219;&#x5224;&#x65AD;&#x53D1;&#x751F;&#x4E86;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x53F3;&#x51FB;&#x8BE5;&#x7C7B;&#xFF0C;&#x9009;&#x62E9;Merge Shortest Paths to GC Root&#x4E2D;&#x7684;exclude all phantom/weak/soft etc.references&#x9009;&#x9879;&#x6765;&#x67E5;&#x770B;&#x8BE5;&#x7C7B;&#x7684;GC&#x5F3A;&#x5F15;&#x7528;&#x94FE;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x5F15;&#x7528;&#x94FE;&#x5373;&#x53EF;&#x770B;&#x5230;&#x6700;&#x7EC8;&#x5F3A;&#x5F15;&#x7528;&#x8BE5;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+</li>
+<li><p>Histogram&#xFF1A;&#x76F4;&#x65B9;&#x56FE;&#x6CE8;&#x91CD;&#x91CF;&#x7684;&#x5206;&#x6790;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0E;Dominator Tree&#x7C7B;&#x4F3C;&#x3002;</p>
+</li>
+<li><p>&#x5BF9;&#x6BD4;hprof&#x6587;&#x4EF6;&#xFF0C;&#x68C0;&#x6D4B;&#x51FA;&#x590D;&#x6742;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF1A;</p>
+</li>
+</ol>
+<h5 id="&#x901A;&#x7528;&#x5BF9;&#x6BD4;&#x65B9;&#x5F0F;&#xFF1A;">&#x901A;&#x7528;&#x5BF9;&#x6BD4;&#x65B9;&#x5F0F;&#xFF1A;</h5>
+<p>&#x5728;Navigation History&#x4E0B;&#x9762;&#x9009;&#x62E9;&#x60F3;&#x8981;&#x5BF9;&#x6BD4;&#x7684;dominator_tree/histogram&#xFF0C;&#x53F3;&#x51FB;&#x9009;&#x62E9;Add to Compare Basket&#xFF0C;&#x7136;&#x540E;&#x5728;Compare Basket&#x4E00;&#x680F;&#x4E2D;&#x70B9;&#x51FB;&#x7EA2;&#x8272;&#x611F;&#x53F9;&#x53F7;&#xFF08;Compare the results&#xFF09;&#x751F;&#x6210;&#x5BF9;&#x6BD4;&#x8868;&#x683C;&#xFF08;Compared Tables&#xFF09;&#xFF0C;&#x5728;&#x9876;&#x90E8;Regex&#x8F93;&#x5165;&#x8981;&#x68C0;&#x6D4B;&#x7684;&#x7C7B;&#xFF0C;&#x67E5;&#x770B;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x6216;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x53BB;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x5373;&#x53EF;</p>
+<h5 id="&#x9488;&#x5BF9;&#x4E8E;historam&#x7684;&#x5FEB;&#x901F;&#x5BF9;&#x6BD4;&#x65B9;&#x5F0F;&#xFF1A;">&#x9488;&#x5BF9;&#x4E8E;Historam&#x7684;&#x5FEB;&#x901F;&#x5BF9;&#x6BD4;&#x65B9;&#x5F0F;&#xFF1A;</h5>
+<p>&#x76F4;&#x63A5;&#x9009;&#x62E9;Histogram&#x4E0A;&#x65B9;&#x7684;Compare to another Heap Dump&#x9009;&#x62E9;&#x8981;&#x6BD4;&#x8F83;&#x7684;hprof&#x6587;&#x4EF6;&#x7684;Historam&#x5373;&#x53EF;&#x3002;</p>
+<hr>
+<h3 id="4&#x6253;&#x5370;trace">4.&#x6253;&#x5370;trace</h3>
+<ol>
+<li>cat proc/[pid]/stack ==&gt; &#x67E5;&#x770B;kernel&#x8C03;&#x7528;&#x6808;</li>
+<li>debuggerd -b [pid] ==&gt; &#x4E5F;&#x4E0D;&#x53EF;&#x4EE5;&#x4E0D;&#x5E26;&#x53C2;&#x6570;-b, &#x5219;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x5230;/data/tombstones/&#x76EE;&#x5F55;</li>
+<li>kill -3 [pid] ==&gt; &#x6536;&#x96C6;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x7684;trace &#x751F;&#x6210;/data/anr/traces.txt&#x6587;&#x4EF6;</li>
+<li>lsof [pid] ==&gt; &#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x6240;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;</li>
+</ol>
+<p><a href="http://gityuan.com/2016/11/26/art-trace/" target="_blank">java trace&#x6587;&#x4EF6;&#x89E3;&#x8BFB;</a></p>
+<hr>
+<h3 id="5gdb">5.GDB</h3>
+<p><a href="http://gityuan.com/2017/09/09/gdb/" target="_blank">gdb&#x8C03;&#x8BD5; native crash</a></p>
+<hr>
+<h3 id="6addr2line">6.addr2line</h3>
+<p><a href="http://gityuan.com/2017/09/02/addr2line/" target="_blank">&#x4ECB;&#x7ECD;addr2line&#x8C03;&#x8BD5;&#x547D;&#x4EE4;</a></p>
+<hr>
+<h3 id="7profiler">7.Profiler</h3>
+<p>&#x4F7F;&#x7528;AndroidProfiler&#x7684;MEMORY&#x5DE5;&#x5177;&#xFF1A;</p>
+<p>&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x5206;&#x6790;&#x68C0;&#x67E5;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x53CD;&#x590D;&#x6253;&#x5F00;&#x5173;&#x95ED;&#x9875;&#x9762;5&#x6B21;&#xFF0C;&#x7136;&#x540E;&#x6536;&#x5230;GC&#xFF08;&#x70B9;&#x51FB;Profile MEMORY&#x5DE6;&#x4E0A;&#x89D2;&#x7684;&#x5783;&#x573E;&#x6876;&#x56FE;&#x6807;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x65F6;total&#x5185;&#x5B58;&#x8FD8;&#x6CA1;&#x6709;&#x6062;&#x590D;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x4E86;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x518D;&#x70B9;&#x51FB;Profile MEMORY&#x5DE6;&#x4E0A;&#x89D2;&#x7684;&#x5783;&#x573E;&#x6876;&#x56FE;&#x6807;&#x65C1;&#x7684;heap dump&#x6309;&#x94AE;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7684;&#x5185;&#x5B58;&#x5806;&#x6808;&#x60C5;&#x51B5;&#xFF0C;&#x9009;&#x62E9;&#x6309;&#x5305;&#x540D;&#x67E5;&#x627E;&#xFF0C;&#x627E;&#x5230;&#x5F53;&#x524D;&#x6D4B;&#x8BD5;&#x7684;Activity&#xFF0C;&#x5982;&#x679C;&#x5F15;&#x7528;&#x4E86;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5219;&#x8868;&#x660E;&#x53D1;&#x751F;&#x4E86;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x3002;</p>
+<p><a href="https://developer.android.google.cn/studio/intro?hl=zh_cn" target="_blank">&#x63A2;&#x7D22; Android Studio</a></p>
+<p><a href="https://developer.android.google.cn/studio/profile/android-profiler?hl=zh_cn" target="_blank">&#x5229;&#x7528; Android Profiler &#x6D4B;&#x91CF;&#x5E94;&#x7528;&#x6027;&#x80FD;</a></p>
+<blockquote>
+<p>&#x8981;&#x6253;&#x5F00; Profiler &#x7A97;&#x53E3;&#xFF0C;&#x8BF7;&#x4F9D;&#x6B21;&#x9009;&#x62E9; View &gt; Tool Windows &gt; Profiler&#xFF0C;</p>
+</blockquote>
+<p><a href="https://developer.android.google.cn/studio/profile/cpu-profiler.html?hl=zh_cn" target="_blank">&#x4F7F;&#x7528; CPU Profiler &#x68C0;&#x67E5; CPU &#x6D3B;&#x52A8;</a></p>
+<h4 id="&#x4F7F;&#x7528;-debug-api-&#x8BB0;&#x5F55;-cpu-&#x6D3B;&#x52A8;">&#x4F7F;&#x7528; Debug API &#x8BB0;&#x5F55; CPU &#x6D3B;&#x52A8;</h4>
+<pre><code>  Debug.startMethodTracing(&quot;OkayDock&quot; );
+  Debug.stopMethodTracing();
+</code></pre><h5 id="trace&#x6587;&#x4EF6;&#x751F;&#x6210;&#x4F4D;&#x7F6E;">trace&#x6587;&#x4EF6;&#x751F;&#x6210;&#x4F4D;&#x7F6E;</h5>
+<pre><code>/sdcard/Android/data/com.okay.dock/files/OkayDock.trace
+</code></pre><p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;AS&#x6253;&#x5F00;</p>
+<p><a href="https://developer.android.google.cn/studio/profile/memory-profiler.html?hl=zh_cn#save-hprof" target="_blank">&#x4F7F;&#x7528; Memory Profiler &#x67E5;&#x770B; Java &#x5806;&#x548C;&#x5185;&#x5B58;&#x5206;&#x914D;</a></p>
+<p><a href="https://developer.android.google.cn/studio/profile/network-profiler.html?hl=zh_cn" target="_blank">&#x4F7F;&#x7528; Network Profiler &#x68C0;&#x67E5;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;</a></p>
+<p><a href="https://developer.android.google.cn/studio/profile/energy-profiler.html?hl=zh_cn" target="_blank">&#x4F7F;&#x7528; Energy Profiler &#x68C0;&#x67E5;&#x8017;&#x7535;&#x91CF;</a></p>
+<hr>
+<h3 id="8systrace">8.Systrace</h3>
+<blockquote>
+<p>/Users/tracyliu/Library/Android/sdk/platform-tools/systrace</p>
+</blockquote>
+<p><a href="https://developer.android.google.cn/studio/profile/systrace/command-line?hl=zh_cn" target="_blank">&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E0A;&#x6355;&#x83B7;&#x7CFB;&#x7EDF;&#x8DDF;&#x8E2A;&#x4FE1;&#x606F;</a>
+<a href="https://developer.android.google.cn/studio/profile/systrace" target="_blank">Systrace &#x6982;&#x89C8;</a>
+<a href="https://source.android.google.cn/devices/tech/debug/systrace" target="_blank">&#x4E86;&#x89E3; Systrace</a></p>
+<p><a href="https://juejin.im/post/5b3cce09e51d45198651069f#heading-12" target="_blank">&#x9762;&#x8BD5;Tip&#x4E4B;Android&#x4F18;&#x5316;&#x5DE5;&#x5177;Systrace</a></p>
+<pre><code>&#x5728;&#x8FDB;&#x7A0B;&#x7684;&#x4E0A;&#x9762;&#x6709;&#x4E00;&#x6761;&#x5F88;&#x7EC6;&#x7684;&#x8FDB;&#x5EA6;&#x6761;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x8BE5;&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#xFF1A;
+&#x3000;&#x3000;&#x7070;&#x8272;&#xFF1A; &#x7761;&#x7720;&#x3002;
+&#x3000;&#x3000;&#x84DD;&#x8272;&#xFF1A; &#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#xFF08;&#x5B83;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x8FD8;&#x672A;&#x88AB;&#x8C03;&#x5EA6;&#x8FD0;&#x884C;&#xFF09;&#x3002;
+&#x3000;&#x3000;&#x7EFF;&#x8272;&#xFF1A; &#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF08;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x8BA4;&#x4E3A;&#x5B83;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF09;&#x3002;
+&#x3000;&#x3000;&#x7EA2;&#x8272;&#xFF1A; &#x4E0D;&#x95F4;&#x65AD;&#x7684;&#x7761;&#x7720;&#xFF08;&#x901A;&#x5E38;&#x53D1;&#x751F;&#x5728;&#x5185;&#x6838;&#x9501;&#x4E0A;&#xFF09;&#xFF0C; &#x6307;&#x51FA;I / O&#x8D1F;&#x8F7D;&#xFF0C;&#x5BF9;&#x4E8E;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x7684;&#x8C03;&#x8BD5;&#x975E;&#x5E38;&#x6709;&#x7528;
+&#x3000;&#x3000;&#x6A59;&#x8272;&#xFF1A; &#x7531;&#x4E8E;I / O&#x8D1F;&#x8F7D;&#x5BFC;&#x81F4;&#x7684;&#x4E0D;&#x95F4;&#x65AD;&#x7761;&#x7720;&#x3002;
+&#x3000;&#x3000;&#x8981;&#x67E5;&#x770B;&#x4E0D;&#x95F4;&#x65AD;&#x7761;&#x7720;&#x7684;&#x539F;&#x56E0;&#xFF08;&#x53EF;&#x4ECE;sched_blocked_reason&#x8DDF;&#x8E2A;&#x70B9;&#x83B7;&#x53D6;&#xFF09;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x7EA2;&#x8272;&#x4E0D;&#x95F4;&#x65AD;&#x7761;&#x7720;&#x5207;&#x7247;&#x3002;
+</code></pre><pre><code>&#x6309;&#x952E;&#x64CD;&#x4F5C;       &#x4F5C;&#x7528;
+w             &#x653E;&#x5927;&#xFF0C;[+shift]&#x901F;&#x5EA6;&#x66F4;&#x5FEB;
+s             &#x7F29;&#x5C0F;&#xFF0C;[+shift]&#x901F;&#x5EA6;&#x66F4;&#x5FEB;
+a             &#x5DE6;&#x79FB;&#xFF0C;[+shift]&#x901F;&#x5EA6;&#x66F4;&#x5FEB;
+d             &#x53F3;&#x79FB;&#xFF0C;[+shift]&#x901F;&#x5EA6;&#x66F4;&#x5FEB;
+
+f             &#x653E;&#x5927;&#x5F53;&#x524D;&#x9009;&#x5B9A;&#x533A;&#x57DF;
+m             &#x6807;&#x8BB0;&#x5F53;&#x524D;&#x9009;&#x5B9A;&#x533A;&#x57DF;
+v             &#x9AD8;&#x4EAE;VSync
+g             &#x5207;&#x6362;&#x662F;&#x5426;&#x663E;&#x793A;60hz&#x7684;&#x7F51;&#x683C;&#x7EBF;
+            &#x6062;&#x590D;trace&#x5230;&#x521D;&#x59CB;&#x6001;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x6570;&#x5B57;0&#x800C;&#x975E;&#x5B57;&#x6BCD;o
+
+h             &#x5207;&#x6362;&#x662F;&#x5426;&#x663E;&#x793A;&#x8BE6;&#x60C5;
+/             &#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;
+enter&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x663E;&#x793A;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x2190; &#x2192;&#x5B9A;&#x4F4D;&#x641C;&#x7D22;&#x7ED3;&#x679C;
+`             &#x663E;&#x793A;/&#x9690;&#x85CF;&#x811A;&#x672C;&#x63A7;&#x5236;&#x53F0;
+?             &#x663E;&#x793A;&#x5E2E;&#x52A9;&#x529F;&#x80FD;
+</code></pre><pre><code>./systrace.py -t 10 sched gfx view wm am app webview -a com.okay.dock
+</code></pre><p><a href="http://gityuan.com/2016/01/17/systrace/" target="_blank">&#x6027;&#x80FD;&#x5DE5;&#x5177;Systrace</a></p>
+<hr>
+<h3 id="9uiautomatorviewer">9.Uiautomatorviewer</h3>
+<h2 id="open-userstracyliulibraryandroidsdktoolsbinuiautomatorviewer">&gt; open /Users/tracyliu/Library/Android/sdk/tools/bin/uiautomatorviewer</h2>
+<h3 id="10&#x53CD;&#x7F16;&#x8BD1;">10.&#x53CD;&#x7F16;&#x8BD1;</h3>
+<h4 id="jadx">jadx</h4>
+<blockquote>
+<p>jadx-gui</p>
+<p>jadx </p>
+</blockquote>
+<h4 id="apktool">Apktool</h4>
+<p><a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank">https://ibotpeaches.github.io/Apktool/install/</a></p>
+<blockquote>
+<p>apktool d xxx.apk</p>
+<pre><code>1. &#x5C06;&#x4E0B;&#x8F7D;&#x597D;&#x7684;apktool&#x6587;&#x4EF6;&#x4E0E;apktool_2.3.1.jar&#x6587;&#x4EF6;&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x5E76;&#x5C06;apktool_2.3.1.jar&#x66F4;&#x540D;&#x4E3A;apktool.jar&#xFF1B;
+2. &#x5C06;apktool.jar&#x4E0E;apktool&#x79FB;&#x52A8;&#x5230;/usr/local/bin&#x76EE;&#x5F55;&#x4E0B;(&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x51FA;&#x547D;&#x4EE4;open /usr/local/bin&#x6765;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;)&#xFF1B;
+3. &#x4E3A;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#xFF0C;&#x5373;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165;&#x5E76;&#x6267;&#x884C;&#xFF1A;
+ chmod +x apktool.jar
+ chmod +x apktool
+4. &#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;apktool&#x770B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x53EF;&#x4EE5;&#x9700;&#x8981;&#x5728;&#x7CFB;&#x7EDF;&#x504F;&#x597D;&#x8BBE;&#x7F6E;&#x4E2D;&#x6253;&#x5F00;&#x5B89;&#x5168;&#x4E0E;&#x9690;&#x79C1;&#x4E2D;&#x70B9;&#x51FB;&#x4ECD;&#x8981;&#x8FD0;&#x884C;apktool.jar&#xFF1B;
+</code></pre><h4 id="dex2jar">dex2jar</h4>
+<p><a href="https://sourceforge.net/projects/dex2jar/files/" target="_blank">https://sourceforge.net/projects/dex2jar/files/</a></p>
+</blockquote>
+<hr>
+<h3 id="11ddms">11.DDMS</h3>
+<p>Android Studio 3.0&#x5F00;&#x59CB; DDMS&#x5F03;&#x7528;</p>
+<p>&#x53EF;&#x4EE5;&#x5728;</p>
+<blockquote>
+<p>SDK/tools/monitor&#x53CC;&#x51FB;&#x6253;&#x5F00;DDMS</p>
+</blockquote>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="使用Gitpages发布GitBook.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Git使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Android Debug Tools","level":"2.1.2","depth":2,"previous":{"title":"Git使用","level":"2.1.1","depth":2,"path":"Tools/使用Gitpages发布GitBook.md","ref":"Tools/使用Gitpages发布GitBook.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tools/Android Debug Tools.md","mtime":"2020-08-28T10:38:00.962Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-30T15:42:05.558Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
