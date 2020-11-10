@@ -52,6 +52,7 @@
 	- [两个栈实现队列](/Algorithmic/Stack-用两个栈实现队列.md)
 	- [字符串翻转](/Algorithmic/String-手写一个字符串翻转.mdd)
 	- [生产者消费者模型](/Algorithmic/生产者消费者模型.md)
+	- [链表](/Algorithmic/链表.md)
 	
 
         
