@@ -523,19 +523,6 @@
                 <span>
             
                     
-                    FrameWork
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" >
-            
-                <span>
-            
-                    
                     Net
             
                 </span>
@@ -545,7 +532,33 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.1" data-path="../Net/3-03.TCP UDP.html">
+        <li class="chapter " data-level="3.1.1" data-path="../Net/3-01.底层网络协议.html">
+            
+                <a href="../Net/3-01.底层网络协议.html">
+            
+                    
+                    底层网络协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Net/3-02.OSI模型.html">
+            
+                <a href="../Net/3-02.OSI模型.html">
+            
+                    
+                    OSI模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../Net/3-03.TCP UDP.html">
             
                 <a href="../Net/3-03.TCP UDP.html">
             
@@ -556,10 +569,9 @@
             
 
             
-            <ul class="articles">
-                
+        </li>
     
-        <li class="chapter " data-level="3.2.1.1" data-path="../Net/3-04.HTTP.html">
+        <li class="chapter " data-level="3.1.4" data-path="../Net/3-04.HTTP.html">
             
                 <a href="../Net/3-04.HTTP.html">
             
@@ -572,9 +584,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.1.2" data-path="../Net/3-05.HTTP描述一次网络请求的流程.md">
+        <li class="chapter " data-level="3.1.5" data-path="../Net/3-05.HTTP描述一次网络请求的流程.html">
             
-                <span>
+                <a href="../Net/3-05.HTTP描述一次网络请求的流程.html">
             
                     
                     一次HTTP请求
@@ -585,7 +597,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2.1.3" data-path="../Net/3-06.HTTPS.html">
+        <li class="chapter " data-level="3.1.6" data-path="../Net/3-06.HTTPS.html">
             
                 <a href="../Net/3-06.HTTPS.html">
             
@@ -595,11 +607,6 @@
                 </a>
             
 
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -904,6 +911,16 @@
 <p>context.startService() -&gt;onCreate()- &gt;onStart()-&gt;Service running--&gt;( &#x5982; &#x679C; &#x8C03; &#x7528; context.stopService() )-&gt;onDestroy() -&gt;Service shut down </p>
 </blockquote>
 <hr>
+<h4 id="5service-&#x7684;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;">5.Service &#x7684;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;</h4>
+<p>&#x9996;&#x5148;&#x8BF4;&#x4E00;&#x4E0B;&#x975E;&#x7ED1;&#x5B9A; Service &#x7684;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x8C03;&#x7528; Context &#x7684; startService &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x662F;&#x8C03;&#x7528;&#x4E86; ContextImpl &#x7684; startService&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x540C;&#x6837;&#x662F;&#x83B7;&#x53D6; AMS &#x7684;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5411; AMS transact &#x4E00;&#x4E2A; START_SERVICE &#x8BF7;&#x6C42;&#x3002;&#x5728; AMS &#x7684; startServiceLocked &#x53BB;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x3002;&#x5728; AMS &#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A; Service &#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x7528;&#x4E00;&#x4E2A; ServiceRecord &#x5BF9;&#x8C61;&#x6765;&#x63CF;&#x8FF0;&#xFF0C;&#x5C31;&#x50CF;&#x6BCF;&#x4E00;&#x4E2A; Activity &#x7EC4;&#x4EF6;&#x90FD;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; ActivityRecord &#x5BF9;&#x8C61;&#x6765;&#x63CF;&#x8FF0;&#x4E00;&#x6837;&#x3002;</p>
+<p>&#x5728; startServiceLocked &#x4E2D;&#xFF0C;&#x4F1A;&#x9996;&#x5148;&#x5411; AMS &#x4E2D;&#x67E5;&#x627E;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E0E;&#x53C2;&#x6570; Intent &#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x4E2A; ServiceRecord &#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5C31;&#x4F1A;&#x5230; PKMS &#x4E2D;&#x53BB;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A; Intent &#x5BF9;&#x5E94;&#x7684; Service &#x7EC4;&#x4EF6;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A; ServiceRecord &#x5BF9;&#x8C61;&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528; bringUpServiceLocked &#x6765;&#x542F;&#x52A8;&#x8FD9;&#x4E2A; Service&#x3002;</p>
+<p>&#x5728; bringUpServiceLocked &#x4E2D;&#xFF0C;&#x540C; Activity &#x7684;&#x542F;&#x52A8;&#x4E00;&#x6837;&#xFF0C;&#x90FD;&#x4F1A;&#x53BB;&#x9996;&#x5148;&#x5224;&#x65AD;&#x8BE5; Service &#x7EC4;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5C31;&#x4F1A;&#x5148;&#x53BB;&#x521B;&#x5EFA;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#xFF0C;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x4F1A;&#x628A; ApplicationThread &#x4F20;&#x9012;&#x7ED9; AMS&#xFF0C;&#x4EE5;&#x4FBF; AMS &#x53EF;&#x4EE5;&#x548C;&#x8FD9;&#x4E2A;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x3002;&#x63A5;&#x7740;&#xFF0C;&#x5C31;&#x662F; realStartServiceLocked&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x901A;&#x8FC7; ApplicationThread &#x5411;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#x53D1;&#x9001;&#x4E00;&#x4E2A; CREATE_SERVICE &#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x8BF7;&#x6C42;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#x662F;&#x5982;&#x4F55;&#x5904;&#x7406;&#x7684;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x8FD8;&#x662F;&#x8001;&#x6837;&#x5B50;&#xFF0C;&#x5F80;&#x4E3B;&#x7EBF;&#x7A0B; Handler &#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528; handleCreateService&#x3002;</p>
+<p>&#x5728; handleCreateService &#x4E2D;&#xFF0C;&#x4F1A;&#x901A;&#x8FC7; LoadedApk &#x7684; ClassLoader &#x53BB;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A; Service &#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; ContextImpl&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528; Service &#x7684; attach &#x548C; onCreate &#x51FD;&#x6570;&#x3002;</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x975E;&#x7ED1;&#x5B9A; Service &#x7EC4;&#x4EF6;&#x7684;&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#x5C31;&#x8BB2;&#x5B8C;&#x4E86;&#x3002;&#x4E0B;&#x9762;&#x518D;&#x6765;&#x8BF4;&#x8BF4;&#x7ED1;&#x5B9A;&#x670D;&#x52A1;&#x7684;&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#x3002;</p>
+<p>bindService &#x7684;&#x6D41;&#x7A0B;&#x8981;&#x6BD4; startService &#x6D41;&#x7A0B;&#x590D;&#x6742;&#x5F88;&#x591A;&#xFF0C;&#x4E0D;&#x8FC7;&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x628A; ServiceConnection &#x5BF9;&#x8C61;&#x4F20;&#x9012;&#x7ED9; Activity &#x7EC4;&#x4EF6;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#x4F1A;&#x6267;&#x884C; handleCreateService &#x548C; handleBindService&#xFF0C;&#x524D;&#x8005;&#x5C31;&#x662F; startService &#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x540E;&#x8005;&#x5373;&#x662F;&#x591A;&#x51FA;&#x6765;&#x7684; bind &#x6D41;&#x7A0B;&#x3002;</p>
+<p>&#x5728; ContextImpl &#x7684; bindService &#x4E2D;&#xFF0C;&#x4F1A;&#x9996;&#x5148;&#x628A; ServiceConnection &#x901A;&#x8FC7; getServiceDispatcher &#x8C03;&#x7528;&#x8F6C;&#x5316;&#x6210;&#x4E00;&#x4E2A; IServiceConnection &#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E2A; IServiceConnection &#x662F;&#x4E00;&#x4E2A; Binder &#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x53EF;&#x4EE5;&#x8DE8;&#x8FDB;&#x7A0B;&#x4F20;&#x9012;&#x7ED9; Activity &#x4E86;&#x3002;&#x7136;&#x540E;&#x5C31;&#x662F;&#x83B7;&#x53D6; AMS &#x7684;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x53BB;&#x6267;&#x884C; bindService &#x8C03;&#x7528;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x4F20;&#x5165; AppplicationThread&#x3001;ActivityToken &#x4EE5;&#x53CA; Intent&#x3002;&#x5728; AMS &#x6210;&#x529F;&#x5C06; Service &#x7EC4;&#x4EF6;&#x542F;&#x52A8;&#x8D77;&#x6765;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A; Binder &#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x53D1;&#x9001;&#x7ED9; Activity &#x7EC4;&#x4EF6;&#x6240;&#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x6700;&#x540E;&#x5728;&#x5206;&#x53D1;&#x7ED9; Activity &#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF; ServiceConnection &#x7684; onServiceConnected &#x6765;&#x5904;&#x7406;&#x3002;Activity &#x7EC4;&#x4EF6;&#x83B7;&#x5F97;&#x4E86; Service &#x7EC4;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x63A5;&#x53E3;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5176;&#x76F8;&#x5173;&#x670D;&#x52A1;&#x4E86;&#x3002;</p>
+<p>~</p>
 
                                 
                                 </section>
@@ -947,7 +964,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Service","level":"2.1.2","depth":2,"next":{"title":"BroadCast","level":"2.1.3","depth":2,"path":"Android/1-03.组件-BroadCast.md","ref":"Android/1-03.组件-BroadCast.md","articles":[]},"previous":{"title":"Activity","level":"2.1.1","depth":2,"path":"Android/1-01.组件-Activity.md","ref":"Android/1-01.组件-Activity.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Android/1-02.组件-Service.md","mtime":"2020-09-23T09:13:18.012Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T16:18:41.387Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Service","level":"2.1.2","depth":2,"next":{"title":"BroadCast","level":"2.1.3","depth":2,"path":"Android/1-03.组件-BroadCast.md","ref":"Android/1-03.组件-BroadCast.md","articles":[]},"previous":{"title":"Activity","level":"2.1.1","depth":2,"path":"Android/1-01.组件-Activity.md","ref":"Android/1-01.组件-Activity.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Android/1-02.组件-Service.md","mtime":"2020-11-08T17:40:42.929Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T17:56:02.782Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
