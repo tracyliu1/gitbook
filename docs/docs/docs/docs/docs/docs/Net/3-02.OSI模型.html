@@ -1,0 +1,964 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>OSI模型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3-03.TCP UDP.html" />
+    
+    
+    <link rel="prev" href="3-01.底层网络协议.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    Java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Java/1-02.java 常量池相关 String Integer.html">
+            
+                <a href="../Java/1-02.java 常量池相关 String Integer.html">
+            
+                    
+                    Java 常量池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                <a href="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Java/1-04.Java类加载.html">
+            
+                <a href="../Java/1-04.Java类加载.html">
+            
+                    
+                    Java类加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Java/1-05.Java GC 垃圾回收.html">
+            
+                <a href="../Java/1-05.Java GC 垃圾回收.html">
+            
+                    
+                    GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Java/1-06.接口、抽象类.html">
+            
+                <a href="../Java/1-06.接口、抽象类.html">
+            
+                    
+                    接口、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                <a href="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                    
+                    动态代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Java/2-01.锁.html">
+            
+                <a href="../Java/2-01.锁.html">
+            
+                    
+                    锁 死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Java/2-02.Volatile.html">
+            
+                <a href="../Java/2-02.Volatile.html">
+            
+                    
+                    Volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Java/2-03.Synchronized.html">
+            
+                <a href="../Java/2-03.Synchronized.html">
+            
+                    
+                    Synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                <a href="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                    
+                    线程简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Java/2-04-2.线程中断.html">
+            
+                <a href="../Java/2-04-2.线程中断.html">
+            
+                    
+                    线程中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../Java/2-04-3.线程间协作.html">
+            
+                <a href="../Java/2-04-3.线程间协作.html">
+            
+                    
+                    线程协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../Java/2-05.线程池.html">
+            
+                <a href="../Java/2-05.线程池.html">
+            
+                    
+                    线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../Java/2-06.ThreadLocal.html">
+            
+                <a href="../Java/2-06.ThreadLocal.html">
+            
+                    
+                    ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../Java/3-01.Java 容器.html">
+            
+                <a href="../Java/3-01.Java 容器.html">
+            
+                    
+                    Java 容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../Java/3-02.设计模式.html">
+            
+                <a href="../Java/3-02.设计模式.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Android
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Android/1-01.组件-Activity.html">
+            
+                <a href="../Android/1-01.组件-Activity.html">
+            
+                    
+                    Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Android/1-02.组件-Service.html">
+            
+                <a href="../Android/1-02.组件-Service.html">
+            
+                    
+                    Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Android/1-03.组件-BroadCast.html">
+            
+                <a href="../Android/1-03.组件-BroadCast.html">
+            
+                    
+                    BroadCast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Android/1-04.组件-ContentProvider.html">
+            
+                <a href="../Android/1-04.组件-ContentProvider.html">
+            
+                    
+                    ContentProvider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../Android/1-05.组件-Fragment.html">
+            
+                <a href="../Android/1-05.组件-Fragment.html">
+            
+                    
+                    Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Android/2-01.framework-Binder.html">
+            
+                <a href="../Android/2-01.framework-Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../Android/2-02.framework-Context.html">
+            
+                <a href="../Android/2-02.framework-Context.html">
+            
+                    
+                    Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../Android/2-03.framework-Android消息机制.html">
+            
+                <a href="../Android/2-03.framework-Android消息机制.html">
+            
+                    
+                    消息机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../Android/2-04.framework-startActivity流程.html">
+            
+                <a href="../Android/2-04.framework-startActivity流程.html">
+            
+                    
+                    startActivity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../Android/3-01.View-绘制流程.html">
+            
+                <a href="../Android/3-01.View-绘制流程.html">
+            
+                    
+                    View绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../Android/3-02.View-事件分发.html">
+            
+                <a href="../Android/3-02.View-事件分发.html">
+            
+                    
+                    View分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Net
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="3-01.底层网络协议.html">
+            
+                <a href="3-01.底层网络协议.html">
+            
+                    
+                    底层网络协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.2" data-path="3-02.OSI模型.html">
+            
+                <a href="3-02.OSI模型.html">
+            
+                    
+                    OSI模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="3-03.TCP UDP.html">
+            
+                <a href="3-03.TCP UDP.html">
+            
+                    
+                    TCP/UDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="3-04.HTTP.html">
+            
+                <a href="3-04.HTTP.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="3-05.HTTP描述一次网络请求的流程.html">
+            
+                <a href="3-05.HTTP描述一次网络请求的流程.html">
+            
+                    
+                    一次HTTP请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="3-06.HTTPS.html">
+            
+                <a href="3-06.HTTPS.html">
+            
+                    
+                    HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    Algorithmic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                <a href="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                    
+                    BinarySearch二分法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                <a href="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                    
+                    两个栈实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../Algorithmic/String-手写一个字符串翻转.mdd">
+            
+                <span>
+            
+                    
+                    字符串翻转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../Algorithmic/生产者消费者模型.html">
+            
+                <a href="../Algorithmic/生产者消费者模型.html">
+            
+                    
+                    生产者消费者模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    Tool
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../Tools/使用Gitpages发布GitBook.html">
+            
+                <a href="../Tools/使用Gitpages发布GitBook.html">
+            
+                    
+                    Git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../Tools/Android Debug Tools.html">
+            
+                <a href="../Tools/Android Debug Tools.html">
+            
+                    
+                    Android Debug Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../Tools/VNC使用.html">
+            
+                <a href="../Tools/VNC使用.html">
+            
+                    
+                    VNC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../Tools/Mac使用.html">
+            
+                <a href="../Tools/Mac使用.html">
+            
+                    
+                    Mac使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../Tools/Ubuntu 环境 编译.html">
+            
+                <a href="../Tools/Ubuntu 环境 编译.html">
+            
+                    
+                    Ubuntu编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../Tools/使用Gitpages发布GitBook.html">
+            
+                <a href="../Tools/使用Gitpages发布GitBook.html">
+            
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >OSI模型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="osi">OSI</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C42;</th>
+<th style="text-align:left">&#x529F;&#x80FD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x5E94;&#x7528;&#x5C42;</td>
+<td style="text-align:left">&#x7F51;&#x7EDC;&#x8FDB;&#x7A0B;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x5E94;&#x7528;&#x89C4;&#x5B9A;&#x5404;&#x5C42;&#x534F;&#x8BAE;&#x3001;&#x65F6;&#x5E8F;&#x3001;&#x8868;&#x793A;&#x7B49;&#xFF0C;&#x8FDB;&#x884C;&#x5C01;&#x88C5; &#x3002;&#x5728;&#x7AEF;&#x7CFB;&#x7EDF;&#x4E2D;&#x7528;&#x8F6F;&#x4EF6;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;HTTP&#x7B49;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x8868;&#x793A;&#x5C42;</td>
+<td style="text-align:left">&#x6570;&#x636E;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#xFF0C;&#x52A0;&#x5BC6;&#x548C;&#x89E3;&#x5BC6;&#xFF0C;&#x628A;&#x673A;&#x5668;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x72EC;&#x7ACB;&#x4E8E;&#x673A;&#x5668;&#x7684;&#x6570;&#x636E;&#x3002;&#x89C4;&#x5B9A;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;&#x5316;&#x8868;&#x793A; &#xFF0C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7684;&#x8F6C;&#x6362;&#x7B49;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x4F1A;&#x8BDD;&#x5C42;</td>
+<td style="text-align:left">&#x4E3B;&#x673A;&#x95F4;&#x901A;&#x8BAF;&#xFF0C;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x7684;&#x4F1A;&#x8BDD;&#x3002;&#x89C4;&#x5B9A;&#x901A;&#x4FE1;&#x65F6;&#x5E8F; &#xFF1B;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x7684;&#x5B9A;&#x754C;&#x3001;&#x540C;&#x6B65;&#xFF0C;&#x521B;&#x5EFA;&#x68C0;&#x67E5;&#x70B9;&#x7B49;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x4F20;&#x8F93;&#x5C42;</td>
+<td style="text-align:left">&#x5728;&#x7F51;&#x7EDC;&#x7684;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x53EF;&#x9760;&#x5730;&#x5206;&#x53D1;&#x6570;&#x636E;&#x5305;&#x3002;&#x6240;&#x6709;&#x4F20;&#x8F93;&#x9057;&#x7559;&#x95EE;&#x9898;&#xFF1B;&#x590D;&#x7528;&#xFF1B;&#x6D41;&#x91CF;&#xFF1B;&#x53EF;&#x9760;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x7F51;&#x7EDC;&#x5C42;</td>
+<td style="text-align:left">&#x5728;&#x7F51;&#x7EDC;&#x7684;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5730;&#x5740;&#x5206;&#x914D;&#x3001;&#x8DEF;&#x7531;&#x548C;&#xFF08;&#x4E0D;&#x4E00;&#x5B9A;&#x53EF;&#x9760;&#x7684;&#xFF09;&#x5206;&#x53D1;&#x62A5;&#x6587;&#x3002;&#x8DEF;&#x7531;&#xFF08; IP&#x5BFB;&#x5740;&#xFF09;&#xFF1B;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x5C42;</td>
+<td style="text-align:left">&#x4E00;&#x4E2A;&#x53EF;&#x9760;&#x7684;&#x70B9;&#x5BF9;&#x70B9;&#x6570;&#x636E;&#x76F4;&#x94FE;&#x3002;&#x68C0;&#x9519;&#x4E0E;&#x7EA0;&#x9519;&#xFF08;CRC&#x7801;&#xFF09;&#xFF1B;&#x591A;&#x8DEF;&#x8BBF;&#x95EE;&#xFF1B;&#x5BFB;&#x5740;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x7269;&#x7406;&#x5C42;</td>
+<td style="text-align:left">&#x4E00;&#x4E2A;&#xFF08;&#x4E0D;&#x4E00;&#x5B9A;&#x53EF;&#x9760;&#x7684;&#xFF09;&#x70B9;&#x5BF9;&#x70B9;&#x6570;&#x636E;&#x76F4;&#x94FE;&#x3002;&#x5B9A;&#x4E49;&#x673A;&#x68B0;&#x7279;&#x6027;&#xFF1B;&#x7535;&#x6C14;&#x7279;&#x6027;&#xFF1B;&#x529F;&#x80FD;&#x7279;&#x6027;&#xFF1B;&#x89C4;&#x7A0B;&#x7279;&#x6027;</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://user-gold-cdn.xitu.io/2020/4/15/1717e3eaf883fe21?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-01.底层网络协议.html" class="navigation navigation-prev " aria-label="Previous page: 底层网络协议">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3-03.TCP UDP.html" class="navigation navigation-next " aria-label="Next page: TCP/UDP">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OSI模型","level":"3.1.2","depth":2,"next":{"title":"TCP/UDP","level":"3.1.3","depth":2,"path":"Net/3-03.TCP UDP.md","ref":"Net/3-03.TCP UDP.md","articles":[]},"previous":{"title":"底层网络协议","level":"3.1.1","depth":2,"path":"Net/3-01.底层网络协议.md","ref":"Net/3-01.底层网络协议.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Net/3-02.OSI模型.md","mtime":"2020-11-06T04:57:36.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T17:56:02.782Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
