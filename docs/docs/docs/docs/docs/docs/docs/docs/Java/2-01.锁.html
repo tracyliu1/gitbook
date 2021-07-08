@@ -688,6 +688,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.1.5" data-path="../Algorithmic/链表.html">
+            
+                <a href="../Algorithmic/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -882,7 +895,11 @@
 &#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x7684;&#x503C; A
 &#x62DF;&#x5199;&#x5165;&#x7684;&#x65B0;&#x503C; B
 &#x5F53;&#x4E14;&#x4EC5;&#x5F53; V &#x7684;&#x503C;&#x7B49;&#x4E8E; A&#x65F6;&#xFF0C;CAS&#x901A;&#x8FC7;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x7528;&#x65B0;&#x503C;B&#x6765;&#x66F4;&#x65B0;V&#x7684;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF08;&#x6BD4;&#x8F83;&#x548C;&#x66FF;&#x6362;&#x662F;&#x4E00;&#x4E2A;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF09;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x65CB;&#x64CD;&#x4F5C;&#xFF0C;&#x5373;&#x4E0D;&#x65AD;&#x7684;&#x91CD;&#x8BD5;&#x3002;
-</code></pre><p>&#x81EA;&#x65CB;&#x9501;&#xFF08;spinlock&#xFF09;&#xFF1A;&#x662F;&#x6307;&#x5F53;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5728;&#x83B7;&#x53D6;&#x9501;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x9501;&#x5DF2;&#x7ECF;&#x88AB;&#x5176;&#x5B83;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x7EBF;&#x7A0B;&#x5C06;&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#xFF0C;&#x7136;&#x540E;&#x4E0D;&#x65AD;&#x7684;&#x5224;&#x65AD;&#x9501;&#x662F;&#x5426;&#x80FD;&#x591F;&#x88AB;&#x6210;&#x529F;&#x83B7;&#x53D6;&#xFF0C;&#x76F4;&#x5230;&#x83B7;&#x53D6;&#x5230;&#x9501;&#x624D;&#x4F1A;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;</p>
+</code></pre><h4 id="&#x539F;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;">&#x539F;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h4>
+<p>&#x539F;&#x5B50;&#x7C7B;&#x5373;&#x662F;&#x6307; Java &#x4E2D;&#x7684; Atomic &#x7C7B;&#xFF0C;&#x6BD4;&#x5982; AtomicInteger&#x3001;AtomicLong&#x3001;AtomicStampedReference&#x3001;AtomicReference &#x7B49;&#x3002;&#x90FD;&#x662F;&#x901A;&#x8FC7; CAS &#x6765;&#x505A;&#x7684;&#x3002;</p>
+<p>CAS &#x5373;&#x6BD4;&#x8F83;&#x5E76;&#x66FF;&#x6362;&#xFF0C;&#x5B83;&#x662F;&#x901A;&#x8FC7;&#x786C;&#x4EF6;&#x6765;&#x4FDD;&#x8BC1;&#x64CD;&#x4F5C;&#x7684;&#x539F;&#x5B50;&#x6027;&#x3002;</p>
+<p>&#x5728; Java &#x4E2D;&#xFF0C;UnSafe &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9; CAS &#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;&#xFF0C;Atomic &#x7C7B;&#x5185;&#x90E8;&#x4E5F;&#x90FD;&#x662F;&#x4F7F;&#x7528; UnSafe &#x7C7B;&#x6765;&#x505A;&#x7684;&#xFF0C;UnSafe &#x7C7B;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5185;&#x5B58;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x662F;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x5B83;&#x662F;&#x7531;&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x52A0;&#x8F7D;&#x7684;&#x3002;UnSafe &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684; compareAndSwapXxx &#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x662F; native &#x65B9;&#x6CD5;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;UnSafe &#x8FD8;&#x6709;&#x4E00;&#x5BF9; park/unpark &#x963B;&#x585E;&#x5524;&#x9192;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;LockSupport &#x4FBF;&#x662F;&#x5BF9;&#x5B83;&#x7684;&#x5305;&#x88C5;&#x3002;</p>
+<p>&#x81EA;&#x65CB;&#x9501;&#xFF08;spinlock&#xFF09;&#xFF1A;&#x662F;&#x6307;&#x5F53;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5728;&#x83B7;&#x53D6;&#x9501;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x9501;&#x5DF2;&#x7ECF;&#x88AB;&#x5176;&#x5B83;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x7EBF;&#x7A0B;&#x5C06;&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#xFF0C;&#x7136;&#x540E;&#x4E0D;&#x65AD;&#x7684;&#x5224;&#x65AD;&#x9501;&#x662F;&#x5426;&#x80FD;&#x591F;&#x88AB;&#x6210;&#x529F;&#x83B7;&#x53D6;&#xFF0C;&#x76F4;&#x5230;&#x83B7;&#x53D6;&#x5230;&#x9501;&#x624D;&#x4F1A;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;</p>
 <p><a href="https://blog.csdn.net/qq_34337272/article/details/81252853" target="_blank">&#x9762;&#x8BD5;&#x5FC5;&#x5907;&#x4E4B;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x81EA;&#x65CB;&#x9501;</a></p>
 <hr>
 <h3 id="&#x6B7B;&#x9501;&#x7684;&#x4EA7;&#x751F;&#x6761;&#x4EF6;&#xFF0C;&#x5982;&#x4F55;&#x907F;&#x514D;&#x6B7B;&#x9501;">&#x6B7B;&#x9501;&#x7684;&#x4EA7;&#x751F;&#x6761;&#x4EF6;&#xFF0C;&#x5982;&#x4F55;&#x907F;&#x514D;&#x6B7B;&#x9501;?</h3>
@@ -1005,7 +1022,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"锁 死锁","level":"1.2.8","depth":2,"next":{"title":"Volatile","level":"1.2.9","depth":2,"path":"Java/2-02.Volatile.md","ref":"Java/2-02.Volatile.md","articles":[]},"previous":{"title":"动态代理","level":"1.2.7","depth":2,"path":"Java/1-07.Java 动态代理 静态代理.md.md","ref":"Java/1-07.Java 动态代理 静态代理.md.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Java/2-01.锁.md","mtime":"2020-09-01T09:27:00.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-08T17:56:02.782Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"锁 死锁","level":"1.2.8","depth":2,"next":{"title":"Volatile","level":"1.2.9","depth":2,"path":"Java/2-02.Volatile.md","ref":"Java/2-02.Volatile.md","articles":[]},"previous":{"title":"动态代理","level":"1.2.7","depth":2,"path":"Java/1-07.Java 动态代理 静态代理.md.md","ref":"Java/1-07.Java 动态代理 静态代理.md.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Java/2-01.锁.md","mtime":"2020-11-09T09:45:18.405Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-10T05:37:09.188Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
