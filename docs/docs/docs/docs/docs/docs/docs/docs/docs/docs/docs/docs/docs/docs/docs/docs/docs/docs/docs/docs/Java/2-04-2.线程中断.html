@@ -1,0 +1,673 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>线程中断 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-04-3.线程间协作.html" />
+    
+    
+    <link rel="prev" href="2-04-1.线程分类、状态、创建、阻塞.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1-01.java内存分区.html">
+            
+                <a href="1-01.java内存分区.html">
+            
+                    
+                    Java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1-02.java 常量池相关 String Integer.html">
+            
+                <a href="1-02.java 常量池相关 String Integer.html">
+            
+                    
+                    Java 常量池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                <a href="1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1-04.Java类加载.html">
+            
+                <a href="1-04.Java类加载.html">
+            
+                    
+                    Java类加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1-05.Java GC 垃圾回收.html">
+            
+                <a href="1-05.Java GC 垃圾回收.html">
+            
+                    
+                    GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1-06.接口、抽象类.html">
+            
+                <a href="1-06.接口、抽象类.html">
+            
+                    
+                    接口、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="1-07.Java 动态代理 静态代理.md.html">
+            
+                <a href="1-07.Java 动态代理 静态代理.md.html">
+            
+                    
+                    动态代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="2-01.锁.html">
+            
+                <a href="2-01.锁.html">
+            
+                    
+                    锁 死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="2-02.Volatile.html">
+            
+                <a href="2-02.Volatile.html">
+            
+                    
+                    Volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="2-03.Synchronized.html">
+            
+                <a href="2-03.Synchronized.html">
+            
+                    
+                    Synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                <a href="2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                    
+                    线程简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.12" data-path="2-04-2.线程中断.html">
+            
+                <a href="2-04-2.线程中断.html">
+            
+                    
+                    线程中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="2-04-3.线程间协作.html">
+            
+                <a href="2-04-3.线程间协作.html">
+            
+                    
+                    线程协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="2-05.线程池.html">
+            
+                <a href="2-05.线程池.html">
+            
+                    
+                    线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="2-06.ThreadLocal.html">
+            
+                <a href="2-06.ThreadLocal.html">
+            
+                    
+                    ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="3-01.Java 容器.html">
+            
+                <a href="3-01.Java 容器.html">
+            
+                    
+                    Java 容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="3-02.设计模式.html">
+            
+                <a href="3-02.设计模式.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tool
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Tools/使用Gitpages发布GitBook.html">
+            
+                <a href="../Tools/使用Gitpages发布GitBook.html">
+            
+                    
+                    Git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Tools/Android Debug Tools.html">
+            
+                <a href="../Tools/Android Debug Tools.html">
+            
+                    
+                    Android Debug Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >线程中断</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;">&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;</h4>
+<p>&#x4E2D;&#x65AD;&#x4EE3;&#x8868;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x5173;&#x8054;&#x4E86;&#x4E00;&#x4E2A;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#xFF0C;&#x662F;&#x4E00;&#x4E2A; true &#x6216; false &#x7684; boolean &#x503C;&#xFF0C;&#x521D;&#x59CB;&#x503C;&#x4E3A; false&#x3002;</p>
+<h4 id="thread&#x7C7B;&#x4E2D;&#x7684;&#x6709;&#x4E2A;&#x4E09;&#x4E2A;&#x5173;&#x4E8E;&#x4E2D;&#x65AD;&#x7684;&#x65B9;&#x6CD5;">Thread&#x7C7B;&#x4E2D;&#x7684;&#x6709;&#x4E2A;&#x4E09;&#x4E2A;&#x5173;&#x4E8E;&#x4E2D;&#x65AD;&#x7684;&#x65B9;&#x6CD5;</h4>
+<h5 id="public-void-interrupt">public void interrupt(){}</h5>
+<blockquote>
+<p>&#x4E2D;&#x65AD;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;&#x72B6;&#x6001;true&#x3002;
+```
+public void interrupt() {<br>    if (this != Thread.currentThread())<br>        checkAccess();                                              </p>
+</blockquote>
+<pre><code>synchronized (blockerLock) {                                      
+    Interruptible b = blocker;                                    
+    if (b != null) {                                              
+        interrupt0();           // Just to set the interrupt flag 
+        b.interrupt(this);                                        
+        return;                                                   
+    }                                                             
+}                                                                 
+interrupt0();                                                     
+</code></pre><p>}                   </p>
+<pre><code>
+- &#x5F53;&#x7EBF;&#x7A0B;&#x88AB;Object&#x4E2D;&#x5B9A;&#x4E49;&#x7684; wait()&#x3001;wait(long)&#x6216;wait(long, int)&#x4EE5;&#x53CA;Thread&#x4E2D;&#x7684;jion()&#x3001;join(long)&#x3001;join(long, int)&#x3001;sleep(long)&#x6216;sleep(long, int)&#x8FDB;&#x5165;&#x963B;&#x585E;&#x72B6;&#x6001;&#xFF0C;&#x8C03;&#x7528;interrupt()&#x65F6;&#x7EBF;&#x7A0B;&#x7684;&#x4E2D;&#x65AD;&#x6807;&#x8BB0;&#x4F1A;&#x88AB;&#x6E05;&#x9664;&#xFF08;&#x8BBE;&#x7F6E;&#x4E3A;false&#xFF09;&#xFF0C;&#x540C;&#x65F6;&#x629B;&#x51FA;&#x4E00;&#x4E2A;InterruptedException&#x5F02;&#x5E38;&#x3002;
+- &#x5F53;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x975E;&#x963B;&#x585E;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x8C03;&#x7528;interrupt()&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x54CD;&#x5E94;&#x3002;&#x4E00;&#x822C;&#x901A;&#x8FC7;Thread.isInterrupted()&#x5224;&#x65AD;&#x72B6;&#x6001;&#x3002;
+
+
+
+##### public static boolean interrupted() {}
+</code></pre><p>public static boolean interrupted() {<br>    return currentThread().isInterrupted(true);<br>} </p>
+<pre><code>&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#xFF0C;&#x8C03;&#x7528;&#x65F6;&#x4F1A;&#x6E05;&#x9664;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#xFF08;&#x7F6E;&#x4E3A;flase&#xFF09;&#xFF0C;&#x8FDE;&#x7EED;&#x8C03;&#x7528;&#x4E24;&#x6B21;&#x8FD4;&#x56DE;false&#x3002;
+
+
+##### public boolean isInterrupted() {}
+</code></pre><p>public boolean isInterrupted() {<br>    return isInterrupted(false);<br>} </p>
+<pre><code>
+&#x5224;&#x65AD;&#x76EE;&#x6807;&#x7EBF;&#x7A0B;&#x662F;&#x5426;&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;&#x4E0D;&#x4F1A;&#x6E05;&#x9664;&#x4E2D;&#x65AD;&#x6807;&#x8BB0;&#x3002;
+
+
+
+---
+
+
+#### &#x4E2D;&#x65AD;&#x72B6;&#x6001;&#x88AB;&#x6E05;&#x9664;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;
+
+##### 1.&#x5F53;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x88AB;&#x963B;&#x585E;&#x72B6;&#x6001;,&#x4F7F;&#x7528;public void interrupt(){}&#x65B9;&#x5F0F;&#x4E2D;&#x65AD;&#x8BE5;&#x7EBF;&#x7A0B;&#xFF0C;&#x5C06;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;InterruptedException&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x540C;&#x65F6;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#x5C06;&#x4F1A;&#x88AB;&#x6E05;&#x9664;&#xFF08;&#x4ECE;true&#x53D8;&#x6210;false&#xFF09;
+</code></pre><p> public static void main(String[] args) {
+        Thread t1 = new Thread() {
+            @Override
+            public void run() {
+                // while&#x5728;try&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x5F02;&#x5E38;&#x4E2D;&#x65AD;&#x5C31;&#x53EF;&#x4EE5;&#x9000;&#x51FA;run&#x5FAA;&#x73AF;
+                try {
+                    while (true) {
+                        // &#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x963B;&#x585E;&#x72B6;&#x6001;&#xFF0C;&#x5F02;&#x5E38;&#x5FC5;&#x987B;&#x6355;&#x6349;&#x5904;&#x7406;&#xFF0C;&#x65E0;&#x6CD5;&#x5F80;&#x5916;&#x629B;&#x51FA;
+                        Thread.sleep(2000);
+                    }
+                } catch (InterruptedException e) {
+                    System.out.println(&quot;Interruted When Sleep&quot;);
+                    boolean interrupt = this.isInterrupted();
+                    // &#x4E2D;&#x65AD;&#x72B6;&#x6001;&#x88AB;&#x590D;&#x4F4D;
+                    System.out.println(&quot;interrupt:&quot; + interrupt);
+                }
+            }
+        };
+        t1.start();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // &#x4E2D;&#x65AD;&#x5904;&#x4E8E;&#x963B;&#x585E;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;
+        t1.interrupt();
+    }</p>
+<pre><code>
+
+&#x8F93;&#x51FA;
+</code></pre><p>Interruted When Sleep
+interrupt:false</p>
+<pre><code>
+&#x8981;&#x6CE8;&#x610F;while&#x4E2D;&#x5224;&#x65AD;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x5BB9;&#x6613;&#x5F15;&#x8D77;&#x6B7B;&#x5FAA;&#x73AF;&#x3002;
+</code></pre><p>while(!this.isInterrupted())</p>
+<pre><code>
+
+
+---
+
+####  &#x4E2D;&#x65AD;&#x4E0E;synchronized
+
+&#x7EBF;&#x7A0B;&#x7684;&#x4E2D;&#x65AD;&#x64CD;&#x4F5C;&#x5BF9;&#x4E8E;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x83B7;&#x53D6;&#x7684;&#x9501;&#x5BF9;&#x8C61;&#x7684;synchronized&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x4EE3;&#x7801;&#x5757;&#x5E76;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;
+</code></pre><p>public class ThreadInterruptTest {</p>
+<pre><code>public static void main(String[] args) {
+    try {
+        Object object = new Object();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    synchronized (object) {
+                        Thread.sleep(5000);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        Thread.sleep(2000);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (object){
+                    System.out.println(&quot;get lock&quot;);
+                }
+            }
+        });
+
+        thread.start();
+
+        Thread.sleep(1000);
+
+        thread.interrupt();
+
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre><p>}</p>
+<pre><code>5&#x79D2;&#x4E4B;&#x540E;&#x6253;&#x5370;&#xFF1A;
+</code></pre><p>get lock</p>
+<pre><code>
+---
+#### &#x5982;&#x4F55;&#x9000;&#x51FA;&#x7EBF;&#x7A0B;&#xFF1F;
+
+1.&#x4F7F;&#x7528;voliate&#x53D8;&#x91CF;
+</code></pre><p>public class Interrupt {</p>
+<pre><code>private volatile static boolean flag = false;
+
+public static void main(String[] args) throws InterruptedException {
+
+
+    Thread thread = new Thread(() -&gt; {
+        while (!flag) {
+            System.out.println(&quot;thread Running&quot;);
+        }
+        System.out.println(&quot;thread break&quot;);
+
+    });
+    thread.start();
+    Thread.sleep(2000);
+    flag = true;
+}
+</code></pre><p>}
+```</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2-04-1.线程分类、状态、创建、阻塞.html" class="navigation navigation-prev " aria-label="Previous page: 线程简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-04-3.线程间协作.html" class="navigation navigation-next " aria-label="Next page: 线程协作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"线程中断","level":"1.2.12","depth":2,"next":{"title":"线程协作","level":"1.2.13","depth":2,"path":"Java/2-04-3.线程间协作.md","ref":"Java/2-04-3.线程间协作.md","articles":[]},"previous":{"title":"线程简介","level":"1.2.11","depth":2,"path":"Java/2-04-1.线程分类、状态、创建、阻塞.md","ref":"Java/2-04-1.线程分类、状态、创建、阻塞.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Java/2-04-2.线程中断.md","mtime":"2020-09-01T09:26:39.923Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T13:33:29.892Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

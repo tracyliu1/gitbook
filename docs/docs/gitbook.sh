@@ -5,6 +5,13 @@ gitbook build
 if [ $? -eq 0 ]; then
     echo "gitbook build succeed"
 
+	
+	if [ $? -eq 0 ]; then
+	book sm	
+	echo "build SUMMARY succeed"
+
+	fi
+
 	if [ $? -eq 0 ]; then
     		echo "succeed"
 		

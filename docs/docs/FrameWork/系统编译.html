@@ -1,0 +1,2033 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>系统编译 · 知识总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="系统裁剪.html" />
+    
+    
+    <link rel="prev" href="沙箱机制.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Algorithmic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                <a href="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                    
+                    BinarySearch 二分法查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Algorithmic/Sort.html">
+            
+                <a href="../Algorithmic/Sort.html">
+            
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                <a href="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                    
+                    Stack-用两个栈实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                <a href="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                    
+                    String-手写一个字符串翻转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Algorithmic/二叉树.html">
+            
+                <a href="../Algorithmic/二叉树.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Algorithmic/数组单独的数.html">
+            
+                <a href="../Algorithmic/数组单独的数.html">
+            
+                    
+                    数组单独的数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Algorithmic/数组实现队列.html">
+            
+                <a href="../Algorithmic/数组实现队列.html">
+            
+                    
+                    数组实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Algorithmic/生产者消费者模型.html">
+            
+                <a href="../Algorithmic/生产者消费者模型.html">
+            
+                    
+                    生产者消费者模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Algorithmic/链表.html">
+            
+                <a href="../Algorithmic/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Android
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Android/1-01.组件-Activity.html">
+            
+                <a href="../Android/1-01.组件-Activity.html">
+            
+                    
+                    1-01.组件-Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Android/1-02.组件-Service.html">
+            
+                <a href="../Android/1-02.组件-Service.html">
+            
+                    
+                    1-02.组件-Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Android/1-03.组件-BroadCast.html">
+            
+                <a href="../Android/1-03.组件-BroadCast.html">
+            
+                    
+                    1-03.组件-BroadCast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Android/1-04.组件-ContentProvider.html">
+            
+                <a href="../Android/1-04.组件-ContentProvider.html">
+            
+                    
+                    1-04.组件-ContentProvider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Android/1-05.组件-Fragment.html">
+            
+                <a href="../Android/1-05.组件-Fragment.html">
+            
+                    
+                    1-05.组件-Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Android/2-01.Binder.html">
+            
+                <a href="../Android/2-01.Binder.html">
+            
+                    
+                    2-01.Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Android/2-02.Context.html">
+            
+                <a href="../Android/2-02.Context.html">
+            
+                    
+                    2-02.Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Android/2-03.framework-Android消息机制.html">
+            
+                <a href="../Android/2-03.framework-Android消息机制.html">
+            
+                    
+                    2-03.framework-Android消息机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../Android/2-04.IdleHandler.html">
+            
+                <a href="../Android/2-04.IdleHandler.html">
+            
+                    
+                    2-04.IdleHandler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../Android/2-05.多线程模型.html">
+            
+                <a href="../Android/2-05.多线程模型.html">
+            
+                    
+                    2-05.多线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../Android/3-01.View-绘制流程.html">
+            
+                <a href="../Android/3-01.View-绘制流程.html">
+            
+                    
+                    3-01.View-绘制流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../Android/3-02.View-事件分发.html">
+            
+                <a href="../Android/3-02.View-事件分发.html">
+            
+                    
+                    3-02.View-事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../Android/3-03.View-面试题.html">
+            
+                <a href="../Android/3-03.View-面试题.html">
+            
+                    
+                    3-03.View-面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../Android/3-04.自定义view CustomView.html">
+            
+                <a href="../Android/3-04.自定义view CustomView.html">
+            
+                    
+                    3-04.自定义view CustomView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../Android/Android概述.html">
+            
+                <a href="../Android/Android概述.html">
+            
+                    
+                    Android概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../Android/Binder IPC.html">
+            
+                <a href="../Android/Binder IPC.html">
+            
+                    
+                    Binder IPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Android Kernel
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Android kernel/Android系统分区.html">
+            
+                <a href="../Android kernel/Android系统分区.html">
+            
+                    
+                    Android系统分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Android kernel/Linux基础.html">
+            
+                <a href="../Android kernel/Linux基础.html">
+            
+                    
+                    Linux基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Android kernel/Zram.html">
+            
+                <a href="../Android kernel/Zram.html">
+            
+                    
+                    Zram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Android kernel/安全.html">
+            
+                <a href="../Android kernel/安全.html">
+            
+                    
+                    安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Debug
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Debug/ADB.html">
+            
+                <a href="../Debug/ADB.html">
+            
+                    
+                    ADB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Debug/binder_sample日志.html">
+            
+                <a href="../Debug/binder_sample日志.html">
+            
+                    
+                    binder_sample日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Debug/Systrace.html">
+            
+                <a href="../Debug/Systrace.html">
+            
+                    
+                    Systrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Debug/Tombstone.html">
+            
+                <a href="../Debug/Tombstone.html">
+            
+                    
+                    Tombstone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Debug/制作开机动画.html">
+            
+                <a href="../Debug/制作开机动画.html">
+            
+                    
+                    制作开机动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Frame Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Activity finish(">
+            
+                <span>
+            
+                    
+                    Activity Finish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="AMS_adj.html">
+            
+                <a href="AMS_adj.html">
+            
+                    
+                    AMS Adj
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="AMS_kill.html">
+            
+                <a href="AMS_kill.html">
+            
+                    
+                    AMS Kill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="AMS_OnTrimMemory.html">
+            
+                <a href="AMS_OnTrimMemory.html">
+            
+                    
+                    AMS On Trim Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="AMS_watchDog.html">
+            
+                <a href="AMS_watchDog.html">
+            
+                    
+                    AMS Watch Dog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Android内存回收.html">
+            
+                <a href="Android内存回收.html">
+            
+                    
+                    Android内存回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Anroid 权限 .html">
+            
+                <a href="Anroid 权限 .html">
+            
+                    
+                    Anroid 权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="ANR分析.html">
+            
+                <a href="ANR分析.html">
+            
+                    
+                    ANR分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="apk打包.html">
+            
+                <a href="apk打包.html">
+            
+                    
+                    apk打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="AppOps权限 .html">
+            
+                <a href="AppOps权限 .html">
+            
+                    
+                    AppOps权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="Audio Device Strategy 音频设备 输入选择 7.0.html">
+            
+                <a href="Audio Device Strategy 音频设备 输入选择 7.0.html">
+            
+                    
+                    Audio Device Strategy 音频设备 输入选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="Audio Device Strategy 音频设备输入 输入出 选择 7.0.html">
+            
+                <a href="Audio Device Strategy 音频设备输入 输入出 选择 7.0.html">
+            
+                    
+                    Audio Device Strategy 音频设备输入 输入出 选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                <a href="build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                    
+                    build.prop system.prop default.prop 与 SystemProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="image.html">
+            
+                <a href="image.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="makefile.html">
+            
+                <a href="makefile.html">
+            
+                    
+                    Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="MediaPlayer 播放流程.html">
+            
+                <a href="MediaPlayer 播放流程.html">
+            
+                    
+                    MediaPlayer 播放流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="minicom 串口调试.html">
+            
+                <a href="minicom 串口调试.html">
+            
+                    
+                    minicom 串口调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="OTA.html">
+            
+                <a href="OTA.html">
+            
+                    
+                    OTA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="PhoneWindowManager需求处理.html">
+            
+                <a href="PhoneWindowManager需求处理.html">
+            
+                    
+                    PhoneWindowManager需求处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="PKMS_安装流程.html">
+            
+                <a href="PKMS_安装流程.html">
+            
+                    
+                    PKMS_安装流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="Root su权限.html">
+            
+                <a href="Root su权限.html">
+            
+                    
+                    Root su权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="WMS_ViewRootImpl.html">
+            
+                <a href="WMS_ViewRootImpl.html">
+            
+                    
+                    WMS View Root Impl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="WMS_窗口加载.html">
+            
+                <a href="WMS_窗口加载.html">
+            
+                    
+                    WMS_窗口加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.24" data-path="WMS工作原理.html">
+            
+                <a href="WMS工作原理.html">
+            
+                    
+                    WMS工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.25" data-path="定屏分析.html">
+            
+                <a href="定屏分析.html">
+            
+                    
+                    定屏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="开机流程.html">
+            
+                <a href="开机流程.html">
+            
+                    
+                    开机流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="沙箱机制.html">
+            
+                <a href="沙箱机制.html">
+            
+                    
+                    沙箱机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.28" data-path="系统编译.html">
+            
+                <a href="系统编译.html">
+            
+                    
+                    系统编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.29" data-path="系统裁剪.html">
+            
+                <a href="系统裁剪.html">
+            
+                    
+                    系统裁剪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.30" data-path="进程启动.html">
+            
+                <a href="进程启动.html">
+            
+                    
+                    进程启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    1-01.java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                <a href="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                    
+                    1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Java/1-04.Java类加载.html">
+            
+                <a href="../Java/1-04.Java类加载.html">
+            
+                    
+                    1-04.Java类加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Java/1-05.Java GC 垃圾回收.html">
+            
+                <a href="../Java/1-05.Java GC 垃圾回收.html">
+            
+                    
+                    1-05.Java GC 垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Java/1-06.接口、抽象类.html">
+            
+                <a href="../Java/1-06.接口、抽象类.html">
+            
+                    
+                    1-06.接口、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                <a href="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                    
+                    1-07.Java 动态代理 静态代理.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Java/1-08.Java反射.html">
+            
+                <a href="../Java/1-08.Java反射.html">
+            
+                    
+                    1-08.Java反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../Java/1-09.java 异常.html">
+            
+                <a href="../Java/1-09.java 异常.html">
+            
+                    
+                    1-09.java 异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../Java/2-01.锁.html">
+            
+                <a href="../Java/2-01.锁.html">
+            
+                    
+                    2-01.锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../Java/2-02.Volatile.html">
+            
+                <a href="../Java/2-02.Volatile.html">
+            
+                    
+                    2-02.Volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../Java/2-03.Synchronized.html">
+            
+                <a href="../Java/2-03.Synchronized.html">
+            
+                    
+                    2-03.Synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                <a href="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                    
+                    2-04-1.线程分类、状态、创建、阻塞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../Java/2-04-2.线程中断.html">
+            
+                <a href="../Java/2-04-2.线程中断.html">
+            
+                    
+                    2-04-2.线程中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../Java/2-04-3.线程间协作.html">
+            
+                <a href="../Java/2-04-3.线程间协作.html">
+            
+                    
+                    2-04-3.线程间协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../Java/2-05.线程池.html">
+            
+                <a href="../Java/2-05.线程池.html">
+            
+                    
+                    2-05.线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../Java/2-06.ThreadLocal.html">
+            
+                <a href="../Java/2-06.ThreadLocal.html">
+            
+                    
+                    2-06.ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../Java/3-01.Java 容器.html">
+            
+                <a href="../Java/3-01.Java 容器.html">
+            
+                    
+                    3-01.Java 容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../Java/3-02.设计模式.html">
+            
+                <a href="../Java/3-02.设计模式.html">
+            
+                    
+                    3-02.设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Net
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Net/3-01.底层网络协议.html">
+            
+                <a href="../Net/3-01.底层网络协议.html">
+            
+                    
+                    3-01.底层网络协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Net/3-02.OSI模型.html">
+            
+                <a href="../Net/3-02.OSI模型.html">
+            
+                    
+                    3-02.OSI模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Net/3-03.TCP UDP.html">
+            
+                <a href="../Net/3-03.TCP UDP.html">
+            
+                    
+                    3-03.TCP UDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Net/3-04.HTTP.html">
+            
+                <a href="../Net/3-04.HTTP.html">
+            
+                    
+                    3-04.HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                <a href="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                    
+                    3-05.HTTP描述一次网络请求的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Net/3-06.HTTPS.html">
+            
+                <a href="../Net/3-06.HTTPS.html">
+            
+                    
+                    3-06.HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Performance/0.概论.html">
+            
+                <a href="../Performance/0.概论.html">
+            
+                    
+                    0.概论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Performance/1.Android优化大全.html">
+            
+                <a href="../Performance/1.Android优化大全.html">
+            
+                    
+                    1.Android优化大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Performance/10.ANR.html">
+            
+                <a href="../Performance/10.ANR.html">
+            
+                    
+                    10.ANR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Performance/11.启动优化.html">
+            
+                <a href="../Performance/11.启动优化.html">
+            
+                    
+                    11.启动优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Performance/12.布局优化.html">
+            
+                <a href="../Performance/12.布局优化.html">
+            
+                    
+                    12.布局优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Performance/13.Bitmap优化.html">
+            
+                <a href="../Performance/13.Bitmap优化.html">
+            
+                    
+                    13.Bitmap优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Performance/14.线程优化.html">
+            
+                <a href="../Performance/14.线程优化.html">
+            
+                    
+                    14.线程优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../Performance/15.Apk包大小优化.html">
+            
+                <a href="../Performance/15.Apk包大小优化.html">
+            
+                    
+                    15.Apk包大小优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../Performance/16.LruCache.html">
+            
+                <a href="../Performance/16.LruCache.html">
+            
+                    
+                    16.LruCache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../Performance/17.WebView缓存优化.html">
+            
+                <a href="../Performance/17.WebView缓存优化.html">
+            
+                    
+                    17.WebView缓存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../Performance/18.电量优化.html">
+            
+                <a href="../Performance/18.电量优化.html">
+            
+                    
+                    18.电量优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../Performance/19.mmap + native 日志优化.html">
+            
+                <a href="../Performance/19.mmap + native 日志优化.html">
+            
+                    
+                    19.mmap + native 日志优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="../Performance/2.优化参考资料.html">
+            
+                <a href="../Performance/2.优化参考资料.html">
+            
+                    
+                    2.优化参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="../Performance/20.IO优化、mmkv原理.html">
+            
+                <a href="../Performance/20.IO优化、mmkv原理.html">
+            
+                    
+                    20.IO优化、mmkv原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="../Performance/21.Bug分析.html">
+            
+                <a href="../Performance/21.Bug分析.html">
+            
+                    
+                    21.Bug分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="../Performance/22.数据结构选择优化.html">
+            
+                <a href="../Performance/22.数据结构选择优化.html">
+            
+                    
+                    22.数据结构选择优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.17" data-path="../Performance/23.OutOfMemoryError.html">
+            
+                <a href="../Performance/23.OutOfMemoryError.html">
+            
+                    
+                    23.OutOfMemoryError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.18" data-path="../Performance/24.Trace.html">
+            
+                <a href="../Performance/24.Trace.html">
+            
+                    
+                    24.Trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.19" data-path="../Performance/25.MAT使用.html">
+            
+                <a href="../Performance/25.MAT使用.html">
+            
+                    
+                    25.MAT使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.20" data-path="../Performance/26.UI卡顿分析.html">
+            
+                <a href="../Performance/26.UI卡顿分析.html">
+            
+                    
+                    26.UI卡顿分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.21" data-path="../Performance/27.网络优化.html">
+            
+                <a href="../Performance/27.网络优化.html">
+            
+                    
+                    27.网络优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.22" data-path="../Performance/28.崩溃优化.html">
+            
+                <a href="../Performance/28.崩溃优化.html">
+            
+                    
+                    28.崩溃优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.23" data-path="../Performance/3.内存模型管理及GC.html">
+            
+                <a href="../Performance/3.内存模型管理及GC.html">
+            
+                    
+                    3.内存模型管理及GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.24" data-path="../Performance/4.ART vs Dalvik.html">
+            
+                <a href="../Performance/4.ART vs Dalvik.html">
+            
+                    
+                    4.ART vs Dalvik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.25" data-path="../Performance/5.Android内存回收机制.html">
+            
+                <a href="../Performance/5.Android内存回收机制.html">
+            
+                    
+                    5.Android内存回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.26" data-path="../Performance/6.Low Memory Killer 机制.html">
+            
+                <a href="../Performance/6.Low Memory Killer 机制.html">
+            
+                    
+                    6.Low Memory Killer 机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.27" data-path="../Performance/7.内存优化工具.html">
+            
+                <a href="../Performance/7.内存优化工具.html">
+            
+                    
+                    7.内存优化工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.28" data-path="../Performance/8.内存性能测试.html">
+            
+                <a href="../Performance/8.内存性能测试.html">
+            
+                    
+                    8.内存性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.29" data-path="../Performance/9.内存问题及解决方案.html">
+            
+                <a href="../Performance/9.内存问题及解决方案.html">
+            
+                    
+                    9.内存问题及解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >系统编译</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#1&#x3001;-andorid-build-&#x7CFB;&#x7EDF;"><b>1.1. </b>1&#x3001; \Andorid Build &#x7CFB;&#x7EDF;**</a></li><ul><li><span class="title-icon "></span><a href="#21-make-&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;"><b>1.1.1. </b>2.1 Make &#x6587;&#x4EF6;&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#22-build-&#x7ED3;&#x679C;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;"><b>1.1.2. </b>2.2 Build &#x7ED3;&#x679C;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</a></li><li><span class="title-icon "></span><a href="#23-build-&#x751F;&#x6210;&#x7684;&#x955C;&#x50CF;&#x6587;&#x4EF6;"><b>1.1.3. </b>2.3 Build &#x751F;&#x6210;&#x7684;&#x955C;&#x50CF;&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#24-build-&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;"><b>1.1.4. </b>2.4 Build &#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;</a></li><li><span class="title-icon "></span><a href="#25-build&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;"><b>1.1.5. </b>2.5 Build&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;</a></li><li><span class="title-icon "></span><a href="#26-&#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x4EA7;&#x7269;&#x4ECB;&#x7ECD;"><b>1.1.6. </b>2.6 &#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x4EA7;&#x7269;&#x4ECB;&#x7ECD;</a></li></ul><li><span class="title-icon "></span><a href="#3&#x3001;framework&#x5B9A;&#x5236;&#x673A;&#x7F16;&#x8BD1;"><b>1.2. </b>\3&#x3001;framework&#x5B9A;&#x5236;&#x673A;&#x7F16;&#x8BD1;**</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="1&#x3001;-andorid-build-&#x7CFB;&#x7EDF;"><a name="1&#x3001;-andorid-build-&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#1&#x3001;-andorid-build-&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. 1&#x3001; \Andorid Build &#x7CFB;&#x7EDF;**</h2>
+<h3 id="21-make-&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;"><a name="21-make-&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#21-make-&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. 2.1 Make &#x6587;&#x4EF6;&#x4ECB;&#x7ECD;</h3>
+<p>Android Build &#x7CFB;&#x7EDF;&#x7528;&#x6765;&#x7F16;&#x8BD1; Android &#x7CFB;&#x7EDF;&#xFF0C;Android SDK &#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6587;&#x6863;&#x3002;&#x8BE5;&#x7CFB;&#x7EDF;&#x4E3B;&#x8981;&#x7531; Make &#x6587;&#x4EF6;&#xFF0C;Shell &#x811A;&#x672C;&#x4EE5;&#x53CA; Python &#x811A;&#x672C;&#x7EC4;&#x6210;&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x662F; Make &#x6587;&#x4EF6;&#x3002;</p>
+<p>Build &#x7CFB;&#x7EDF;&#x4E2D;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x90FD;&#x5728; Make &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6574;&#x4E2A; Build &#x7CFB;&#x7EDF;&#x4E2D;&#x7684; Make &#x6587;&#x4EF6;</p>
+<p>&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E09;&#x7C7B;&#xFF1A;</p>
+<p>&#x7B2C;&#x4E00;&#x7C7B;&#x662F; Build &#x7CFB;&#x7EDF;&#x6838;&#x5FC3;&#x6587;&#x4EF6;&#xFF0C;&#x6B64;&#x7C7B;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;&#x6574;&#x4E2A; Build &#x7CFB;&#x7EDF;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x6240;&#x6709; Make &#x6587;&#x4EF6;&#x90FD;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x7F16;&#x5199;&#x51FA;&#x6765;&#x7684;&#x3002;&#x4E0B;&#x56FE;&#x662F;Android&#x6E90;&#x7801;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF0C;Build &#x7CFB;&#x7EDF;&#x6838;&#x5FC3;&#x6587;&#x4EF6;&#x5168;&#x90E8;&#x4F4D;&#x4E8E; /build/core&#xFF08;&#x672C;&#x6587;&#x6240;&#x63D0;&#x5230;&#x7684;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x90FD;&#x662F;&#x4EE5; Android &#x6E90;&#x7801;&#x6811;&#x4F5C;&#x4E3A;&#x80CC;&#x666F;&#x7684;&#xFF0C;&#x201C;/&#x201D;&#x6307;&#x7684;&#x662F;&#x6E90;&#x7801;&#x6811;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x4E0E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x65E0;&#x5173;&#xFF09;&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsT8m6Yl.jpg" alt="img"> </p>
+<p>&#x7B2C;&#x4E8C;&#x7C7B;&#x662F;&#x9488;&#x5BF9;&#x67D0;&#x4E2A;&#x4EA7;&#x54C1;&#xFF08;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x53EF;&#x80FD;&#x662F;&#x67D0;&#x4E2A;&#x578B;&#x53F7;&#x7684;&#x624B;&#x673A;&#x6216;&#x8005;&#x5E73;&#x677F;&#x7535;&#x8111;&#xFF09;&#x7684; Make &#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x4F4D;&#x4E8E; device &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x53C8;&#x4EE5;&#x516C;&#x53F8;&#x540D;&#x4EE5;&#x53CA;&#x4EA7;&#x54C1;&#x540D;&#x5206;&#x4E3A;&#x4E24;&#x7EA7;&#x76EE;&#x5F55;&#xFF0C;&#x56FE; 2 &#x662F; device &#x76EE;&#x5F55;&#x4E0B;&#x5B50;&#x76EE;&#x5F55;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7684;&#x5B9A;&#x4E49;&#x901A;&#x5E38;&#x9700;&#x8981;&#x4E00;&#x7EC4;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x5171;&#x540C;&#x6784;&#x6210;&#x4E86;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x4EA7;&#x54C1;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x4F8B;&#x5982;&#xFF0C;/device/sony/it26 &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x5171;&#x540C;&#x6784;&#x6210;&#x4E86;&#x5BF9;&#x4E8E; Sony LT26 &#x578B;&#x53F7;&#x624B;&#x673A;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpskpqwRX.jpg" alt="img"> </p>
+<p>&#x7B2C;&#x4E09;&#x7C7B;&#x662F;&#x9488;&#x5BF9;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#xFF08;&#x5173;&#x4E8E;&#x6A21;&#x5757;&#x540E;&#x6587;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#xFF09;&#x7684; Make &#x6587;&#x4EF6;&#x3002;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684; Make &#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x7C7B;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x7EDF;&#x4E00;&#x4E3A;&#x201C;Android.mk&#x201D;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x5982;&#x4F55;&#x7F16;&#x8BD1;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x3002;Build &#x7CFB;&#x7EDF;&#x4F1A;&#x5728;&#x6574;&#x4E2A;&#x6E90;&#x7801;&#x6811;&#x4E2D;&#x626B;&#x63CF;&#x540D;&#x79F0;&#x4E3A;&#x201C;Android.mk&#x201D;&#x7684;&#x6587;&#x4EF6;&#x5E76;&#x6839;&#x636E;&#x5176;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x6267;&#x884C;&#x6A21;&#x5757;&#x7684;&#x7F16;&#x8BD1;&#x3002;</p>
+<p>&#x5728;Andorid&#x7CFB;&#x7EDF;&#x4E2D;build&#x7CFB;&#x7EDF;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;&#x5F88;&#x591A;&#x7F16;&#x8BD1;&#x6307;&#x4EE4;&#xFF0C;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x5728;&#x7F16;&#x8BD1;Android&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x547D;&#x4EE4;&#x201C;source build/envsetup.sh&#x201D;&#x5F15;&#x5165;&#x4E86; build/envsetup.sh&#x811A;&#x672C;&#x3002;&#x8BE5;&#x811A;&#x672C;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x521D;&#x59CB;&#x5316;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x5E76;&#x5F15;&#x5165;&#x4E00;&#x4E9B;&#x8F85;&#x52A9;&#x7684; Shell &#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x5C31;&#x5305;&#x62EC;&#x7B2C;&#x4E8C;&#x6B65;&#x4F7F;&#x7528; lunch &#x51FD;&#x6570;&#x3002;</p>
+<p>build/envsetup.sh &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsmXhM6o.jpg" alt="img"> </p>
+<p>&#x7B2C;&#x4E8C;&#x884C;&#x547D;&#x4EE4;&#x201C;lunch full-eng&#x201D;&#x662F;&#x8C03;&#x7528; lunch &#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#x4E3A;&#x201C;full-eng&#x201D;&#x3002;lunch &#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6B64;&#x6B21;&#x7F16;&#x8BD1;&#x7684;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#x4EE5;&#x53CA;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x503C;&#x5206;&#x522B;&#x662F;&#x201C;full&#x201D;&#x548C;&#x201C;eng&#x201D;&#x3002;&#x201C;full&#x201D;&#x662F; Android &#x6E90;&#x7801;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x4E00;&#x79CD;&#x4EA7;&#x54C1;&#xFF0C;&#x662F;&#x4E3A;&#x6A21;&#x62DF;&#x5668;&#x800C;&#x8BBE;&#x7F6E;&#x7684;&#x3002;&#x800C;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#x4F1A;&#x5F71;&#x54CD;&#x6700;&#x7EC8;&#x7CFB;&#x7EDF;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x6A21;&#x5757;&#x3002;&#x5982;&#x679C;&#x8C03;&#x7528; lunch &#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x51FD;&#x6570;&#x5C06;&#x8F93;&#x51FA;&#x5217;&#x8868;&#x4EE5;&#x4F9B;&#x9009;&#x62E9;&#x3002;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsppAoWG.jpg" alt="img"> </p>
+<p>&#x5982;&#x679C;&#x6709;&#x540D;&#x79F0;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#x201C;<product_name>--&lt; build_variant &gt;&#x201D;&#xFF0C;&#x5176;&#x4E2D;&#x524D;&#x534A;&#x90E8;&#x5206;&#x662F;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#xFF0C;&#x540E;&#x9762;&#x662F;&#x201C;build_variant&#x201D;&#x5FC5;&#x987B;&#x662F;eng /user/userdebug &#x4E09;&#x8005;&#x4E4B;&#x4E00;&#x3002;</product_name></p>
+<p>lunch&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x6839;&#x636E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6216;&#x9009;&#x62E9;&#x7684;&#x4EA7;&#x54C1;&#x7684;&#x540D;&#x6765;&#x8BBE;&#x7F6E;&#x4E0E;&#x4EA7;&#x54C1;&#x76F8;&#x5173;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x8FD9;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E0E;&#x4EA7;&#x54C1;&#x7F16;&#x8BD1;&#x76F8;&#x5173;&#x7684;&#x4E3B;&#x8981;&#x6709;&#xFF1A;</p>
+<p>TARGET_PRODUCT&#xFF1A;&#x6240;&#x7F16;&#x8BD1;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x3002;  </p>
+<p>TARGET_BUILD_VARIANT:&#x8868;&#x793A;&#x7F16;&#x8BD1;&#x4EA7;&#x54C1;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x53EF;&#x80FD;&#x503C;&#x6709; eng ,user .userdebug&#x3002;  </p>
+<p>TARGET_BUILD_TYPE:&#x8868;&#x793A;&#x7F16;&#x8BD1;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x4E3A;release&#x548C;debug&#x5F53;&#x9009;&#x62E9;debug&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x52A0;&#x5165;&#x8C03;&#x5F0F;&#x4FE1;&#x606F;&#xFF0C;&#x65B9;&#x4FBF;&#x8FFD;&#x8E2A;&#x3002;  </p>
+<p>&#x7B2C;&#x4E09;&#x884C;&#x547D;&#x4EE4;&#x201C;make -j8&#x201D;&#x624D;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x7F16;&#x8BD1;&#x3002;make &#x7684;&#x53C2;&#x6570;&#x201C;-j&#x201D;&#x6307;&#x5B9A;&#x4E86;&#x540C;&#x65F6;&#x7F16;&#x8BD1;&#x7684; Job &#x6570;&#x91CF;&#xFF0C;&#x8FD9;&#x662F;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8BE5;&#x503C;&#x901A;&#x5E38;&#x662F;&#x7F16;&#x8BD1;&#x4E3B;&#x673A; CPU &#x652F;&#x6301;&#x7684;&#x5E76;&#x53D1;&#x7EBF;&#x7A0B;&#x603B;&#x6570;&#x7684; 1 &#x500D;&#x6216; 2 &#x500D;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5728;&#x4E00;&#x4E2A; 4 &#x6838;&#xFF0C;&#x6BCF;&#x4E2A;&#x6838;&#x652F;&#x6301;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684; CPU &#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; make -j8 &#x6216; make -j16&#xFF09;&#x3002;&#x5728;&#x8C03;&#x7528; make &#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x4EFB;&#x4F55;&#x76EE;&#x6807;&#xFF0C;&#x5219;&#x5C06;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x540D;&#x79F0;&#x4E3A;&#x201C;droid&#x201D;&#x76EE;&#x6807;&#xFF0C;&#x8BE5;&#x76EE;&#x6807;&#x4F1A;&#x7F16;&#x8BD1;&#x51FA;&#x5B8C;&#x6574;&#x7684; Android &#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x3002;</p>
+<p>Build&#x7CFB;&#x7EDF;&#x4E3B;&#x8981;&#x7F16;&#x8BD1;&#x811A;&#x672C;&#x7B80;&#x4ECB;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>main.mk&#xFF1A;Android Build&#x7CFB;&#x7EDF;&#x7684;&#x4E3B;&#x63A7;&#x6587;&#x4EF6;&#x3002;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x5305;&#x542B;&#x8FDB;&#x5176;&#x4ED6;mk&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x5B9A;&#x4E49;&#x51E0;&#x4E2A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x7F16;&#x8BD1;&#x76EE;&#x6807;&#xFF0C;&#x5982;droid&#x3001;sdk&#x3001;ndk&#x7B49;&#x3002;&#x540C;&#x65F6;&#x68C0;&#x67E5;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5982;make&#x3001;gcc&#x3001;javac&#x7B49;&#x3002;</p>
+<p>help.mk&#xFF1A;Android Build&#x7CFB;&#x7EDF;&#x7684;&#x5E2E;&#x52A9;&#x3002;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;help&#x7684;&#x7F16;&#x8BD1;&#x76EE;&#x6807;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8F93;&#x5165;&#x201C;make help&#x201D;&#x4F1A;&#x6253;&#x5370;&#x51FA;Build&#x7CFB;&#x7EDF;&#x7684;&#x4F7F;&#x7528;&#x8BF4;&#x660E;&#x3002;</p>
+<p>config.mk&#xFF1A;Android Build&#x7CFB;&#x7EDF;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x4E3B;&#x8981;&#x5B9A;&#x4E49;&#x4E86;&#x8BB8;&#x591A;&#x5E38;&#x91CF;&#x6765;&#x8D1F;&#x8D23;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x6A21;&#x5757;&#x7684;&#x7F16;&#x8BD1;&#xFF0C;&#x5B9A;&#x4E49;&#x7F16;&#x8BD1;&#x5668;&#x53C2;&#x6570;&#x5E76;&#x5F15;&#x5165;&#x4EA7;&#x54C1;&#x7684;BoardConfig.mk&#x6587;&#x4EF6;&#x6765;&#x914D;&#x7F6E;&#x4EA7;&#x54C1;&#x53C2;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;aapt&#x3001;javajar&#x7B49;&#x3002;</p>
+<p>pathmap.mk&#xFF1A;&#x5C06;&#x8BB8;&#x591A;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x901A;&#x8FC7;&#x540D;&#x503C;&#x5BF9;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x4E3A;&#x6620;&#x5C04;&#x8868;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;include-path-for&#x51FD;&#x6570;&#x6765;&#x83B7;&#x53D6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x901A;&#x8FC7; $(callinclude-path-for, frameworks-native)&#x4FBF;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230; framework &#x672C;&#x5730;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>envsetup.sh&#xFF1A;&#x5305;&#x542B;&#x8FDB;product_config.mk&#x6587;&#x4EF6;&#x5E76;&#x6839;&#x636E;&#x5176;&#x5185;&#x5BB9;&#x8BBE;&#x7F6E;&#x7F16;&#x8BD1;&#x4EA7;&#x54C1;&#x6240;&#x9700;&#x8981;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5982;TARGET_PRODUCT&#x7B49;&#xFF0C;&#x5E76;&#x68C0;&#x67E5;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x503C;&#x7684;&#x5408;&#x6CD5;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x6307;&#x5B9A;&#x4E86;&#x5404;&#x79CD;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x7684;&#x8F93;&#x51FA;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>product_config.mk&#xFF1A;&#x5305;&#x542B;&#x8FDB;&#x4E86;&#x7CFB;&#x7EDF;&#x4E2D;&#x6240;&#x6709;AndroidProduct.mk&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x5F53;&#x524D;&#x4EA7;&#x54C1;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x8BBE;&#x7F6E;&#x4EA7;&#x54C1;&#x7F16;&#x8BD1;&#x76F8;&#x5173;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>product.mk&#xFF1A;&#x5B9A;&#x4E49;product_config.mk&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5404;&#x79CD;&#x51FD;&#x6570;&#x3002;</p>
+<p>version_default.mk&#xFF1A;&#x5B9A;&#x4E49;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x76F8;&#x5173;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
+<p>build_id.mk&#xFF1A;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;BUILD_ID&#x3002;</p>
+<p>Makefile&#xFF1A;&#x5B9A;&#x4E49;&#x4E86;&#x7CFB;&#x7EDF;&#x6700;&#x7EC8;&#x7F16;&#x8BD1;&#x5B8C;&#x6210;&#x6240;&#x9700;&#x8981;&#x7684;&#x5404;&#x79CD;&#x76EE;&#x6807;&#x548C;&#x89C4;&#x5219;&#x3002;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wps9vmUyD.jpg" alt="img"> </p>
+<h3 id="22-build-&#x7ED3;&#x679C;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;"><a name="22-build-&#x7ED3;&#x679C;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#22-build-&#x7ED3;&#x679C;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. 2.2 Build &#x7ED3;&#x679C;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h3>
+<p>&#x6240;&#x6709;&#x7684;&#x7F16;&#x8BD1;&#x4EA7;&#x7269;&#x90FD;&#x5C06;&#x4F4D;&#x4E8E; /out &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#xFF1A;</p>
+<p>/out/host/&#xFF1A;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x5305;&#x542B;&#x4E86;&#x9488;&#x5BF9;&#x4E3B;&#x673A;&#x7684; Android &#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7684;&#x4EA7;&#x7269;&#x3002;&#x5373; SDK &#x4E2D;&#x7684;&#x5404;&#x79CD;&#x5DE5;&#x5177;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;emulator&#xFF0C;adb&#xFF0C;aapt &#x7B49;&#x3002;</p>
+<p>/out/target/common/&#xFF1A;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x5305;&#x542B;&#x4E86;&#x9488;&#x5BF9;&#x8BBE;&#x5907;&#x7684;&#x5171;&#x901A;&#x7684;&#x7F16;&#x8BD1;&#x4EA7;&#x7269;&#xFF0C;&#x4E3B;&#x8981;&#x662F; Java &#x5E94;&#x7528;&#x4EE3;&#x7801;&#x548C; Java &#x5E93;&#x3002;</p>
+<p>/out/target/product/<product_name>/&#xFF1A;&#x5305;&#x542B;&#x4E86;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x8BBE;&#x5907;&#x7684;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x4EE5;&#x53CA;&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684; C/C++ &#x5E93;&#x548C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x3002;&#x5176;&#x4E2D;&#xFF0C;<product_name>&#x662F;&#x5177;&#x4F53;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#x7684;&#x540D;&#x79F0;&#x3002;</product_name></product_name></p>
+<p>/out/dist/&#xFF1A;&#x5305;&#x542B;&#x4E86;&#x4E3A;&#x591A;&#x79CD;&#x5206;&#x53D1;&#x800C;&#x51C6;&#x5907;&#x7684;&#x5305;&#xFF0C;&#x901A;&#x8FC7;&#x201C;make disttarget&#x201D;&#x5C06;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7F16;&#x8BD1;&#x76EE;&#x6807;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x8BE5;&#x76EE;&#x5F55;&#x3002;</p>
+<h3 id="23-build-&#x751F;&#x6210;&#x7684;&#x955C;&#x50CF;&#x6587;&#x4EF6;"><a name="23-build-&#x751F;&#x6210;&#x7684;&#x955C;&#x50CF;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#23-build-&#x751F;&#x6210;&#x7684;&#x955C;&#x50CF;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. 2.3 Build &#x751F;&#x6210;&#x7684;&#x955C;&#x50CF;&#x6587;&#x4EF6;</h3>
+<p>Build &#x7684;&#x4EA7;&#x7269;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x4E09;&#x4E2A;&#x955C;&#x50CF;&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x4F4D;&#x4E8E; /out/target/product/<product_name>/ &#x76EE;&#x5F55;&#x4E0B;&#x3002;</product_name></p>
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#xFF1A;</p>
+<p>system.img&#xFF1A;&#x5305;&#x542B;&#x4E86; Android OS &#x7684;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#xFF0C;&#x5E93;&#xFF0C;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x9884;&#x7F6E;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5C06;&#x88AB;&#x6302;&#x8F7D;&#x4E3A;&#x6839;&#x5206;&#x533A;&#x3002;</p>
+<p>ramdisk.img&#xFF1A;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x5C06;&#x88AB; Linux &#x5185;&#x6838;&#x6302;&#x8F7D;&#x4E3A;&#x53EA;&#x8BFB;&#x5206;&#x533A;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E86; /init &#x6587;&#x4EF6;&#x548C;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x5B83;&#x7528;&#x6765;&#x6302;&#x8F7D;&#x5176;&#x4ED6;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x5E76;&#x542F;&#x52A8; init &#x8FDB;&#x7A0B;&#x3002;</p>
+<p>userdata.img&#xFF1A;&#x5C06;&#x88AB;&#x6302;&#x8F7D;&#x4E3A; /data&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x548C;&#x7528;&#x6237;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="24-build-&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;"><a name="24-build-&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;" class="anchor-navigation-ex-anchor" href="#24-build-&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. 2.4 Build &#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;</h3>
+<p>&#x200B;    &#x5F53;&#x6211;&#x4EEC;&#x8981;&#x5F00;&#x53D1;&#x4E00;&#x6B3E;&#x65B0;&#x7684; Android &#x4EA7;&#x54C1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5C31;&#x9700;&#x8981;&#x5728; Build &#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x5BF9;&#x4E8E;&#x8BE5;&#x4EA7;&#x54C1;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x5728; Android Build &#x7CFB;&#x7EDF;&#x4E2D;&#x5BF9;&#x4EA7;&#x54C1;&#x5B9A;&#x4E49;&#x7684;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x4F4D;&#x4E8E; device &#x76EE;&#x5F55;&#x4E0B;,    &#x901A;&#x5E38;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7684;&#x5B9A;&#x4E49;&#x901A;&#x5E38;&#x81F3;&#x5C11;&#x4F1A;&#x5305;&#x62EC;&#x56DB;&#x4E2A;&#x6587;&#x4EF6;&#xFF1A;AndroidProducts.mk&#xFF0C;&#x4EA7;&#x54C1;&#x7248;&#x672C;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;BoardConfig.mk &#x4EE5;&#x53CA; verndorsetup.sh&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x8FD9;&#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;AndroidProducts.mk&#xFF1A;&#x8BE5;&#x6587;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5176;&#x4E2D;&#x53EA;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x540D;&#x79F0;&#x4E3A;&#x201C;PRODUCT_MAKEFILES&#x201D;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4E3A;&#x4EA7;&#x54C1;&#x7248;&#x672C;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsmnNQin.jpg" alt="img"> </p>
+<p>&#xFF08;2&#xFF09;&#x4EA7;&#x54C1;&#x7248;&#x672C;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF1A;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x5BF9;&#x4E8E;&#x7279;&#x5B9A;&#x4EA7;&#x54C1;&#x7248;&#x672C;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x53EF;&#x80FD;&#x4E0D;&#x53EA;&#x4E00;&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A;&#x540C;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x591A;&#x79CD;&#x7248;&#x672C;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x9762;&#x5411;&#x4E2D;&#x56FD;&#x5730;&#x533A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x9762;&#x5411;&#x7F8E;&#x56FD;&#x5730;&#x533A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF09;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x4EE5;&#x53CA;&#x542B;&#x4E49;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsNLYspW.jpg" alt="img"> </p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x3002;Build &#x7CFB;&#x7EDF;&#x7684;&#x5DF2;&#x7ECF;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x597D;&#x4E86;&#x4E00;&#x4E9B;&#x7EC4;&#x5408;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x4F4D;&#x4E8E; /build/target/product &#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7EC4;&#x5408;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x7EE7;&#x627F;&#x8FD9;&#x4E9B;&#x9884;&#x7F6E;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8986;&#x76D6;&#x81EA;&#x5DF1;&#x60F3;&#x8981;&#x7684;&#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x5373;&#x53EF;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsqTlliU.jpg" alt="img"> </p>
+<p>&#xFF08;3&#xFF09;BoardConfig.mk&#xFF1A;&#x8BE5;&#x6587;&#x4EF6;&#x7528;&#x6765;&#x914D;&#x7F6E;&#x786C;&#x4EF6;&#x4E3B;&#x677F;&#xFF0C;&#x5B83;&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x90FD;&#x662F;&#x8BBE;&#x5907;&#x5E95;&#x5C42;&#x7684;&#x786C;&#x4EF6;&#x7279;&#x6027;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x8BE5;&#x8BBE;&#x5907;&#x7684;&#x4E3B;&#x677F;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;Wifi &#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x8FD8;&#x6709; bootloader&#xFF0C;&#x5185;&#x6838;&#xFF0C;radioimage &#x7B49;&#x4FE1;&#x606F;&#x3002;&#x5BF9;&#x4E8E;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x8BF7;&#x53C2;&#x770B; Android &#x6E90;&#x7801;&#x6811;&#x5DF2;&#x7ECF;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#xFF08;4&#xFF09;vendorsetup.sh&#xFF1A;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x4F5C;&#x7528;&#x662F;&#x901A;&#x8FC7; add_lunch_combo &#x51FD;&#x6570;&#x5728; lunch &#x51FD;&#x6570;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x83DC;&#x5355;&#x9009;&#x9879;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x52A0;&#x4E0A;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#xFF0C;&#x4E2D;&#x95F4;&#x4EE5;&#x201C;-&#x201D;&#x8FDE;&#x63A5;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;add_lunch_combo full_lt26-userdebug&#x3002;/build/envsetup.sh &#x4F1A;&#x626B;&#x63CF;&#x6240;&#x6709; device &#x548C; vender &#x4E8C; &#x7EA7;&#x76EE; &#x5F55;&#x4E0B;&#x7684;&#x540D;&#x79F0; &#x4E3A;&quot;vendorsetup.sh&quot;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x5176;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x6765;&#x786E;&#x5B9A; lunch &#x51FD;&#x6570;&#x7684; &#x83DC;&#x5355;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x5728;&#x914D;&#x7F6E;&#x4E86;&#x4EE5;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x4E4B;&#x540E;&#xFF0C;&#x4FBF;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x51FA;&#x6211;&#x4EEC;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x8BBE;&#x5907;&#x7684;&#x7CFB;&#x7EDF;&#x955C;&#x50CF;&#x4E86;&#x3002;</p>
+<h3 id="25-build&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;"><a name="25-build&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#25-build&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.5. 2.5 Build&#x7CFB;&#x7EDF;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;</h3>
+<p>&#x200B;    &#x5728;&#x6E90;&#x7801;&#x6811;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x90FD;&#x4F4D;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x3002;&#x4E3A;&#x4E86;&#x5C06;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x6DFB;&#x52A0;&#x5230;&#x6574;&#x4E2A; Build &#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684; Make &#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x4E3A;&#x201C;Android.mk&#x201D;&#x3002;Build &#x7CFB;&#x7EDF;&#x4F1A;&#x626B;&#x63CF;&#x540D;&#x79F0;&#x4E3A;&#x201C;Android.mk&#x201D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x5185;&#x5BB9;&#x7F16;&#x8BD1;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x4EA7;&#x7269;&#x3002;</p>
+<p>Android.mk &#x6587;&#x4EF6;&#x4ECB;&#x7ECD;&#xFF0C;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x6A21;&#x5757;&#x7684;&#x7F16;&#x8BD1;&#xFF0C;Build &#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x4E86;&#x5F88;&#x591A;&#x7684;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x8981;&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x7F16;&#x8BD1;&#x4E4B;&#x524D;&#x6839;&#x636E;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x7136;&#x540E;&#x6267;&#x884C;&#x7F16;&#x8BD1;&#x5373;&#x53EF;&#x3002;&#x5B83;&#x4EEC;&#x5305;&#x62EC;&#xFF1A;</p>
+<p>LOCAL_SRC_FILES&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x6E90;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x3002;</p>
+<p>LOCAL_MODULE&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8FD9;&#x4E2A;&#x540D;&#x79F0;&#x5E94;&#x5F53;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x6A21;&#x5757;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x540D;&#x79F0;&#x6765;&#x5F15;&#x7528;&#x7684;&#x3002;</p>
+<p>LOCAL_C_INCLUDES&#xFF1A;C &#x6216; C++ &#x8BED;&#x8A00;&#x9700;&#x8981;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>LOCAL_STATIC_LIBRARIES&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x5728;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x65F6;&#x9700;&#x8981;&#x7684;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>LOCAL_SHARED_LIBRARIES&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4F9D;&#x8D56;&#x7684;&#x52A8;&#x6001;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>LOCAL_CFLAGS&#xFF1A;&#x63D0;&#x4F9B;&#x7ED9; C/C++ &#x7F16;&#x8BD1;&#x5668;&#x7684;&#x989D;&#x5916;&#x7F16;&#x8BD1;&#x53C2;&#x6570;&#x3002;</p>
+<p>LOCAL_JAVA_LIBRARIES&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x7684; Java &#x5171;&#x4EAB;&#x5E93;&#x3002;</p>
+<p>LOCAL_STATIC_JAVA_LIBRARIES&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x7684; Java &#x9759;&#x6001;&#x5E93;&#x3002;</p>
+<p>LOCAL_PACKAGE_NAME&#xFF1A;&#x5F53;&#x524D; APK &#x5E94;&#x7528;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>LOCAL_CERTIFICATE&#xFF1A;&#x7B7E;&#x7F72;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;&#x8BC1;&#x4E66;&#x540D;&#x79F0;&#x3002;</p>
+<p>LOCAL_MODULE_TAGS&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x6240;&#x5305;&#x542B;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x6807;&#x7B7E;&#x3002;&#x6807;&#x7B7E;&#x7684;&#x503C;&#x53EF;&#x80FD;&#x662F; debug, eng, user&#xFF0C;development &#x6216;&#x8005; optional&#x3002;&#x5176;&#x4E2D;&#xFF0C;optional &#x662F;&#x9ED8;&#x8BA4;&#x6807;&#x7B7E;&#x3002;&#x6807;&#x7B7E;&#x662F;&#x63D0;&#x4F9B;&#x7ED9;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x7684;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#x4F1A;&#x5B89;&#x88C5;&#x5305;&#x542B;&#x4E0D;&#x540C;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5173;&#x4E8E;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#x7684;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsRJ3DSM.jpg" alt="img"> </p>
+<p>&#x9664;&#x6B64;&#x4EE5;&#x5916;&#xFF0C;Build &#x7CFB;&#x7EDF;&#x4E2D;&#x8FD8;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x4FBF;&#x6377;&#x7684;&#x51FD;&#x6570;&#x4EE5;&#x4FBF;&#x5728; Android.mk &#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;</p>
+<p>$(call my-dir)&#xFF1A;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>$(call all-java-files-under, <src>)&#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709; Java &#x6587;&#x4EF6;&#x3002;</src></p>
+<p>$(call all-c-files-under, <src>)&#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709; C &#x8BED;&#x8A00;&#x6587;&#x4EF6;&#x3002;</src></p>
+<p>$(call all-Iaidl-files-under, <src>) &#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709; AIDL &#x6587;&#x4EF6;&#x3002;</src></p>
+<p>$(call all-makefiles-under, <folder>)&#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709; Make &#x6587;&#x4EF6;&#x3002;</folder></p>
+<p>$(call intermediates-dir-for, <class>, <app_name>, <host or="" target="">, <common?> )&#xFF1A;&#x83B7;&#x53D6; Build &#x8F93;&#x51FA;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;&#x3002;&#x4E0B;&#x9762;&#x4E3E;&#x4E24;&#x4E2A;&#x4F8B;&#x5B50;&#x8BF4;&#x660E;</common?></host></app_name></class></p>
+<p>1&#x3001; &#x7F16;&#x8BD1;&#x4E00;&#x4E2A;APK&#x6587;&#x4EF6;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsGUS6ur.jpg" alt="img"> </p>
+<p>2&#x3001; &#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x5E93;</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wpsXsuSYI.jpg" alt="img"> </p>
+<h3 id="26-&#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x4EA7;&#x7269;&#x4ECB;&#x7ECD;"><a name="26-&#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x4EA7;&#x7269;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#26-&#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x4EA7;&#x7269;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.6. 2.6 &#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x4EA7;&#x7269;&#x4ECB;&#x7ECD;</h3>
+<p>1&#x3001;boot.img</p>
+<p><img src="file:////private/var/folders/q8/w266cmnj7z9cpy_j23367j000000gn/T/com.kingsoft.wpsoffice.mac/wps-tracyliu/ksohtml/wps0tkJyz.jpg" alt="img"> </p>
+<p>boot.img&#x662F;&#x4E00;&#x79CD;Android&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x3002;&#x8BE5;&#x683C;&#x5F0F;&#x5305;&#x62EC;&#x4E86;&#x4E00;&#x4E2A;2*1024&#x5927;&#x5C0F;&#x7684;&#x6587;&#x4EF6;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x662F;&#x7528;gzip&#x538B;&#x7F29;&#x8FC7;&#x7684;kernel&#x955C;&#x50CF;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x662F;ramdisk&#x6620;&#x50CF;&#xFF0C;&#x6700;&#x540E;&#x662F;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>2&#x3001;recovery.img</p>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x5C0F;&#x578B;&#x6587;&#x672C;&#x754C;&#x9762;&#x7684;Linux&#x7CFB;&#x7EDF;&#xFF0C;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x6838;&#x548C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x6062;&#x590D;&#x6216;&#x5347;&#x7EA7;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>3&#x3001; system.img</p>
+<p>&#x662F;&#x8BBE;&#x5907;&#x4E2D;system&#x76EE;&#x5F55;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5305;&#x542B;&#x4E86;Android&#x7CFB;&#x7EDF;&#x4E3B;&#x8981;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x3002;</p>
+<p>app&#x76EE;&#x5F55;&#xFF1A;&#x4E00;&#x822C;&#x7684;apk&#x6587;&#x4EF6;&#x3002;</p>
+<p>bin&#x76EE;&#x5F55;&#xFF1A;&#x4E00;&#x4E9B;Linux&#x5DE5;&#x5177;&#x3002;</p>
+<p>etc&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</p>
+<p>framework&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x5E73;&#x53F0;&#x6240;&#x6709;jar&#x5305;&#x548C;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x5305;</p>
+<p>lib&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x5171;&#x4EAB;&#x5E93;</p>
+<p>media&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x7684;&#x591A;&#x5A92;&#x4F53;&#x8D44;&#x6E90;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x94C3;&#x58F0;</p>
+<p>priv-app&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x6838;&#x5FC3;&#x7684;apk&#x6587;&#x4EF6;</p>
+<p>usr&#x76EE;&#x5F55;&#xFF1A;&#x952E;&#x76D8;&#x5E03;&#x5C40;&#x3001;&#x65F6;&#x95F4;&#x533A;&#x57DF;&#x6587;&#x4EF6;</p>
+<p>build.prop&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x7684;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;</p>
+<p>tts&#x76EE;&#x5F55;&#xFF1A;&#x7CFB;&#x7EDF;&#x7684;&#x8BED;&#x97F3;&#x5408;&#x6210;&#x6587;&#x4EF6;</p>
+<p>4&#x3001;userdata.img</p>
+<p>&#x200B;    &#x662F;&#x8BBE;&#x5907;&#x4E2D;data&#x76EE;&#x5F55;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x521D;&#x59CB;&#x65F6;&#x4E00;&#x822C;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x3002;Android&#x7CFB;&#x7EDF;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F1A;&#x5728;/data&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x5B50;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="3&#x3001;framework&#x5B9A;&#x5236;&#x673A;&#x7F16;&#x8BD1;"><a name="3&#x3001;framework&#x5B9A;&#x5236;&#x673A;&#x7F16;&#x8BD1;" class="anchor-navigation-ex-anchor" href="#3&#x3001;framework&#x5B9A;&#x5236;&#x673A;&#x7F16;&#x8BD1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. \3&#x3001;framework&#x5B9A;&#x5236;&#x673A;&#x7F16;&#x8BD1;**</h2>
+<p>framework&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x4E0E;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x662F;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#xFF0C;framework&#x5F00;&#x53D1;&#x662F;&#x57FA;&#x4E8E;Android&#x6E90;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#xFF1A;git&#xFF0C;repo&#x4E24;&#x79CD;&#x5DE5;&#x5177;&#x3002;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5B66;&#x4E60;framework&#x5F00;&#x53D1;&#xFF0C;&#x5FC5;&#x987B;&#x9700;&#x8981;&#x4E0B;&#x8F7D;&#x4E00;&#x5957;Android&#x6E90;&#x7801;&#x3002;</p>
+<p>&#x4FEE;&#x6539; android &#x7684; framework &#x5C42;&#x9700;&#x8981;&#x4EE5;&#x4E0B;&#x56DB;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<p>\1. &#x9996;&#x5148;&#x8981;&#x5728;&#x5DE5;&#x7A0B;&#x76EE;&#x5F55;&#x4E0B;&#x8FD0;&#x884C;&#xFF1A; . ./build/envsetup.sh &#x8FD9;&#x6837;&#x5728;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;mm&#x547D;&#x4EE4;&#x4E86;</p>
+<p>2.&#x4F8B;&#x5982;&#x8981;&#x4FEE;&#x6539;services&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x90A3;&#x4E48;&#x7F16;&#x8F91;&#x5B8C;&#x6210;&#x540E;</p>
+<p>cd frameworks/base/services/</p>
+<p>mm</p>
+<p>3.&#x66FF;&#x6362;&#x4FEE;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;</p>
+<p>&#x7F16;&#x8BD1;&#x540E;&#x7528;&#x751F;&#x6210;&#x7684;&#x5305;&#x66FF;&#x6362;&#x624B;&#x673A;&#x4E0A; /system/framework/ &#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x4EF6;</p>
+<p>$ adb remount</p>
+<p>$ cd out/target/product/general/system/framework/</p>
+<p>$ adb push services.jar /system/framework/</p>
+<p>4.&#x8BA9;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x8FD0;&#x884C;&#xFF1A;</p>
+<p>&#x65B9;&#x5F0F;1: adb reboot &#x91CD;&#x542F;</p>
+<p>&#x65B9;&#x5F0F;2:&#x6740;&#x6B7B; services.jar &#x8FDB;&#x7A0B;&#xFF0C;&#x4F7F;&#x7CFB;&#x7EDF;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x901F;&#x5EA6;&#x5FEB;</p>
+<p>$ ps</p>
+<p>&#x627E;&#x5230; services.jar&#x5BF9;&#x5E94;&#x7684; pid, &#x5047;&#x8BBE;&#x5B83;&#x4E3A; 1219</p>
+<p>$ kill 1219 </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tracyliu-FE 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-03-26 11:10:13
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="沙箱机制.html" class="navigation navigation-prev " aria-label="Previous page: 沙箱机制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="系统裁剪.html" class="navigation navigation-next " aria-label="Next page: 系统裁剪">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"系统编译","level":"1.6.28","depth":2,"next":{"title":"系统裁剪","level":"1.6.29","depth":2,"path":"FrameWork/系统裁剪.md","ref":"FrameWork/系统裁剪.md","articles":[]},"previous":{"title":"沙箱机制","level":"1.6.27","depth":2,"path":"FrameWork/沙箱机制.md","ref":"FrameWork/沙箱机制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"FrameWork/系统编译.md","mtime":"2021-03-26T03:10:13.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-24T07:11:48.594Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
