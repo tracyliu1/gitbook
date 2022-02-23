@@ -10,6 +10,8 @@ if [ $? -eq 0 ]; then
 		
 		cp -r _book/* docs 		
 		
+		git add README.md
+		git add SUMMARY.md		
 		git add /docs
 		git commit -m “update my note”
 		git push origin gh-pages:gh-pages

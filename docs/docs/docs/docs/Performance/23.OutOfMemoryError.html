@@ -1,0 +1,2212 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>23.OutOfMemoryError · 知识总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="24.Trace.html" />
+    
+    
+    <link rel="prev" href="22.数据结构选择优化.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Algorithmic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                <a href="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                    
+                    BinarySearch 二分法查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Algorithmic/Sort.html">
+            
+                <a href="../Algorithmic/Sort.html">
+            
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                <a href="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                    
+                    Stack-用两个栈实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                <a href="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                    
+                    String-手写一个字符串翻转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Algorithmic/二叉树.html">
+            
+                <a href="../Algorithmic/二叉树.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Algorithmic/数组单独的数.html">
+            
+                <a href="../Algorithmic/数组单独的数.html">
+            
+                    
+                    数组单独的数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Algorithmic/数组实现队列.html">
+            
+                <a href="../Algorithmic/数组实现队列.html">
+            
+                    
+                    数组实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Algorithmic/生产者消费者模型.html">
+            
+                <a href="../Algorithmic/生产者消费者模型.html">
+            
+                    
+                    生产者消费者模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Algorithmic/链表.html">
+            
+                <a href="../Algorithmic/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Android
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Android/1-01.组件-Activity.html">
+            
+                <a href="../Android/1-01.组件-Activity.html">
+            
+                    
+                    1-01.组件-Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Android/1-02.组件-Service.html">
+            
+                <a href="../Android/1-02.组件-Service.html">
+            
+                    
+                    1-02.组件-Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Android/1-03.组件-BroadCast.html">
+            
+                <a href="../Android/1-03.组件-BroadCast.html">
+            
+                    
+                    1-03.组件-BroadCast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Android/1-04.组件-ContentProvider.html">
+            
+                <a href="../Android/1-04.组件-ContentProvider.html">
+            
+                    
+                    1-04.组件-ContentProvider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Android/1-05.组件-Fragment.html">
+            
+                <a href="../Android/1-05.组件-Fragment.html">
+            
+                    
+                    1-05.组件-Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Android/2-01.Binder.html">
+            
+                <a href="../Android/2-01.Binder.html">
+            
+                    
+                    2-01.Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Android/2-02.Context.html">
+            
+                <a href="../Android/2-02.Context.html">
+            
+                    
+                    2-02.Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Android/2-03.framework-Android消息机制.html">
+            
+                <a href="../Android/2-03.framework-Android消息机制.html">
+            
+                    
+                    2-03.framework-Android消息机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../Android/2-04.IdleHandler.html">
+            
+                <a href="../Android/2-04.IdleHandler.html">
+            
+                    
+                    2-04.IdleHandler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../Android/2-05.多线程模型.html">
+            
+                <a href="../Android/2-05.多线程模型.html">
+            
+                    
+                    2-05.多线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../Android/3-01.View-绘制流程.html">
+            
+                <a href="../Android/3-01.View-绘制流程.html">
+            
+                    
+                    3-01.View-绘制流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../Android/3-02.View-事件分发.html">
+            
+                <a href="../Android/3-02.View-事件分发.html">
+            
+                    
+                    3-02.View-事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../Android/3-03.View-面试题.html">
+            
+                <a href="../Android/3-03.View-面试题.html">
+            
+                    
+                    3-03.View-面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../Android/3-04.自定义view CustomView.html">
+            
+                <a href="../Android/3-04.自定义view CustomView.html">
+            
+                    
+                    3-04.自定义view CustomView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../Android/Android概述.html">
+            
+                <a href="../Android/Android概述.html">
+            
+                    
+                    Android概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../Android/Binder IPC.html">
+            
+                <a href="../Android/Binder IPC.html">
+            
+                    
+                    Binder IPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Android Kernel
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Android kernel/Android系统分区.html">
+            
+                <a href="../Android kernel/Android系统分区.html">
+            
+                    
+                    Android系统分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Android kernel/Linux基础.html">
+            
+                <a href="../Android kernel/Linux基础.html">
+            
+                    
+                    Linux基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Android kernel/Zram.html">
+            
+                <a href="../Android kernel/Zram.html">
+            
+                    
+                    Zram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Android kernel/安全.html">
+            
+                <a href="../Android kernel/安全.html">
+            
+                    
+                    安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Debug
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Debug/ADB.html">
+            
+                <a href="../Debug/ADB.html">
+            
+                    
+                    ADB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Debug/binder_sample日志.html">
+            
+                <a href="../Debug/binder_sample日志.html">
+            
+                    
+                    binder_sample日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Debug/Systrace.html">
+            
+                <a href="../Debug/Systrace.html">
+            
+                    
+                    Systrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Debug/Tombstone.html">
+            
+                <a href="../Debug/Tombstone.html">
+            
+                    
+                    Tombstone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Debug/制作开机动画.html">
+            
+                <a href="../Debug/制作开机动画.html">
+            
+                    
+                    制作开机动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Frame Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../FrameWork/Activity finish(">
+            
+                <span>
+            
+                    
+                    Activity Finish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../FrameWork/AMS_adj.html">
+            
+                <a href="../FrameWork/AMS_adj.html">
+            
+                    
+                    AMS Adj
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../FrameWork/AMS_kill.html">
+            
+                <a href="../FrameWork/AMS_kill.html">
+            
+                    
+                    AMS Kill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../FrameWork/AMS_OnTrimMemory.html">
+            
+                <a href="../FrameWork/AMS_OnTrimMemory.html">
+            
+                    
+                    AMS On Trim Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../FrameWork/AMS_watchDog.html">
+            
+                <a href="../FrameWork/AMS_watchDog.html">
+            
+                    
+                    AMS Watch Dog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../FrameWork/Android内存回收.html">
+            
+                <a href="../FrameWork/Android内存回收.html">
+            
+                    
+                    Android内存回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../FrameWork/Anroid 权限 .html">
+            
+                <a href="../FrameWork/Anroid 权限 .html">
+            
+                    
+                    Anroid 权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../FrameWork/ANR分析.html">
+            
+                <a href="../FrameWork/ANR分析.html">
+            
+                    
+                    ANR分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../FrameWork/apk打包.html">
+            
+                <a href="../FrameWork/apk打包.html">
+            
+                    
+                    apk打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../FrameWork/AppOps权限 .html">
+            
+                <a href="../FrameWork/AppOps权限 .html">
+            
+                    
+                    AppOps权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../FrameWork/Audio Device Strategy 音频设备 输入选择 7.0.html">
+            
+                <a href="../FrameWork/Audio Device Strategy 音频设备 输入选择 7.0.html">
+            
+                    
+                    Audio Device Strategy 音频设备 输入选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../FrameWork/Audio Device Strategy 音频设备输入 输入出 选择 7.0.html">
+            
+                <a href="../FrameWork/Audio Device Strategy 音频设备输入 输入出 选择 7.0.html">
+            
+                    
+                    Audio Device Strategy 音频设备输入 输入出 选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../FrameWork/build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                <a href="../FrameWork/build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                    
+                    build.prop system.prop default.prop 与 SystemProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../FrameWork/image.html">
+            
+                <a href="../FrameWork/image.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../FrameWork/makefile.html">
+            
+                <a href="../FrameWork/makefile.html">
+            
+                    
+                    Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../FrameWork/MediaPlayer 播放流程.html">
+            
+                <a href="../FrameWork/MediaPlayer 播放流程.html">
+            
+                    
+                    MediaPlayer 播放流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../FrameWork/minicom 串口调试.html">
+            
+                <a href="../FrameWork/minicom 串口调试.html">
+            
+                    
+                    minicom 串口调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../FrameWork/OTA.html">
+            
+                <a href="../FrameWork/OTA.html">
+            
+                    
+                    OTA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../FrameWork/PhoneWindowManager需求处理.html">
+            
+                <a href="../FrameWork/PhoneWindowManager需求处理.html">
+            
+                    
+                    PhoneWindowManager需求处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../FrameWork/PKMS_安装流程.html">
+            
+                <a href="../FrameWork/PKMS_安装流程.html">
+            
+                    
+                    PKMS_安装流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../FrameWork/Root su权限.html">
+            
+                <a href="../FrameWork/Root su权限.html">
+            
+                    
+                    Root su权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="../FrameWork/WMS_ViewRootImpl.html">
+            
+                <a href="../FrameWork/WMS_ViewRootImpl.html">
+            
+                    
+                    WMS View Root Impl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="../FrameWork/WMS_窗口加载.html">
+            
+                <a href="../FrameWork/WMS_窗口加载.html">
+            
+                    
+                    WMS_窗口加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.24" data-path="../FrameWork/WMS工作原理.html">
+            
+                <a href="../FrameWork/WMS工作原理.html">
+            
+                    
+                    WMS工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.25" data-path="../FrameWork/定屏分析.html">
+            
+                <a href="../FrameWork/定屏分析.html">
+            
+                    
+                    定屏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="../FrameWork/开机流程.html">
+            
+                <a href="../FrameWork/开机流程.html">
+            
+                    
+                    开机流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="../FrameWork/沙箱机制.html">
+            
+                <a href="../FrameWork/沙箱机制.html">
+            
+                    
+                    沙箱机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.28" data-path="../FrameWork/系统编译.html">
+            
+                <a href="../FrameWork/系统编译.html">
+            
+                    
+                    系统编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.29" data-path="../FrameWork/系统裁剪.html">
+            
+                <a href="../FrameWork/系统裁剪.html">
+            
+                    
+                    系统裁剪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.30" data-path="../FrameWork/进程启动.html">
+            
+                <a href="../FrameWork/进程启动.html">
+            
+                    
+                    进程启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    1-01.java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                <a href="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                    
+                    1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Java/1-04.Java类加载.html">
+            
+                <a href="../Java/1-04.Java类加载.html">
+            
+                    
+                    1-04.Java类加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Java/1-05.Java GC 垃圾回收.html">
+            
+                <a href="../Java/1-05.Java GC 垃圾回收.html">
+            
+                    
+                    1-05.Java GC 垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Java/1-06.接口、抽象类.html">
+            
+                <a href="../Java/1-06.接口、抽象类.html">
+            
+                    
+                    1-06.接口、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                <a href="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                    
+                    1-07.Java 动态代理 静态代理.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Java/1-08.Java反射.html">
+            
+                <a href="../Java/1-08.Java反射.html">
+            
+                    
+                    1-08.Java反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../Java/1-09.java 异常.html">
+            
+                <a href="../Java/1-09.java 异常.html">
+            
+                    
+                    1-09.java 异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../Java/2-01.锁.html">
+            
+                <a href="../Java/2-01.锁.html">
+            
+                    
+                    2-01.锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../Java/2-02.Volatile.html">
+            
+                <a href="../Java/2-02.Volatile.html">
+            
+                    
+                    2-02.Volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../Java/2-03.Synchronized.html">
+            
+                <a href="../Java/2-03.Synchronized.html">
+            
+                    
+                    2-03.Synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                <a href="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                    
+                    2-04-1.线程分类、状态、创建、阻塞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../Java/2-04-2.线程中断.html">
+            
+                <a href="../Java/2-04-2.线程中断.html">
+            
+                    
+                    2-04-2.线程中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../Java/2-04-3.线程间协作.html">
+            
+                <a href="../Java/2-04-3.线程间协作.html">
+            
+                    
+                    2-04-3.线程间协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../Java/2-05.线程池.html">
+            
+                <a href="../Java/2-05.线程池.html">
+            
+                    
+                    2-05.线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../Java/2-06.ThreadLocal.html">
+            
+                <a href="../Java/2-06.ThreadLocal.html">
+            
+                    
+                    2-06.ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../Java/3-01.Java 容器.html">
+            
+                <a href="../Java/3-01.Java 容器.html">
+            
+                    
+                    3-01.Java 容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../Java/3-02.设计模式.html">
+            
+                <a href="../Java/3-02.设计模式.html">
+            
+                    
+                    3-02.设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Net
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Net/3-01.底层网络协议.html">
+            
+                <a href="../Net/3-01.底层网络协议.html">
+            
+                    
+                    3-01.底层网络协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Net/3-02.OSI模型.html">
+            
+                <a href="../Net/3-02.OSI模型.html">
+            
+                    
+                    3-02.OSI模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Net/3-03.TCP UDP.html">
+            
+                <a href="../Net/3-03.TCP UDP.html">
+            
+                    
+                    3-03.TCP UDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Net/3-04.HTTP.html">
+            
+                <a href="../Net/3-04.HTTP.html">
+            
+                    
+                    3-04.HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                <a href="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                    
+                    3-05.HTTP描述一次网络请求的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Net/3-06.HTTPS.html">
+            
+                <a href="../Net/3-06.HTTPS.html">
+            
+                    
+                    3-06.HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="0.概论.html">
+            
+                <a href="0.概论.html">
+            
+                    
+                    0.概论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="1.Android优化大全.html">
+            
+                <a href="1.Android优化大全.html">
+            
+                    
+                    1.Android优化大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="10.ANR.html">
+            
+                <a href="10.ANR.html">
+            
+                    
+                    10.ANR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="11.启动优化.html">
+            
+                <a href="11.启动优化.html">
+            
+                    
+                    11.启动优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="12.布局优化.html">
+            
+                <a href="12.布局优化.html">
+            
+                    
+                    12.布局优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="13.Bitmap优化.html">
+            
+                <a href="13.Bitmap优化.html">
+            
+                    
+                    13.Bitmap优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="14.线程优化.html">
+            
+                <a href="14.线程优化.html">
+            
+                    
+                    14.线程优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="15.Apk包大小优化.html">
+            
+                <a href="15.Apk包大小优化.html">
+            
+                    
+                    15.Apk包大小优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="16.LruCache.html">
+            
+                <a href="16.LruCache.html">
+            
+                    
+                    16.LruCache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="17.WebView缓存优化.html">
+            
+                <a href="17.WebView缓存优化.html">
+            
+                    
+                    17.WebView缓存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="18.电量优化.html">
+            
+                <a href="18.电量优化.html">
+            
+                    
+                    18.电量优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="19.mmap + native 日志优化.html">
+            
+                <a href="19.mmap + native 日志优化.html">
+            
+                    
+                    19.mmap + native 日志优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="2.优化参考资料.html">
+            
+                <a href="2.优化参考资料.html">
+            
+                    
+                    2.优化参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="20.IO优化、mmkv原理.html">
+            
+                <a href="20.IO优化、mmkv原理.html">
+            
+                    
+                    20.IO优化、mmkv原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="21.Bug分析.html">
+            
+                <a href="21.Bug分析.html">
+            
+                    
+                    21.Bug分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="22.数据结构选择优化.html">
+            
+                <a href="22.数据结构选择优化.html">
+            
+                    
+                    22.数据结构选择优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.17" data-path="23.OutOfMemoryError.html">
+            
+                <a href="23.OutOfMemoryError.html">
+            
+                    
+                    23.OutOfMemoryError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.18" data-path="24.Trace.html">
+            
+                <a href="24.Trace.html">
+            
+                    
+                    24.Trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.19" data-path="25.MAT使用.html">
+            
+                <a href="25.MAT使用.html">
+            
+                    
+                    25.MAT使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.20" data-path="26.UI卡顿分析.html">
+            
+                <a href="26.UI卡顿分析.html">
+            
+                    
+                    26.UI卡顿分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.21" data-path="27.网络优化.html">
+            
+                <a href="27.网络优化.html">
+            
+                    
+                    27.网络优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.22" data-path="28.崩溃优化.html">
+            
+                <a href="28.崩溃优化.html">
+            
+                    
+                    28.崩溃优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.23" data-path="3.内存模型管理及GC.html">
+            
+                <a href="3.内存模型管理及GC.html">
+            
+                    
+                    3.内存模型管理及GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.24" data-path="4.ART vs Dalvik.html">
+            
+                <a href="4.ART vs Dalvik.html">
+            
+                    
+                    4.ART vs Dalvik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.25" data-path="5.Android内存回收机制.html">
+            
+                <a href="5.Android内存回收机制.html">
+            
+                    
+                    5.Android内存回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.26" data-path="6.Low Memory Killer 机制.html">
+            
+                <a href="6.Low Memory Killer 机制.html">
+            
+                    
+                    6.Low Memory Killer 机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.27" data-path="7.内存优化工具.html">
+            
+                <a href="7.内存优化工具.html">
+            
+                    
+                    7.内存优化工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.28" data-path="8.内存性能测试.html">
+            
+                <a href="8.内存性能测试.html">
+            
+                    
+                    8.内存性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.29" data-path="9.内存问题及解决方案.html">
+            
+                <a href="9.内存问题及解决方案.html">
+            
+                    
+                    9.内存问题及解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >23.OutOfMemoryError</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#outofmemoryerror"><b>1. </b>OutOfMemoryError</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;-fcforce-close&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#xFF1F;"><b>1.1. </b>&#x4E00;. FC(Force Close)&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x4E8C;-try-catch&#x80FD;&#x5426;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#xFF1F;"><b>1.2. </b>&#x4E8C;. try-catch&#x80FD;&#x5426;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;-outofmemoryerror"><b>1.3. </b>&#x4E09;. OutOfMemoryError</a></li><ul><li><span class="title-icon "></span><a href="#31-stackoverflowerror"><b>1.3.1. </b>3.1. StackOverflowError</a></li><li><span class="title-icon "></span><a href="#32-java-heap-space"><b>1.3.2. </b>3.2 Java heap space</a></li><li><span class="title-icon "></span><a href="#33-gc-overhead-limit-exceeded"><b>1.3.3. </b>3.3 GC overhead limit exceeded</a></li><li><span class="title-icon "></span><a href="#34&#x3001;direct-buffer-memory"><b>1.3.4. </b>3.4&#x3001;Direct buffer memory</a></li><li><span class="title-icon "></span><a href="#35&#x3001;unable-to-create-new-native-thread"><b>1.3.5. </b>3.5&#x3001;Unable to create new native thread</a></li><li><span class="title-icon "></span><a href="#36-metaspace"><b>1.3.6. </b>3.6 Metaspace</a></li><li><span class="title-icon "></span><a href="#37-requested-array-size-exceeds-vm-limit"><b>1.3.7. </b>3.7 Requested array size exceeds VM limit</a></li><li><span class="title-icon "></span><a href="#38-out-of-swap-space"><b>1.3.8. </b>3.8 Out of swap space</a></li><li><span class="title-icon "></span><a href="#39-kill-process-or-sacrifice-child"><b>1.3.9. </b>3.9 Kill process or sacrifice child</a></li></ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b>1.4. </b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#outofmemoryerror" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 align="center" id="outofmemoryerror"><a name="outofmemoryerror" class="anchor-navigation-ex-anchor" href="#outofmemoryerror"><i class="fa fa-link" aria-hidden="true"></i></a>1. OutOfMemoryError</h1>
+
+<p>[toc]</p>
+<h2 id="&#x4E00;-fcforce-close&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#xFF1F;"><a name="&#x4E00;-fcforce-close&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E00;-fcforce-close&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4E00;. FC(Force Close)&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#xFF1F;</h2>
+<p>Error&#x3001;OOM&#xFF0C;StackOverFlowError&#x3001;Runtime,&#x6BD4;&#x5982;&#x8BF4;&#x7A7A;&#x6307;&#x9488;&#x5F02;&#x5E38;</p>
+<p>&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x6CE8;&#x610F;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528;&#x548C;&#x7BA1;&#x7406;</li>
+<li>&#x4F7F;&#x7528;Thread.UncaughtExceptionHandler&#x63A5;&#x53E3;</li>
+</ul>
+<h2 id="&#x4E8C;-try-catch&#x80FD;&#x5426;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#xFF1F;"><a name="&#x4E8C;-try-catch&#x80FD;&#x5426;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;-try-catch&#x80FD;&#x5426;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x4E8C;. try-catch&#x80FD;&#x5426;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#xFF1F;</h2>
+<p>&#x4E0D;&#x80FD;&#x6355;&#x83B7;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#x3002;</p>
+<h2 id="&#x4E09;-outofmemoryerror"><a name="&#x4E09;-outofmemoryerror" class="anchor-navigation-ex-anchor" href="#&#x4E09;-outofmemoryerror"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x4E09;. OutOfMemoryError</h2>
+<p><img src="media/007S8ZIlly1gggcqh5gsdj324d0ol0y7.jpg" alt="img"></p>
+<p>&#x5728;&#x300A;Java&#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#x300B;&#x7684;&#x89C4;&#x5B9A;&#x91CC;&#xFF0C;&#x9664;&#x4E86;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x5916;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x5185;&#x5B58;&#x7684;&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x8FD0;&#x884C;&#x65F6;&#x533A;&#x57DF;&#x90FD;&#x6709;&#x53D1;&#x751F; OutOfMemoryError &#x5F02;&#x5E38;&#x7684;&#x53EF;&#x80FD;&#x3002;</p>
+<p>&#x672C;&#x7BC7;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x5982;&#x4E0B; OOM &#x7684;&#x4ECB;&#x7ECD;&#x548C;&#x793A;&#x4F8B;&#xFF1A;</p>
+<ul>
+<li>java.lang.StackOverflowError</li>
+<li>java.lang.OutOfMemoryError: Java heap space</li>
+<li>java.lang.OutOfMemoryError: GC overhead limit exceeded</li>
+<li>java.lang.OutOfMemoryError--&gt;Metaspace</li>
+<li>java.lang.OutOfMemoryError: Direct buffer memory</li>
+<li>java.lang.OutOfMemoryError: unable to create new native thread</li>
+<li>java.lang.OutOfMemoryError&#xFF1A;Metaspace</li>
+<li>java.lang.OutOfMemoryError: Requested array size exceeds VM limit</li>
+<li>java.lang.OutOfMemoryError: Out of swap space</li>
+<li>java.lang.OutOfMemoryError&#xFF1A;Kill process or sacrifice child</li>
+</ul>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x5E38;&#x8BF4;&#x7684; OOM &#x5F02;&#x5E38;&#xFF0C;&#x5176;&#x5B9E;&#x662F; Error</p>
+</blockquote>
+<p><img src="media/007S8ZIlly1gggbu55wwgj30sy0ku3z0.jpg" alt="img"></p>
+<h3 id="31-stackoverflowerror"><a name="31-stackoverflowerror" class="anchor-navigation-ex-anchor" href="#31-stackoverflowerror"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. 3.1. StackOverflowError</h3>
+<h4 id="311-&#x5199;&#x4E2A;-bug"><a name="311-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#311-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.1 &#x5199;&#x4E2A; bug</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StackOverflowErrorDemo</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        javaKeeper();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">javaKeeper</span><span class="hljs-params">()</span> </span>{
+        javaKeeper();
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x4E00;&#x7BC7;&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#x8FC7;<a href="https://mp.weixin.qq.com/s/jPIHNsQwiYNCRUQt1qXR6Q" target="_blank">JVM &#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;</a>&#xFF0C;JVM &#x865A;&#x62DF;&#x673A;&#x6808;&#x662F;&#x6709;&#x6DF1;&#x5EA6;&#x7684;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4F34;&#x968F;&#x7740;&#x5165;&#x6808;&#x548C;&#x51FA;&#x6808;&#xFF0C;&#x4E0A;&#x8FB9;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;main &#x65B9;&#x6CD5;&#x6267;&#x884C;&#x540E;&#x4E0D;&#x505C;&#x7684;&#x9012;&#x5F52;&#xFF0C;&#x8FDF;&#x65E9;&#x628A;&#x6808;&#x6491;&#x7206;&#x4E86;</p>
+<pre><code class="lang-java">Exception in thread <span class="hljs-string">&quot;main&quot;</span> java.lang.StackOverflowError at oom.StackOverflowErrorDemo.javaKeeper(StackOverflowErrorDemo.java:<span class="hljs-number">15</span>)
+</code></pre>
+<p><img src="media/b334c2faa77a5e03.gif" alt="img"></p>
+<h4 id="312-&#x539F;&#x56E0;&#x5206;&#x6790;"><a name="312-&#x539F;&#x56E0;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#312-&#x539F;&#x56E0;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.2 &#x539F;&#x56E0;&#x5206;&#x6790;</h4>
+<ul>
+<li>&#x65E0;&#x9650;&#x9012;&#x5F52;&#x5FAA;&#x73AF;&#x8C03;&#x7528;&#xFF08;&#x6700;&#x5E38;&#x89C1;&#x539F;&#x56E0;&#xFF09;&#xFF0C;&#x8981;&#x65F6;&#x523B;&#x6CE8;&#x610F;&#x4EE3;&#x7801;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x4E86;&#x5FAA;&#x73AF;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x800C;&#x65E0;&#x6CD5;&#x9000;&#x51FA;&#x7684;&#x60C5;&#x51B5;</li>
+<li>&#x6267;&#x884C;&#x4E86;&#x5927;&#x91CF;&#x65B9;&#x6CD5;&#xFF0C;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x6808;&#x7A7A;&#x95F4;&#x8017;&#x5C3D;</li>
+<li>&#x65B9;&#x6CD5;&#x5185;&#x58F0;&#x660E;&#x4E86;&#x6D77;&#x91CF;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</li>
+<li>native &#x4EE3;&#x7801;&#x6709;&#x6808;&#x4E0A;&#x5206;&#x914D;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5E76;&#x4E14;&#x8981;&#x6C42;&#x7684;&#x5185;&#x5B58;&#x8FD8;&#x4E0D;&#x5C0F;&#xFF0C;&#x6BD4;&#x5982; java.net.SocketInputStream.read0 &#x4F1A;&#x5728;&#x6808;&#x4E0A;&#x8981;&#x6C42;&#x5206;&#x914D;&#x4E00;&#x4E2A; 64KB &#x7684;&#x7F13;&#x5B58;&#xFF08;64&#x4F4D; Linux&#xFF09;</li>
+</ul>
+<h4 id="313-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="313-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#313-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.3 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<ul>
+<li>&#x4FEE;&#x590D;&#x5F15;&#x53D1;&#x65E0;&#x9650;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x7684;&#x5F02;&#x5E38;&#x4EE3;&#x7801;&#xFF0C; &#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x5806;&#x6808;&#xFF0C;&#x627E;&#x51FA;&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#x7684;&#x4EE3;&#x7801;&#x884C;&#xFF0C;&#x6309;&#x56FE;&#x7D22;&#x9AA5;&#xFF0C;&#x4FEE;&#x590D;&#x65E0;&#x9650;&#x9012;&#x5F52; Bug</li>
+<li>&#x6392;&#x67E5;&#x662F;&#x5426;&#x5B58;&#x5728;&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x5FAA;&#x73AF;&#x4F9D;&#x8D56;&#xFF08;&#x5F53;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x76F8;&#x4E92;&#x5F15;&#x7528;&#xFF0C;&#x5728;&#x8C03;&#x7528;toString&#x65B9;&#x6CD5;&#x65F6;&#x4E5F;&#x4F1A;&#x4EA7;&#x751F;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#xFF09;</li>
+<li>&#x901A;&#x8FC7; JVM &#x542F;&#x52A8;&#x53C2;&#x6570; <code>-Xss</code> &#x589E;&#x52A0;&#x7EBF;&#x7A0B;&#x6808;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C; &#x67D0;&#x4E9B;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x9700;&#x8981;&#x6267;&#x884C;&#x5927;&#x91CF;&#x65B9;&#x6CD5;&#x6216;&#x5305;&#x542B;&#x5927;&#x91CF;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x5730;&#x63D0;&#x9AD8;&#x7EBF;&#x7A0B;&#x6808;&#x7A7A;&#x95F4;&#x9650;&#x5236;</li>
+</ul>
+<h3 id="32-java-heap-space"><a name="32-java-heap-space" class="anchor-navigation-ex-anchor" href="#32-java-heap-space"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. 3.2 Java heap space</h3>
+<p>Java &#x5806;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x4E0D;&#x65AD;&#x7684;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x4FDD;&#x8BC1; GC Roots &#x5230;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x6709;&#x53EF;&#x8FBE;&#x8DEF;&#x5F84;&#x6765;&#x907F;&#x514D; GC &#x6E05;&#x9664;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x968F;&#x7740;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x603B;&#x5BB9;&#x91CF;&#x89E6;&#x53CA;&#x5806;&#x7684;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x9650;&#x5236;&#x540E;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x5F02;&#x5E38;&#x3002;</p>
+<p>Java &#x5806;&#x5185;&#x5B58;&#x7684; OOM &#x5F02;&#x5E38;&#x662F;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x5F02;&#x5E38;&#x3002;</p>
+<h4 id="321-&#x5199;&#x4E2A;-bug"><a name="321-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#321-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.1 &#x5199;&#x4E2A; bug</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * JVM&#x53C2;&#x6570;&#xFF1A;-Xmx12m
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JavaHeapSpaceDemo</span> </span>{
+
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> SIZE = <span class="hljs-number">2</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] a)</span> </span>{
+        <span class="hljs-keyword">int</span>[] i = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[SIZE];
+    }
+}
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x8BD5;&#x56FE;&#x5206;&#x914D;&#x5BB9;&#x91CF;&#x4E3A; 2M &#x7684; int &#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x542F;&#x52A8;&#x53C2;&#x6570; <code>-Xmx12m</code>&#xFF0C;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5C31;&#x4E0D;&#x591F;&#x7528;&#xFF0C;&#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;&#x5C06; XXXL &#x53F7;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5F80; S &#x53F7;&#x7684; Java heap space &#x91CC;&#x9762;&#x585E;&#x3002;</p>
+<pre><code class="lang-java">Exception in thread <span class="hljs-string">&quot;main&quot;</span> java.lang.OutOfMemoryError: Java heap space at oom.JavaHeapSpaceDemo.main(JavaHeapSpaceDemo.java:<span class="hljs-number">13</span>)
+</code></pre>
+<h4 id="322-&#x539F;&#x56E0;&#x5206;&#x6790;"><a name="322-&#x539F;&#x56E0;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#322-&#x539F;&#x56E0;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.2 &#x539F;&#x56E0;&#x5206;&#x6790;</h4>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8D85;&#x5927;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x5927;&#x6570;&#x7EC4;</li>
+<li>&#x8D85;&#x51FA;&#x9884;&#x671F;&#x7684;&#x8BBF;&#x95EE;&#x91CF;/&#x6570;&#x636E;&#x91CF;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E0A;&#x6E38;&#x7CFB;&#x7EDF;&#x8BF7;&#x6C42;&#x6D41;&#x91CF;&#x98D9;&#x5347;&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;&#x5404;&#x7C7B;&#x4FC3;&#x9500;/&#x79D2;&#x6740;&#x6D3B;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x4E1A;&#x52A1;&#x6D41;&#x91CF;&#x6307;&#x6807;&#x6392;&#x67E5;&#x662F;&#x5426;&#x6709;&#x5C16;&#x72B6;&#x5CF0;&#x503C;</li>
+<li>&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#x7EC8;&#x7ED3;&#x5668;&#xFF08;Finalizer&#xFF09;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x88AB; GC</li>
+<li>&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF08;Memory Leak&#xFF09;&#xFF0C;&#x5927;&#x91CF;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x6CA1;&#x6709;&#x91CA;&#x653E;&#xFF0C;JVM &#x65E0;&#x6CD5;&#x5BF9;&#x5176;&#x81EA;&#x52A8;&#x56DE;&#x6536;&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;&#x4F7F;&#x7528;&#x4E86; File &#x7B49;&#x8D44;&#x6E90;&#x6CA1;&#x6709;&#x56DE;&#x6536;</li>
+</ul>
+<h4 id="323-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="323-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#323-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.3 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<p>&#x9488;&#x5BF9;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#xFF0C;&#x901A;&#x5E38;&#x53EA;&#x9700;&#x8981;&#x901A;&#x8FC7; <code>-Xmx</code> &#x53C2;&#x6570;&#x8C03;&#x9AD8; JVM &#x5806;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x5373;&#x53EF;&#x3002;&#x5982;&#x679C;&#x4ECD;&#x7136;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x505A;&#x8FDB;&#x4E00;&#x6B65;&#x5904;&#x7406;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x662F;&#x8D85;&#x5927;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x5176;&#x5408;&#x7406;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x662F;&#x5426;&#x4E00;&#x6B21;&#x6027;&#x67E5;&#x8BE2;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x5168;&#x90E8;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x505A;&#x7ED3;&#x679C;&#x6570;&#x9650;&#x5236;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x4E1A;&#x52A1;&#x5CF0;&#x503C;&#x538B;&#x529B;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x6DFB;&#x52A0;&#x673A;&#x5668;&#x8D44;&#x6E90;&#xFF0C;&#x6216;&#x8005;&#x505A;&#x9650;&#x6D41;&#x964D;&#x7EA7;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x9700;&#x8981;&#x627E;&#x5230;&#x6301;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;&#xFF0C;&#x6BD4;&#x5982;&#x5173;&#x95ED;&#x6CA1;&#x6709;&#x91CA;&#x653E;&#x7684;&#x8FDE;&#x63A5;</li>
+</ul>
+<p><img src="media/1b2bed506484c61d.jpeg" alt="img"></p>
+<blockquote>
+<p>&#x9762;&#x8BD5;&#x5B98;&#xFF1A;&#x8BF4;&#x8BF4;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x548C;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</p>
+</blockquote>
+<p>&#x52A0;&#x9001;&#x4E2A;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x4E09;&#x8FDE;&#x7684;&#x7EC8;&#x5C06;&#x6210;&#x4E3A;&#x5927;&#x795E;~~</p>
+<h4 id="&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x548C;&#x5185;&#x5B58;&#x6EA2;&#x51FA;"><a name="&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x548C;&#x5185;&#x5B58;&#x6EA2;&#x51FA;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x548C;&#x5185;&#x5B58;&#x6EA2;&#x51FA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x548C;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</h4>
+<p>&#x5185;&#x5B58;&#x6EA2;&#x51FA;(out of memory)&#xFF0C;&#x662F;&#x6307;&#x7A0B;&#x5E8F;&#x5728;&#x7533;&#x8BF7;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4F9B;&#x5176;&#x4F7F;&#x7528;&#xFF0C;&#x51FA;&#x73B0;out of memory&#xFF1B;&#x6BD4;&#x5982;&#x7533;&#x8BF7;&#x4E86;&#x4E00;&#x4E2A; Integer&#xFF0C;&#x4F46;&#x7ED9;&#x5B83;&#x5B58;&#x4E86; Long &#x624D;&#x80FD;&#x5B58;&#x4E0B;&#x7684;&#x6570;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x3002;</p>
+<p>&#x5185;&#x5B58;&#x6CC4;&#x9732;( memory leak)&#xFF0C;&#x662F;&#x6307;&#x7A0B;&#x5E8F;&#x5728;&#x7533;&#x8BF7;&#x5185;&#x5B58;&#x540E;&#xFF0C;&#x65E0;&#x6CD5;&#x91CA;&#x653E;&#x5DF2;&#x7533;&#x8BF7;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x4E00;&#x6B21;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x5371;&#x5BB3;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#xFF0C;&#x4F46;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x5806;&#x79EF;&#x540E;&#x679C;&#x5F88;&#x4E25;&#x91CD;&#xFF0C;&#x65E0;&#x8BBA;&#x591A;&#x5C11;&#x5185;&#x5B58;&#xFF0C;&#x8FDF;&#x65E9;&#x4F1A;&#x88AB;&#x5360;&#x5149;&#x3002;</p>
+<p><strong>memory leak &#x6700;&#x7EC8;&#x4F1A;&#x5BFC;&#x81F4; out of memory&#xFF01;</strong></p>
+<h3 id="33-gc-overhead-limit-exceeded"><a name="33-gc-overhead-limit-exceeded" class="anchor-navigation-ex-anchor" href="#33-gc-overhead-limit-exceeded"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. 3.3 GC overhead limit exceeded</h3>
+<p>JVM &#x5185;&#x7F6E;&#x4E86;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;GC&#xFF0C;&#x6240;&#x4EE5;&#x4F5C;&#x4E3A; Javaer &#x7684;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x5DE5;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x6765;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x5206;&#x914D;&#x548C;&#x91CA;&#x653E;&#xFF0C;&#x4F46;&#x662F;&#x5F53; Java &#x8FDB;&#x7A0B;&#x82B1;&#x8D39; 98% &#x4EE5;&#x4E0A;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C; GC&#xFF0C;&#x4F46;&#x53EA;&#x6062;&#x590D;&#x4E86;&#x4E0D;&#x5230; 2% &#x7684;&#x5185;&#x5B58;&#xFF0C;&#x4E14;&#x8BE5;&#x52A8;&#x4F5C;&#x8FDE;&#x7EED;&#x91CD;&#x590D;&#x4E86; 5 &#x6B21;&#xFF0C;&#x5C31;&#x4F1A;&#x629B;&#x51FA; <code>java.lang.OutOfMemoryError:GC overhead limit exceeded</code> &#x9519;&#x8BEF;&#xFF08;<strong>&#x4FD7;&#x79F0;&#xFF1A;&#x5783;&#x573E;&#x56DE;&#x6536;&#x4E0A;&#x5934;</strong>&#xFF09;&#x3002;&#x7B80;&#x5355;&#x5730;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5DF2;&#x7ECF;&#x57FA;&#x672C;&#x8017;&#x5C3D;&#x4E86;&#x6240;&#x6709;&#x53EF;&#x7528;&#x5185;&#x5B58;&#xFF0C; GC &#x4E5F;&#x65E0;&#x6CD5;&#x56DE;&#x6536;&#x3002;</p>
+<p>&#x5047;&#x5982;&#x4E0D;&#x629B;&#x51FA; <code>GC overhead limit exceeded</code> &#x9519;&#x8BEF;&#xFF0C;&#x90A3; GC &#x6E05;&#x7406;&#x7684;&#x90A3;&#x4E48;&#x4E00;&#x4E22;&#x4E22;&#x5185;&#x5B58;&#x5F88;&#x5FEB;&#x5C31;&#x4F1A;&#x88AB;&#x518D;&#x6B21;&#x586B;&#x6EE1;&#xFF0C;&#x8FEB;&#x4F7F; GC &#x518D;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x6076;&#x6027;&#x5FAA;&#x73AF;&#xFF0C;CPU &#x4F7F;&#x7528;&#x7387; 100%&#xFF0C;&#x800C; GC &#x6CA1;&#x4EC0;&#x4E48;&#x6548;&#x679C;&#x3002;</p>
+<h4 id="331-&#x5199;&#x4E2A;-bug"><a name="331-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#331-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.1 &#x5199;&#x4E2A; bug</h4>
+<p>&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x5199;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#xFF0C;&#x5F80; List &#x6216; Map &#x52A0;&#x6570;&#x636E;&#x5C31;&#x4F1A;&#x4E00;&#x76F4; Full GC&#xFF0C;&#x76F4;&#x5230;&#x625B;&#x4E0D;&#x4F4F;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x5BB9;&#x6613;&#x53D1;&#x73B0;&#x7684;&#x6817;&#x5B50;&#x3002;&#x6211;&#x4EEC;&#x5F80; map &#x4E2D;&#x6DFB;&#x52A0; 1000 &#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * JVM &#x53C2;&#x6570;&#xFF1A; -Xmx14m -XX:+PrintGCDetails
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KeylessEntry</span> </span>{
+
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Key</span> </span>{
+        Integer id;
+
+        Key(Integer id) {
+            <span class="hljs-keyword">this</span>.id = id;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> id.hashCode();
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Map m = <span class="hljs-keyword">new</span> HashMap();
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>){
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++){
+                <span class="hljs-keyword">if</span> (!m.containsKey(<span class="hljs-keyword">new</span> Key(i))){
+                    m.put(<span class="hljs-keyword">new</span> Key(i), <span class="hljs-string">&quot;Number:&quot;</span> + i);
+                }
+            }
+            System.out.println(<span class="hljs-string">&quot;m.size()=&quot;</span> + m.size());
+        }
+    }
+}
+...
+m.size()=<span class="hljs-number">54000</span>
+m.size()=<span class="hljs-number">55000</span>
+m.size()=<span class="hljs-number">56000</span>
+Exception in thread <span class="hljs-string">&quot;main&quot;</span> java.lang.OutOfMemoryError: GC overhead limit exceeded
+</code></pre>
+<p>&#x4ECE;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x9650;&#x5236; 1000 &#x6761;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;map &#x5BB9;&#x91CF;&#x8FDC;&#x8D85;&#x8FC7;&#x4E86; 1000&#xFF0C;&#x800C;&#x4E14;&#x6700;&#x540E;&#x4E5F;&#x51FA;&#x73B0;&#x4E86;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x7C7B; Key &#x53EA;&#x91CD;&#x5199;&#x4E86; <code>hashCode()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5374;&#x6CA1;&#x6709;&#x91CD;&#x5199; <code>equals()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528; <code>containsKey()</code> &#x65B9;&#x6CD5;&#x5176;&#x5B9E;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x4F1A;&#x4E00;&#x76F4;&#x5F80; HashMap &#x4E2D;&#x6DFB;&#x52A0; Key&#xFF0C;&#x76F4;&#x81F3; GC &#x90FD;&#x6E05;&#x7406;&#x4E0D;&#x6389;&#x3002;</p>
+<blockquote>
+<p>&#x1F9D1;&#x1F3FB;&#x200D;&#x1F4BB; &#x9762;&#x8BD5;&#x5B98;&#x53C8;&#x6765;&#x4E86;&#xFF1A;&#x8BF4;&#x4E00;&#x4E0B; HashMap &#x539F;&#x7406;&#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x540C;&#x65F6;&#x5B9E;&#x73B0; equals &#x548C; hashcode</p>
+<p>&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x6700;&#x7EC8;&#x9519;&#x8BEF;&#xFF0C;&#x548C; JVM &#x914D;&#x7F6E;&#x4E5F;&#x4F1A;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x7684;&#x5806;&#x5185;&#x5B58;&#x7279;&#x522B;&#x5C0F;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x62A5; <code>Java heap space</code>&#x3002;&#x7B97;&#x662F;&#x88AB;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x622A;&#x80E1;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x65F6;&#xFF0C;&#x5728;&#x8D44;&#x6E90;&#x53D7;&#x9650;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x65E0;&#x6CD5;&#x51C6;&#x786E;&#x9884;&#x6D4B;&#x7A0B;&#x5E8F;&#x4F1A;&#x6B7B;&#x4E8E;&#x54EA;&#x79CD;&#x5177;&#x4F53;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+</blockquote>
+<h4 id="332-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="332-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#332-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.2 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<ul>
+<li>&#x6DFB;&#x52A0; JVM &#x53C2;&#x6570; <code>-XX:-UseGCOverheadLimit</code> &#x4E0D;&#x63A8;&#x8350;&#x8FD9;&#x4E48;&#x5E72;&#xFF0C;&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x53EA;&#x662F;&#x5C06;&#x5F02;&#x5E38;&#x63A8;&#x8FDF;</li>
+<li>&#x68C0;&#x67E5;&#x9879;&#x76EE;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x5927;&#x91CF;&#x7684;&#x6B7B;&#x5FAA;&#x73AF;&#x6216;&#x6709;&#x4F7F;&#x7528;&#x5927;&#x5185;&#x5B58;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F18;&#x5316;&#x4EE3;&#x7801;</li>
+<li>dump&#x5185;&#x5B58;&#x5206;&#x6790;&#xFF0C;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x52A0;&#x5927;&#x5185;&#x5B58;</li>
+</ul>
+<h3 id="34&#x3001;direct-buffer-memory"><a name="34&#x3001;direct-buffer-memory" class="anchor-navigation-ex-anchor" href="#34&#x3001;direct-buffer-memory"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. 3.4&#x3001;Direct buffer memory</h3>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528; NIO &#x7684;&#x65F6;&#x5019;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x4F7F;&#x7528; ByteBuffer &#x6765;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E; Channel(&#x901A;&#x9053;) &#x548C; Buffer(&#x7F13;&#x51B2;&#x533A;)&#x7684; I/O &#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Native &#x51FD;&#x6570;&#x5E93;&#x76F4;&#x63A5;&#x5206;&#x914D;&#x5806;&#x5916;&#x5185;&#x5B58;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5728; Java &#x5806;&#x91CC;&#x9762;&#x7684; DirectByteBuffer &#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x8FD9;&#x5757;&#x5185;&#x5B58;&#x7684;&#x5F15;&#x7528;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x6837;&#x5728;&#x4E00;&#x4E9B;&#x573A;&#x666F;&#x5C31;&#x907F;&#x514D;&#x4E86; Java &#x5806;&#x548C; Native &#x4E2D;&#x6765;&#x56DE;&#x590D;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6027;&#x80FD;&#x4F1A;&#x6709;&#x6240;&#x63D0;&#x9AD8;&#x3002;</p>
+<blockquote>
+<p>Java &#x5141;&#x8BB8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7; Direct ByteBuffer &#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5806;&#x5916;&#x5185;&#x5B58;&#xFF0C;&#x8BB8;&#x591A;&#x9AD8;&#x6027;&#x80FD;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7; Direct ByteBuffer &#x7ED3;&#x5408;&#x5185;&#x5B58;&#x6620;&#x5C04;&#x6587;&#x4EF6;&#xFF08;Memory Mapped File&#xFF09;&#x5B9E;&#x73B0;&#x9AD8;&#x901F; IO&#x3002;</p>
+</blockquote>
+<h4 id="341-&#x5199;&#x4E2A;-bug"><a name="341-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#341-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.1 &#x5199;&#x4E2A; bug</h4>
+<ul>
+<li><code>ByteBuffer.allocate(capability)</code> &#x662F;&#x5206;&#x914D; JVM &#x5806;&#x5185;&#x5B58;&#xFF0C;&#x5C5E;&#x4E8E; GC &#x7BA1;&#x8F96;&#x8303;&#x56F4;&#xFF0C;&#x9700;&#x8981;&#x5185;&#x5B58;&#x62F7;&#x8D1D;&#x6240;&#x4EE5;&#x901F;&#x5EA6;&#x76F8;&#x5BF9;&#x8F83;&#x6162;&#xFF1B;</li>
+<li><code>ByteBuffer.allocateDirect(capability)</code>&#x662F;&#x5206;&#x914D; OS &#x672C;&#x5730;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x5C5E;&#x4E8E; GC &#x7BA1;&#x8F96;&#x8303;&#x56F4;&#xFF0C;&#x7531;&#x4E8E;&#x4E0D;&#x9700;&#x8981;&#x5185;&#x5B58;&#x62F7;&#x8D1D;&#x6240;&#x4EE5;&#x901F;&#x5EA6;&#x76F8;&#x5BF9;&#x8F83;&#x5FEB;&#xFF1B;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4E0D;&#x65AD;&#x5206;&#x914D;&#x672C;&#x5730;&#x5185;&#x5B58;&#xFF0C;&#x5806;&#x5185;&#x5B58;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#xFF0C;&#x90A3;&#x4E48; JVM &#x5C31;&#x4E0D;&#x9700;&#x8981;&#x6267;&#x884C; GC&#xFF0C;DirectByteBuffer &#x5BF9;&#x8C61;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#xFF0C;&#x8FD9;&#x65F6;&#x867D;&#x7136;&#x5806;&#x5185;&#x5B58;&#x5145;&#x8DB3;&#xFF0C;&#x4F46;&#x672C;&#x5730;&#x5185;&#x5B58;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x4E0D;&#x591F;&#x7528;&#x4E86;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0; OOM&#xFF0C;<strong>&#x672C;&#x5730;&#x76F4;&#x63A5;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</strong>&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ *  VM Options&#xFF1A;-Xms10m,-Xmx10m,-XX:+PrintGCDetails -XX:MaxDirectMemorySize=5m
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DirectBufferMemoryDemo</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;maxDirectMemory is:&quot;</span>+sun.misc.VM.maxDirectMemory() / <span class="hljs-number">1024</span> / <span class="hljs-number">1024</span> + <span class="hljs-string">&quot;MB&quot;</span>);
+
+        <span class="hljs-comment">//ByteBuffer buffer = ByteBuffer.allocate(6*1024*1024);</span>
+        ByteBuffer buffer = ByteBuffer.allocateDirect(<span class="hljs-number">6</span>*<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>);
+
+    }
+}
+</code></pre>
+<p>&#x6700;&#x5927;&#x76F4;&#x63A5;&#x5185;&#x5B58;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x7535;&#x8111;&#x5185;&#x5B58;&#x7684; 1/4&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8BBE;&#x5C0F;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x5185;&#x5B58;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0; OOM&#x3002;</p>
+<pre><code>maxDirectMemory is:5MB
+Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Direct buffer memory
+</code></pre><h4 id="342-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="342-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#342-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.2 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<ol>
+<li>Java &#x53EA;&#x80FD;&#x901A;&#x8FC7; <code>ByteBuffer.allocateDirect</code> &#x65B9;&#x6CD5;&#x4F7F;&#x7528; Direct ByteBuffer&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Arthas &#x7B49;&#x5728;&#x7EBF;&#x8BCA;&#x65AD;&#x5DE5;&#x5177;&#x62E6;&#x622A;&#x8BE5;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6392;&#x67E5;</li>
+<li>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x4F7F;&#x7528;&#x4E86; NIO&#xFF0C;&#x5982; netty&#xFF0C;jetty &#x7B49;</li>
+<li>&#x901A;&#x8FC7;&#x542F;&#x52A8;&#x53C2;&#x6570; <code>-XX:MaxDirectMemorySize</code> &#x8C03;&#x6574; Direct ByteBuffer &#x7684;&#x4E0A;&#x9650;&#x503C;</li>
+<li>&#x68C0;&#x67E5; JVM &#x53C2;&#x6570;&#x662F;&#x5426;&#x6709; <code>-XX:+DisableExplicitGC</code> &#x9009;&#x9879;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5C31;&#x53BB;&#x6389;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x53C2;&#x6570;&#x4F1A;&#x4F7F; <code>System.gc()</code> &#x5931;&#x6548;</li>
+<li>&#x68C0;&#x67E5;&#x5806;&#x5916;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x4EE3;&#x7801;&#xFF0C;&#x786E;&#x8BA4;&#x662F;&#x5426;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF1B;&#x6216;&#x8005;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x8C03;&#x7528; <code>sun.misc.Cleaner</code> &#x7684; <code>clean()</code> &#x65B9;&#x6CD5;&#x6765;&#x4E3B;&#x52A8;&#x91CA;&#x653E;&#x88AB; Direct ByteBuffer &#x6301;&#x6709;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;</li>
+<li>&#x5185;&#x5B58;&#x5BB9;&#x91CF;&#x786E;&#x5B9E;&#x4E0D;&#x8DB3;&#xFF0C;&#x5347;&#x7EA7;&#x914D;&#x7F6E;</li>
+</ol>
+<h3 id="35&#x3001;unable-to-create-new-native-thread"><a name="35&#x3001;unable-to-create-new-native-thread" class="anchor-navigation-ex-anchor" href="#35&#x3001;unable-to-create-new-native-thread"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. 3.5&#x3001;Unable to create new native thread</h3>
+<p>&#x6BCF;&#x4E2A; Java &#x7EBF;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x5360;&#x7528;&#x4E00;&#x5B9A;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x5F53; JVM &#x5411;&#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; native &#x7EBF;&#x7A0B;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x5C31;&#x4F1A;&#x62A5;&#x6B64;&#x7C7B;&#x9519;&#x8BEF;&#x3002;</p>
+<h4 id="351-&#x5199;&#x4E2A;-bug"><a name="351-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#351-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.5.1 &#x5199;&#x4E2A; bug</h4>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+  <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+    <span class="hljs-keyword">new</span> Thread(() -&gt; {
+      <span class="hljs-keyword">try</span> {
+        Thread.sleep(Integer.MAX_VALUE);
+      } <span class="hljs-keyword">catch</span>(InterruptedException e) { }
+    }).start();
+  }
+}
+Error occurred during initialization of VM java.lang.OutOfMemoryError: unable to create <span class="hljs-keyword">new</span> <span class="hljs-keyword">native</span> thread
+</code></pre>
+<h4 id="352-&#x539F;&#x56E0;&#x5206;&#x6790;"><a name="352-&#x539F;&#x56E0;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#352-&#x539F;&#x56E0;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>3.5.2 &#x539F;&#x56E0;&#x5206;&#x6790;</h4>
+<p><img src="media/007S8ZIlly1ggg8qlm7f0j30jg066gly.jpg" alt="img"></p>
+<p>JVM &#x5411; OS &#x8BF7;&#x6C42;&#x521B;&#x5EFA; native &#x7EBF;&#x7A0B;&#x5931;&#x8D25;&#xFF0C;&#x5C31;&#x4F1A;&#x629B;&#x51FA; <code>Unableto createnewnativethread</code>&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x539F;&#x56E0;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x7EBF;&#x7A0B;&#x6570;&#x8D85;&#x8FC7;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x9650;&#x5236;&#xFF08;&#x548C;&#x5E73;&#x53F0;&#x6709;&#x5173;&#xFF09;</li>
+<li>&#x7EBF;&#x7A0B;&#x6570;&#x8D85;&#x8FC7; kernel.pid_max&#xFF08;&#x53EA;&#x80FD;&#x91CD;&#x542F;&#xFF09;</li>
+<li>native &#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#xFF1B;&#x8BE5;&#x95EE;&#x9898;&#x53D1;&#x751F;&#x7684;&#x5E38;&#x89C1;&#x8FC7;&#x7A0B;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x6B65;&#xFF1A;<ol>
+<li>JVM &#x5185;&#x90E8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Java &#x7EBF;&#x7A0B;&#xFF1B;</li>
+<li>JVM native &#x65B9;&#x6CD5;&#x4EE3;&#x7406;&#x4E86;&#x8BE5;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x5E76;&#x5411;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; native &#x7EBF;&#x7A0B;&#xFF1B;</li>
+<li>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C1D;&#x8BD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; native &#x7EBF;&#x7A0B;&#xFF0C;&#x5E76;&#x4E3A;&#x5176;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x5DF2;&#x8017;&#x5C3D;&#xFF0C;&#x6216;&#x662F;&#x53D7;&#x5230; 32 &#x4F4D;&#x8FDB;&#x7A0B;&#x7684;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x9650;&#x5236;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C31;&#x4F1A;&#x62D2;&#x7EDD;&#x672C;&#x6B21; native &#x5185;&#x5B58;&#x5206;&#x914D;&#xFF1B;</li>
+<li>JVM &#x5C06;&#x629B;&#x51FA; <code>java.lang.OutOfMemoryError:Unableto createnewnativethread</code> &#x9519;&#x8BEF;&#x3002;</li>
+</ol>
+</li>
+</ul>
+<h4 id="353-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="353-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#353-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.5.3 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<ol>
+<li>&#x60F3;&#x529E;&#x6CD5;&#x964D;&#x4F4E;&#x7A0B;&#x5E8F;&#x4E2D;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x5206;&#x6790;&#x5E94;&#x7528;&#x662F;&#x5426;&#x771F;&#x7684;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x8FD9;&#x4E48;&#x591A;&#x7EBF;&#x7A0B;</li>
+<li>&#x5982;&#x679C;&#x786E;&#x5B9E;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x5F88;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8C03;&#x9AD8; OS &#x5C42;&#x9762;&#x7684;&#x7EBF;&#x7A0B;&#x6700;&#x5927;&#x6570;&#xFF1A;&#x6267;&#x884C; <code>ulimia-a</code> &#x67E5;&#x770B;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x9650;&#x5236;&#xFF0C;&#x4F7F;&#x7528; <code>ulimit-u xxx</code> &#x8C03;&#x6574;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x9650;&#x5236;</li>
+</ol>
+<h3 id="36-metaspace"><a name="36-metaspace" class="anchor-navigation-ex-anchor" href="#36-metaspace"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.6. 3.6 Metaspace</h3>
+<p>JDK 1.8 &#x4E4B;&#x524D;&#x4F1A;&#x51FA;&#x73B0; Permgen space&#xFF0C;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;&#x6C38;&#x4E45;&#x4EE3;&#xFF08;Permanent Generation&#xFF09;&#x5DF2;&#x7528;&#x6EE1;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x56E0;&#x4E3A;&#x52A0;&#x8F7D;&#x7684; class &#x6570;&#x76EE;&#x592A;&#x591A;&#x6216;&#x4F53;&#x79EF;&#x592A;&#x5927;&#x3002;&#x968F;&#x7740; 1.8 &#x4E2D;&#x6C38;&#x4E45;&#x4EE3;&#x7684;&#x53D6;&#x6D88;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x5F02;&#x5E38;&#x4E86;&#x3002;</p>
+<p>Metaspace &#x662F;&#x65B9;&#x6CD5;&#x533A;&#x5728; HotSpot &#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x4E0E;&#x6C38;&#x4E45;&#x4EE3;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5143;&#x7A7A;&#x95F4;&#x5E76;&#x4E0D;&#x5728;&#x865A;&#x62DF;&#x673A;&#x5185;&#x5B58;&#x4E2D;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5185;&#x5B58;&#xFF0C;&#x4F46;&#x662F;&#x672C;&#x5730;&#x5185;&#x5B58;&#x4E5F;&#x6709;&#x6253;&#x6EE1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x4F1A;&#x6709;&#x5F02;&#x5E38;&#x3002;</p>
+<h4 id="361-&#x5199;&#x4E2A;-bug"><a name="361-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#361-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.6.1 &#x5199;&#x4E2A; bug</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * JVM Options: -XX:MetaspaceSize=10m -XX:MaxMetaspaceSize=10m
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MetaspaceOOMDemo</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+            Enhancer enhancer = <span class="hljs-keyword">new</span> Enhancer();
+            enhancer.setSuperclass(MetaspaceOOMDemo.class);
+            enhancer.setUseCache(<span class="hljs-keyword">false</span>);
+            enhancer.setCallback((MethodInterceptor) (o, method, objects, methodProxy) -&gt; {
+                <span class="hljs-comment">//&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</span>
+                <span class="hljs-keyword">return</span> methodProxy.invokeSuper(o, objects);
+            });
+            enhancer.create();
+        }
+    }
+}
+</code></pre>
+<p>&#x501F;&#x52A9; Spring &#x7684; GCLib &#x5B9E;&#x73B0;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</p>
+<pre><code>Exception in thread &quot;main&quot; org.springframework.cglib.core.CodeGenerationException: java.lang.OutOfMemoryError--&gt;Metaspace
+</code></pre><h4 id="362-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="362-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#362-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.6.2 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<p>&#x65B9;&#x6CD5;&#x533A;&#x6EA2;&#x51FA;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5728;&#x7ECF;&#x5E38;&#x8FD0;&#x884C;&#x65F6;&#x751F;&#x6210;&#x5927;&#x91CF;&#x52A8;&#x6001;&#x7C7B;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x7279;&#x522B;&#x5173;&#x6CE8;&#x8FD9;&#x4E9B;&#x7C7B;&#x7684;&#x56DE;&#x6536;&#x60C5;&#x51B5;&#x3002;&#x8FD9;&#x7C7B;&#x573A;&#x666F;&#x9664;&#x4E86;&#x4E0A;&#x8FB9;&#x7684; GCLib &#x5B57;&#x8282;&#x7801;&#x589E;&#x5F3A;&#x548C;&#x52A8;&#x6001;&#x8BED;&#x8A00;&#x5916;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x8FD8;&#x6709;&#xFF0C;&#x5927;&#x91CF; JSP &#x6216;&#x52A8;&#x6001;&#x4EA7;&#x751F; JSP &#x6587;&#x4EF6;&#x7684;&#x5E94;&#x7528;&#xFF08;&#x8FDC;&#x53E4;&#x65F6;&#x4EE3;&#x7684;&#x4F20;&#x7EDF;&#x8F6F;&#x4EF6;&#x884C;&#x4E1A;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#xFF09;&#x3001;&#x57FA;&#x4E8E; OSGi &#x7684;&#x5E94;&#x7528;&#xFF08;&#x5373;&#x4F7F;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x6587;&#x4EF6;&#xFF0C;&#x88AB;&#x4E0D;&#x540C;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x52A0;&#x8F7D;&#x4E5F;&#x4F1A;&#x89C6;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#xFF09;&#x7B49;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x533A;&#x5728; JDK8 &#x4E2D;&#x4E00;&#x822C;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#xFF0C;HotSpot &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#x6765;&#x8BBE;&#x7F6E;&#x5143;&#x7A7A;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x8D77;&#x5230;&#x9884;&#x9632;&#x4F5C;&#x7528;</p>
+<ul>
+<li><code>-XX:MaxMetaspaceSize</code> &#x8BBE;&#x7F6E;&#x5143;&#x7A7A;&#x95F4;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; -1&#xFF0C;&#x8868;&#x793A;&#x4E0D;&#x9650;&#x5236;&#xFF08;&#x8FD8;&#x662F;&#x8981;&#x53D7;&#x672C;&#x5730;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x9650;&#x5236;&#x7684;&#xFF09;</li>
+<li><code>-XX:MetaspaceSize</code> &#x6307;&#x5B9A;&#x5143;&#x7A7A;&#x95F4;&#x7684;&#x521D;&#x59CB;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x8FBE;&#x5230;&#x8BE5;&#x503C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1; GC &#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x5378;&#x8F7D;&#xFF0C;&#x540C;&#x65F6;&#x6536;&#x96C6;&#x5668;&#x4F1A;&#x5BF9;&#x8BE5;&#x503C;&#x8FDB;&#x884C;&#x8C03;&#x6574;</li>
+<li><code>-XX:MinMetaspaceFreeRatio</code> &#x5728; GC &#x4E4B;&#x540E;&#x63A7;&#x5236;&#x6700;&#x5C0F;&#x7684;&#x5143;&#x7A7A;&#x95F4;&#x5269;&#x4F59;&#x5BB9;&#x91CF;&#x7684;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x53EF;&#x51CF;&#x5C11;&#x56E0;&#x5143;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#x5BFC;&#x81F4;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;&#x9891;&#x7387;&#xFF0C;&#x7C7B;&#x4F3C;&#x7684;&#x8FD8;&#x6709; <code>MaxMetaspaceFreeRatio</code></li>
+</ul>
+<h3 id="37-requested-array-size-exceeds-vm-limit"><a name="37-requested-array-size-exceeds-vm-limit" class="anchor-navigation-ex-anchor" href="#37-requested-array-size-exceeds-vm-limit"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.7. 3.7 Requested array size exceeds VM limit</h3>
+<h4 id="371-&#x5199;&#x4E2A;-bug"><a name="371-&#x5199;&#x4E2A;-bug" class="anchor-navigation-ex-anchor" href="#371-&#x5199;&#x4E2A;-bug"><i class="fa fa-link" aria-hidden="true"></i></a>3.7.1 &#x5199;&#x4E2A; bug</h4>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+  <span class="hljs-keyword">int</span>[] arr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[Integer.MAX_VALUE];
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x5EFA;&#x4E2A;&#x8D85;&#x7EA7;&#x5927;&#x6570;&#x7EC4;&#x5C31;&#x4F1A;&#x51FA;&#x73B0; OOM&#xFF0C;&#x4E0D;&#x591A;&#x8BF4;&#x4E86;</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+</code></pre><p>JVM &#x9650;&#x5236;&#x4E86;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x7EC4;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x9650;&#x5236;&#x3002;</p>
+<p>JVM &#x5728;&#x4E3A;&#x6570;&#x7EC4;&#x5206;&#x914D;&#x5185;&#x5B58;&#x524D;&#xFF0C;&#x4F1A;&#x68C0;&#x67E5;&#x8981;&#x5206;&#x914D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x662F;&#x5426;&#x53EF;&#x5BFB;&#x5740;&#xFF0C;&#x901A;&#x5E38;&#x4E3A; <code>Integer.MAX_VALUE-2</code>&#x3002;</p>
+<p>&#x6B64;&#x7C7B;&#x95EE;&#x9898;&#x6BD4;&#x8F83;&#x7F55;&#x89C1;&#xFF0C;&#x901A;&#x5E38;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#xFF0C;&#x786E;&#x8BA4;&#x4E1A;&#x52A1;&#x662F;&#x5426;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x5982;&#x6B64;&#x5927;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x62C6;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x5757;&#xFF0C;&#x5206;&#x6279;&#x6267;&#x884C;&#x3002;</p>
+<h3 id="38-out-of-swap-space"><a name="38-out-of-swap-space" class="anchor-navigation-ex-anchor" href="#38-out-of-swap-space"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.8. 3.8 Out of swap space</h3>
+<p>&#x542F;&#x52A8; Java &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F1A;&#x5206;&#x914D;&#x6709;&#x9650;&#x7684;&#x5185;&#x5B58;&#x3002;&#x6B64;&#x9650;&#x5236;&#x662F;&#x901A;&#x8FC7;-Xmx&#x548C;&#x5176;&#x4ED6;&#x7C7B;&#x4F3C;&#x7684;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x5728; JVM &#x8BF7;&#x6C42;&#x7684;&#x603B;&#x5185;&#x5B58;&#x5927;&#x4E8E;&#x53EF;&#x7528;&#x7269;&#x7406;&#x5185;&#x5B58;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5F00;&#x59CB;&#x5C06;&#x5185;&#x5BB9;&#x4ECE;&#x5185;&#x5B58;&#x6362;&#x51FA;&#x5230;&#x786C;&#x76D8;&#x9A71;&#x52A8;&#x5668;&#x3002;</p>
+<p><img src="media/007S8ZIlly1gggbbrbgj2j30jg066t8k.jpg" alt="img"></p>
+<p>&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;&#x6240;&#x6709;&#x53EF;&#x7528;&#x7684;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x5DF2;&#x88AB;&#x8017;&#x5C3D;&#x3002;&#x865A;&#x62DF;&#x5185;&#x5B58;&#xFF08;Virtual Memory&#xFF09;&#x7531;&#x7269;&#x7406;&#x5185;&#x5B58;&#xFF08;Physical Memory&#xFF09;&#x548C;&#x4EA4;&#x6362;&#x7A7A;&#x95F4;&#xFF08;Swap Space&#xFF09;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x9519;&#x8BEF;&#x6CA1;&#x89C1;&#x8FC7;~~~</p>
+<p><img src="media/007S8ZIlly1gggbg03x7ug308c08cgn0.gif" alt="img"></p>
+<h3 id="39-kill-process-or-sacrifice-child"><a name="39-kill-process-or-sacrifice-child" class="anchor-navigation-ex-anchor" href="#39-kill-process-or-sacrifice-child"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.9. 3.9 Kill process or sacrifice child</h3>
+<p>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F;&#x5EFA;&#x7ACB;&#x5728;&#x6D41;&#x7A0B;&#x6982;&#x5FF5;&#x4E4B;&#x4E0A;&#x7684;&#x3002;&#x8FD9;&#x4E9B;&#x8FDB;&#x7A0B;&#x7531;&#x51E0;&#x4E2A;&#x5185;&#x6838;&#x4F5C;&#x4E1A;&#x8D1F;&#x8D23;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;&#x201C; Out of memory Killer&#x201D;&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x6781;&#x4F4E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x201C;&#x6740;&#x6B7B;&#x201D;&#xFF08;kill&#xFF09;&#x67D0;&#x4E9B;&#x8FDB;&#x7A0B;&#x3002;OOM Killer &#x4F1A;&#x5BF9;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x8FDB;&#x884C;&#x6253;&#x5206;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8BC4;&#x5206;&#x8F83;&#x4F4E;&#x7684;&#x8FDB;&#x7A0B;&#x201C;&#x6740;&#x6B7B;&#x201D;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x8BC4;&#x5206;&#x89C4;&#x5219;&#x53EF;&#x4EE5;&#x53C2;&#x8003; Surviving the Linux OOM Killer&#x3002;</p>
+<p>&#x4E0D;&#x540C;&#x4E8E;&#x5176;&#x4ED6;&#x7684; OOM &#x9519;&#x8BEF;&#xFF0C; <code>Killprocessorsacrifice child</code> &#x9519;&#x8BEF;&#x4E0D;&#x662F;&#x7531; JVM &#x5C42;&#x9762;&#x89E6;&#x53D1;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C42;&#x9762;&#x89E6;&#x53D1;&#x7684;&#x3002;</p>
+<h4 id="391-&#x539F;&#x56E0;&#x5206;&#x6790;"><a name="391-&#x539F;&#x56E0;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#391-&#x539F;&#x56E0;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>3.9.1 &#x539F;&#x56E0;&#x5206;&#x6790;</h4>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Linux &#x5185;&#x6838;&#x5141;&#x8BB8;&#x8FDB;&#x7A0B;&#x7533;&#x8BF7;&#x7684;&#x5185;&#x5B58;&#x603B;&#x91CF;&#x5927;&#x4E8E;&#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x5185;&#x5B58;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x201C;&#x9519;&#x5CF0;&#x590D;&#x7528;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x66F4;&#x6709;&#x6548;&#x7684;&#x5229;&#x7528;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E5F;&#x4F1A;&#x65E0;&#x53EF;&#x907F;&#x514D;&#x5730;&#x5E26;&#x6765;&#x4E00;&#x5B9A;&#x7684;&#x201C;&#x8D85;&#x5356;&#x201D;&#x98CE;&#x9669;&#x3002;&#x4F8B;&#x5982;&#x67D0;&#x4E9B;&#x8FDB;&#x7A0B;&#x6301;&#x7EED;&#x5360;&#x7528;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#xFF0C;&#x7136;&#x540E;&#x5BFC;&#x81F4;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x81EA;&#x52A8;&#x6FC0;&#x6D3B; OOM Killer&#xFF0C;&#x5BFB;&#x627E;&#x8BC4;&#x5206;&#x4F4E;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x201C;&#x6740;&#x6B7B;&#x201D;&#xFF0C;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x3002;</p>
+<h4 id="392-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="392-&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#392-&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>3.9.2 &#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
+<ul>
+<li>&#x5347;&#x7EA7;&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;/&#x9694;&#x79BB;&#x90E8;&#x7F72;&#xFF0C;&#x907F;&#x514D;&#x4E89;&#x7528;</li>
+<li>OOM Killer &#x8C03;&#x4F18;&#x3002;</li>
+</ul>
+<p>&#x6700;&#x540E;&#x9644;&#x4E0A;&#x4E00;&#x5F20;&#x201C;&#x6DAF;&#x6D77;&#x201D;&#x5927;&#x795E;&#x7684;&#x56FE;</p>
+<p><img src="media/007S8ZIlly1gggc8i8yk4j31qo0te49o.jpg" alt="&#x6DAF;&#x6D77;"></p>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/lazyegg/p/13353474.html" target="_blank">10&#x79CD;&#x5E38;&#x89C1;OOM&#x5206;&#x6790;&#x2014;&#x2014;&#x624B;&#x628A;&#x624B;&#x6559;&#x4F60;&#x5199;bug</a></li>
+<li>&#x300A;&#x6DF1;&#x5165;&#x7406;&#x89E3; Java &#x865A;&#x62DF;&#x673A; &#x7B2C; 3 &#x7248;&#x300B;</li>
+<li><a href="https://plumbr.io/outofmemoryerror" target="_blank">https://plumbr.io/outofmemoryerror</a></li>
+<li><a href="https://yq.aliyun.com/articles/711191" target="_blank">https://yq.aliyun.com/articles/711191</a></li>
+<li><a href="https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception" target="_blank">https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tracyliu-FE 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-03-19 23:21:01
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="22.数据结构选择优化.html" class="navigation navigation-prev " aria-label="Previous page: 22.数据结构选择优化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="24.Trace.html" class="navigation navigation-next " aria-label="Next page: 24.Trace">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"23.OutOfMemoryError","level":"1.9.17","depth":2,"next":{"title":"24.Trace","level":"1.9.18","depth":2,"path":"Performance/24.Trace.md","ref":"Performance/24.Trace.md","articles":[]},"previous":{"title":"22.数据结构选择优化","level":"1.9.16","depth":2,"path":"Performance/22.数据结构选择优化.md","ref":"Performance/22.数据结构选择优化.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"Performance/23.OutOfMemoryError.md","mtime":"2021-03-19T15:21:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-24T07:11:48.594Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
