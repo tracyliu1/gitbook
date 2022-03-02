@@ -1,0 +1,2292 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>14.线程优化 · 知识总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="15.Apk包大小优化.html" />
+    
+    
+    <link rel="prev" href="13.Bitmap优化.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Algorithmic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                <a href="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                    
+                    BinarySearch 二分法查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Algorithmic/Sort.html">
+            
+                <a href="../Algorithmic/Sort.html">
+            
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                <a href="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                    
+                    Stack-用两个栈实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                <a href="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                    
+                    String-手写一个字符串翻转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Algorithmic/二叉树.html">
+            
+                <a href="../Algorithmic/二叉树.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Algorithmic/数组单独的数.html">
+            
+                <a href="../Algorithmic/数组单独的数.html">
+            
+                    
+                    数组单独的数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Algorithmic/数组实现队列.html">
+            
+                <a href="../Algorithmic/数组实现队列.html">
+            
+                    
+                    数组实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Algorithmic/生产者消费者模型.html">
+            
+                <a href="../Algorithmic/生产者消费者模型.html">
+            
+                    
+                    生产者消费者模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Algorithmic/链表.html">
+            
+                <a href="../Algorithmic/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Android
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Android/1-01.组件-Activity.html">
+            
+                <a href="../Android/1-01.组件-Activity.html">
+            
+                    
+                    1-01.组件-Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Android/1-02.组件-Service.html">
+            
+                <a href="../Android/1-02.组件-Service.html">
+            
+                    
+                    1-02.组件-Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Android/1-03.组件-BroadCast.html">
+            
+                <a href="../Android/1-03.组件-BroadCast.html">
+            
+                    
+                    1-03.组件-BroadCast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Android/1-04.组件-ContentProvider.html">
+            
+                <a href="../Android/1-04.组件-ContentProvider.html">
+            
+                    
+                    1-04.组件-ContentProvider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Android/1-05.组件-Fragment.html">
+            
+                <a href="../Android/1-05.组件-Fragment.html">
+            
+                    
+                    1-05.组件-Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Android/2-01.Binder.html">
+            
+                <a href="../Android/2-01.Binder.html">
+            
+                    
+                    2-01.Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Android/2-02.Context.html">
+            
+                <a href="../Android/2-02.Context.html">
+            
+                    
+                    2-02.Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Android/2-03.framework-Android消息机制.html">
+            
+                <a href="../Android/2-03.framework-Android消息机制.html">
+            
+                    
+                    2-03.framework-Android消息机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../Android/2-04.IdleHandler.html">
+            
+                <a href="../Android/2-04.IdleHandler.html">
+            
+                    
+                    2-04.IdleHandler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../Android/2-05.多线程模型.html">
+            
+                <a href="../Android/2-05.多线程模型.html">
+            
+                    
+                    2-05.多线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../Android/3-01.View-绘制流程.html">
+            
+                <a href="../Android/3-01.View-绘制流程.html">
+            
+                    
+                    3-01.View-绘制流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../Android/3-02.View-事件分发.html">
+            
+                <a href="../Android/3-02.View-事件分发.html">
+            
+                    
+                    3-02.View-事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../Android/3-03.View-面试题.html">
+            
+                <a href="../Android/3-03.View-面试题.html">
+            
+                    
+                    3-03.View-面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../Android/3-04.自定义view CustomView.html">
+            
+                <a href="../Android/3-04.自定义view CustomView.html">
+            
+                    
+                    3-04.自定义view CustomView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../Android/Android概述.html">
+            
+                <a href="../Android/Android概述.html">
+            
+                    
+                    Android概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../Android/Binder IPC.html">
+            
+                <a href="../Android/Binder IPC.html">
+            
+                    
+                    Binder IPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Android Kernel
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Android kernel/Android系统分区.html">
+            
+                <a href="../Android kernel/Android系统分区.html">
+            
+                    
+                    Android系统分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Android kernel/Linux基础.html">
+            
+                <a href="../Android kernel/Linux基础.html">
+            
+                    
+                    Linux基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Android kernel/Zram.html">
+            
+                <a href="../Android kernel/Zram.html">
+            
+                    
+                    Zram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Android kernel/安全.html">
+            
+                <a href="../Android kernel/安全.html">
+            
+                    
+                    安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Debug
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Debug/ADB.html">
+            
+                <a href="../Debug/ADB.html">
+            
+                    
+                    ADB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Debug/binder_sample日志.html">
+            
+                <a href="../Debug/binder_sample日志.html">
+            
+                    
+                    binder_sample日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Debug/Systrace.html">
+            
+                <a href="../Debug/Systrace.html">
+            
+                    
+                    Systrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Debug/Tombstone.html">
+            
+                <a href="../Debug/Tombstone.html">
+            
+                    
+                    Tombstone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Debug/Untitled.md">
+            
+                <span>
+            
+                    
+                    Untitled
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Debug/制作开机动画.html">
+            
+                <a href="../Debug/制作开机动画.html">
+            
+                    
+                    制作开机动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Frame Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../FrameWork/Activity finish(">
+            
+                <span>
+            
+                    
+                    Activity Finish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../FrameWork/AMS_kill.md">
+            
+                <span>
+            
+                    
+                    AMS Kill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../FrameWork/AMS_OnTrimMemory.md">
+            
+                <span>
+            
+                    
+                    AMS On Trim Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../FrameWork/AMS_watchDog.md">
+            
+                <span>
+            
+                    
+                    AMS Watch Dog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../FrameWork/Android内存回收.md">
+            
+                <span>
+            
+                    
+                    Android内存回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../FrameWork/Anroid 权限 .md">
+            
+                <span>
+            
+                    
+                    Anroid 权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../FrameWork/ANR分析.html">
+            
+                <a href="../FrameWork/ANR分析.html">
+            
+                    
+                    ANR分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../FrameWork/apk打包.html">
+            
+                <a href="../FrameWork/apk打包.html">
+            
+                    
+                    apk打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../FrameWork/AppOps权限 .html">
+            
+                <a href="../FrameWork/AppOps权限 .html">
+            
+                    
+                    AppOps权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../FrameWork/Audio Device Strategy 音频设备 输入选择 7.0.md">
+            
+                <span>
+            
+                    
+                    Audio Device Strategy 音频设备 输入选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../FrameWork/Audio Device Strategy 音频设备输入 输入出 选择 7.0.md">
+            
+                <span>
+            
+                    
+                    Audio Device Strategy 音频设备输入 输入出 选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../FrameWork/build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                <a href="../FrameWork/build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                    
+                    build.prop system.prop default.prop 与 SystemProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../FrameWork/image.html">
+            
+                <a href="../FrameWork/image.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../FrameWork/makefile.html">
+            
+                <a href="../FrameWork/makefile.html">
+            
+                    
+                    Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../FrameWork/MediaPlayer 播放流程.html">
+            
+                <a href="../FrameWork/MediaPlayer 播放流程.html">
+            
+                    
+                    MediaPlayer 播放流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../FrameWork/minicom 串口调试.md">
+            
+                <span>
+            
+                    
+                    minicom 串口调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../FrameWork/OTA.html">
+            
+                <a href="../FrameWork/OTA.html">
+            
+                    
+                    OTA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../FrameWork/PhoneWindowManager需求处理.html">
+            
+                <a href="../FrameWork/PhoneWindowManager需求处理.html">
+            
+                    
+                    PhoneWindowManager需求处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../FrameWork/PKMS_安装流程.html">
+            
+                <a href="../FrameWork/PKMS_安装流程.html">
+            
+                    
+                    PKMS_安装流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../FrameWork/Root su权限.html">
+            
+                <a href="../FrameWork/Root su权限.html">
+            
+                    
+                    Root su权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../FrameWork/WMS_ViewRootImpl.html">
+            
+                <a href="../FrameWork/WMS_ViewRootImpl.html">
+            
+                    
+                    WMS View Root Impl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="../FrameWork/WMS_窗口加载.html">
+            
+                <a href="../FrameWork/WMS_窗口加载.html">
+            
+                    
+                    WMS_窗口加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="../FrameWork/WMS工作原理.html">
+            
+                <a href="../FrameWork/WMS工作原理.html">
+            
+                    
+                    WMS工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.24" data-path="../FrameWork/定屏分析.html">
+            
+                <a href="../FrameWork/定屏分析.html">
+            
+                    
+                    定屏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.25" data-path="../FrameWork/开机流程.html">
+            
+                <a href="../FrameWork/开机流程.html">
+            
+                    
+                    开机流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="../FrameWork/沙箱机制.html">
+            
+                <a href="../FrameWork/沙箱机制.html">
+            
+                    
+                    沙箱机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="../FrameWork/系统编译.html">
+            
+                <a href="../FrameWork/系统编译.html">
+            
+                    
+                    系统编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.28" data-path="../FrameWork/系统裁剪.html">
+            
+                <a href="../FrameWork/系统裁剪.html">
+            
+                    
+                    系统裁剪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.29" data-path="../FrameWork/进程启动.html">
+            
+                <a href="../FrameWork/进程启动.html">
+            
+                    
+                    进程启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    1-01.java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                <a href="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                    
+                    1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Java/1-04.Java类加载.html">
+            
+                <a href="../Java/1-04.Java类加载.html">
+            
+                    
+                    1-04.Java类加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Java/1-05.Java GC 垃圾回收.html">
+            
+                <a href="../Java/1-05.Java GC 垃圾回收.html">
+            
+                    
+                    1-05.Java GC 垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Java/1-06.接口、抽象类.html">
+            
+                <a href="../Java/1-06.接口、抽象类.html">
+            
+                    
+                    1-06.接口、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                <a href="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                    
+                    1-07.Java 动态代理 静态代理.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Java/1-08.Java反射.html">
+            
+                <a href="../Java/1-08.Java反射.html">
+            
+                    
+                    1-08.Java反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../Java/1-09.java 异常.html">
+            
+                <a href="../Java/1-09.java 异常.html">
+            
+                    
+                    1-09.java 异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../Java/2-01.锁.html">
+            
+                <a href="../Java/2-01.锁.html">
+            
+                    
+                    2-01.锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../Java/2-02.Volatile.html">
+            
+                <a href="../Java/2-02.Volatile.html">
+            
+                    
+                    2-02.Volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../Java/2-03.Synchronized.html">
+            
+                <a href="../Java/2-03.Synchronized.html">
+            
+                    
+                    2-03.Synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                <a href="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                    
+                    2-04-1.线程分类、状态、创建、阻塞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../Java/2-04-2.线程中断.html">
+            
+                <a href="../Java/2-04-2.线程中断.html">
+            
+                    
+                    2-04-2.线程中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../Java/2-04-3.线程间协作.html">
+            
+                <a href="../Java/2-04-3.线程间协作.html">
+            
+                    
+                    2-04-3.线程间协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../Java/2-05.线程池.html">
+            
+                <a href="../Java/2-05.线程池.html">
+            
+                    
+                    2-05.线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../Java/2-06.ThreadLocal.html">
+            
+                <a href="../Java/2-06.ThreadLocal.html">
+            
+                    
+                    2-06.ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../Java/3-01.Java 容器.html">
+            
+                <a href="../Java/3-01.Java 容器.html">
+            
+                    
+                    3-01.Java 容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../Java/3-02.设计模式.html">
+            
+                <a href="../Java/3-02.设计模式.html">
+            
+                    
+                    3-02.设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Net
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Net/3-01.底层网络协议.html">
+            
+                <a href="../Net/3-01.底层网络协议.html">
+            
+                    
+                    3-01.底层网络协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Net/3-02.OSI模型.html">
+            
+                <a href="../Net/3-02.OSI模型.html">
+            
+                    
+                    3-02.OSI模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Net/3-03.TCP UDP.html">
+            
+                <a href="../Net/3-03.TCP UDP.html">
+            
+                    
+                    3-03.TCP UDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Net/3-04.HTTP.html">
+            
+                <a href="../Net/3-04.HTTP.html">
+            
+                    
+                    3-04.HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                <a href="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                    
+                    3-05.HTTP描述一次网络请求的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Net/3-06.HTTPS.html">
+            
+                <a href="../Net/3-06.HTTPS.html">
+            
+                    
+                    3-06.HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="0.概论.html">
+            
+                <a href="0.概论.html">
+            
+                    
+                    0.概论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="1.Android优化大全.html">
+            
+                <a href="1.Android优化大全.html">
+            
+                    
+                    1.Android优化大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="10.ANR.html">
+            
+                <a href="10.ANR.html">
+            
+                    
+                    10.ANR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="11.启动优化.html">
+            
+                <a href="11.启动优化.html">
+            
+                    
+                    11.启动优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="12.布局优化.html">
+            
+                <a href="12.布局优化.html">
+            
+                    
+                    12.布局优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="13.Bitmap优化.html">
+            
+                <a href="13.Bitmap优化.html">
+            
+                    
+                    13.Bitmap优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.7" data-path="14.线程优化.html">
+            
+                <a href="14.线程优化.html">
+            
+                    
+                    14.线程优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="15.Apk包大小优化.html">
+            
+                <a href="15.Apk包大小优化.html">
+            
+                    
+                    15.Apk包大小优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="16.LruCache.html">
+            
+                <a href="16.LruCache.html">
+            
+                    
+                    16.LruCache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="17.WebView缓存优化.html">
+            
+                <a href="17.WebView缓存优化.html">
+            
+                    
+                    17.WebView缓存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="18.电量优化.html">
+            
+                <a href="18.电量优化.html">
+            
+                    
+                    18.电量优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="19.mmap + native 日志优化.html">
+            
+                <a href="19.mmap + native 日志优化.html">
+            
+                    
+                    19.mmap + native 日志优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="2.优化参考资料.html">
+            
+                <a href="2.优化参考资料.html">
+            
+                    
+                    2.优化参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="20.IO优化、mmkv原理.html">
+            
+                <a href="20.IO优化、mmkv原理.html">
+            
+                    
+                    20.IO优化、mmkv原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="21.Bug分析.html">
+            
+                <a href="21.Bug分析.html">
+            
+                    
+                    21.Bug分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="22.数据结构选择优化.html">
+            
+                <a href="22.数据结构选择优化.html">
+            
+                    
+                    22.数据结构选择优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.17" data-path="23.OutOfMemoryError.html">
+            
+                <a href="23.OutOfMemoryError.html">
+            
+                    
+                    23.OutOfMemoryError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.18" data-path="24.Trace.html">
+            
+                <a href="24.Trace.html">
+            
+                    
+                    24.Trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.19" data-path="25.MAT使用.html">
+            
+                <a href="25.MAT使用.html">
+            
+                    
+                    25.MAT使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.20" data-path="26.UI卡顿分析.html">
+            
+                <a href="26.UI卡顿分析.html">
+            
+                    
+                    26.UI卡顿分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.21" data-path="27.网络优化.html">
+            
+                <a href="27.网络优化.html">
+            
+                    
+                    27.网络优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.22" data-path="28.崩溃优化.html">
+            
+                <a href="28.崩溃优化.html">
+            
+                    
+                    28.崩溃优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.23" data-path="3.内存模型管理及GC.html">
+            
+                <a href="3.内存模型管理及GC.html">
+            
+                    
+                    3.内存模型管理及GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.24" data-path="4.ART vs Dalvik.html">
+            
+                <a href="4.ART vs Dalvik.html">
+            
+                    
+                    4.ART vs Dalvik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.25" data-path="5.Android内存回收机制.html">
+            
+                <a href="5.Android内存回收机制.html">
+            
+                    
+                    5.Android内存回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.26" data-path="6.Low Memory Killer 机制.html">
+            
+                <a href="6.Low Memory Killer 机制.html">
+            
+                    
+                    6.Low Memory Killer 机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.27" data-path="7.内存优化工具.html">
+            
+                <a href="7.内存优化工具.html">
+            
+                    
+                    7.内存优化工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.28" data-path="8.内存性能测试.html">
+            
+                <a href="8.内存性能测试.html">
+            
+                    
+                    8.内存性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.29" data-path="9.内存问题及解决方案.html">
+            
+                <a href="9.内存问题及解决方案.html">
+            
+                    
+                    9.内存问题及解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >14.线程优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;"><b>1. </b>&#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E00;&#x3001;-&#x7EBF;&#x7A0B;&#x6C60;"><b>1.1. </b>&#x4E00;&#x3001; &#x7EBF;&#x7A0B;&#x6C60;</a></li><ul><li><span class="title-icon "></span><a href="#11-&#x5206;&#x7C7B;"><b>1.1.1. </b>1.1 &#x5206;&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#12-&#x4F18;&#x70B9;"><b>1.1.2. </b>1.2 &#x4F18;&#x70B9;</a></li><li><span class="title-icon "></span><a href="#13-&#x6CE8;&#x610F;&#x70B9;"><b>1.1.3. </b>1.3 &#x6CE8;&#x610F;&#x70B9;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E8C;&#x3001;-&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;"><b>1.2. </b>&#x4E8C;&#x3001; &#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;</a></li><ul><li><span class="title-icon "></span><a href="#21-&#x4E3B;&#x7EBF;&#x7A0B;"><b>1.2.1. </b>2.1 &#x4E3B;&#x7EBF;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#22-&#x7EBF;&#x7A0B;&#x548C;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x5F15;&#x7528;"><b>1.2.2. </b>2.2 &#x7EBF;&#x7A0B;&#x548C;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x5F15;&#x7528;</a></li><li><span class="title-icon "></span><a href="#23-&#x7EBF;&#x7A0B;&#x548C;&#x5E94;&#x7528;-activity-&#x751F;&#x547D;&#x5468;&#x671F;"><b>1.2.3. </b>2.3 &#x7EBF;&#x7A0B;&#x548C;&#x5E94;&#x7528; Activity &#x751F;&#x547D;&#x5468;&#x671F;</a></li><li><span class="title-icon "></span><a href="#24-&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x8F85;&#x52A9;&#x7C7B;"><b>1.2.4. </b>2.4 &#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x8F85;&#x52A9;&#x7C7B;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E09;&#x3001;-thread-&#x4F7F;&#x7528;"><b>1.3. </b>&#x4E09;&#x3001; Thread &#x4F7F;&#x7528;</a></li><ul><li><span class="title-icon "></span><a href="#31-thread-&#x4E2D;&#x65AD;"><b>1.3.1. </b>3.1 Thread &#x4E2D;&#x65AD;</a></li><li><span class="title-icon "></span><a href="#32-&#x540C;&#x6B65;"><b>1.3.2. </b>3.2 &#x540C;&#x6B65;</a></li></ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b>1.4. </b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#&#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 align="center" id="&#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;"><a name="&#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7EBF;&#x7A0B;&#x6C60;&#x4F18;&#x5316;</h1>
+
+<p>[toc]</p>
+<h2 id="&#x4E00;&#x3001;-&#x7EBF;&#x7A0B;&#x6C60;"><a name="&#x4E00;&#x3001;-&#x7EBF;&#x7A0B;&#x6C60;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;-&#x7EBF;&#x7A0B;&#x6C60;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4E00;&#x3001; &#x7EBF;&#x7A0B;&#x6C60;</h2>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x907F;&#x514D;&#x5B58;&#x5728;&#x5927;&#x91CF;&#x7684;Thread&#xFF0C;&#x91CD;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x5185;&#x90E8;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E86;&#x7EBF;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x5F00;&#x9500;&#xFF0C;&#x540C;&#x65F6;&#x80FD;&#x6709;&#x6548;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x6700;&#x5927;&#x5E76;&#x53D1;&#x6570;&#xFF0C;&#x907F;&#x514D;&#x5927;&#x91CF;&#x7EBF;&#x7A0B;&#x56E0;&#x4E92;&#x76F8;&#x62A2;&#x5360;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x800C;&#x5BFC;&#x81F4;&#x963B;&#x585E;&#x7EBF;&#x73B0;&#x8C61;&#x53D1;&#x751F;&#x3002;</p>
+<h3 id="11-&#x5206;&#x7C7B;"><a name="11-&#x5206;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#11-&#x5206;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. 1.1 &#x5206;&#x7C7B;</h3>
+<ul>
+<li>FixedThreadPool &#x6570;&#x91CF;&#x56FA;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;</li>
+<li>CachedThreadPool &#x53EA;&#x6709;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#xFF0C;&#x6570;&#x91CF;&#x4E0D;&#x5B9A;&#xFF0C;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x6709;&#x8D85;&#x65F6;&#x673A;&#x5236;&#xFF0C;&#x6BD4;&#x8F83;&#x9002;&#x5408;&#x6267;&#x884C;&#x5927;&#x91CF;&#x8017;&#x65F6;&#x8F83;&#x5C11;&#x7684;&#x4EFB;&#x52A1;</li>
+<li>ScheduledThreadPool &#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x56FA;&#x5B9A;&#xFF0C;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;&#x9650;&#x5236;&#x3002;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x548C;&#x5177;&#x6709;&#x56FA;&#x5B9A;&#x4E2D;&#x5468;&#x671F;&#x7684;&#x91CD;&#x590D;&#x4EFB;&#x52A1;&#x3002;</li>
+<li>SingleThreadPool &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#xFF0C;&#x786E;&#x4FDD;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x7EDF;&#x4E00;&#x5916;&#x754C;&#x4EFB;&#x52A1;&#x5230;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x5728;&#x8FD9;&#x4E9B;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x4E0D;&#x9700;&#x8981;&#x5904;&#x7406;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+</ul>
+<h3 id="12-&#x4F18;&#x70B9;"><a name="12-&#x4F18;&#x70B9;" class="anchor-navigation-ex-anchor" href="#12-&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. 1.2 &#x4F18;&#x70B9;</h3>
+<ul>
+<li>&#x51CF;&#x5C11;&#x5728;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;&#x4E0A;&#x6240;&#x82B1;&#x7684;&#x65F6;&#x95F4;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x7684;&#x5F00;&#x9500;</li>
+<li>&#x4E0D;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x6709;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x5927;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x800C;&#x5BFC;&#x81F4;&#x6D88;&#x8017;&#x5B8C;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x4EE5;&#x53CA;&quot;&#x8FC7;&#x5EA6;&#x5207;&#x6362;&quot;</li>
+</ul>
+<h3 id="13-&#x6CE8;&#x610F;&#x70B9;"><a name="13-&#x6CE8;&#x610F;&#x70B9;" class="anchor-navigation-ex-anchor" href="#13-&#x6CE8;&#x610F;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. 1.3 &#x6CE8;&#x610F;&#x70B9;</h3>
+<ul>
+<li>&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x672A;&#x8FBE;&#x5230;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x7684;&#x6570;&#x91CF;,&#x5219;&#x76F4;&#x63A5;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x4EFB;&#x52A1;</li>
+<li>&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;&#x6216;&#x8D85;&#x8FC7;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x7684;&#x6570;&#x91CF;,&#x5219;&#x4EFB;&#x4F55;&#x4F1A;&#x88AB;&#x63D2;&#x5165;&#x5230;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x6267;&#x884C;</li>
+<li>&#x5982;&#x679C;2&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x65E0;&#x6CD5;&#x63D2;&#x5165;&#x5230;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;,&#x7531;&#x4E8E;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5DF2;&#x6EE1;,&#x8FD9;&#x65F6;&#x5019;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x672A;&#x8FBE;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x89C4;&#x5B9A;&#x7684;&#x6700;&#x5927;&#x503C;,&#x5219;&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x4EFB;&#x52A1;</li>
+<li>&#x5982;&#x679C;3&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x6700;&#x5927;&#x503C;,&#x5219;&#x4F1A;&#x62D2;&#x7EDD;&#x6267;&#x884C;&#x6B64;&#x4EFB;&#x52A1;,ThreadPoolExecutor&#x4F1A;&#x8C03;&#x7528;RejectedExecutionHandler&#x7684;rejectedExecution()&#x65B9;&#x6CD5;&#x901A;&#x77E5;&#x8C03;&#x7528;&#x8005;</li>
+</ul>
+<h2 id="&#x4E8C;&#x3001;-&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;"><a name="&#x4E8C;&#x3001;-&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;-&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x4E8C;&#x3001; &#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;</h2>
+<p>&#x5584;&#x4E8E;&#x5728; Android &#x4E0A;&#x5229;&#x7528;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x60A8;&#x63D0;&#x5347;&#x5E94;&#x7528;&#x7684;&#x6027;&#x80FD;&#x3002;&#x672C;&#x9875;&#x4ECE;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x65B9;&#x9762;&#x8BA8;&#x8BBA;&#x7EBF;&#x7A0B;&#x7684;&#x4F7F;&#x7528;&#xFF1A;&#x4F7F;&#x7528;&#x754C;&#x9762;&#x7EBF;&#x7A0B;&#xFF08;&#x5373;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF09;&#xFF1B;&#x5E94;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0E;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1B;&#x4EE5;&#x53CA;&#x5E73;&#x53F0;&#x4E3A;&#x5E2E;&#x52A9;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;&#x590D;&#x6742;&#x6027;&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;&#x672C;&#x9875;&#x90FD;&#x4ECB;&#x7ECD;&#x4E86;&#x6F5C;&#x5728;&#x7684;&#x9677;&#x9631;&#x548C;&#x76F8;&#x5E94;&#x7684;&#x89C4;&#x907F;&#x7B56;&#x7565;&#x3002;</p>
+<h3 id="21-&#x4E3B;&#x7EBF;&#x7A0B;"><a name="21-&#x4E3B;&#x7EBF;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#21-&#x4E3B;&#x7EBF;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. 2.1 &#x4E3B;&#x7EBF;&#x7A0B;</h3>
+<p>&#x5F53;&#x7528;&#x6237;&#x542F;&#x52A8;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x65F6;&#xFF0C;Android &#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684; <a href="https://developer.android.com/guide/components/fundamentals?hl=zh-cn" target="_blank">Linux &#x8FDB;&#x7A0B;</a>&#x4EE5;&#x53CA;&#x6267;&#x884C;&#x7EBF;&#x7A0B;&#x3002;&#x8FD9;&#x4E2A;<strong>&#x4E3B;&#x7EBF;&#x7A0B;</strong>&#x4E5F;&#x79F0;&#x4E3A;&#x754C;&#x9762;&#x7EBF;&#x7A0B;&#xFF0C;&#x8D1F;&#x8D23;&#x5C4F;&#x5E55;&#x4E0A;&#x53D1;&#x751F;&#x7684;&#x4E00;&#x5207;&#x6D3B;&#x52A8;&#x3002;&#x4E86;&#x89E3;&#x5176;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x6709;&#x52A9;&#x4E8E;&#x60A8;&#x901A;&#x8FC7;&#x8BBE;&#x8BA1;&#x8BA9;&#x5E94;&#x7528;&#x5229;&#x7528;&#x4E3B;&#x7EBF;&#x7A0B;&#x5B9E;&#x73B0;&#x6700;&#x4F73;&#x6027;&#x80FD;&#x3002;</p>
+<h4 id="211-&#x5185;&#x90E8;&#x539F;&#x7406;"><a name="211-&#x5185;&#x90E8;&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#211-&#x5185;&#x90E8;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.1 &#x5185;&#x90E8;&#x539F;&#x7406;</h4>
+<p>&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x8BBE;&#x8BA1;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF1A;&#x5B83;&#x7684;&#x552F;&#x4E00;&#x5DE5;&#x4F5C;&#x5C31;&#x662F;&#x4ECE;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x5DE5;&#x4F5C;&#x961F;&#x5217;&#x83B7;&#x53D6;&#x5DE5;&#x4F5C;&#x5757;&#x5E76;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x5E94;&#x7528;&#x88AB;&#x7EC8;&#x6B62;&#x3002;&#x6846;&#x67B6;&#x4F1A;&#x4ECE;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x751F;&#x6210;&#x90E8;&#x5206;&#x5DE5;&#x4F5C;&#x5757;&#x3002;&#x8FD9;&#x4E9B;&#x4F4D;&#x7F6E;&#x5305;&#x62EC;&#x4E0E;&#x751F;&#x547D;&#x5468;&#x671F;&#x4FE1;&#x606F;&#x3001;&#x7528;&#x6237;&#x4E8B;&#x4EF6;&#xFF08;&#x4F8B;&#x5982;&#x8F93;&#x5165;&#xFF09;&#x6216;&#x6765;&#x81EA;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x548C;&#x8FDB;&#x7A0B;&#x7684;&#x4E8B;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x56DE;&#x8C03;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5E94;&#x7528;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x6846;&#x67B6;&#x800C;&#x81EA;&#x884C;&#x5BF9;&#x5757;&#x8FDB;&#x884C;&#x660E;&#x786E;&#x6392;&#x961F;&#x3002;</p>
+<p><a href="https://www.youtube.com/watch?v=qk5F6Bxqhr4&amp;index=1&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;hl=zh-cn" target="_blank">&#x5E94;&#x7528;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x5757;</a>&#x51E0;&#x4E4E;&#x90FD;&#x4E0E;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#xFF08;&#x4F8B;&#x5982;&#x8F93;&#x5165;&#x3001;&#x5E03;&#x5C40;&#x6269;&#x5145;&#x6216;&#x7ED8;&#x5236;&#xFF09;&#x76F8;&#x5173;&#x8054;&#x3002;&#x5F53;&#x67D0;&#x4E2A;&#x64CD;&#x4F5C;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x53D1;&#x751F;&#x4E86;&#x4E8B;&#x4EF6;&#x7684;&#x7EBF;&#x7A0B;&#x4F1A;&#x5C06;&#x4E8B;&#x4EF6;&#x4ECE;&#x7EBF;&#x7A0B;&#x672C;&#x8EAB;&#x91CC;&#x63A8;&#x9001;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x4E3A;&#x4E8B;&#x4EF6;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;</p>
+<p>&#x5F53;&#x6709;&#x52A8;&#x753B;&#x6216;&#x5C4F;&#x5E55;&#x66F4;&#x65B0;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x6BCF;&#x9694; 16ms &#x5DE6;&#x53F3;&#x5C1D;&#x8BD5;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x5757;&#xFF08;&#x8D1F;&#x8D23;&#x7ED8;&#x5236;&#x5C4F;&#x5E55;&#xFF09;&#xFF0C;&#x4ECE;&#x800C;&#x4EE5;<a href="https://www.youtube.com/watch?v=CaMTIgxCSqU&amp;index=62&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;hl=zh-cn" target="_blank">&#x6BCF;&#x79D2; 60 &#x5E27;</a>&#x7684;&#x6D41;&#x7545;&#x901F;&#x5EA6;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;&#x8981;&#x4F7F;&#x7CFB;&#x7EDF;&#x8FBE;&#x5230;&#x6B64;&#x76EE;&#x6807;&#xFF0C;&#x754C;&#x9762;/&#x89C6;&#x56FE;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x5FC5;&#x987B;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x66F4;&#x65B0;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x592A;&#x591A;&#x6216;&#x592A;&#x957F;&#xFF0C;&#x5BFC;&#x81F4;&#x4E3B;&#x7EBF;&#x7A0B;&#x65E0;&#x6CD5;&#x8DB3;&#x591F;&#x5FEB;&#x5730;&#x5B8C;&#x6210;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x5E94;&#x7528;&#x5E94;&#x5C06;&#x6B64;&#x5DE5;&#x4F5C;&#x79FB;&#x81F3;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x4E3B;&#x7EBF;&#x7A0B;&#x65E0;&#x6CD5;&#x5728; 16ms &#x5185;&#x6267;&#x884C;&#x5B8C;&#x5DE5;&#x4F5C;&#x5757;&#xFF0C;&#x5219;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x4F1A;&#x5BDF;&#x89C9;&#x5230;&#x5361;&#x987F;&#x3001;&#x5EF6;&#x8FDF;&#x6216;&#x754C;&#x9762;&#x5BF9;&#x8F93;&#x5165;&#x65E0;&#x54CD;&#x5E94;&#x3002; &#x5982;&#x679C;&#x4E3B;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#x5927;&#x7EA6; 5 &#x79D2;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x663E;&#x793A;<a href="https://developer.android.com/training/articles/perf-anr?hl=zh-cn" target="_blank">&#x201C;&#x5E94;&#x7528;&#x65E0;&#x54CD;&#x5E94;&#x201D;</a>(ANR) &#x5BF9;&#x8BDD;&#x6846;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x5E94;&#x7528;&#x3002;</p>
+<p>&#x5C06;&#x5927;&#x91CF;&#x6216;&#x5197;&#x957F;&#x7684;&#x4EFB;&#x52A1;&#x4ECE;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x79FB;&#x51FA;&#xFF0C;&#x4F7F;&#x5176;&#x4E0D;&#x5F71;&#x54CD;&#x6D41;&#x7545;&#x6E32;&#x67D3;&#x548C;&#x5FEB;&#x901F;&#x54CD;&#x5E94;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x8FD9;&#x662F;&#x60A8;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x91C7;&#x7528;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x6700;&#x5927;&#x539F;&#x56E0;&#x3002;</p>
+<h3 id="22-&#x7EBF;&#x7A0B;&#x548C;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x5F15;&#x7528;"><a name="22-&#x7EBF;&#x7A0B;&#x548C;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#22-&#x7EBF;&#x7A0B;&#x548C;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. 2.2 &#x7EBF;&#x7A0B;&#x548C;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x5F15;&#x7528;</h3>
+<p>&#x6839;&#x636E;&#x8BBE;&#x8BA1;&#xFF0C;<a href="https://www.youtube.com/watch?v=tBHPmQQNiS8&amp;index=3&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;hl=zh-cn" target="_blank">Android &#x89C6;&#x56FE;&#x5BF9;&#x8C61;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;</a>&#x3002;&#x65E0;&#x8BBA;&#x662F;&#x521B;&#x5EFA;&#x3001;&#x4F7F;&#x7528;&#x8FD8;&#x662F;&#x9500;&#x6BC1;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#xFF0C;&#x5E94;&#x7528;&#x90FD;&#x5E94;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x5B8C;&#x6210;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5C1D;&#x8BD5;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4E2D;&#x4FEE;&#x6539;&#x751A;&#x81F3;&#x5F15;&#x7528;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5F02;&#x5E38;&#x3001;&#x65E0;&#x63D0;&#x793A;&#x6545;&#x969C;&#x3001;&#x5D29;&#x6E83;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x5F02;&#x5E38;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x5F15;&#x7528;&#x65B9;&#x9762;&#x7684;&#x95EE;&#x9898;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;&#x663E;&#x5F0F;&#x5F15;&#x7528;&#x548C;&#x9690;&#x5F0F;&#x5F15;&#x7528;&#x3002;</p>
+<h4 id="221-&#x663E;&#x5F0F;&#x5F15;&#x7528;"><a name="221-&#x663E;&#x5F0F;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#221-&#x663E;&#x5F0F;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1 &#x663E;&#x5F0F;&#x5F15;&#x7528;</h4>
+<p>&#x975E;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x7684;&#x8BB8;&#x591A;&#x4EFB;&#x52A1;&#x7684;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x662F;&#x66F4;&#x65B0;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#x89C6;&#x56FE;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5E94;&#x7528;&#x4E0D;&#x7A33;&#x5B9A;&#xFF1A;&#x5982;&#x679C;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x66F4;&#x6539;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#x6709;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x5F15;&#x7528;&#x8BE5;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x7ED3;&#x679C;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x67D0;&#x4E2A;&#x5E94;&#x7528;&#x5728;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x4E0A;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#x4E86;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x3002;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x4E0A;&#x7684;&#x8BE5;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x5BF9; <code>View</code> &#x7684;&#x5F15;&#x7528;&#xFF1B;&#x4F46;&#x5728;&#x5DE5;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#xFF0C;<code>View</code> &#x5DF2;&#x4ECE;&#x89C6;&#x56FE;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x79FB;&#x9664;&#x3002;&#x5F53;&#x8FD9;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x540C;&#x65F6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x8BE5;&#x5F15;&#x7528;&#x4F1A;&#x5C06; <code>View</code> &#x5BF9;&#x8C61;&#x4FDD;&#x7559;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x7528;&#x6237;&#x4ECE;&#x4E0D;&#x4F1A;&#x770B;&#x5230;&#x6B64;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E14;&#x5E94;&#x7528;&#x4F1A;&#x5728;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x6D88;&#x5931;&#x540E;&#x5220;&#x9664;&#x8BE5;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x518D;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5047;&#x8BBE; <code>View</code> &#x5BF9;&#x8C61;&#x5305;&#x542B;&#x5BF9;&#x5176;&#x6240;&#x5C5E;&#x7684; Activity &#x7684;&#x5F15;&#x7528;&#x3002;&#x5982;&#x679C;&#x8BE5; Activity &#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x4F46;&#x4ECD;&#x6709;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x5B83;&#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x5757;&#xFF0C;&#x5219;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x4F1A;&#x7B49;&#x5230;&#x8BE5;&#x5DE5;&#x4F5C;&#x5757;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x518D;&#x6536;&#x96C6;&#x8BE5; Activity&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x751F;&#x67D0;&#x4E2A; Activity &#x751F;&#x547D;&#x5468;&#x671F;&#x4E8B;&#x4EF6;&#xFF08;&#x4F8B;&#x5982;&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#xFF09;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x95EE;&#x9898;&#x3002;&#x5728;&#x6267;&#x884C;&#x4E2D;&#x7684;&#x5DE5;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7B49;&#x5230;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x65F6;&#xFF0C;&#x5185;&#x5B58;&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x4E24;&#x4E2A; <code>Activity</code> &#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x7C7B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x4E0D;&#x8981;&#x5728;&#x5E94;&#x7528;&#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x4EFB;&#x52A1;&#x4E2D;&#x5305;&#x542B;&#x5BF9;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x7684;&#x663E;&#x5F0F;&#x5F15;&#x7528;&#x3002;&#x907F;&#x514D;&#x6B64;&#x7C7B;&#x5F15;&#x7528;&#x6709;&#x52A9;&#x4E8E;&#x9632;&#x6B62;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x7684;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x540C;&#x65F6;&#x907F;&#x5F00;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x4E89;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5E94;&#x7528;&#x90FD;&#x53EA;&#x5E94;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x66F4;&#x65B0;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x60A8;&#x5E94;&#x5236;&#x5B9A;&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5C06;&#x5DE5;&#x4F5C;&#x4F20;&#x56DE;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x534F;&#x5546;&#x653F;&#x7B56;&#xFF0C;&#x8BA9;&#x6700;&#x9876;&#x5C42;&#x7684; Activity &#x6216; Fragment &#x8D1F;&#x8D23;&#x66F4;&#x65B0;&#x5B9E;&#x9645;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="222-&#x9690;&#x5F0F;&#x5F15;&#x7528;"><a name="222-&#x9690;&#x5F0F;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#222-&#x9690;&#x5F0F;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.2 &#x9690;&#x5F0F;&#x5F15;&#x7528;</h4>
+<p>&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x6BB5;&#x6F14;&#x793A;&#x4E86;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x5E38;&#x89C1;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;&#x7F3A;&#x9677;&#xFF1A;</p>
+<p><a href="https://developer.android.com/topic/performance/threads?hl=zh-cn#kotlin" target="_blank">KOTLIN</a><a href="https://developer.android.com/topic/performance/threads?hl=zh-cn#java" target="_blank">JAVA</a></p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAsyncTask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AsyncTask</span>&lt;<span class="hljs-title">Void</span>, <span class="hljs-title">Void</span>, <span class="hljs-title">String</span>&gt;   </span>{
+        <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">doInBackground</span><span class="hljs-params">(Void... params)</span> </span>{...}
+        <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPostExecute</span><span class="hljs-params">(String result)</span> </span>{...}
+      }
+    }
+</code></pre>
+<p>&#x6B64;&#x4EE3;&#x7801;&#x6BB5;&#x7684;&#x7F3A;&#x9677;&#x5728;&#x4E8E;&#xFF0C;&#x4EE3;&#x7801;&#x4F1A;&#x5C06;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5BF9;&#x8C61; <code>MyAsyncTask</code> &#x58F0;&#x660E;&#x4E3A;&#x67D0;&#x4E2A; Activity &#x7684;&#x975E;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#xFF08;&#x6216; Kotlin &#x4E2D;&#x7684;&#x5185;&#x90E8;&#x7C7B;&#xFF09;&#x3002;&#x6B64;&#x58F0;&#x660E;&#x4F1A;&#x521B;&#x5EFA;&#x5BF9;&#x5C01;&#x88C5; <code>Activity</code> &#x5B9E;&#x4F8B;&#x7684;&#x9690;&#x5F0F;&#x5F15;&#x7528;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4E00;&#x76F4;&#x5305;&#x542B;&#x5BF9;&#x76F8;&#x5E94; Activity &#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5BFC;&#x81F4;&#x6240;&#x5F15;&#x7528; Activity &#x7684;&#x9500;&#x6BC1;&#x51FA;&#x73B0;&#x5EF6;&#x8FDF;&#x3002; &#x8FD9;&#x79CD;&#x5EF6;&#x8FDF;&#x8FDB;&#x800C;&#x4F1A;&#x7ED9;&#x5185;&#x5B58;&#x5E26;&#x6765;&#x66F4;&#x591A;&#x538B;&#x529B;&#x3002;</p>
+<p>&#x6B64;&#x95EE;&#x9898;&#x7684;&#x76F4;&#x63A5;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x8FC7;&#x8F7D;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;&#x5B9A;&#x4E49;&#x4E3A;&#x9759;&#x6001;&#x7C7B;&#xFF0C;&#x6216;&#x5728;&#x5176;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x4ECE;&#x800C;&#x79FB;&#x9664;&#x9690;&#x5F0F;&#x5F15;&#x7528;&#x3002;</p>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x662F;&#x5C06; <code>AsyncTask</code> &#x5BF9;&#x8C61;&#x58F0;&#x660E;&#x4E3A;&#x9759;&#x6001;&#x5D4C;&#x5957;&#x7C7B;&#xFF08;&#x6216;&#x5728; Kotlin &#x4E2D;&#x79FB;&#x9664;&#x5185;&#x90E8;&#x9650;&#x5B9A;&#x7B26;&#xFF09;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x53EF;&#x4EE5;&#x6D88;&#x9664;&#x9690;&#x5F0F;&#x5F15;&#x7528;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x9759;&#x6001;&#x5D4C;&#x5957;&#x7C7B;&#x4E0E;&#x5185;&#x90E8;&#x7C7B;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF1A;&#x5185;&#x90E8;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x8981;&#x6C42;&#x5BF9;&#x5916;&#x90E8;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5C01;&#x88C5;&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5B57;&#x6BB5;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x9759;&#x6001;&#x5D4C;&#x5957;&#x7C7B;&#x4E0D;&#x9700;&#x8981;&#x5F15;&#x7528;&#x5C01;&#x88C5;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4E0D;&#x5305;&#x542B;&#x5BF9;&#x5916;&#x90E8;&#x7C7B;&#x6210;&#x5458;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<p><a href="https://developer.android.com/topic/performance/threads?hl=zh-cn#kotlin" target="_blank">KOTLIN</a><a href="https://developer.android.com/topic/performance/threads?hl=zh-cn#java" target="_blank">JAVA</a></p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-keyword">static</span> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAsyncTask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AsyncTask</span>&lt;<span class="hljs-title">Void</span>, <span class="hljs-title">Void</span>, <span class="hljs-title">String</span>&gt;   </span>{
+        <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">doInBackground</span><span class="hljs-params">(Void... params)</span> </span>{...}
+        <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPostExecute</span><span class="hljs-params">(String result)</span> </span>{...}
+      }
+    }
+</code></pre>
+<h3 id="23-&#x7EBF;&#x7A0B;&#x548C;&#x5E94;&#x7528;-activity-&#x751F;&#x547D;&#x5468;&#x671F;"><a name="23-&#x7EBF;&#x7A0B;&#x548C;&#x5E94;&#x7528;-activity-&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#23-&#x7EBF;&#x7A0B;&#x548C;&#x5E94;&#x7528;-activity-&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. 2.3 &#x7EBF;&#x7A0B;&#x548C;&#x5E94;&#x7528; Activity &#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<p>&#x5E94;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;&#x4F1A;&#x5F71;&#x54CD;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x3002;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x786E;&#x5B9A;&#x7EBF;&#x7A0B;&#x5728; Activity &#x9500;&#x6BC1;&#x540E;&#x5E94;&#x4E0D;&#x5E94;&#x8BE5;&#x4FDD;&#x7559;&#x3002;&#x60A8;&#x8FD8;&#x5E94;&#x6CE8;&#x610F;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x4E0E; Activity &#x662F;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#x8FD8;&#x662F;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<h4 id="231-&#x4FDD;&#x7559;&#x7EBF;&#x7A0B;"><a name="231-&#x4FDD;&#x7559;&#x7EBF;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#231-&#x4FDD;&#x7559;&#x7EBF;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.1 &#x4FDD;&#x7559;&#x7EBF;&#x7A0B;</h4>
+<p>&#x7EBF;&#x7A0B;&#x4F1A;&#x5728;&#x751F;&#x6210;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x7684; Activity &#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x8FC7;&#x540E;&#x7EE7;&#x7EED;&#x4FDD;&#x7559;&#x3002;&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x53D1;&#x751F; Activity &#x521B;&#x5EFA;&#x6216;&#x9500;&#x6BC1;&#x4E8B;&#x4EF6;&#xFF0C;&#x7EBF;&#x7A0B;&#x90FD;&#x4F1A;&#x7EE7;&#x7EED;&#x4E0D;&#x95F4;&#x65AD;&#x5730;&#x6267;&#x884C;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x79CD;&#x6301;&#x4E45;&#x6027;&#x662F;&#x53EF;&#x53D6;&#x7684;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x67D0;&#x4E2A; Activity &#x751F;&#x6210;&#x4E86;&#x4E00;&#x7EC4;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x5757;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x80FD;&#x6267;&#x884C;&#x5DE5;&#x4F5C;&#x5757;&#x4E4B;&#x524D;&#x88AB;&#x9500;&#x6BC1;&#x3002;&#x5E94;&#x7528;&#x5E94;&#x5982;&#x4F55;&#x5904;&#x7406;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#x5757;&#xFF1F;</p>
+<p>&#x5982;&#x679C;&#x5DE5;&#x4F5C;&#x5757;&#x5C06;&#x8981;&#x66F4;&#x65B0;&#x4E0D;&#x518D;&#x5B58;&#x5728;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x5219;&#x8BE5;&#x5DE5;&#x4F5C;&#x4E0D;&#x5FC5;&#x518D;&#x7EE7;&#x7EED;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x5DE5;&#x4F5C;&#x662F;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x65B0;&#x89C6;&#x56FE;&#xFF0C;&#x5219;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x8BE5;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x5DE5;&#x4F5C;&#x6570;&#x636E;&#x5305;&#x53EF;&#x80FD;&#x5177;&#x6709;&#x67D0;&#x79CD;&#x4E0D;&#x5B8C;&#x5168;&#x4E0E;&#x754C;&#x9762;&#x76F8;&#x5173;&#x7684;&#x4F18;&#x52BF;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x4FDD;&#x7559;&#x8BE5;&#x7EBF;&#x7A0B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6570;&#x636E;&#x5305;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x4E0B;&#x8F7D;&#x56FE;&#x7247;&#xFF0C;&#x5C06;&#x5176;&#x7F13;&#x5B58;&#x5230;&#x78C1;&#x76D8;&#x5E76;&#x66F4;&#x65B0;&#x5173;&#x8054;&#x7684; <code>View</code> &#x5BF9;&#x8C61;&#x3002;&#x867D;&#x7136;&#x8BE5;&#x5BF9;&#x8C61;&#x5DF2;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x662F;&#x4E0B;&#x8F7D;&#x548C;&#x7F13;&#x5B58;&#x8BE5;&#x56FE;&#x7247;&#x53EF;&#x80FD;&#x4ECD;&#x7136;&#x6709;&#x7528;&#xFF0C;&#x4EE5;&#x9632;&#x7528;&#x6237;&#x8FD4;&#x56DE;&#x5230;&#x5DF2;&#x9500;&#x6BC1;&#x7684; Activity&#x3002;</p>
+<p>&#x4E3A;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5BF9;&#x8C61;&#x624B;&#x52A8;&#x7BA1;&#x7406;&#x751F;&#x547D;&#x5468;&#x671F;&#x54CD;&#x5E94;&#x53EF;&#x80FD;&#x6781;&#x5176;&#x590D;&#x6742;&#x3002;&#x5982;&#x679C;&#x7BA1;&#x7406;&#x4E0D;&#x5F53;&#xFF0C;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x5185;&#x5B58;&#x4E89;&#x7528;&#x548C;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x4F7F;&#x7528; <a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel?hl=zh-cn" target="_blank"><code>ViewModel</code></a> &#x548C; <a href="https://developer.android.com/reference/androidx/lifecycle/LiveData?hl=zh-cn" target="_blank"><code>LiveData</code></a> &#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5E76;&#x5728;&#x6570;&#x636E;&#x53D1;&#x751F;&#x66F4;&#x6539;&#x65F6;&#x6536;&#x5230;&#x901A;&#x77E5;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5173;&#x5FC3;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;<a href="https://developer.android.com/reference/androidx/lifecycle/ViewModel?hl=zh-cn" target="_blank"><code>ViewModel</code></a> &#x5BF9;&#x8C61;&#x662F;&#x6B64;&#x95EE;&#x9898;&#x7684;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;ViewModel &#x4F1A;&#x5728;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#x540E;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF0C;&#x4FBF;&#x4E8E;&#x60A8;&#x4FDD;&#x7559;&#x89C6;&#x56FE;&#x6570;&#x636E;&#x3002;&#x8981;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3; ViewModel &#x548C; LiveData&#xFF0C;&#x8BF7;&#x5206;&#x522B;&#x53C2;&#x9605; <a href="https://developer.android.com/topic/libraries/architecture/viewmodel?hl=zh-cn" target="_blank">ViewModel &#x6307;&#x5357;</a>&#x548C; <a href="https://developer.android.com/topic/libraries/architecture/livedata?hl=zh-cn" target="_blank">LiveData &#x6307;&#x5357;</a>&#x3002;&#x5982;&#x679C;&#x60A8;&#x8FD8;&#x60F3;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x5E94;&#x7528;&#x67B6;&#x6784;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;<a href="https://developer.android.com/topic/libraries/architecture/guide?hl=zh-cn" target="_blank">&#x5E94;&#x7528;&#x67B6;&#x6784;&#x6307;&#x5357;</a>&#x3002;</p>
+<h4 id="232-&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;"><a name="232-&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#232-&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.2 &#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;</h4>
+<p><a href="https://developer.android.com/guide/topics/processes/process-lifecycle?hl=zh-cn" target="_blank">&#x8FDB;&#x7A0B;&#x548C;&#x5E94;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;</a>&#x4E2D;&#x4ECB;&#x7ECD;&#x8FC7;&#xFF0C;&#x5E94;&#x7528;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x53D6;&#x51B3;&#x4E8E;&#x5E94;&#x7528;&#x5904;&#x4E8E;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x54EA;&#x4E2A;&#x9636;&#x6BB5;&#x3002;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;&#x65F6;&#xFF0C;&#x8BF7;&#x52A1;&#x5FC5;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4EE5;&#x4FBF;&#x6B63;&#x786E;&#x7684;&#x7EBF;&#x7A0B;&#x9002;&#x65F6;&#x83B7;&#x5F97;&#x6B63;&#x786E;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x5F97;&#x8FC7;&#x9AD8;&#xFF0C;&#x60A8;&#x7684;&#x7EBF;&#x7A0B;&#x53EF;&#x80FD;&#x4F1A;&#x5E72;&#x6270;&#x754C;&#x9762;&#x7EBF;&#x7A0B;&#x548C; RenderThread&#xFF0C;&#x5BFC;&#x81F4;&#x5E94;&#x7528;&#x6389;&#x5E27;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x5F97;&#x8FC7;&#x4F4E;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#xFF08;&#x4F8B;&#x5982;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#xFF09;&#x8FBE;&#x4E0D;&#x5230;&#x6240;&#x9700;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x65F6;&#xFF0C;&#x90FD;&#x5E94;&#x8C03;&#x7528; <code>setThreadPriority()</code>&#x3002;&#x7CFB;&#x7EDF;&#x7684;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x4F1A;&#x4F18;&#x5148;&#x8003;&#x8651;&#x4F18;&#x5148;&#x7EA7;&#x8F83;&#x9AD8;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x5728;&#x8FD9;&#x4E9B;&#x4F18;&#x5148;&#x7EA7;&#x4E0E;&#x6700;&#x7EC8;&#x5C06;&#x6240;&#x6709;&#x5DE5;&#x4F5C;&#x90FD;&#x5B8C;&#x6210;&#x7684;&#x9700;&#x6C42;&#x4E4B;&#x95F4;&#x505A;&#x51FA;&#x6743;&#x8861;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;<a href="https://www.youtube.com/watch?v=NwFXVsM15Co&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;index=9&amp;hl=zh-cn" target="_blank">&#x524D;&#x53F0;&#x7EC4;&#x7EA6;&#x5360;&#x8BBE;&#x5907;&#x603B;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7684; 95%</a>&#xFF0C;&#x800C;&#x540E;&#x53F0;&#x7EC4;&#x7EA6;&#x5360; 5%&#x3002;</p>
+<p>&#x7CFB;&#x7EDF;&#x8FD8;&#x4F1A;&#x4F7F;&#x7528; <code>Process</code> &#x7C7B;&#x4E3A;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x5206;&#x914D;&#x7CFB;&#x7EDF;&#x81EA;&#x5DF1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x503C;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5C06;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E0E;&#x751F;&#x6210;&#x5B83;&#x7684;&#x7EBF;&#x7A0B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x548C;&#x7EC4;&#x6210;&#x5458;&#x8D44;&#x683C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>setThreadPriority()</code> &#x660E;&#x786E;&#x8C03;&#x6574;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
+<p><code>Process</code> &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x53EF;&#x4F9B;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x5E38;&#x91CF;&#xFF0C;&#x4EE5;&#x5E2E;&#x52A9;&#x7B80;&#x5316;&#x4F18;&#x5148;&#x7EA7;&#x503C;&#x7684;&#x5206;&#x914D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code>THREAD_PRIORITY_DEFAULT</code> &#x4EE3;&#x8868;&#x7EBF;&#x7A0B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#x4E0D;&#x592A;&#x7D27;&#x6025;&#xFF0C;&#x5E94;&#x7528;&#x5E94;&#x5C06;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8BBE;&#x4E3A; <code>THREAD_PRIORITY_BACKGROUND</code>&#x3002;</p>
+<p>&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>THREAD_PRIORITY_LESS_FAVORABLE</code> &#x548C; <code>THREAD_PRIORITY_MORE_FAVORABLE</code> &#x5E38;&#x91CF;&#x4F5C;&#x4E3A;&#x589E;&#x91CF;&#x5668;&#x6765;&#x8BBE;&#x7F6E;&#x76F8;&#x5BF9;&#x4F18;&#x5148;&#x7EA7;&#x3002;&#x5982;&#x9700;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <code>Process</code> &#x7C7B;&#x4E2D;&#x7684; <code>THREAD_PRIORITY</code> &#x5E38;&#x91CF;&#x3002;</p>
+<p>&#x5982;&#x9700;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x6709;&#x5173; <code>Thread</code> &#x548C; <code>Process</code> &#x7C7B;&#x7684;&#x53C2;&#x8003;&#x6587;&#x6863;&#x3002;</p>
+<p>Android&#x7CFB;&#x7EDF;&#x4F1A;&#x6839;&#x636E;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x53EF;&#x89C1;&#x7684;&#x7A0B;&#x5E8F;&#x548C;&#x4E0D;&#x53EF;&#x89C1;&#x7684;&#x540E;&#x53F0;&#x7A0B;&#x5E8F;&#x5BF9;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x5F52;&#x7C7B;&#xFF0C;&#x5212;&#x5206;&#x4E3A;forground&#x7684;&#x90A3;&#x90E8;&#x5206;&#x7EBF;&#x7A0B;&#x4F1A;&#x5927;&#x81F4;&#x5360;&#x7528;&#x6389;CPU&#x7684;90%&#x5DE6;&#x53F3;&#x7684;&#x65F6;&#x95F4;&#x7247;&#xFF0C;background&#x7684;&#x90A3;&#x90E8;&#x5206;&#x7EBF;&#x7A0B;&#x5C31;&#x603B;&#x5171;&#x53EA;&#x80FD;&#x5206;&#x4EAB;&#x5230;5%-10%&#x5DE6;&#x53F3;&#x7684;&#x65F6;&#x95F4;&#x7247;&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x8BBE;&#x8BA1;&#x6210;&#x8FD9;&#x6837;&#x662F;&#x56E0;&#x4E3A;forground&#x7684;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x5C31;&#x66F4;&#x9AD8;&#xFF0C;&#x7406;&#x5E94;&#x5F97;&#x5230;&#x66F4;&#x591A;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x3002;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5748654-fedda45234d2551d.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/574/format/webp" alt="img"></p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9ED8;&#x8BA4;&#x548C;&#x521B;&#x5EFA;&#x5B83;&#x7684;&#x6BCD;&#x7EBF;&#x7A0B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x5982;&#x679C;&#x4E3B;UI&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x51FA;&#x4E86;&#x51E0;&#x5341;&#x4E2A;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD9;&#x4E9B;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x5C31;&#x9ED8;&#x8BA4;&#x548C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x4E86;&#xFF0C;&#x4E3A;&#x4E86;&#x4E0D;&#x8BA9;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x548C;&#x4E3B;&#x7EBF;&#x7A0B;&#x62A2;&#x5360;CPU&#x8D44;&#x6E90;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8FDB;&#x884C;&#x964D;&#x4F4E;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x7ED9;&#x5E2E;&#x7EC4;CPU&#x8BC6;&#x522B;&#x4E3B;&#x6B21;&#xFF0C;&#x63D0;&#x9AD8;&#x4E3B;&#x7EBF;&#x7A0B;&#x6240;&#x80FD;&#x5F97;&#x5230;&#x7684;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x5728;Android&#x7CFB;&#x7EDF;&#x91CC;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;android.os.Process.setThreadPriority(int)&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x53C2;&#x6570;&#x8303;&#x56F4;&#x4ECE;-20&#x5230;24&#xFF0C;&#x6570;&#x503C;&#x8D8A;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#x3002;Android&#x7CFB;&#x7EDF;&#x8FD8;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4EE5;&#x4E0B;&#x7684;&#x4E00;&#x4E9B;&#x9884;&#x8BBE;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7ED9;&#x4E0D;&#x540C;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x6570;&#x503C;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6765;&#x8FBE;&#x5230;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x63A7;&#x5236;&#x3002;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5748654-1f22773258ff2ed1.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/525/format/webp" alt="img"></p>
+<p>&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;0&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x8BBE;&#x7F6E;&#x4E3A;0&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x8FD8;&#x53EF;&#x4EE5;&#x5229;&#x7528;THREAD_PRIORITY_LESS_FAVORABLE&#x6216;&#x8005;THREAD_PRIORITY_MORE_FAVORABLE&#x6765;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
+<h3 id="24-&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x8F85;&#x52A9;&#x7C7B;"><a name="24-&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x8F85;&#x52A9;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#24-&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x8F85;&#x52A9;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. 2.4 &#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7684;&#x8F85;&#x52A9;&#x7C7B;</h3>
+<p>&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x76F8;&#x540C;&#x7684; Java &#x7C7B;&#x548C;&#x57FA;&#x5143;&#x6765;&#x65B9;&#x4FBF;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#xFF0C;&#x4F8B;&#x5982; <code>Thread</code>&#x3001;<code>Runnable</code> &#x548C; <code>Executors</code> &#x7C7B;&#x3002;&#x4E3A;&#x4E86;&#x5E2E;&#x52A9;&#x51CF;&#x8F7B;&#x4E0E;&#x5F00;&#x53D1;&#x9002;&#x7528;&#x4E8E; Android &#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5E94;&#x7528;&#x76F8;&#x5173;&#x7684;&#x8BA4;&#x77E5;&#x8D1F;&#x8377;&#xFF0C;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x53EF;&#x534F;&#x52A9;&#x5F00;&#x53D1;&#x7684;&#x8F85;&#x52A9;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F8B;&#x5982; <code>AsyncTaskLoader</code> &#x548C; <code>AsyncTask</code>&#x3002;&#x6BCF;&#x4E2A;&#x8F85;&#x52A9;&#x7C7B;&#x90FD;&#x6709;&#x4E00;&#x7EC4;&#x7279;&#x5B9A;&#x7684;&#x6027;&#x80FD;&#x7EC6;&#x5FAE;&#x5DEE;&#x522B;&#xFF0C;&#x4E13;&#x7528;&#x4E8E;&#x89E3;&#x51B3;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x7279;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x95EE;&#x9898;&#x3002;&#x5C06;&#x9519;&#x8BEF;&#x7684;&#x7C7B;&#x7528;&#x5728;&#x9519;&#x8BEF;&#x7684;&#x573A;&#x5408;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;</p>
+<h4 id="241-asynctask-&#x7C7B;"><a name="241-asynctask-&#x7C7B;" class="anchor-navigation-ex-anchor" href="#241-asynctask-&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.1 AsyncTask &#x7C7B;</h4>
+<p>&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x5FEB;&#x901F;&#x5C06;&#x5DE5;&#x4F5C;&#x4ECE;&#x4E3B;&#x7EBF;&#x7A0B;&#x79FB;&#x52A8;&#x5230;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x7684;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#xFF0C;<code>AsyncTask</code> &#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5B9E;&#x7528;&#x7684;&#x57FA;&#x5143;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F93;&#x5165;&#x4E8B;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x89E6;&#x53D1;&#x4F7F;&#x7528;&#x52A0;&#x8F7D;&#x7684;&#x4F4D;&#x56FE;&#x66F4;&#x65B0;&#x754C;&#x9762;&#x7684;&#x9700;&#x6C42;&#x3002;<code>AsyncTask</code> &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5C06;&#x4F4D;&#x56FE;&#x52A0;&#x8F7D;&#x548C;&#x89E3;&#x7801;&#x5206;&#x6D41;&#x5230;&#x5907;&#x7528;&#x7EBF;&#x7A0B;&#xFF1B;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x540E;&#xFF0C;<code>AsyncTask</code> &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x8BBE;&#x6CD5;&#x56DE;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x63A5;&#x6536;&#x5DE5;&#x4F5C;&#x4EE5;&#x66F4;&#x65B0;&#x754C;&#x9762;&#x3002;</p>
+<p>&#x5728;&#x4F7F;&#x7528; <code>AsyncTask</code> &#x65F6;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6027;&#x80FD;&#x65B9;&#x9762;&#x7684;&#x8981;&#x70B9;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5E94;&#x7528;&#x4F1A;&#x5C06;&#x5176;&#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709; <code>AsyncTask</code> &#x5BF9;&#x8C61;&#x63A8;&#x9001;&#x5230;&#x5355;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x4EEC;&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E14;&#x4E0E;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E00;&#x6837;&#xFF0C;&#x7279;&#x522B;&#x957F;&#x7684;&#x5DE5;&#x4F5C;&#x6570;&#x636E;&#x5305;&#x53EF;&#x80FD;&#x4F1A;&#x963B;&#x585E;&#x961F;&#x5217;&#x3002;&#x9274;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x4EC5;&#x4F7F;&#x7528; <code>AsyncTask</code> &#x5904;&#x7406;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x77ED;&#x4E8E; 5ms &#x7684;&#x5DE5;&#x4F5C;&#x9879;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x9690;&#x5F0F;&#x5F15;&#x7528;&#x95EE;&#x9898;&#xFF0C;<code>AsyncTask</code> &#x5BF9;&#x8C61;&#x4E5F;&#x662F;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8BF1;&#x56E0;&#x3002;<code>AsyncTask</code> &#x5BF9;&#x8C61;&#x4E5F;&#x4F1A;&#x5E26;&#x6765;&#x4E0E;&#x663E;&#x5F0F;&#x5F15;&#x7528;&#x76F8;&#x5173;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x4F46;&#x8FD9;&#x4E9B;&#x98CE;&#x9669;&#x6709;&#x65F6;&#x66F4;&#x5BB9;&#x6613;&#x89E3;&#x51B3;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code>AsyncTask</code> &#x53EF;&#x80FD;&#x9700;&#x8981;&#x5F15;&#x7528;&#x67D0;&#x4E2A;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x4FBF; <code>AsyncTask</code> &#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#x5176;&#x56DE;&#x8C03;&#x540E;&#x6B63;&#x786E;&#x66F4;&#x65B0;&#x8BE5;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>WeakReference</code> &#x5B58;&#x50A8;&#x5BF9;&#x6240;&#x9700;&#x754C;&#x9762;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5E76;&#x5728; <code>AsyncTask</code> &#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FD0;&#x884C;&#x540E;&#x8BBF;&#x95EE;&#x8BE5;&#x5BF9;&#x8C61;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x4FDD;&#x7559;&#x5BF9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684; <code>WeakReference</code> &#x4E0D;&#x4F1A;&#x4F7F;&#x8BE5;&#x5BF9;&#x8C61;&#x53D8;&#x4E3A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1B;<code>WeakReference</code> &#x4EC5;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x5904;&#x7406;&#x663E;&#x5F0F;&#x5F15;&#x7528;&#x548C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E3A;UI&#x7EBF;&#x7A0B;&#x4E0E;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x7684;&#x5207;&#x6362;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x4FBF;&#x6377;&#x7684;&#x673A;&#x5236;&#x3002;&#x9002;&#x7528;&#x4E8E;&#x5F53;&#x4E0B;&#x7ACB;&#x5373;&#x9700;&#x8981;&#x542F;&#x52A8;&#xFF0C;&#x4F46;&#x662F;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x77ED;&#x6682;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x3002;
+&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x4FBF;&#x7684;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x53C8;&#x540C;&#x65F6;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E9B;&#x4EE4;&#x4EBA;&#x538C;&#x6076;&#x7684;&#x9EBB;&#x70E6;&#x3002;&#x4E00;&#x65E6;&#x5BF9;AsyncTask&#x4F7F;&#x7528;&#x4E0D;&#x5F53;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x5BF9;&#x7A0B;&#x5E8F;&#x7684;&#x6027;&#x80FD;&#x5E26;&#x6765;&#x8D1F;&#x9762;&#x5F71;&#x54CD;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x3002;(&#x5173;&#x4E8E;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x5728;&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x8BB2;&#x8FC7;)</p>
+<p><strong>&#x4F7F;&#x7528;AsyncTask&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;?</strong></p>
+<p>(1).&#x5728;AsyncTask&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x88AB;&#x7EBF;&#x6027;&#x8C03;&#x5EA6;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x4ED6;&#x4EEC;&#x5904;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5F53;&#x4E2D;&#xFF0C;&#x6309;&#x987A;&#x5E8F;&#x9010;&#x4E2A;&#x6267;&#x884C;&#x3002;&#x4E00;&#x65E6;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8FC7;&#x957F;&#xFF0C;&#x961F;&#x5217;&#x4E2D;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#x5C31;&#x4F1A;&#x963B;&#x585E;&#x3002;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5748654-713e085214020903.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/559/format/webp" alt="img"></p>
+<p>&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;AsyncTask.executeOnExecutor()&#x8BA9;AsyncTask&#x53D8;&#x6210;&#x5E76;&#x53D1;&#x8C03;&#x5EA6;&#x3002;</p>
+<p>(2).AsyncTask&#x5BF9;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x4E0D;&#x5177;&#x5907;&#x53D6;&#x6D88;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8981;&#x5728;&#x4EFB;&#x52A1;&#x4EE3;&#x7801;&#x4E2D;&#x6DFB;&#x52A0;&#x53D6;&#x6D88;&#x7684;&#x903B;&#x8F91;&#xFF08;&#x548C;&#x4E0A;&#x9762;Thread&#x7C7B;&#x4F3C;&#xFF09;</p>
+<p>(3).AsyncTask&#x4F7F;&#x7528;&#x4E0D;&#x5F53;&#x4F1A;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF08;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x4E00;&#x7AE0;&#xFF09;</p>
+<h4 id="242-handlerthread-&#x7C7B;"><a name="242-handlerthread-&#x7C7B;" class="anchor-navigation-ex-anchor" href="#242-handlerthread-&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.2 HandlerThread &#x7C7B;</h4>
+<p>&#x867D;&#x7136; <code>AsyncTask</code> &#x5F88;&#x6709;&#x7528;&#xFF0C;&#x4F46;&#x5BF9;&#x60A8;&#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x95EE;&#x9898;&#x6765;&#x8BF4;&#xFF0C;<a href="https://www.youtube.com/watch?v=adPLIAnx9og&amp;index=5&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;hl=zh-cn" target="_blank">&#x5B83;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x6B63;&#x786E;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;</a>&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x91C7;&#x7528;&#x66F4;&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x6CD5;&#x5728;&#x66F4;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#x5DE5;&#x4F5C;&#x5757;&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x624B;&#x52A8;&#x7BA1;&#x7406;&#x8BE5;&#x5DE5;&#x4F5C;&#x6D41;&#x3002;</p>
+<p>&#x60F3;&#x4E00;&#x60F3;&#x4ECE;&#x60A8;&#x7684; <code>Camera</code> &#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x9884;&#x89C8;&#x5E27;&#x65F6;&#x9047;&#x5230;&#x7684;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x60A8;&#x6CE8;&#x518C; Camera &#x9884;&#x89C8;&#x5E27;&#x65F6;&#xFF0C;&#x60A8;&#x4F1A;&#x5728; <code>onPreviewFrame()</code> &#x56DE;&#x8C03;&#x4E2D;&#x6536;&#x5230;&#x8FD9;&#x4E9B;&#x5E27;&#xFF0C;&#x8BE5;&#x56DE;&#x8C03;&#x5728;&#x8C03;&#x7528;&#x4E86;&#x5B83;&#x7684;&#x4E8B;&#x4EF6;&#x7EBF;&#x7A0B;&#x4E0A;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x56DE;&#x8C03;&#x662F;&#x5728;&#x754C;&#x9762;&#x7EBF;&#x7A0B;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x5219;&#x5904;&#x7406;&#x5927;&#x578B;&#x50CF;&#x7D20;&#x77E9;&#x9635;&#x7684;&#x4EFB;&#x52A1;&#x4F1A;&#x5E72;&#x6270;&#x6E32;&#x67D3;&#x548C;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x3002;<code>AsyncTask</code> &#x4E5F;&#x5B58;&#x5728;&#x540C;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x4F5C;&#x4E1A;&#xFF0C;&#x5E76;&#x4E14;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x963B;&#x585E;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x9002;&#x5408;&#x91C7;&#x7528;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7EBF;&#x7A0B;&#xFF1A;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7EBF;&#x7A0B;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F1A;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x6293;&#x53D6;&#x5DE5;&#x4F5C;&#x5E76;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x5F53;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x5C06; <code>Camera.open()</code> &#x547D;&#x4EE4;&#x59D4;&#x6258;&#x7ED9;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7EBF;&#x7A0B;&#x4E0A;&#x7684;&#x5DE5;&#x4F5C;&#x5757;&#x65F6;&#xFF0C;&#x5173;&#x8054;&#x7684; <code>onPreviewFrame()</code> &#x56DE;&#x8C03;&#x4F1A;&#x8FDB;&#x5165;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x754C;&#x9762;&#x6216; <code>AsyncTask</code> &#x7EBF;&#x7A0B;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x50CF;&#x7D20;&#x6267;&#x884C;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x66F4;&#x597D;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<p>&#x5F53;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x4F7F;&#x7528; <code>HandlerThread</code> &#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x65F6;&#xFF0C;&#x522B;&#x5FD8;&#x4E86;<a href="https://www.youtube.com/watch?v=NwFXVsM15Co&amp;index=9&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;hl=zh-cn" target="_blank">&#x6839;&#x636E;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x5176;&#x4F18;&#x5148;&#x7EA7;</a>&#x3002;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;CPU &#x53EA;&#x80FD;&#x5E76;&#x884C;&#x5904;&#x7406;&#x5C11;&#x91CF;&#x7EBF;&#x7A0B;&#x3002;&#x8BBE;&#x7F6E;&#x4F18;&#x5148;&#x7EA7;&#x6709;&#x52A9;&#x4E8E;&#x7CFB;&#x7EDF;&#x4E86;&#x89E3;&#x5F53;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x90FD;&#x5728;&#x4E89;&#x53D6;&#x5173;&#x6CE8;&#x65F6;&#x8C03;&#x5EA6;&#x6B64;&#x5DE5;&#x4F5C;&#x7684;&#x6B63;&#x786E;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E3A;&#x67D0;&#x4E9B;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x7B49;&#x5F85;&#x67D0;&#x4E9B;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4E13;&#x5C5E;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x7EBF;&#x7A0B;&#x4EFB;&#x52A1;&#x7684;&#x8C03;&#x5EA6;&#x673A;&#x5236;&#x3002;
+&#x5148;&#x6765;&#x4E86;&#x89E3;&#x4E0B;Looper&#xFF0C;Handler&#xFF0C;MessageQueue
+<strong>Looper:</strong> &#x80FD;&#x591F;&#x786E;&#x4FDD;&#x7EBF;&#x7A0B;&#x6301;&#x7EED;&#x5B58;&#x6D3B;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4E0D;&#x65AD;&#x7684;&#x4ECE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x5E76;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x3002;
+<strong>Handler:</strong> &#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x5B9E;&#x73B0;&#x961F;&#x5217;&#x4EFB;&#x52A1;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x4E0D;&#x4EC5;&#x4EC5;&#x80FD;&#x591F;&#x628A;&#x4EFB;&#x52A1;&#x63D2;&#x5165;&#x5230;&#x961F;&#x5217;&#x7684;&#x5934;&#x90E8;&#xFF0C;&#x5C3E;&#x90E8;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5EF6;&#x8FDF;&#x6765;&#x786E;&#x4FDD;&#x4EFB;&#x52A1;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x80FD;&#x591F;&#x6765;&#x5F97;&#x53CA;&#x88AB;&#x53D6;&#x6D88;&#x6389;&#x3002;
+<strong>MessageQueue:</strong> &#x4F7F;&#x7528;Intent&#xFF0C;Message&#xFF0C;Runnable&#x4F5C;&#x4E3A;&#x4EFB;&#x52A1;&#x7684;&#x8F7D;&#x4F53;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;
+ &#x628A;&#x4E0A;&#x9762;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#x6253;&#x5305;&#x5230;&#x4E00;&#x8D77;&#x8FDB;&#x884C;&#x534F;&#x4F5C;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;HandlerThread</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5748654-e88d1a439d37bf38.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/622/format/webp" alt="img"></p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E0B;&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HandlerThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HandlerThread</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> priority)</span> </span>{
+            <span class="hljs-keyword">super</span>(name);
+            mPriority = priority;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            mTid = Process.myTid();
+            Looper.prepare();
+            <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+                mLooper = Looper.myLooper();
+                notifyAll();
+            }
+            Process.setThreadPriority(mPriority);
+            onLooperPrepared();
+            Looper.loop();
+            mTid = -<span class="hljs-number">1</span>;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Looper <span class="hljs-title">getLooper</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">if</span> (!isAlive()) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+            }
+            <span class="hljs-comment">// If the thread has been started, wait until the looper has been created.</span>
+            <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+                <span class="hljs-keyword">while</span> (isAlive() &amp;&amp; mLooper == <span class="hljs-keyword">null</span>) {
+                    <span class="hljs-keyword">try</span> {
+                        wait();
+                    } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+                    }
+                }
+            }
+            <span class="hljs-keyword">return</span> mLooper;
+        }
+    }
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x6E90;&#x7801;&#x53D1;&#x73B0;&#xFF0C;HandlerThread&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x4E2D;&#x7EF4;&#x6301;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#x961F;&#x5217;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x770B;&#x4E0B;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-java">    HandlerThread mHanderThread = <span class="hljs-keyword">new</span> HandlerThread(<span class="hljs-string">&quot;hanlderThreadTest&quot;</span>, Process.THREAD_PRIORITY_BACKGROUND);
+    mHanderThread.run();
+    Looper mHanderThreadLooper = mHanderThread.getLooper();
+
+    Handler mHandler = <span class="hljs-keyword">new</span> Handler(mHanderThreadLooper){
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(Message msg)</span> </span>{
+            <span class="hljs-keyword">super</span>.handleMessage(msg);
+            <span class="hljs-comment">//&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;</span>
+            ...
+        }
+    };
+    <span class="hljs-comment">//&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+    mHandler.post(<span class="hljs-keyword">new</span> Runnable() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            ...
+        }
+    });
+</code></pre>
+<h4 id="243-threadpoolexecutor-&#x7C7B;"><a name="243-threadpoolexecutor-&#x7C7B;" class="anchor-navigation-ex-anchor" href="#243-threadpoolexecutor-&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.3 ThreadPoolExecutor &#x7C7B;</h4>
+<p>&#x67D0;&#x4E9B;&#x7C7B;&#x578B;&#x7684;&#x5DE5;&#x4F5C;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x4E3A;&#x9AD8;&#x5EA6;&#x5E76;&#x884C;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x4EFB;&#x52A1;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E3A; 800 &#x4E07;&#x50CF;&#x7D20;&#x56FE;&#x7247;&#x7684;&#x6BCF;&#x4E2A; 8x8 &#x5757;&#x8BA1;&#x7B97;&#x6EE4;&#x955C;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;&#x9274;&#x4E8E;&#x8FD9;&#x4F1A;&#x521B;&#x5EFA;&#x5927;&#x91CF;&#x7684;&#x5DE5;&#x4F5C;&#x6570;&#x636E;&#x5305;&#xFF0C;<a href="https://www.youtube.com/watch?v=uCmHoEY1iTM&amp;index=6&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;hl=zh-cn" target="_blank"><code>AsyncTask</code> &#x548C; <code>HandlerThread</code> &#x7C7B;&#x5E76;&#x4E0D;&#x5408;&#x9002;</a>&#x3002;&#x5177;&#x6709;&#x5355;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x7279;&#x6027;&#x7684; <code>AsyncTask</code> &#x4F1A;&#x5C06;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x6C60;&#x5316;&#x7684;&#x5DE5;&#x4F5C;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x7CFB;&#x7EDF;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x4F7F;&#x7528; <code>HandlerThread</code> &#x7C7B;&#x9700;&#x8981;&#x7A0B;&#x5E8F;&#x5458;&#x5728;&#x4E00;&#x7EC4;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x624B;&#x52A8;&#x5B9E;&#x73B0;&#x8D1F;&#x8F7D;&#x5E73;&#x8861;&#x3002;</p>
+<p><code>ThreadPoolExecutor</code> &#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x7B80;&#x5316;&#x6B64;&#x8FC7;&#x7A0B;&#x7684;&#x8F85;&#x52A9;&#x7C7B;&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x53EF;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x4E00;&#x7EC4;&#x7EBF;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x8BBE;&#x7F6E;&#x5176;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x5E76;&#x7BA1;&#x7406;&#x5DE5;&#x4F5C;&#x5728;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x5206;&#x5E03;&#x60C5;&#x51B5;&#x3002;&#x968F;&#x7740;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x7684;&#x589E;&#x51CF;&#xFF0C;&#x8BE5;&#x7C7B;&#x4F1A;&#x521B;&#x5EFA;&#x6216;&#x9500;&#x6BC1;&#x66F4;&#x591A;&#x7EBF;&#x7A0B;&#x4EE5;&#x9002;&#x5E94;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x3002;</p>
+<p>&#x8BE5;&#x7C7B;&#x8FD8;&#x53EF;&#x5E2E;&#x52A9;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x751F;&#x6210;&#x6700;&#x4F73;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x3002;&#x6784;&#x9020; <code>ThreadPoolExecutor</code> &#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5E94;&#x7528;&#x4F1A;&#x8BBE;&#x7F6E;&#x6700;&#x5C0F;&#x548C;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x3002;&#x968F;&#x7740; <code>ThreadPoolExecutor</code> &#x4E0A;&#x7684;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#xFF0C;&#x8BE5;&#x7C7B;&#x4F1A;&#x8003;&#x8651;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6700;&#x5C0F;&#x548C;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x8BA1;&#x6570;&#xFF0C;&#x5E76;&#x8003;&#x8651;&#x5F85;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x91CF;&#x3002;<code>ThreadPoolExecutor</code> &#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x56E0;&#x7D20;&#x51B3;&#x5B9A;&#x5728;&#x4EFB;&#x4F55;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x5E94;&#x4FDD;&#x7559;&#x591A;&#x5C11;&#x7EBF;&#x7A0B;&#x3002;</p>
+<h4 id="244-&#x60A8;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x591A;&#x5C11;&#x7EBF;&#x7A0B;&#xFF1F;"><a name="244-&#x60A8;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x591A;&#x5C11;&#x7EBF;&#x7A0B;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#244-&#x60A8;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x591A;&#x5C11;&#x7EBF;&#x7A0B;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.4 &#x60A8;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x591A;&#x5C11;&#x7EBF;&#x7A0B;&#xFF1F;</h4>
+<p>&#x5C3D;&#x7BA1;&#x5728;&#x8F6F;&#x4EF6;&#x5C42;&#x9762;&#x4E0A;&#xFF0C;&#x60A8;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x6570;&#x767E;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F46;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;&#x3001;&#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x3001;&#x97F3;&#x9891;&#x5F15;&#x64CE;&#x3001;&#x7F51;&#x7EDC;&#x7B49;&#x5171;&#x4EAB;&#x6709;&#x9650;&#x7684; CPU &#x8D44;&#x6E90;&#x3002;CPU &#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x80FD;&#x5E76;&#x884C;&#x5904;&#x7406;&#x5C11;&#x91CF;&#x7EBF;&#x7A0B;&#xFF1B;&#x4E00;&#x65E6;&#x8D85;&#x9650;&#x4FBF;&#x4F1A;&#x9047;&#x5230;<a href="https://www.youtube.com/watch?v=NwFXVsM15Co&amp;list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&amp;index=9&amp;hl=zh-cn" target="_blank">&#x4F18;&#x5148;&#x7EA7;&#x548C;&#x8C03;&#x5EA6;&#x95EE;&#x9898;</a>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x52A1;&#x5FC5;&#x8981;&#x6839;&#x636E;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x9700;&#x6C42;&#x521B;&#x5EFA;&#x5408;&#x9002;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x4E00;&#x51B3;&#x5B9A;&#x53D6;&#x51B3;&#x4E8E;&#x5F88;&#x591A;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x503C;&#xFF08;&#x4F8B;&#x5982;&#x9996;&#x5148;&#x9009;&#x62E9; 4 &#x4E2A;&#xFF09;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; <a href="https://developer.android.com/topic/performance/tracing/command-line?hl=zh-cn" target="_blank">Systrace</a> &#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x7B56;&#x7565;&#x8DDF;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7B56;&#x7565;&#x4E00;&#x6837;&#x53EF;&#x9760;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x8BD5;&#x9519;&#x6CD5;&#x5F97;&#x51FA;&#x6700;&#x5C11;&#x8981;&#x5C06;&#x7EBF;&#x7A0B;&#x6570;&#x51CF;&#x81F3;&#x591A;&#x5C11;&#x624D;&#x4E0D;&#x81F3;&#x4E8E;&#x9047;&#x5230;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x5728;&#x51B3;&#x5B9A;&#x521B;&#x5EFA;&#x591A;&#x5C11;&#x4E2A;&#x7EBF;&#x7A0B;&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#x7EBF;&#x7A0B;&#x4E0D;&#x662F;&#x514D;&#x8D39;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x5360;&#x7528;&#x5185;&#x5B58;&#x3002;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x5360;&#x7528; 64k &#x5185;&#x5B58;&#x3002;&#x8BBE;&#x5907;&#x4E0A;&#x5B89;&#x88C5;&#x7684;&#x4F17;&#x591A;&#x5E94;&#x7528;&#x4F1A;&#x4F7F;&#x8FD9;&#x4E00;&#x6570;&#x5B57;&#x8FC5;&#x901F;&#x7D2F;&#x52A0;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x8C03;&#x7528;&#x5806;&#x6808;&#x663E;&#x8457;&#x6269;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;</p>
+<p>&#x8BB8;&#x591A;&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7ECF;&#x5E38;&#x4F1A;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;&#x5982;&#x679C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x73B0;&#x6709;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x548C;&#x5904;&#x7406;&#x8D44;&#x6E90;&#x4E89;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x5E2E;&#x52A9;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x5728;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x7684;&#x5B9E;&#x8DF5;&#x5F53;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;&#x7A0B;&#x5E8F;&#x8868;&#x73B0;&#x5F97;&#x66F4;&#x52A0;&#x6D41;&#x7545;&#xFF0C;&#x6211;&#x4EEC;&#x80AF;&#x5B9A;&#x4F1A;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x591A;&#x7EBF;&#x7A0B;&#x6765;&#x63D0;&#x5347;&#x7A0B;&#x5E8F;&#x7684;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x6027;&#x80FD;&#x3002;&#x4F46;&#x662F;&#x7F16;&#x5199;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x7684;&#x4EE3;&#x7801;&#x4E00;&#x76F4;&#x4EE5;&#x6765;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x68D8;&#x624B;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x8981;&#x83B7;&#x5F97;&#x66F4;&#x4F73;&#x7684;&#x7A0B;&#x5E8F;&#x6027;&#x80FD;&#xFF0C;&#x975E;&#x5E38;&#x6709;&#x5FC5;&#x8981;&#x638C;&#x63E1;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x57FA;&#x7840;&#x6280;&#x80FD;&#x3002;</p>
+<h4 id="245-intentservice"><a name="245-intentservice" class="anchor-navigation-ex-anchor" href="#245-intentservice"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.5 IntentService</h4>
+<p>&#x9002;&#x5408;&#x4E8E;&#x6267;&#x884C;&#x7531;UI&#x89E6;&#x53D1;&#x7684;&#x540E;&#x53F0;Service&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x628A;&#x540E;&#x53F0;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x60C5;&#x51B5;&#x901A;&#x8FC7;&#x4E00;&#x5B9A;&#x7684;&#x673A;&#x5236;&#x53CD;&#x9988;&#x7ED9;UI&#x3002;
+&#x9ED8;&#x8BA4;&#x7684;Service&#x662F;&#x6267;&#x884C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#xFF0C;&#x53EF;&#x662F;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x5F88;&#x5BB9;&#x6613;&#x5F71;&#x54CD;&#x5230;&#x7A0B;&#x5E8F;&#x7684;&#x7ED8;&#x5236;&#x6027;&#x80FD;(&#x62A2;&#x5360;&#x4E86;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x8D44;&#x6E90;)&#x3002;&#x9664;&#x4E86;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x8FC7;&#x7684;AsyncTask&#x4E0E;HandlerThread&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528;IntentService&#x6765;&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;IntentService&#x7EE7;&#x627F;&#x81EA;&#x666E;&#x901A;Service&#x540C;&#x65F6;&#x53C8;&#x5728;&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;HandlerThread&#xFF0C;&#x5728;onHandlerIntent()&#x7684;&#x56DE;&#x8C03;&#x91CC;&#x9762;&#x5904;&#x7406;&#x6254;&#x5230;IntentService&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x6240;&#x4EE5;IntentService&#x5C31;&#x4E0D;&#x4EC5;&#x4EC5;&#x5177;&#x5907;&#x4E86;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8FD8;&#x540C;&#x65F6;&#x4FDD;&#x7559;&#x4E86;Service&#x4E0D;&#x53D7;&#x4E3B;&#x9875;&#x9762;&#x751F;&#x547D;&#x5468;&#x671F;&#x5F71;&#x54CD;&#x7684;&#x7279;&#x70B9;&#x3002;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5748654-b85e16cfc4e1ebf4.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/744/format/webp" alt="img"></p>
+<p><strong>&#x4F7F;&#x7528;IntentService&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7684;&#x70B9;&#xFF1A;</strong></p>
+<p>(1).&#x56E0;&#x4E3A;IntentService&#x5185;&#x7F6E;&#x7684;&#x662F;HandlerThread&#x4F5C;&#x4E3A;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E00;&#x4E2A;&#x4EA4;&#x7ED9;IntentService&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x5C06;&#x4EE5;&#x961F;&#x5217;&#x7684;&#x65B9;&#x5F0F;&#x9010;&#x4E2A;&#x88AB;&#x6267;&#x884C;&#x5230;&#xFF0C;&#x4E00;&#x65E6;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8FC7;&#x957F;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x540E;&#x7EED;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x4F1A;&#x88AB;&#x5EF6;&#x8FDF;&#x5904;&#x7406;&#x3002;</p>
+<p>(2).&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x5230;IntentService&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x7ED3;&#x5408;&#x4F7F;&#x7528;BroadcastReceiver&#x628A;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x4E3B;UI&#x7EBF;&#x7A0B;&#x3002;&#x4F7F;&#x7528;&#x5E7F;&#x64AD;&#x5BB9;&#x6613;&#x5F15;&#x8D77;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;LocalBroadcastManager&#x6765;&#x53D1;&#x9001;&#x53EA;&#x5728;&#x7A0B;&#x5E8F;&#x5185;&#x90E8;&#x4F20;&#x9012;&#x7684;&#x5E7F;&#x64AD;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x5347;&#x5E7F;&#x64AD;&#x7684;&#x6027;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;runOnUiThread()&#x5FEB;&#x901F;&#x56DE;&#x8C03;&#x5230;&#x4E3B;UI&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>(3).&#x5305;&#x542B;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;IntentService&#x7684;&#x7A0B;&#x5E8F;&#x76F8;&#x6BD4;&#x8D77;&#x7EAF;&#x7CB9;&#x7684;&#x540E;&#x53F0;&#x7A0B;&#x5E8F;&#x66F4;&#x4E0D;&#x5BB9;&#x6613;&#x88AB;&#x7CFB;&#x7EDF;&#x6740;&#x6B7B;&#xFF0C;&#x8BE5;&#x7A0B;&#x5E8F;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x662F;&#x4ECB;&#x4E8E;&#x524D;&#x53F0;&#x7A0B;&#x5E8F;&#x4E0E;&#x7EAF;&#x540E;&#x53F0;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x7684;&#x3002;</p>
+<h4 id="246-loader"><a name="246-loader" class="anchor-navigation-ex-anchor" href="#246-loader"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.6 Loader</h4>
+<p>&#x5BF9;&#x4E8E;3.0&#x540E;ContentProvider&#x4E2D;&#x7684;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;Loader&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x673A;&#x5236;&#x3002;&#x76F8;&#x5BF9;&#x5176;&#x4ED6;&#x52A0;&#x8F7D;&#x673A;&#x5236;&#xFF0C;Loader&#x6709;&#x90A3;&#x4E9B;&#x4F18;&#x70B9;&#x5462;&#xFF1F;</p>
+<ul>
+<li><p>&#x63D0;&#x4F9B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x673A;&#x5236;</p>
+</li>
+<li><p>&#x5BF9;&#x6570;&#x636E;&#x6E90;&#x53D8;&#x5316;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#xFF0C;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x6570;&#x636E;</p>
+</li>
+<li><p>&#x5728;Activity&#x914D;&#x7F6E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF08;&#x5982;&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#xFF09;&#x65F6;&#x4E0D;&#x7528;&#x91CD;&#x590D;&#x52A0;&#x8F7D;&#x6570;&#x636E;</p>
+</li>
+<li><p>&#x9002;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;Activity&#x548C;Fragment</p>
+</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B;Loader&#x7684;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#xFF1A;
+ &#x6211;&#x4EEC;&#x4EE5;&#x83B7;&#x5F97;&#x624B;&#x673A;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x56FE;&#x7247;&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java">    getLoaderManager().initLoader(LOADER_TYPE, <span class="hljs-keyword">null</span>, mLoaderCallback);
+    LoaderManager.LoaderCallbacks&lt;Cursor&gt; mLoaderCallback = <span class="hljs-keyword">new</span> LoaderManager.LoaderCallbacks&lt;Cursor&gt;() {
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String[] IMAGE_COLUMNS={
+                MediaStore.Images.Media.DATA,<span class="hljs-comment">//&#x56FE;&#x7247;&#x8DEF;&#x5F84;</span>
+                MediaStore.Images.Media.DISPLAY_NAME,<span class="hljs-comment">//&#x663E;&#x793A;&#x7684;&#x540D;&#x5B57;</span>
+                MediaStore.Images.Media.DATE_ADDED,<span class="hljs-comment">//&#x6DFB;&#x52A0;&#x65F6;&#x95F4;</span>
+                MediaStore.Images.Media.MIME_TYPE,<span class="hljs-comment">//&#x56FE;&#x7247;&#x6269;&#x5C55;&#x7C7B;&#x578B;</span>
+                MediaStore.Images.Media.SIZE,<span class="hljs-comment">//&#x56FE;&#x7247;&#x5927;&#x5C0F;</span>
+                MediaStore.Images.Media._ID,<span class="hljs-comment">//&#x56FE;&#x7247;id</span>
+        };
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Loader&lt;Cursor&gt; <span class="hljs-title">onCreateLoader</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id, Bundle args)</span> </span>{
+            toggleShowLoading(<span class="hljs-keyword">true</span>,getString(R.string.common_loading));
+
+            CursorLoader cursorLoader = <span class="hljs-keyword">new</span> CursorLoader(ImageSelectActivity.<span class="hljs-keyword">this</span>,                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI,IMAGE_COLUMNS,
+                    IMAGE_COLUMNS[<span class="hljs-number">4</span>] + <span class="hljs-string">&quot; &gt; 0 AND &quot;</span>+IMAGE_COLUMNS[<span class="hljs-number">3</span>] + <span class="hljs-string">&quot; =? OR &quot;</span> +IMAGE_COLUMNS[<span class="hljs-number">3</span>] + <span class="hljs-string">&quot; =? &quot;</span>,
+                    <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;image/jpeg&quot;</span>,<span class="hljs-string">&quot;image/png&quot;</span>},IMAGE_COLUMNS[<span class="hljs-number">2</span>] + <span class="hljs-string">&quot; DESC&quot;</span>);
+            <span class="hljs-keyword">return</span> cursorLoader;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLoadFinished</span><span class="hljs-params">(Loader&lt;Cursor&gt; loader, Cursor data)</span> </span>{
+            <span class="hljs-keyword">if</span>(data != <span class="hljs-keyword">null</span> &amp;&amp; data.getCount() &gt; <span class="hljs-number">0</span>){
+                ArrayList&lt;String&gt; imageList = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+
+                <span class="hljs-keyword">if</span>(mShowCamera){
+                    imageList.add(<span class="hljs-string">&quot;&quot;</span>);
+                }
+                <span class="hljs-keyword">while</span> (data.moveToNext()){
+                    String path = data.getString(data.getColumnIndexOrThrow(IMAGE_COLUMNS[<span class="hljs-number">0</span>]));
+                    imageList.add(path);
+                    Log.e(<span class="hljs-string">&quot;ImageSelect&quot;</span>, <span class="hljs-string">&quot;IIIIIIIIIIIIIIIIIIII=====&gt;&quot;</span>+path);
+                }
+                <span class="hljs-comment">//&#x663E;&#x793A;&#x6570;&#x636E;</span>
+                showListData(imageList);
+                toggleShowLoading(<span class="hljs-keyword">false</span>,getString(R.string.common_loading));
+            }
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLoaderReset</span><span class="hljs-params">(Loader&lt;Cursor&gt; loader)</span> </span>{  
+        }
+</code></pre>
+<p>onCreateLoader()  &#x5B9E;&#x4F8B;&#x5316;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x521B;&#x5EFA;&#x7ED9;&#x5B9A;ID&#x7684;Loader&#x5BF9;&#x8C61;
+onLoadFinished() &#x5F53;&#x521B;&#x5EFA;&#x597D;&#x7684;Loader&#x5B8C;&#x6210;&#x4E86;&#x6570;&#x636E;&#x7684;load&#x4E4B;&#x540E;&#x56DE;&#x8C03;&#x6B64;&#x65B9;&#x6CD5;
+onLoaderReset() &#x5F53;&#x521B;&#x5EFA;&#x597D;&#x7684;Loader&#x88AB;reset&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x4FDD;&#x8BC1;&#x5B83;&#x7684;&#x6570;&#x636E;&#x65E0;&#x6548;
+LoaderManager&#x4F1A;&#x5BF9;&#x67E5;&#x8BE2;&#x7684;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#xFF0C;&#x53EA;&#x8981;&#x5BF9;&#x5E94;Cursor&#x4E0A;&#x7684;&#x6570;&#x636E;&#x6E90;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5728;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;(&#x4F8B;&#x5982;&#x5C4F;&#x5E55;&#x7684;&#x65CB;&#x8F6C;)&#xFF0C;Loader&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x628A;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#x56DE;&#x8C03;&#x5230;onLoadFinished()&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x91CD;&#x65B0;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x3002;&#x53E6;&#x5916;&#x7CFB;&#x7EDF;&#x4F1A;&#x5728;Loader&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x65F6;&#x5019;(&#x4F8B;&#x5982;&#x4F7F;&#x7528;Back&#x6309;&#x94AE;&#x9000;&#x51FA;&#x5F53;&#x524D;&#x9875;&#x9762;)&#x56DE;&#x8C03;onLoaderReset()&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x505A;&#x6570;&#x636E;&#x7684;&#x6E05;&#x9664;&#x7B49;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
+<h4 id="247-threadpool"><a name="247-threadpool" class="anchor-navigation-ex-anchor" href="#247-threadpool"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.7 ThreadPool</h4>
+<p>&#x628A;&#x4EFB;&#x52A1;&#x5206;&#x89E3;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x5355;&#x5143;&#xFF0C;&#x5206;&#x53D1;&#x5230;&#x5404;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#xFF0C;&#x8FDB;&#x884C;&#x540C;&#x65F6;&#x5E76;&#x53D1;&#x5904;&#x7406;&#x3002;
+&#x7EBF;&#x7A0B;&#x6C60;&#x9002;&#x5408;&#x7528;&#x5728;&#x628A;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x5206;&#x89E3;&#xFF0C;&#x5E76;&#x53D1;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x7684;&#x573A;&#x666F;&#x3002;
+&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;ThreadPoolExecutor&#x5E2E;&#x52A9;&#x7C7B;&#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x7B80;&#x5316;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5748654-91d21d03a19a7610.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/670/format/webp" alt="img"></p>
+<p>&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x540C;&#x65F6;&#x5E76;&#x53D1;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x7684;&#x63A7;&#x5236;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4EFB;&#x610F;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x5E76;&#x53D1;&#x6570;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x505A;&#x975E;&#x5E38;&#x7684;&#x4E0D;&#x597D;&#x3002;&#x56E0;&#x4E3A;CPU&#x53EA;&#x80FD;&#x540C;&#x65F6;&#x6267;&#x884C;&#x56FA;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x4E00;&#x65E6;&#x540C;&#x65F6;&#x5E76;&#x53D1;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x8D85;&#x8FC7;CPU&#x80FD;&#x591F;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x9608;&#x503C;&#xFF0C;CPU&#x5C31;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x7CBE;&#x529B;&#x6765;&#x5224;&#x65AD;&#x5230;&#x5E95;&#x54EA;&#x4E9B;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#x5207;&#x6362;&#x3002;
+&#x4E00;&#x65E6;&#x540C;&#x65F6;&#x5E76;&#x53D1;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x7684;&#x91CF;&#x7EA7;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;CPU&#x5728;&#x4E0D;&#x540C;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#x7684;&#x65F6;&#x95F4;&#x5C31;&#x53EF;&#x80FD;&#x8FC7;&#x957F;&#xFF0C;&#x53CD;&#x800C;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x4E25;&#x91CD;&#x4E0B;&#x964D;&#x3002;&#x53E6;&#x5916;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x6BCF;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x90FD;&#x4F1A;&#x8017;&#x8D39;&#x81F3;&#x5C11;64K+&#x7684;&#x5185;&#x5B58;&#x3002;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x65B9;&#x4FBF;&#x7684;&#x5BF9;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x8FDB;&#x884C;&#x63A7;&#x5236;&#xFF0C;ThreadPoolExecutor&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5E76;&#x53D1;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF0C;&#x4EE5;&#x53CA;&#x6700;&#x5927;&#x7684;&#x5E76;&#x53D1;&#x6570;&#x91CF;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-dart">    <span class="hljs-comment"><span class="markdown">/**
+<span class="hljs-code">     * &#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;</span>
+<span class="hljs-code">     * &#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;</span>
+<span class="hljs-code">     * &#x4FDD;&#x6D3B;&#x65F6;&#x95F4;</span>
+<span class="hljs-code">     * &#x65F6;&#x95F4;&#x5355;&#x4F4D;</span>
+<span class="hljs-code">     * &#x4EFB;&#x52A1;&#x961F;&#x5217;</span>
+<span class="hljs-code">     * &#x7EBF;&#x7A0B;&#x5DE5;&#x5382;</span>
+<span class="hljs-code">     */</span></span></span>
+    threadPoolExecutor = <span class="hljs-keyword">new</span> ThreadPoolExecutor(
+            CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS, TimeUnit.SECONDS,
+            linkedBlockingQueue, sThreadFactory);
+    threadPoolExecutor.execute(runnable);
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x7CFB;&#x7EDF;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;Executors&#x7C7B;&#x4E2D;&#x51E0;&#x79CD;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<p><strong>newFixedThreadPool &#x548C; newSingleThreadExecutor:</strong>&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x662F;&#x5806;&#x79EF;&#x7684;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x961F;&#x5217;&#x53EF;&#x80FD;&#x4F1A;&#x8017;&#x8D39;&#x975E;&#x5E38;&#x5927;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x751A;&#x81F3; OOM&#x3002;
+<strong>newCachedThreadPool &#x548C; newScheduledThreadPool:</strong>&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x662F;&#x7EBF;&#x7A0B;&#x6570;&#x6700;&#x5927;&#x6570;&#x662F; Integer.MAX_VALUE&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x521B;&#x5EFA;&#x6570;&#x91CF;&#x975E;&#x5E38;&#x591A;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x751A;&#x81F3; OOM</p>
+<p>&#x6211;&#x4EEC;&#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x6C60;&#x4F46;&#x662F;&#x6709;&#x7F3A;&#x70B9;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x90A3;&#x79CD;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x8981;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x6C42;&#x6765;&#x9009;&#x62E9;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x907F;&#x5F00;&#x4E0A;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;OKHttp&#x4E2D;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;OKHttp&#x4E2D;&#x961F;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x53C8;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x5C42;&#xFF0C;&#x4F7F;&#x7528;&#x5B89;&#x5168;&#x4E14;&#x65B9;&#x4FBF;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x53BB;&#x770B;&#x770B;&#x6E90;&#x7801;&#x3002;</p>
+<h2 id="&#x4E09;&#x3001;-thread-&#x4F7F;&#x7528;"><a name="&#x4E09;&#x3001;-thread-&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;-thread-&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x4E09;&#x3001; Thread &#x4F7F;&#x7528;</h2>
+<p>Thread&#x4F7F;&#x7528;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x70B9;&#xFF1A;</p>
+<h3 id="31-thread-&#x4E2D;&#x65AD;"><a name="31-thread-&#x4E2D;&#x65AD;" class="anchor-navigation-ex-anchor" href="#31-thread-&#x4E2D;&#x65AD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. 3.1 Thread &#x4E2D;&#x65AD;</h3>
+<p>&#x5E38;&#x7528;&#x7684;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<p><strong>(1).&#x901A;&#x8FC7;&#x629B;&#x51FA;InterruptedException&#x6765;&#x4E2D;&#x65AD;&#x7EBF;&#x7A0B;</strong></p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span>  <span class="hljs-keyword">static</span>  <span class="hljs-class"><span class="hljs-keyword">class</span>  <span class="hljs-title">MyThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{
+        <span class="hljs-keyword">private</span>  <span class="hljs-keyword">int</span> count=<span class="hljs-number">0</span>;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">super</span>.run();
+            <span class="hljs-keyword">try</span>{
+                <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+                        count++;
+                        System.out.println(<span class="hljs-string">&quot;count value:&quot;</span>+count);
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.interrupted() || <span class="hljs-keyword">this</span>.isInterrupted()){
+                            System.out.println(<span class="hljs-string">&quot;check interrupted show!&quot;</span>);
+                            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InterruptedException();
+                        }
+                }
+            }<span class="hljs-keyword">catch</span> ( InterruptedException e) {
+                System.out.println(<span class="hljs-string">&quot;thread is stop!&quot;</span>);
+                e.printStackTrace();
+            }
+        }
+
+    }
+</code></pre>
+<p><strong>(2).&#x901A;&#x8FC7;&#x53D8;&#x91CF;&#x6765;&#x4E2D;&#x65AD;&#xFF08;&#x5E38;&#x7528;&#xFF09;</strong></p>
+<pre><code class="lang-java">    <span class="hljs-keyword">public</span>  <span class="hljs-keyword">static</span>  <span class="hljs-class"><span class="hljs-keyword">class</span>  <span class="hljs-title">CustomThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{
+        <span class="hljs-keyword">private</span>  <span class="hljs-keyword">int</span> count=<span class="hljs-number">0</span>;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> isCancel = <span class="hljs-keyword">false</span>;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">super</span>.run();
+            <span class="hljs-keyword">while</span>(!isCancel){
+                    count++;
+                    System.out.println(<span class="hljs-string">&quot;count value:&quot;</span>+count);
+            }
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cancel</span><span class="hljs-params">()</span></span>{
+            isCancel = <span class="hljs-keyword">true</span>;
+        }
+    }
+</code></pre>
+<h3 id="32-&#x540C;&#x6B65;"><a name="32-&#x540C;&#x6B65;" class="anchor-navigation-ex-anchor" href="#32-&#x540C;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. 3.2 &#x540C;&#x6B65;</h3>
+<p>&#x5206;&#x53D8;&#x91CF;&#x540C;&#x6B65;&#x548C;&#x4EE3;&#x7801;&#x5757;&#x540C;&#x6B65;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#x6765;&#x8BB2;&#x89E3;</p>
+<p><strong>(1).&#x53D8;&#x91CF;&#x540C;&#x6B65;</strong></p>
+<p>&#x4F7F;&#x7528;volatile&#x5173;&#x952E;&#x5B57;</p>
+<pre><code class="lang-cpp">    <span class="hljs-comment">/**
+     * &#x4E3B;&#x5185;&#x5B58;&#x548C;&#x7EBF;&#x7A0B;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x8FDB;&#x884C;&#x540C;&#x6B65;
+     */</span>
+    <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">int</span> val = <span class="hljs-number">5</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getVal</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> val;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setVal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+        <span class="hljs-keyword">this</span>.val = val;
+    }
+</code></pre>
+<p>&#x4F7F;&#x7528;synchronized&#x5173;&#x952E;&#x5B57;</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">int</span> val2 = <span class="hljs-number">5</span>;
+    <span class="hljs-comment">/**
+     * &#x4F7F;&#x7528;&#x4E00;&#x4E2A;motinor&#x6765;&#x76D1;&#x542C;&#xFF08;&#x5B9E;&#x73B0;&#x8D44;&#x6E90;&#x7531;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF09;
+     * &#x4E3B;&#x5185;&#x5B58;&#x548C;&#x7EBF;&#x7A0B;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x8FDB;&#x884C;&#x540C;&#x6B65;
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getVal2</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> val2;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">int</span> <span class="hljs-title">setVal2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+        <span class="hljs-keyword">this</span>.val2 = val;
+    }
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;AtomicXXXXX</p>
+<pre><code class="lang-csharp">    AtomicInteger mAtomicValue = <span class="hljs-keyword">new</span>  AtomicInteger(<span class="hljs-number">0</span>);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAtomicValue</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-keyword">value</span></span>)</span>{
+        mAtomicValue.getAndSet(<span class="hljs-keyword">value</span>);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAtomicValue</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> mAtomicValue.<span class="hljs-keyword">get</span>();
+    }
+</code></pre>
+<p><strong>(2).&#x4EE3;&#x7801;&#x5757;&#x540C;&#x6B65;</strong></p>
+<p>&#x4EE3;&#x7801;&#x5757;&#x540C;&#x6B65;&#x5206;&#x4E50;&#x89C2;&#x9501;&#x548C;&#x60B2;&#x89C2;&#x9501;&#x6765;&#x8BB2;&#x89E3;</p>
+<p>&#x4F7F;&#x7528;&#x60B2;&#x89C2;&#x9501;&#x65F6;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#xFF0C;&#x8FDB;&#x5165;&#x7761;&#x7720;&#xFF0C;&#x9891;&#x7E41;&#x5207;&#x6362;&#x4EFB;&#x52A1;&#xFF0C;&#x6D88;&#x8017;cpu&#x8D44;&#x6E90;</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+        .....   
+    }
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x4E50;&#x89C2;&#x9501;&#x65F6;&#xFF0C;&#x5931;&#x8D25;&#x91CD;&#x8BD5;&#xFF0C;&#x907F;&#x514D;&#x4EFB;&#x52A1;&#x91CD;&#x590D;&#x5207;&#x6362;&#xFF0C;&#x51CF;&#x5C11;cpu&#x6D88;&#x8017;</p>
+<pre><code class="lang-csharp">    ReentrantLock <span class="hljs-keyword">lock</span> = <span class="hljs-keyword">new</span>  ReentrantLock();
+    <span class="hljs-keyword">lock</span>.<span class="hljs-keyword">lock</span>();
+    ......
+    <span class="hljs-keyword">lock</span>.unlock();
+</code></pre>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://juejin.im/post/6844903909178212359" target="_blank">&#x63A2;&#x7D22; Android &#x591A;&#x7EBF;&#x7A0B;&#x4F18;&#x5316;&#x65B9;&#x6CD5;</a></li>
+<li><a href="https://segmentfault.com/a/1190000005181461" target="_blank">&#x3010;Bugly&#x5E72;&#x8D27;&#x5206;&#x4EAB;&#x3011;Android&#x6027;&#x80FD;&#x4F18;&#x5316;&#x5178;&#x8303;&#x4E4B;&#x591A;&#x7EBF;&#x7A0B;&#x7BC7;</a></li>
+<li><a href="https://developer.android.com/topic/performance/threads?hl=zh-cn" target="_blank">&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x63D0;&#x5347;&#x6027;&#x80FD;</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tracyliu-FE 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-03-19 23:24:03
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="13.Bitmap优化.html" class="navigation navigation-prev " aria-label="Previous page: 13.Bitmap优化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="15.Apk包大小优化.html" class="navigation navigation-next " aria-label="Next page: 15.Apk包大小优化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"14.线程优化","level":"1.9.7","depth":2,"next":{"title":"15.Apk包大小优化","level":"1.9.8","depth":2,"path":"Performance/15.Apk包大小优化.md","ref":"Performance/15.Apk包大小优化.md","articles":[]},"previous":{"title":"13.Bitmap优化","level":"1.9.6","depth":2,"path":"Performance/13.Bitmap优化.md","ref":"Performance/13.Bitmap优化.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"Performance/14.线程优化.md","mtime":"2021-03-19T15:24:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-02T09:10:10.844Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

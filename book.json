@@ -1,0 +1,20 @@
+{
+	"plugins": [
+		
+		"anchor-navigation-ex",
+		"tbfed-pagefooter"
+	],
+	"pluginsConfig": {
+		"tbfed-pagefooter": {
+			"copyright": "Copyright &copy tracyliu-FE 2021",
+			"modify_label": "文件修订时间：",
+			"modify_format": "YYYY-MM-DD HH:mm:ss"
+		}
+		
+	},
+	"title": "知识总结",
+	"outputfile": "SUMMARY.md",
+	
+	"ignores": ["docs","_book","node_modules"],
+	"disableTitleFormatting": false
+}
