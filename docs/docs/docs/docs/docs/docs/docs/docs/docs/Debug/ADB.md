@@ -2,53 +2,75 @@
 
 
 
-adb shell appops set com.android.toofifi SYSTEM_ALERT_WINDOW allow
+
+
+#####  权限
+
+>  adb shell appops set com.android.toofifi SYSTEM_ALERT_WINDOW allow
+
+>  **adb shell pm grant** 包名 **android.permission.SYSTEM_ALERT_WINDOW**
+
+> **adb shell appops set com.xxx.packagename SYSTEM_ALERT_WINDOW allow**
 
 
 
-**adb shell pm grant** 包名 **android.permission.SYSTEM_ALERT_WINDOW**
+##### Monkey
 
-**adb shell appops set com.xxx.packagename SYSTEM_ALERT_WINDOW allow**
-
-
+>  adb shell monkey -p com.android.settings --throttle 1000 -s 100 --pct-touch 5 --monitor-native-crashes -v -v 20000000’
 
 
 
-adb shell monkey -p com.android.settings --throttle 1000 -s 100 --pct-touch 5 --monitor-native-crashes -v -v 20000000’
+##### Kernel Log
+
+>  adb shell cat /proc/kmsg > kernel.log
 
 
 
+##### 强制GC
 
-
-禁用自动旋转：
-
-adb shell content insert --uri content://settings/system --bind name:s:accelerometer_rotation --bind value:i:0
-
-
-
-设置横屏
-
-adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1
+> adb shell kill -10 PIDXXX
 
 
 
-设置竖屏
+##### 强制生成进程的内存镜像
 
-adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:0
-
-
+> adb shell am dumpheap PIDxxx /data/xxx.hprof
 
 
 
+##### 在events log中实时打印cpu信息。
 
+```
+$ adb logcat -b events | grep cpu
+   I/cpu     (  743): [16,4,12,0,0,0]
+   I/cpu     (  743): [15,2,13,0,0,0]
+   I/cpu     (  743): [16,2,14,0,0,0]
 
-**adb shell pm disable com.okayprovision.splash/.pages.welcome.WelcomeNewActivity;adb shell pm disable com.okayprovision.splash/.okProvisionMainActivity;adb shell pm disable com.okayprovision.splash/.pages.ContentNewActivity;adb shell pm disable com.okayprovision.splash/.common.PlayService;**
+   数字都是百分比，分别为：[total, user, system, iouat, irq, softlrq]``
+```
 
 
 
 
 
+**强制dump某个进程的内存镜像**
 
+```
+# 1044是Launcher的pid
+$ adb shell am dumpheap 1044 /data/aa.hprof
+```
+
+
+
+
+
+```
+adb shell dumpsys SurfaceFlinger | grep "Layer\|z="
+adb shell dumpsys activity processes   进程信息 trimmemory
+adb shell dumpsys activity intents
+adb shell dumpsys activity oom
+adb shell dumpsys input | grep Focus   查看焦点窗口
+```
 
 adb logcat -v threadtime|tee logcat.txt| grep "vold.cy"
 
@@ -60,52 +82,17 @@ grep vold.decrypt . -rni
 
 
 
-
-
-cd Users/tracyliu/Library/Android/sdk/platform-tools/systrace
-
-Python2.7 Users/tracyliu/Library/Android/sdk/platform-tools/systrace/systrace.py -t 10 sched gfx view wm am app webview -a com.android.settings 
-
-
-
- systrace.py -t 10 -o /Users/tracyliu/Desktop/setting_trace.html sched gfx view wm am app webview -a com.android.settings 
-
-
-
-./systrace.py -t 10 sched gfx view wm am app webview -a
-
-
-
-hexo new “HelloWorld”
-
-hexo s
-
-hexo clean && hexo g && hexo d
-
-
-
-1、Android系统应用优化，如应用的启动时间和运行流畅度
-
-2、Android 系统底层优化，包括 Framework/HAL/Kernel/filesystem/Network等
-
-3、监控系统性能，监督系统性能状况，发现和分析监控数据中可能的优化点
+android 主线程栈默认大小可以通过输入 adb shell “ulimit -s” 查看（6.0为8M）
 
 
 
 
 
-# ubuntu下压缩android开机动画
-
-这个zip文件必须在ubuntu下使用下面指令：
-
-```
- zip -Z store bootanimation.zip part0/*.png part1/*.png desc.txt
-```
-
-windows下zip或者ubuntu下UI压缩都不行。
 
 
 
-du -h --max-depth=1
+
+
+
 
 

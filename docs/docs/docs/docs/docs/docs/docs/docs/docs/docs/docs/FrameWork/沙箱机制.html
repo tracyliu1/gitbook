@@ -487,9 +487,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Android kernel/Java.html">
+        <li class="chapter " data-level="1.4.1" data-path="../Android kernel/Java.md">
             
-                <a href="../Android kernel/Java.html">
+                <span>
             
                     
                     Java
@@ -532,9 +532,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Debug/ANR trace 分析.html">
+        <li class="chapter " data-level="1.5.1" data-path="../Debug/ANR trace 分析.md">
             
-                <a href="../Debug/ANR trace 分析.html">
+                <span>
             
                     
                     ANR trace 分析
@@ -603,9 +603,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="AMS_ANR.html">
+        <li class="chapter " data-level="1.6.3" data-path="AMS_ANR.md">
             
-                <a href="AMS_ANR.html">
+                <span>
             
                     
                     AMS ANR
@@ -759,9 +759,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.15" data-path="WatchDog.html">
+        <li class="chapter " data-level="1.6.15" data-path="WatchDog.md">
             
-                <a href="WatchDog.html">
+                <span>
             
                     
                     Watch Dog
@@ -1314,13 +1314,92 @@
 <li>&#x4EE5;&#x53CA;&#x4E25;&#x683C;&#x9650;&#x5236;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6743;&#x9650;&#x3002;</li>
 </ol>
 <p><img src="." alt="https://img-blog.csdnimg.cn/20181113095438795.png"></p>
-<hr>
+<h4 id="android-aid-&#x5373;uid&#x673A;&#x5236;"><a name="android-aid-&#x5373;uid&#x673A;&#x5236;" class="anchor-navigation-ex-anchor" href="#android-aid-&#x5373;uid&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>Android AID &#x5373;UID&#x673A;&#x5236;</h4>
+<blockquote>
+<p>iflycode/system/core/include/private/android_filesystem_config.h</p>
+</blockquote>
+<pre><code>#define AID_ROOT 0 /* traditional unix root user */
+/* The following are for LTP and should only be used for testing */
+#define AID_DAEMON 1 /* traditional unix daemon owner */
+#define AID_BIN 2    /* traditional unix binaries owner */
+
+#define AID_SYSTEM 1000 /* system server */
+
+#define AID_RADIO 1001           /* telephony subsystem, RIL */
+#define AID_BLUETOOTH 1002       /* bluetooth subsystem */
+#define AID_GRAPHICS 1003        /* graphics devices */
+#define AID_INPUT 1004           /* input devices */
+#define AID_AUDIO 1005           /* audio devices */
+#define AID_CAMERA 1006          /* camera devices */
+#define AID_LOG 1007             /* log devices */
+#define AID_COMPASS 1008         /* compass device */
+#define AID_MOUNT 1009           /* mountd socket */
+#define AID_WIFI 1010            /* wifi subsystem */
+#define AID_ADB 1011             /* android debug bridge (adbd) */
+#define AID_INSTALL 1012         /* group for installing packages */
+#define AID_MEDIA 1013           /* mediaserver process */
+#define AID_DHCP 1014            /* dhcp client */
+#define AID_SDCARD_RW 1015       /* external storage write access */
+#define AID_VPN 1016             /* vpn system */
+#define AID_KEYSTORE 1017        /* keystore subsystem */
+#define AID_USB 1018             /* USB devices */
+#define AID_DRM 1019             /* DRM server */
+#define AID_MDNSR 1020           /* MulticastDNSResponder (service discovery) */
+#define AID_GPS 1021             /* GPS daemon */
+#define AID_UNUSED1 1022         /* deprecated, DO NOT USE */
+#define AID_MEDIA_RW 1023        /* internal media storage write access */
+#define AID_MTP 1024             /* MTP USB driver access */
+#define AID_UNUSED2 1025         /* deprecated, DO NOT USE */
+#define AID_DRMRPC 1026          /* group for drm rpc */
+#define AID_NFC 1027             /* nfc subsystem */
+#define AID_SDCARD_R 1028        /* external storage read access */
+#define AID_CLAT 1029            /* clat part of nat464 */
+#define AID_LOOP_RADIO 1030      /* loop radio devices */
+#define AID_MEDIA_DRM 1031       /* MediaDrm plugins */
+#define AID_PACKAGE_INFO 1032    /* access to installed package details */
+#define AID_SDCARD_PICS 1033     /* external storage photos access */
+#define AID_SDCARD_AV 1034       /* external storage audio/video access */
+#define AID_SDCARD_ALL 1035      /* access all users external storage */
+#define AID_LOGD 1036            /* log daemon */
+#define AID_SHARED_RELRO 1037    /* creator of shared GNU RELRO files */
+#define AID_DBUS 1038            /* dbus-daemon IPC broker process */
+#define AID_TLSDATE 1039         /* tlsdate unprivileged user */
+#define AID_MEDIA_EX 1040        /* mediaextractor process */
+#define AID_AUDIOSERVER 1041     /* audioserver process */
+#define AID_METRICS_COLL 1042    /* metrics_collector process */
+#define AID_METRICSD 1043        /* metricsd process */
+#define AID_WEBSERV 1044         /* webservd process */
+#define AID_DEBUGGERD 1045       /* debuggerd unprivileged user */
+#define AID_MEDIA_CODEC 1046     /* mediacodec process */
+#define AID_CAMERASERVER 1047    /* cameraserver process */
+#define AID_FIREWALL 1048        /* firewalld process */
+#define AID_TRUNKS 1049          /* trunksd process (TPM daemon) */
+#define AID_NVRAM 1050           /* Access-controlled NVRAM */
+#define AID_DNS 1051             /* DNS resolution daemon (system: netd) */
+#define AID_DNS_TETHER 1052      /* DNS resolution daemon (tether: dnsmasq) */
+#define AID_WEBVIEW_ZYGOTE 1053  /* WebView zygote process */
+#define AID_VEHICLE_NETWORK 1054 /* Vehicle network service */
+#define AID_MEDIA_AUDIO 1055     /* GID for audio files on internal media storage */
+#define AID_MEDIA_VIDEO 1056     /* GID for video files on internal media storage */
+#define AID_MEDIA_IMAGE 1057     /* GID for image files on internal media storage */
+#define AID_TOMBSTONED 1058      /* tombstoned user */
+#define AID_MEDIA_OBB 1059       /* GID for OBB files on internal media storage */
+#define AID_ESE 1060             /* embedded secure element (eSE) subsystem */
+#define AID_OTA_UPDATE 1061      /* resource tracking UID for OTA updates */
+#define AID_AUTOMOTIVE_EVS 1062  /* Automotive rear and surround view system */
+#define AID_LOWPAN 1063          /* LoWPAN subsystem */
+#define AID_HSM 1064             /* hardware security module subsystem */
+#define AID_RESERVED_DISK 1065   /* GID that has access to reserved disk space */
+#define AID_STATSD 1066          /* statsd daemon */
+#define AID_INCIDENTD 1067       /* incidentd daemon */
+#define AID_SECURE_ELEMENT 1068  /* secure element subsystem */
+</code></pre><hr>
 <p><a href="https://juejin.cn/entry/6844903680697712648" target="_blank">https://juejin.cn/entry/6844903680697712648</a></p>
 <p><a href="https://source.android.google.cn/security/app-sandbox?hl=zh-cn" target="_blank">https://source.android.google.cn/security/app-sandbox?hl=zh-cn</a></p>
 <p><a href="https://blog.csdn.net/fei20121106/article/details/84023953" target="_blank">Android &#x6C99;&#x7BB1;&#x673A;&#x5236;</a></p>
 <p><a href="https://www.cnblogs.com/lao-liang/p/5089336.html" target="_blank">&#x7406;&#x89E3;Android&#x5B89;&#x5168;&#x673A;&#x5236;</a> </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; tracyliu-FE 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-11-24 00:12:04
+2021-05-20 14:48:57
 </span></footer>
                                 
                                 </section>
@@ -1364,7 +1443,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"沙箱机制","level":"1.6.21","depth":2,"next":{"title":"系统裁剪","level":"1.6.22","depth":2,"path":"FrameWork/系统裁剪.md","ref":"FrameWork/系统裁剪.md","articles":[]},"previous":{"title":"开机流程","level":"1.6.20","depth":2,"path":"FrameWork/开机流程.md","ref":"FrameWork/开机流程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"FrameWork/沙箱机制.md","mtime":"2020-11-23T16:12:04.684Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-12T10:08:35.079Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"沙箱机制","level":"1.6.21","depth":2,"next":{"title":"系统裁剪","level":"1.6.22","depth":2,"path":"FrameWork/系统裁剪.md","ref":"FrameWork/系统裁剪.md","articles":[]},"previous":{"title":"开机流程","level":"1.6.20","depth":2,"path":"FrameWork/开机流程.md","ref":"FrameWork/开机流程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"FrameWork/沙箱机制.md","mtime":"2021-05-20T06:48:57.560Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-16T01:39:54.679Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
