@@ -25,10 +25,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -1209,19 +1205,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../test.html">
-            
-                <a href="../test.html">
-            
-                    
-                    test
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
 
@@ -1275,6 +1258,22 @@
 </ul>
 <p>&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;</p>
 <p><a href="http://www.gamelook.com.cn/wp-content/uploads/2020/05/wyy004.jpg" target="_blank">http://www.gamelook.com.cn/wp-content/uploads/2020/05/wyy004.jpg</a></p>
+<p>init.rc&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;</p>
+<blockquote>
+<p>EBook3.2-7.1/system/core/rootdir/init.rc</p>
+<p>system/core/rootdir/init.zygote64.rc</p>
+</blockquote>
+<pre><code class="lang-.rc">service zygote /system/bin/app_process64 -Xzygote /system/bin --zygote --start-system-server
+    class main
+    socket zygote stream 660 root system
+    onrestart write /sys/android_power/request_state wake
+    onrestart write /sys/power/state on
+    onrestart restart audioserver
+    onrestart restart cameraserver
+    onrestart restart media
+    onrestart restart netd
+    writepid /dev/cpuset/foreground/tasks
+</code></pre>
 <h4 id="zygote&#x8FDB;&#x7A0B;"><a name="zygote&#x8FDB;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#zygote&#x8FDB;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>Zygote&#x8FDB;&#x7A0B;</h4>
 <p>zygote&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;Native&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E0E;&#x9A71;&#x52A8;&#x3001;&#x5185;&#x6838;&#x7B49;&#x65E0;&#x5173;&#x3002;&#x5B83;&#x662F;&#x7531;init&#x8FDB;&#x7A0B;&#x6839;&#x636E;init.rc&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x521B;&#x5EFA;&#x7684;&#x3002;zygote&#x6700;&#x521D;&#x7684;&#x540D;&#x5B57;&#x53EB;&#x201C;app_process&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x662F;&#x5728;Android.mk&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x4E2D;&#xFF0C;app_process&#x901A;&#x8FC7;linux&#x4E0B;&#x7684;pctrl&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x540D;&#x5B57;&#x6362;&#x6210;&#x4E86;zygote&#x3002;</p>
 <p>Zygote&#x8FDB;&#x7A0B;&#x662F;&#x6240;&#x6709;&#x7684;android&#x8FDB;&#x7A0B;&#x7684;&#x7236;&#x8FDB;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;SystemServer&#x548C;&#x5404;&#x79CD;&#x5E94;&#x7528;&#x8FDB;&#x7A0B;&#x90FD;&#x662F;&#x901A;&#x8FC7;Zygote&#x8FDB;&#x7A0B;fork&#x51FA;&#x6765;&#x7684;&#x3002;&#x800C;Zygote&#x8FDB;&#x7A0B;&#x5219;&#x662F;&#x901A;&#x8FC7;linux&#x7CFB;&#x7EDF;&#x7684;init&#x8FDB;&#x7A0B;&#x542F;&#x52A8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;Android&#x7CFB;&#x7EDF;&#x4E2D;&#x8FDB;&#x7A0B;&#x7684;&#x542F;&#x52A8;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -1333,14 +1332,43 @@ startOtherServices() &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x4E00;&#x
 <li>&#x6620;&#x5C04;&#x5185;&#x5B58;&#x3001;&#x5206;&#x914D;&#x7F13;&#x51B2;&#x533A;</li>
 <li>&#x542F;&#x52A8;binder&#x7EBF;&#x7A0B;&#x3001;&#x8FDB;&#x5165;binder loop </li>
 </ul>
-<h4 id="&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;-surfaceflinger-media"><a name="&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;-surfaceflinger-media" class="anchor-navigation-ex-anchor" href="#&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;-surfaceflinger-media"><i class="fa fa-link" aria-hidden="true"></i></a>&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1; surfaceFlinger media</h4>
-<p><img src="../Users/tracyliu/Library/Application Support/typora-user-images/image-20210223235038850.png" alt="image-20210223235038850" style="zoom: 25%;"></p>
-<p>&#xB7;     </p>
+<h4 id="&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;-surfaceflinger-&#x542F;&#x52A8;"><a name="&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;-surfaceflinger-&#x542F;&#x52A8;" class="anchor-navigation-ex-anchor" href="#&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;-surfaceflinger-&#x542F;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x7CFB;&#x7EDF;&#x670D;&#x52A1; surfaceFlinger &#x542F;&#x52A8;</h4>
+<blockquote>
+<p>frameworks/native/services/surfaceflinger/surfaceflinger.rc</p>
+</blockquote>
+<pre><code>service surfaceflinger /system/bin/surfaceflinger
+    class core
+    user system
+    group graphics drmrpc readproc
+    onrestart restart zygote
+    writepid /dev/stune/foreground/tasks
+</code></pre><blockquote>
+<p>frameworks/native/services/surfaceflinger/main_surfaceflinger.cpp</p>
+</blockquote>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span>, <span class="hljs-keyword">char</span>**)</span> </span>{
+    ProcessState::self()-&gt;setThreadPoolMaxThreadCount(<span class="hljs-number">4</span>);
+    <span class="hljs-comment">// start the thread pool &#x542F;&#x52A8;binder</span>
+    sp&lt;ProcessState&gt; ps(ProcessState::self());
+    ps-&gt;startThreadPool();
+
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;sf  &#x8C03;&#x7528;init</span>
+    sp&lt;SurfaceFlinger&gt; flinger = DisplayUtils::getInstance()-&gt;getSFInstance();
+    flinger-&gt;init();
+
+    <span class="hljs-comment">// publish surface flinger</span>
+    sp&lt;IServiceManager&gt; sm(defaultServiceManager());
+    sm-&gt;addService(String16(SurfaceFlinger::getServiceName()), flinger, <span class="hljs-literal">false</span>);
+    <span class="hljs-comment">// run surface flinger in this thread</span>
+    flinger-&gt;run();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
 <p>servicemanager&#x542F;&#x52A8;&#x6D41;&#x7A0B;</p>
 <hr>
 <p><a href="https://www.cnblogs.com/lao-liang/p/5067312.html" target="_blank">Android&#x7CFB;&#x7EDF;&#x542F;&#x52A8;</a></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; tracyliu-FE 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2021-02-25 10:39:58
+2021-03-01 17:16:08
 </span></footer>
                                 
                                 </section>
@@ -1384,7 +1412,7 @@ startOtherServices() &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x4E00;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"开机流程","level":"1.6.19","depth":2,"next":{"title":"沙箱机制","level":"1.6.20","depth":2,"path":"FrameWork/沙箱机制.md","ref":"FrameWork/沙箱机制.md","articles":[]},"previous":{"title":"定屏分析","level":"1.6.18","depth":2,"path":"FrameWork/定屏分析.md","ref":"FrameWork/定屏分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["collapsible-menu","anchor-navigation-ex","tbfed-pagefooter","disqus"],"ignores":["docs","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"collapsible-menu":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":"-","disableTitleFormatting":true,"variables":{},"title":"知识总结","catalog":"all","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"FrameWork/开机流程.md","mtime":"2021-02-25T02:39:58.016Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T05:22:00.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"开机流程","level":"1.6.19","depth":2,"next":{"title":"沙箱机制","level":"1.6.20","depth":2,"path":"FrameWork/沙箱机制.md","ref":"FrameWork/沙箱机制.md","articles":[]},"previous":{"title":"定屏分析","level":"1.6.18","depth":2,"path":"FrameWork/定屏分析.md","ref":"FrameWork/定屏分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"FrameWork/开机流程.md","mtime":"2021-03-01T09:16:08.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-01T16:30:41.291Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1392,18 +1420,6 @@ startOtherServices() &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x4E00;&#x
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
