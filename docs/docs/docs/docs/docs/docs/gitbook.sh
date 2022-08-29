@@ -5,7 +5,8 @@ gitbook build
 if [ $? -eq 0 ]; then
     echo "gitbook build succeed"
 
-	
+	currentTime=`date "+%Y-%m-%d %H:%M:%S"`
+
 	if [ $? -eq 0 ]; then
 	book sm	
 	echo "build SUMMARY succeed"
@@ -20,7 +21,7 @@ if [ $? -eq 0 ]; then
 		git add README.md
 		git add SUMMARY.md		
 		git add docs
-		git commit -m update_my_note
+		git commit -m  "update_my_note  $currentTime" 
 		git push origin gh-pages:gh-pages
 		echo "push to GitHub"
 	fi

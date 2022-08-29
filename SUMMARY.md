@@ -34,6 +34,7 @@
   * [安全](Android kernel/安全.md)
 - Debug
   * [ADB](Debug/ADB.md)
+  * [ANR分析](Debug/ANR分析.md)
   * [binder_sample日志](Debug/binder_sample日志.md)
   * [minicom 串口调试](Debug/minicom 串口调试.md)
   * [Systrace](Debug/Systrace.md)
@@ -43,11 +44,13 @@
 - Frame Work
   * [AMS Finish Kill](FrameWork/AMS finish kill.md)
   * [AMS 内存回收](FrameWork/AMS 内存回收.md)
-  * [ANR分析](FrameWork/ANR分析.md)
+  * [Android 权限](FrameWork/Android 权限.md)
   * [apk打包](FrameWork/apk打包.md)
-  * [AppOps权限 ](FrameWork/AppOps权限 .md)
+  * [ART](FrameWork/ART.md)
   * [build.prop system.prop default.prop 与 SystemProperty](FrameWork/build.prop system.prop default.prop 与 SystemProperty.md)
+  * [Dalvik](FrameWork/Dalvik.md)
   * [Image](FrameWork/image.md)
+  * [Input](FrameWork/Input.md)
   * [Makefile](FrameWork/makefile.md)
   * [MediaPlayer 播放流程](FrameWork/MediaPlayer 播放流程.md)
   * [OTA](FrameWork/OTA.md)

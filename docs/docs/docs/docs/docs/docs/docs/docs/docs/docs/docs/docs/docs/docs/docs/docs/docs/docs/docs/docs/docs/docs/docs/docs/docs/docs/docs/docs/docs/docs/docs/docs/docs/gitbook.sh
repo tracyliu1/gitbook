@@ -7,7 +7,7 @@ if [ $? -eq 0 ]; then
 
 	if [ $? -eq 0 ]; then
     		echo "succeed"
-		cp -r _book/* /docs
+		cp -r _book/* docs/
 		
 		git add /docs
 		git commit -m “update my note”
