@@ -1,10 +1,15 @@
+
+
+
+
 ##### OnTrimMemory的主要作用就是指导应用程序在不同的情况下进行自身的内存释放，以避免被系统直接杀掉，提高应用程序的用户体验
 
 OnTrimMemory：Android 4.0之后提供的API，系统会根据不同的内存状态来回调。根据不同的内存状态，来响应不同的内存释放策略。
 
 ##### onLowMemory()方法在使用过程只要低内存状态下,就会回调.
+
 OnLowMemory：Android提供的API，在系统内存不足，所有后台程序（优先级为background的进程，不是指后台运行的进程）都被杀死时，系统会调用OnLowMemory。
- 
+
 
 #### onTrimMemory传入的几个内存级别释放内存：
 
@@ -27,15 +32,16 @@ OnLowMemory：Android提供的API，在系统内存不足，所有后台程序�
   系统运行在低内存状态，如果系统没有恢复内存，你的进程是首先被杀死的进程之一。你应该释放所有不重要的资源来恢复你的app状态。该进程在后台进程列表最后一个，马上就要被清
 
 - TRIM_MEMORY_UI_HIDDEN：内存不足，并且该进程的UI已经不可见了。 
-  
 
   
+
 
   ###### onTrimMemory()是在API 14里添加的，你可以在老版本里使用onLowMemory()回调，大致跟TRIM_MEMORY_COMPLETE事件相同。
 
   
 
   ##### onLowMemory、 onTrimMemory优化，需要释放什么资源？
+
   在内存紧张的时候，会回调OnLowMemory/OnTrimMemory，需要在回调方法中编写释放资源的代码。
   可以在资源紧张的时候，释放UI 使用的资源资：Bitmap、数组、控件资源。
   注意回调时刻：
@@ -43,3 +49,11 @@ OnLowMemory：Android提供的API，在系统内存不足，所有后台程序�
   OnLowMemory是在最后一个后台进程被杀时调用，一般情况是low memory killer 杀进程后触发；而OnTrimMemory的触发更频繁，每次计算进程优先级时，只要满足条件，都会触发。
   在Application、 Activity、Fragement、Service、ContentProvider中都可以重写回调方法，对OnLowMemory/OnTrimMemory进行回调，在回调方法中实现资源释放的实现。
   以Activity为例，在Activity源码中能够看到对于onTrimMemory的定义，因此在回调的时候重写方法即可。
+
+
+
+
+
+
+
+https://developer.ibm.com/zh/technologies/mobile/articles/os-cn-android-mmry-rcycl/

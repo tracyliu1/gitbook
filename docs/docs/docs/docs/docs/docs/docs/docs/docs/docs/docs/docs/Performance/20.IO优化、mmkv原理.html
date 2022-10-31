@@ -1,0 +1,2220 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>20.IO优化、mmkv原理 · 知识总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="21.Bug分析.html" />
+    
+    
+    <link rel="prev" href="2.优化参考资料.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Algorithmic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                <a href="../Algorithmic/BinarySearch 二分法查找.html">
+            
+                    
+                    BinarySearch 二分法查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Algorithmic/Sort.html">
+            
+                <a href="../Algorithmic/Sort.html">
+            
+                    
+                    Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                <a href="../Algorithmic/Stack-用两个栈实现队列.html">
+            
+                    
+                    Stack-用两个栈实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                <a href="../Algorithmic/String-手写一个字符串翻转.html">
+            
+                    
+                    String-手写一个字符串翻转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Algorithmic/二叉树.html">
+            
+                <a href="../Algorithmic/二叉树.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Algorithmic/数组单独的数.html">
+            
+                <a href="../Algorithmic/数组单独的数.html">
+            
+                    
+                    数组单独的数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Algorithmic/数组实现队列.html">
+            
+                <a href="../Algorithmic/数组实现队列.html">
+            
+                    
+                    数组实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Algorithmic/生产者消费者模型.html">
+            
+                <a href="../Algorithmic/生产者消费者模型.html">
+            
+                    
+                    生产者消费者模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Algorithmic/链表.html">
+            
+                <a href="../Algorithmic/链表.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Android
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Android/1-01.组件-Activity.html">
+            
+                <a href="../Android/1-01.组件-Activity.html">
+            
+                    
+                    1-01.组件-Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Android/1-02.组件-Service.html">
+            
+                <a href="../Android/1-02.组件-Service.html">
+            
+                    
+                    1-02.组件-Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Android/1-03.组件-BroadCast.html">
+            
+                <a href="../Android/1-03.组件-BroadCast.html">
+            
+                    
+                    1-03.组件-BroadCast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Android/1-04.组件-ContentProvider.html">
+            
+                <a href="../Android/1-04.组件-ContentProvider.html">
+            
+                    
+                    1-04.组件-ContentProvider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Android/1-05.组件-Fragment.html">
+            
+                <a href="../Android/1-05.组件-Fragment.html">
+            
+                    
+                    1-05.组件-Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Android/2-01.Binder.html">
+            
+                <a href="../Android/2-01.Binder.html">
+            
+                    
+                    2-01.Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Android/2-02.Context.html">
+            
+                <a href="../Android/2-02.Context.html">
+            
+                    
+                    2-02.Context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Android/2-03.framework-Android消息机制.html">
+            
+                <a href="../Android/2-03.framework-Android消息机制.html">
+            
+                    
+                    2-03.framework-Android消息机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../Android/2-04.IdleHandler.html">
+            
+                <a href="../Android/2-04.IdleHandler.html">
+            
+                    
+                    2-04.IdleHandler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../Android/2-05.多线程模型.html">
+            
+                <a href="../Android/2-05.多线程模型.html">
+            
+                    
+                    2-05.多线程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../Android/3-01.View-绘制流程.html">
+            
+                <a href="../Android/3-01.View-绘制流程.html">
+            
+                    
+                    3-01.View-绘制流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../Android/3-02.View-事件分发.html">
+            
+                <a href="../Android/3-02.View-事件分发.html">
+            
+                    
+                    3-02.View-事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../Android/3-03.View-面试题.html">
+            
+                <a href="../Android/3-03.View-面试题.html">
+            
+                    
+                    3-03.View-面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../Android/3-04.自定义view CustomView.html">
+            
+                <a href="../Android/3-04.自定义view CustomView.html">
+            
+                    
+                    3-04.自定义view CustomView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../Android/Android概述.html">
+            
+                <a href="../Android/Android概述.html">
+            
+                    
+                    Android概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../Android/Binder IPC.html">
+            
+                <a href="../Android/Binder IPC.html">
+            
+                    
+                    Binder IPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Android Kernel
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Android kernel/Android系统分区.html">
+            
+                <a href="../Android kernel/Android系统分区.html">
+            
+                    
+                    Android系统分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Android kernel/Linux基础.html">
+            
+                <a href="../Android kernel/Linux基础.html">
+            
+                    
+                    Linux基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Android kernel/Zram.html">
+            
+                <a href="../Android kernel/Zram.html">
+            
+                    
+                    Zram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Android kernel/安全.html">
+            
+                <a href="../Android kernel/安全.html">
+            
+                    
+                    安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Debug
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Debug/ADB.html">
+            
+                <a href="../Debug/ADB.html">
+            
+                    
+                    ADB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Debug/binder_sample日志.html">
+            
+                <a href="../Debug/binder_sample日志.html">
+            
+                    
+                    binder_sample日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Debug/Systrace.html">
+            
+                <a href="../Debug/Systrace.html">
+            
+                    
+                    Systrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Debug/Tombstone.html">
+            
+                <a href="../Debug/Tombstone.html">
+            
+                    
+                    Tombstone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Debug/制作开机动画.html">
+            
+                <a href="../Debug/制作开机动画.html">
+            
+                    
+                    制作开机动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Frame Work
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../FrameWork/Activity finish(">
+            
+                <span>
+            
+                    
+                    Activity Finish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../FrameWork/AMS_adj.html">
+            
+                <a href="../FrameWork/AMS_adj.html">
+            
+                    
+                    AMS Adj
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../FrameWork/AMS_kill.html">
+            
+                <a href="../FrameWork/AMS_kill.html">
+            
+                    
+                    AMS Kill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../FrameWork/AMS_OnTrimMemory.html">
+            
+                <a href="../FrameWork/AMS_OnTrimMemory.html">
+            
+                    
+                    AMS On Trim Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../FrameWork/AMS_watchDog.html">
+            
+                <a href="../FrameWork/AMS_watchDog.html">
+            
+                    
+                    AMS Watch Dog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../FrameWork/Android内存回收.html">
+            
+                <a href="../FrameWork/Android内存回收.html">
+            
+                    
+                    Android内存回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../FrameWork/Anroid 权限 .html">
+            
+                <a href="../FrameWork/Anroid 权限 .html">
+            
+                    
+                    Anroid 权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../FrameWork/ANR分析.html">
+            
+                <a href="../FrameWork/ANR分析.html">
+            
+                    
+                    ANR分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../FrameWork/apk打包.html">
+            
+                <a href="../FrameWork/apk打包.html">
+            
+                    
+                    apk打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../FrameWork/AppOps权限 .html">
+            
+                <a href="../FrameWork/AppOps权限 .html">
+            
+                    
+                    AppOps权限 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../FrameWork/Audio Device Strategy 音频设备 输入选择 7.0.html">
+            
+                <a href="../FrameWork/Audio Device Strategy 音频设备 输入选择 7.0.html">
+            
+                    
+                    Audio Device Strategy 音频设备 输入选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../FrameWork/Audio Device Strategy 音频设备输入 输入出 选择 7.0.html">
+            
+                <a href="../FrameWork/Audio Device Strategy 音频设备输入 输入出 选择 7.0.html">
+            
+                    
+                    Audio Device Strategy 音频设备输入 输入出 选择 7.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../FrameWork/build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                <a href="../FrameWork/build.prop system.prop default.prop 与 SystemProperty.html">
+            
+                    
+                    build.prop system.prop default.prop 与 SystemProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../FrameWork/image.html">
+            
+                <a href="../FrameWork/image.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../FrameWork/makefile.html">
+            
+                <a href="../FrameWork/makefile.html">
+            
+                    
+                    Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../FrameWork/MediaPlayer 播放流程.html">
+            
+                <a href="../FrameWork/MediaPlayer 播放流程.html">
+            
+                    
+                    MediaPlayer 播放流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../FrameWork/minicom 串口调试.html">
+            
+                <a href="../FrameWork/minicom 串口调试.html">
+            
+                    
+                    minicom 串口调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../FrameWork/OTA.html">
+            
+                <a href="../FrameWork/OTA.html">
+            
+                    
+                    OTA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../FrameWork/PhoneWindowManager需求处理.html">
+            
+                <a href="../FrameWork/PhoneWindowManager需求处理.html">
+            
+                    
+                    PhoneWindowManager需求处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../FrameWork/PKMS_安装流程.html">
+            
+                <a href="../FrameWork/PKMS_安装流程.html">
+            
+                    
+                    PKMS_安装流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../FrameWork/Root su权限.html">
+            
+                <a href="../FrameWork/Root su权限.html">
+            
+                    
+                    Root su权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="../FrameWork/WMS_ViewRootImpl.html">
+            
+                <a href="../FrameWork/WMS_ViewRootImpl.html">
+            
+                    
+                    WMS View Root Impl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="../FrameWork/WMS_窗口加载.html">
+            
+                <a href="../FrameWork/WMS_窗口加载.html">
+            
+                    
+                    WMS_窗口加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.24" data-path="../FrameWork/WMS工作原理.html">
+            
+                <a href="../FrameWork/WMS工作原理.html">
+            
+                    
+                    WMS工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.25" data-path="../FrameWork/定屏分析.html">
+            
+                <a href="../FrameWork/定屏分析.html">
+            
+                    
+                    定屏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="../FrameWork/开机流程.html">
+            
+                <a href="../FrameWork/开机流程.html">
+            
+                    
+                    开机流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="../FrameWork/沙箱机制.html">
+            
+                <a href="../FrameWork/沙箱机制.html">
+            
+                    
+                    沙箱机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.28" data-path="../FrameWork/系统编译.html">
+            
+                <a href="../FrameWork/系统编译.html">
+            
+                    
+                    系统编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.29" data-path="../FrameWork/系统裁剪.html">
+            
+                <a href="../FrameWork/系统裁剪.html">
+            
+                    
+                    系统裁剪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.30" data-path="../FrameWork/进程启动.html">
+            
+                <a href="../FrameWork/进程启动.html">
+            
+                    
+                    进程启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    1-01.java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                <a href="../Java/1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类.html">
+            
+                    
+                    1-03.Java内存模型  原子性 、 可见性 、 有序性 、CAS happens-before 原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Java/1-04.Java类加载.html">
+            
+                <a href="../Java/1-04.Java类加载.html">
+            
+                    
+                    1-04.Java类加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Java/1-05.Java GC 垃圾回收.html">
+            
+                <a href="../Java/1-05.Java GC 垃圾回收.html">
+            
+                    
+                    1-05.Java GC 垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Java/1-06.接口、抽象类.html">
+            
+                <a href="../Java/1-06.接口、抽象类.html">
+            
+                    
+                    1-06.接口、抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                <a href="../Java/1-07.Java 动态代理 静态代理.md.html">
+            
+                    
+                    1-07.Java 动态代理 静态代理.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Java/1-08.Java反射.html">
+            
+                <a href="../Java/1-08.Java反射.html">
+            
+                    
+                    1-08.Java反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../Java/1-09.java 异常.html">
+            
+                <a href="../Java/1-09.java 异常.html">
+            
+                    
+                    1-09.java 异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../Java/2-01.锁.html">
+            
+                <a href="../Java/2-01.锁.html">
+            
+                    
+                    2-01.锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../Java/2-02.Volatile.html">
+            
+                <a href="../Java/2-02.Volatile.html">
+            
+                    
+                    2-02.Volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../Java/2-03.Synchronized.html">
+            
+                <a href="../Java/2-03.Synchronized.html">
+            
+                    
+                    2-03.Synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                <a href="../Java/2-04-1.线程分类、状态、创建、阻塞.html">
+            
+                    
+                    2-04-1.线程分类、状态、创建、阻塞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../Java/2-04-2.线程中断.html">
+            
+                <a href="../Java/2-04-2.线程中断.html">
+            
+                    
+                    2-04-2.线程中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../Java/2-04-3.线程间协作.html">
+            
+                <a href="../Java/2-04-3.线程间协作.html">
+            
+                    
+                    2-04-3.线程间协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../Java/2-05.线程池.html">
+            
+                <a href="../Java/2-05.线程池.html">
+            
+                    
+                    2-05.线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../Java/2-06.ThreadLocal.html">
+            
+                <a href="../Java/2-06.ThreadLocal.html">
+            
+                    
+                    2-06.ThreadLocal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../Java/3-01.Java 容器.html">
+            
+                <a href="../Java/3-01.Java 容器.html">
+            
+                    
+                    3-01.Java 容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../Java/3-02.设计模式.html">
+            
+                <a href="../Java/3-02.设计模式.html">
+            
+                    
+                    3-02.设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Net
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Net/3-01.底层网络协议.html">
+            
+                <a href="../Net/3-01.底层网络协议.html">
+            
+                    
+                    3-01.底层网络协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Net/3-02.OSI模型.html">
+            
+                <a href="../Net/3-02.OSI模型.html">
+            
+                    
+                    3-02.OSI模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Net/3-03.TCP UDP.html">
+            
+                <a href="../Net/3-03.TCP UDP.html">
+            
+                    
+                    3-03.TCP UDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Net/3-04.HTTP.html">
+            
+                <a href="../Net/3-04.HTTP.html">
+            
+                    
+                    3-04.HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                <a href="../Net/3-05.HTTP描述一次网络请求的流程.html">
+            
+                    
+                    3-05.HTTP描述一次网络请求的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Net/3-06.HTTPS.html">
+            
+                <a href="../Net/3-06.HTTPS.html">
+            
+                    
+                    3-06.HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="0.概论.html">
+            
+                <a href="0.概论.html">
+            
+                    
+                    0.概论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="1.Android优化大全.html">
+            
+                <a href="1.Android优化大全.html">
+            
+                    
+                    1.Android优化大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="10.ANR.html">
+            
+                <a href="10.ANR.html">
+            
+                    
+                    10.ANR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="11.启动优化.html">
+            
+                <a href="11.启动优化.html">
+            
+                    
+                    11.启动优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="12.布局优化.html">
+            
+                <a href="12.布局优化.html">
+            
+                    
+                    12.布局优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="13.Bitmap优化.html">
+            
+                <a href="13.Bitmap优化.html">
+            
+                    
+                    13.Bitmap优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="14.线程优化.html">
+            
+                <a href="14.线程优化.html">
+            
+                    
+                    14.线程优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="15.Apk包大小优化.html">
+            
+                <a href="15.Apk包大小优化.html">
+            
+                    
+                    15.Apk包大小优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="16.LruCache.html">
+            
+                <a href="16.LruCache.html">
+            
+                    
+                    16.LruCache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="17.WebView缓存优化.html">
+            
+                <a href="17.WebView缓存优化.html">
+            
+                    
+                    17.WebView缓存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="18.电量优化.html">
+            
+                <a href="18.电量优化.html">
+            
+                    
+                    18.电量优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="19.mmap + native 日志优化.html">
+            
+                <a href="19.mmap + native 日志优化.html">
+            
+                    
+                    19.mmap + native 日志优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="2.优化参考资料.html">
+            
+                <a href="2.优化参考资料.html">
+            
+                    
+                    2.优化参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.14" data-path="20.IO优化、mmkv原理.html">
+            
+                <a href="20.IO优化、mmkv原理.html">
+            
+                    
+                    20.IO优化、mmkv原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="21.Bug分析.html">
+            
+                <a href="21.Bug分析.html">
+            
+                    
+                    21.Bug分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="22.数据结构选择优化.html">
+            
+                <a href="22.数据结构选择优化.html">
+            
+                    
+                    22.数据结构选择优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.17" data-path="23.OutOfMemoryError.html">
+            
+                <a href="23.OutOfMemoryError.html">
+            
+                    
+                    23.OutOfMemoryError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.18" data-path="24.Trace.html">
+            
+                <a href="24.Trace.html">
+            
+                    
+                    24.Trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.19" data-path="25.MAT使用.html">
+            
+                <a href="25.MAT使用.html">
+            
+                    
+                    25.MAT使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.20" data-path="26.UI卡顿分析.html">
+            
+                <a href="26.UI卡顿分析.html">
+            
+                    
+                    26.UI卡顿分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.21" data-path="27.网络优化.html">
+            
+                <a href="27.网络优化.html">
+            
+                    
+                    27.网络优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.22" data-path="28.崩溃优化.html">
+            
+                <a href="28.崩溃优化.html">
+            
+                    
+                    28.崩溃优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.23" data-path="3.内存模型管理及GC.html">
+            
+                <a href="3.内存模型管理及GC.html">
+            
+                    
+                    3.内存模型管理及GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.24" data-path="4.ART vs Dalvik.html">
+            
+                <a href="4.ART vs Dalvik.html">
+            
+                    
+                    4.ART vs Dalvik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.25" data-path="5.Android内存回收机制.html">
+            
+                <a href="5.Android内存回收机制.html">
+            
+                    
+                    5.Android内存回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.26" data-path="6.Low Memory Killer 机制.html">
+            
+                <a href="6.Low Memory Killer 机制.html">
+            
+                    
+                    6.Low Memory Killer 机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.27" data-path="7.内存优化工具.html">
+            
+                <a href="7.内存优化工具.html">
+            
+                    
+                    7.内存优化工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.28" data-path="8.内存性能测试.html">
+            
+                <a href="8.内存性能测试.html">
+            
+                    
+                    8.内存性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.29" data-path="9.内存问题及解决方案.html">
+            
+                <a href="9.内存问题及解决方案.html">
+            
+                    
+                    9.内存问题及解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >20.IO优化、mmkv原理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#io&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528;-sharedpreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;"><b>1. </b>IO&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528; SharedPreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;</a></li><ul><li><span class="title-icon "></span><a href="#1-mmkv&#x7684;&#x6982;&#x5FF5;"><b>1.1. </b>1 MMKV&#x7684;&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#2-&#x7279;&#x70B9;"><b>1.2. </b>2 &#x7279;&#x70B9;</a></li><li><span class="title-icon "></span><a href="#3-&#x6027;&#x80FD;&#x5BF9;&#x6BD4;"><b>1.3. </b>3 &#x6027;&#x80FD;&#x5BF9;&#x6BD4;</a></li><li><span class="title-icon "></span><a href="#4-mmkv-&#x539F;&#x7406;"><b>1.4. </b>4 MMKV &#x539F;&#x7406;</a></li><li><span class="title-icon "></span><a href="#5-&#x5FEB;&#x901F;&#x4E0A;&#x624B;"><b>1.5. </b>5 &#x5FEB;&#x901F;&#x4E0A;&#x624B;</a></li><li><span class="title-icon "></span><a href="#6-&#x8865;&#x5145;&#x9002;&#x7528;&#x5EFA;&#x8BAE;"><b>1.6. </b>6. &#x8865;&#x5145;&#x9002;&#x7528;&#x5EFA;&#x8BAE;</a></li><li><span class="title-icon "></span><a href="#7-&#x9650;&#x5236;"><b>1.7. </b>7 &#x9650;&#x5236;</a></li><li><span class="title-icon "></span><a href="#8-&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;"><b>1.8. </b>8 &#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;</a></li><ul><li><span class="title-icon "></span><a href="#81&#x9501;-lock-unlock-trylock"><b>1.8.1. </b>8.1&#x9501; lock unlock tryLock</a></li><li><span class="title-icon "></span><a href="#82-mmkvwithashmemid-&#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;"><b>1.8.2. </b>8.2 mmkvWithAshmemID &#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;</a></li><li><span class="title-icon "></span><a href="#83-&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;"><b>1.8.3. </b>8.3 &#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</a></li></ul><li><span class="title-icon "></span><a href="#9-binder-mmap&#xFF08;&#x4E00;&#x6B21;&#x62F7;&#x8D1D;&#xFF09;"><b>1.9. </b>9 Binder MMAP&#xFF08;&#x4E00;&#x6B21;&#x62F7;&#x8D1D;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#91-liunx&#x8FDB;&#x7A0B;&#x9694;&#x79BB;"><b>1.9.1. </b>9.1 Liunx&#x8FDB;&#x7A0B;&#x9694;&#x79BB;</a></li><li><span class="title-icon "></span><a href="#92-&#x4F20;&#x7EDF;ipc"><b>1.9.2. </b>9.2 &#x4F20;&#x7EDF;IPC</a></li><li><span class="title-icon "></span><a href="#93-binder&#x901A;&#x4FE1;"><b>1.9.3. </b>9.3 Binder&#x901A;&#x4FE1;</a></li></ul><li><span class="title-icon "></span><a href="#10-&#x666E;&#x901A;&#x6587;&#x4EF6;mmap&#x539F;&#x7406;"><b>1.10. </b>10 &#x666E;&#x901A;&#x6587;&#x4EF6;mmap&#x539F;&#x7406;</a></li><li><span class="title-icon "></span><a href="#11-&#x4EA4;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;"><b>1.11. </b>11. &#x4EA4;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#12-sharepreferences-&#x4F18;&#x5316;"><b>1.12. </b>12. SharePreferences &#x4F18;&#x5316;</a></li><li><span class="title-icon "></span><a href="#13-&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;"><b>1.13. </b>13. &#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;</a></li><ul><li><span class="title-icon "></span><a href="#131-&#x4E8B;&#x52A1;"><b>1.13.1. </b>13.1 &#x4E8B;&#x52A1;</a></li><li><span class="title-icon "></span><a href="#132-sqlitestatement"><b>1.13.2. </b>13.2 SQLiteStatement</a></li><li><span class="title-icon "></span><a href="#133-&#x7D22;&#x5F15;"><b>1.13.3. </b>13.3 &#x7D22;&#x5F15;</a></li></ul><li><span class="title-icon "></span><a href="#14-&#x5176;&#x5B83;&#x901A;&#x7528;&#x4F18;&#x5316;"><b>1.14. </b>14. &#x5176;&#x5B83;&#x901A;&#x7528;&#x4F18;&#x5316;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b>1.15. </b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#io&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528;-sharedpreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 align="center" id="io&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528;-sharedpreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;"><a name="io&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528;-sharedpreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#io&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528;-sharedpreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1. IO&#x4F18;&#x5316;&#xFF0C;&#x4F7F;&#x7528; SharedPreferences&#x5361;&#x987F;&#xFF0C;mmkv&#x539F;&#x7406;</h1>
+
+<p>[toc]</p>
+<p><strong>&#x9762;&#x8BD5;&#x5B98;: IO&#x4F18;&#x5316;&#x662F;&#x600E;&#x4E48;&#x505A;&#x7684;&#xFF0C;&#x4F7F;&#x7528; SharedPreferences&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x5361;&#xFF0C;mmkv&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;</strong></p>
+<p><strong>&#x5FC3;&#x7406;&#x5206;&#x6790;</strong>&#xFF1A;IO&#x4F18;&#x5316;&#x4E00;&#x76F4;&#x662F;&#x6BCF;&#x4E2A;&#x4F01;&#x4E1A;&#x5FC5;&#x9009;&#x9879;&#xFF0C;&#x6BCF;&#x6B21;&#x95FB;&#x5230;&#x90FD;&#x5F88;&#x5934;&#x75BC;&#xFF0C;&#x9762;&#x8BD5;&#x5B98;&#x60F3;&#x95EE;&#x6709;&#x6CA1;&#x6709;&#x76F8;&#x5173;&#x7ECF;&#x9A8C;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x7B54;&#x6848;sqlitedatabse&#xFF0C; SharedPreferences&#x3002; &#x8FD9;&#x4E24;&#x4E2A;&#x5F88;&#x5E38;&#x89C1;&#xFF0C;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x9762;&#x8BD5;&#x5B98;&#x60F3;&#x95EE;&#x7684;&#x3002; &#x90A3;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x7B54;&#x6848;&#x4E86;&#xFF0C;&#x5BF9;&#xFF0C;&#x5C31;&#x662F;&#x6700;&#x65B0;&#x7684;mmkv&#x6846;&#x67B6;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x4F1A;&#x95EE;&#x4F60;&#x4ED6;&#x7684;&#x539F;&#x7406; &#x4F60;&#x662F;&#x600E;&#x4E48;&#x770B;&#x3002; &#x5B83;&#x7684;&#x4F18;&#x7F3A;&#x70B9;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6BD4;&#x5176;&#x4ED6;&#x7684;&#x597D;&#x3002;&#x4ECE;&#x539F;&#x7406;&#x5C42;&#x6765;&#x89E3;&#x6790;&#x3002;&#x8FD9;&#x624D;&#x662F;&#x6700;&#x96BE;&#x7684;&#x3002;</p>
+<p>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0; &#x4ECE;&#x539F;&#x7406;&#x5C42;&#x8BF4;&#x660E;&#x4ED6;&#x4EEC;&#x7684;&#x533A;&#x522B;</p>
+<h2 id="1-mmkv&#x7684;&#x6982;&#x5FF5;"><a name="1-mmkv&#x7684;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#1-mmkv&#x7684;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. 1 MMKV&#x7684;&#x6982;&#x5FF5;</h2>
+<p>mkkv&#x662F;&#x57FA;&#x4E8E; <strong>mmap &#x7684;&#x9AD8;&#x6027;&#x80FD;&#x901A;&#x7528;</strong> <strong>key-value</strong> &#x7EC4;&#x4EF6;&#xFF0C;&#x5E95;&#x5C42;&#x5E8F;&#x5217;&#x5316;/&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4F7F;&#x7528; protobuf &#x5B9E;&#x73B0;&#xFF0C;&#x6027;&#x80FD;&#x9AD8;&#xFF0C;&#x7A33;&#x5B9A;&#x6027;&#x5F3A;&#x3002;</p>
+<blockquote>
+<p>mmkv <a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttps%3A%2F%2Fgithub.com%2FTencent%2FMMKV%2Fblob%2Fmaster%2Freadme_cn.md" target="_blank">github</a>&#x4E0B;&#x8F7D;&#x5730;&#x5740;</p>
+</blockquote>
+<ol>
+<li>MMKV &#x662F;&#x57FA;&#x4E8E; mmap &#x5185;&#x5B58;&#x6620;&#x5C04;&#x7684;&#x79FB;&#x52A8;&#x7AEF;&#x901A;&#x7528; key-value &#x7EC4;&#x4EF6;&#xFF0C;&#x5E95;&#x5C42;&#x5E8F;&#x5217;&#x5316;/&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4F7F;&#x7528; protobuf &#x5B9E;&#x73B0;&#xFF0C;&#x6027;&#x80FD;&#x9AD8;&#xFF0C;&#x7A33;&#x5B9A;&#x6027;&#x5F3A;&#x3002;</li>
+<li>&#x4ECE; 2015 &#x5E74;&#x4E2D;&#x81F3;&#x4ECA;&#xFF0C;&#x5728;Android &#x5FAE;&#x4FE1;&#x4E0A;&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8FD1; 3 &#x5E74;&#xFF0C;&#x5176;&#x6027;&#x80FD;&#x548C;&#x7A33;&#x5B9A;&#x6027;&#x7ECF;&#x8FC7;&#x4E86;&#x65F6;&#x95F4;&#x7684;&#x9A8C;&#x8BC1;&#x3002;&#x5728;&#x817E;&#x8BAF;&#x5185;&#x90E8;&#x5F00;&#x6E90;&#x534A;&#x5E74;&#x4E4B;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x56E2;&#x961F;&#x7684;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x548C;&#x4E00;&#x81F4;&#x597D;&#x8BC4;&#x3002;</li>
+<li>&#x901A;&#x8FC7; mmap &#x5185;&#x5B58;&#x6620;&#x5C04;&#x6587;&#x4EF6;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x6BB5;&#x53EF;&#x4F9B;&#x968F;&#x65F6;&#x5199;&#x5165;&#x7684;&#x5185;&#x5B58;&#x5757;&#xFF0C;App &#x53EA;&#x7BA1;&#x5F80;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#xFF0C;
+&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8D1F;&#x8D23;&#x5C06;&#x5185;&#x5B58;&#x56DE;&#x5199;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x5FC5;&#x62C5;&#x5FC3; crash &#x5BFC;&#x81F4;&#x6570;&#x636E;&#x4E22;&#x5931;&#x3002;</li>
+<li>XML&#x3001;JSON &#x66F4;&#x6CE8;&#x91CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5316;&#xFF0C;&#x5173;&#x6CE8;&#x4EBA;&#x7C7B;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x8BED;&#x4E49;&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x3002; ProtoBuf &#x66F4;&#x6CE8;&#x91CD;&#x6570;&#x636E;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x5173;&#x6CE8;&#x6548;&#x7387;&#x3001;&#x7A7A;&#x95F4;&#x3001;&#x901F;&#x5EA6;&#xFF0C;&#x4EBA;&#x7C7B;&#x53EF;&#x8BFB;&#x6027;&#x5DEE;&#xFF0C;&#x8BED;&#x4E49;&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x4E0D;&#x8DB3;&#xFF08;&#x4E3A;&#x4FDD;&#x8BC1;&#x6781;&#x81F4;&#x7684;&#x6548;&#x7387;&#xFF0C;&#x4F1A;&#x820D;&#x5F03;&#x4E00;&#x90E8;&#x5206;&#x5143;&#x4FE1;&#x606F;&#xFF09;</li>
+</ol>
+<h2 id="2-&#x7279;&#x70B9;"><a name="2-&#x7279;&#x70B9;" class="anchor-navigation-ex-anchor" href="#2-&#x7279;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. 2 &#x7279;&#x70B9;</h2>
+<ul>
+<li>&#x9AD8;&#x6027;&#x80FD; &#x5B9E;&#x65F6;&#x5199;&#x5165;</li>
+<li>&#x7A33;&#x5B9A; &#x9632;crash</li>
+<li>&#x591A;&#x8FDB;&#x7A0B;&#x8BBF;&#x95EE;
+ &#x901A;&#x8FC7;&#x4E0E; Android &#x5F00;&#x53D1;&#x540C;&#x5B66;&#x7684;&#x6C9F;&#x901A;&#xFF0C;&#x4E86;&#x89E3;&#x5230;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684; SharedPreferences &#x5BF9;&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x652F;&#x6301;&#x4E0D;&#x597D;&#x3002;
+ &#x73B0;&#x6709;&#x57FA;&#x4E8E; ContentProvider &#x5C01;&#x88C5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x867D;&#x7136;&#x591A;&#x8FDB;&#x7A0B;&#x662F;&#x652F;&#x6301;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x6027;&#x80FD;&#x4F4E;&#x4E0B;&#xFF0C;&#x7ECF;&#x5E38;&#x5BFC;&#x81F4; ANR&#x3002;
+ &#x8003;&#x8651;&#x5230; mmap &#x5171;&#x4EAB;&#x5185;&#x5B58;&#x672C;&#x8D28;&#x4E0A;&#x7684;&#x591A;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x4E2A;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6DF1;&#x5165;&#x6316;&#x6398;&#x4E86; Android &#x7CFB;&#x7EDF;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x53EF;&#x80FD;&#x662F;&#x4E1A;&#x754C;&#x6700;&#x9AD8;&#x6548;&#x7684;&#x591A;&#x8FDB;&#x7A0B;&#x6570;&#x636E;&#x5171;&#x4EAB;&#x7EC4;&#x4EF6;&#x3002;</li>
+<li>&#x533F;&#x540D;&#x5185;&#x5B58;
+ &#x5728;&#x591A;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x67D0;&#x4E9B;&#x654F;&#x611F;&#x6570;&#x636E;(&#x4F8B;&#x5982;&#x5BC6;&#x7801;)&#x9700;&#x8981;&#x8FDB;&#x7A0B;&#x95F4;&#x5171;&#x4EAB;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x65B9;&#x4FBF;&#x843D;&#x5730;&#x5B58;&#x50A8;&#x5230;&#x6587;&#x4EF6;&#x4E0A;&#xFF0C;&#x76F4;&#x63A5;&#x7528; mmap &#x4E0D;&#x5408;&#x9002;&#x3002;
+ &#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x5230; Android &#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x4E86; Ashmem &#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x53D1;&#x73B0;&#x5B83;&#x5728;&#x8FDB;&#x7A0B;&#x9000;&#x51FA;&#x540E;&#x5C31;&#x4F1A;&#x6D88;&#x5931;&#xFF0C;&#x4E0D;&#x4F1A;&#x843D;&#x5730;&#x5230;&#x6587;&#x4EF6;&#x4E0A;&#xFF0C;&#x975E;&#x5E38;&#x9002;&#x5408;&#x8FD9;&#x4E2A;&#x573A;&#x666F;&#x3002;
+ &#x6211;&#x4EEC;&#x5F88;&#x6109;&#x5FEB;&#x5730;&#x63D0;&#x4F9B;&#x4E86; Ashmem MMKV &#x7684;&#x529F;&#x80FD;&#x3002;</li>
+<li>&#x6570;&#x636E;&#x52A0;&#x5BC6;
+ &#x4E0D;&#x50CF; iOS &#x63D0;&#x4F9B;&#x4E86;&#x786C;&#x4EF6;&#x5C42;&#x7EA7;&#x7684;&#x52A0;&#x5BC6;&#x673A;&#x5236;&#xFF0C;&#x5728; Android &#x73AF;&#x5883;&#x91CC;&#xFF0C;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x662F;&#x975E;&#x5E38;&#x5FC5;&#x987B;&#x7684;&#x3002;
+ MMKV &#x4F7F;&#x7528;&#x4E86; AES CFB-128 &#x7B97;&#x6CD5;&#x6765;&#x52A0;&#x5BC6;/&#x89E3;&#x5BC6;&#x3002;&#x6211;&#x4EEC;&#x9009;&#x62E9; CFB &#x800C;&#x4E0D;&#x662F;&#x5E38;&#x89C1;&#x7684; CBC &#x7B97;&#x6CD5;&#xFF0C;
+ &#x4E3B;&#x8981;&#x662F;&#x56E0;&#x4E3A; MMKV &#x4F7F;&#x7528; append-only &#x5B9E;&#x73B0;&#x63D2;&#x5165;/&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#xFF0C;&#x6D41;&#x5F0F;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x66F4;&#x52A0;&#x5408;&#x9002;&#x3002;</li>
+<li>&#x6570;&#x636E;&#x6709;&#x6548;&#x6027;</li>
+</ul>
+<h2 id="3-&#x6027;&#x80FD;&#x5BF9;&#x6BD4;"><a name="3-&#x6027;&#x80FD;&#x5BF9;&#x6BD4;" class="anchor-navigation-ex-anchor" href="#3-&#x6027;&#x80FD;&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. 3 &#x6027;&#x80FD;&#x5BF9;&#x6BD4;</h2>
+<p>&#x6211;&#x4EEC;&#x5C06; MMKV &#x548C; SharedPreferences&#x3001;SQLite &#x8FDB;&#x884C;&#x5BF9;&#x6BD4;, &#x91CD;&#x590D;&#x8BFB;&#x5199;&#x64CD;&#x4F5C; 1k &#x6B21;&#x3002;&#x76F8;&#x5173;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5728; Android/MMKV/mmkvdemo/&#x3002;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x8868;&#x3002;</p>
+<p><strong>&#x5355;&#x8FDB;&#x7A0B;&#x6027;&#x80FD;</strong></p>
+<p><img src="media/v2-af7fdb857c84dd150421502e1bde33c9_1440w.jpg" alt="img" style="zoom: 50%;"></p>
+<p>&#x53EF;&#x89C1;&#xFF0C;MMKV &#x5728;&#x5199;&#x5165;&#x6027;&#x80FD;&#x4E0A;&#x8FDC;&#x8FDC;&#x8D85;&#x8D8A; SharedPreferences &amp; SQLite&#xFF0C;&#x5728;&#x8BFB;&#x53D6;&#x6027;&#x80FD;&#x4E0A;&#x4E5F;&#x6709;&#x76F8;&#x8FD1;&#x6216;&#x8D85;&#x8D8A;&#x7684;&#x8868;&#x73B0;&#x3002;</p>
+<p><img src="media/v2-bb4940bd12bf71b77316740b227994a4_1440w.jpg" alt="img" style="zoom:50%;"></p>
+<p>&#x53EF;&#x89C1;&#xFF0C;MMKV &#x65E0;&#x8BBA;&#x662F;&#x5728;&#x5199;&#x5165;&#x6027;&#x80FD;&#x8FD8;&#x662F;&#x5728;&#x8BFB;&#x53D6;&#x6027;&#x80FD;&#xFF0C;&#x90FD;&#x8FDC;&#x8FDC;&#x8D85;&#x8D8A; MultiProcessSharedPreferences &amp; SQLite &amp; SQLite&#xFF0C; MMKV &#x5728; Android &#x591A;&#x8FDB;&#x7A0B; key-value &#x5B58;&#x50A8;&#x7EC4;&#x4EF6;&#x4E0A;&#x662F;&#x4E0D;&#x4E8C;&#x4E4B;&#x9009;&#x3002;</p>
+<h2 id="4-mmkv-&#x539F;&#x7406;"><a name="4-mmkv-&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#4-mmkv-&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. 4 MMKV &#x539F;&#x7406;</h2>
+<ul>
+<li><strong>&#x5185;&#x5B58;&#x51C6;&#x5907;</strong> &#x901A;&#x8FC7; mmap &#x5185;&#x5B58;&#x6620;&#x5C04;&#x6587;&#x4EF6;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x6BB5;&#x53EF;&#x4F9B;&#x968F;&#x65F6;&#x5199;&#x5165;&#x7684;&#x5185;&#x5B58;&#x5757;&#xFF0C;App &#x53EA;&#x7BA1;&#x5F80;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#xFF0C;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8D1F;&#x8D23;&#x5C06;&#x5185;&#x5B58;&#x56DE;&#x5199;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x5FC5;&#x62C5;&#x5FC3; crash &#x5BFC;&#x81F4;&#x6570;&#x636E;&#x4E22;&#x5931;&#x3002;</li>
+<li><strong>&#x6570;&#x636E;&#x7EC4;&#x7EC7;</strong> &#x6570;&#x636E;&#x5E8F;&#x5217;&#x5316;&#x65B9;&#x9762;&#x6211;&#x4EEC;&#x9009;&#x7528; protobuf &#x534F;&#x8BAE;&#xFF0C;pb &#x5728;&#x6027;&#x80FD;&#x548C;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x4E0A;&#x90FD;&#x6709;&#x4E0D;&#x9519;&#x7684;&#x8868;&#x73B0;&#x3002;</li>
+<li><strong>&#x5199;&#x5165;&#x4F18;&#x5316;</strong> &#x8003;&#x8651;&#x5230;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x662F;&#x9891;&#x7E41;&#x5730;&#x8FDB;&#x884C;&#x5199;&#x5165;&#x66F4;&#x65B0;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6709;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x7684;&#x80FD;&#x529B;&#x3002;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5C06;&#x589E;&#x91CF; kv &#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x540E;&#xFF0C;<strong>append &#x5230;&#x5185;&#x5B58;&#x672B;&#x5C3E;</strong>&#x3002; &#x8FD9;&#x6837;&#x540C;&#x4E00;&#x4E2A; key &#x4F1A;&#x6709;&#x65B0;&#x65E7;&#x82E5;&#x5E72;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x6700;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5728;&#x6700;&#x540E;&#xFF1B;&#x90A3;&#x4E48;&#x53EA;&#x9700;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7B2C;&#x4E00;&#x6B21;&#x6253;&#x5F00; mmkv &#x65F6;&#xFF0C;&#x4E0D;&#x65AD;&#x7528;&#x540E;&#x8BFB;&#x5165;&#x7684; value &#x66FF;&#x6362;&#x4E4B;&#x524D;&#x7684;&#x503C;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x662F;&#x6700;&#x65B0;&#x6709;&#x6548;&#x7684;&#x3002;</li>
+<li><strong>&#x7A7A;&#x95F4;&#x589E;&#x957F;</strong> &#x4F7F;&#x7528; append &#x5B9E;&#x73B0;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x5E26;&#x6765;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x4E0D;&#x65AD; append &#x7684;&#x8BDD;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4F1A;&#x589E;&#x957F;&#x5F97;&#x4E0D;&#x53EF;&#x63A7;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x6027;&#x80FD;&#x548C;&#x7A7A;&#x95F4;&#x4E0A;&#x505A;&#x4E2A;&#x6298;&#x4E2D;&#x3002; &#x4EE5;&#x5185;&#x5B58; pagesize &#x4E3A;&#x5355;&#x4F4D;&#x7533;&#x8BF7;&#x7A7A;&#x95F4;&#xFF0C;&#x5728;&#x7A7A;&#x95F4;&#x7528;&#x5C3D;&#x4E4B;&#x524D;&#x90FD;&#x662F; append &#x6A21;&#x5F0F;&#xFF1B;&#x5F53; append &#x5230;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x65F6;&#xFF0C;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x91CD;&#x6574;&#x3001;key &#x6392;&#x91CD;&#xFF0C;&#x5C1D;&#x8BD5;&#x5E8F;&#x5217;&#x5316;&#x4FDD;&#x5B58;&#x6392;&#x91CD;&#x7ED3;&#x679C;&#xFF1B; &#x6392;&#x91CD;&#x540E;&#x7A7A;&#x95F4;&#x8FD8;&#x662F;&#x4E0D;&#x591F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x6269;&#x5927;&#x4E00;&#x500D;&#xFF0C;&#x76F4;&#x5230;&#x7A7A;&#x95F4;&#x8DB3;&#x591F;&#x3002;</li>
+<li><strong>&#x6570;&#x636E;&#x6709;&#x6548;&#x6027;</strong> &#x8003;&#x8651;&#x5230;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x4E0D;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x53E6;&#x5916;&#x589E;&#x52A0;&#x4E86; crc &#x6821;&#x9A8C;&#xFF0C;&#x5BF9;&#x65E0;&#x6548;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7504;&#x522B;&#x3002;</li>
+</ul>
+<p>&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BBE;&#x8BA1;&#x539F;&#x7406;&#x53C2;&#x8003; <a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3Dhttps%3A%2F%2Fgithub.com%2FTencent%2FMMKV%2Fwiki%2Fdesign" target="_blank">MMKV &#x539F;&#x7406;</a>&#x3002;</p>
+<h2 id="5-&#x5FEB;&#x901F;&#x4E0A;&#x624B;"><a name="5-&#x5FEB;&#x901F;&#x4E0A;&#x624B;" class="anchor-navigation-ex-anchor" href="#5-&#x5FEB;&#x901F;&#x4E0A;&#x624B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. 5 &#x5FEB;&#x901F;&#x4E0A;&#x624B;</h2>
+<pre><code class="lang-text">dependencies {
+      implementation &apos;com.tencent:mmkv:1.0.23&apos;
+      // replace &quot;1.0.23&quot; with any available version
+  }
+</code></pre>
+<p><a href="https://link.zhihu.com/?target=https%3A//links.jianshu.com/go%3Fto%3D(https%3A%2F%2Fgithub.com%2FTencent%2FMMKV%2Fwiki%2Fandroid_tutorial_cn" target="_blank">MMKV</a>)&#x7684;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C; &#x6240;&#x6709;&#x53D8;&#x66F4;&#x7ACB;&#x9A6C;&#x751F;&#x6548;&#xFF0C;&#x65E0;&#x9700;&#x8C03;&#x7528; sync&#x3001;apply&#x3002; &#x5728; App &#x542F;&#x52A8;&#x65F6;&#x521D;&#x59CB;&#x5316; MMKV&#xFF0C;&#x8BBE;&#x5B9A; MMKV &#x7684;&#x6839;&#x76EE;&#x5F55; (&#x9ED8;&#x8BA4;/data/data/xxx.xxx/files/mmkv/) (sp&#x5B58;&#x50A8;&#x5728;/data/data/xxx.xxx/shared_prefs/)</p>
+<p>&#x652F;&#x6301;&#x4ECE;SP&#x8FC1;&#x79FB;&#x6570;&#x636E;importFromSharedPreferences</p>
+<p>MMKV &#x8FD8;&#x989D;&#x5916;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x904D; SharedPreferences&#x3001;SharedPreferences.Editor &#x8FD9;&#x4E24;&#x4E2A; interface</p>
+<pre><code class="lang-text">  // &#x53EF;&#x4EE5;&#x8DDF;SP&#x7528;&#x6CD5;&#x4E00;&#x6837;
+  SharedPreferences.Editor editor = mmkv.edit();
+  // &#x65E0;&#x9700;&#x8C03;&#x7528; commit()
+  //editor.commit();
+</code></pre>
+<p>MMKV &#x7684;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x6240;&#x6709;&#x53D8;&#x66F4;&#x7ACB;&#x9A6C;&#x751F;&#x6548;&#xFF0C;&#x65E0;&#x9700;&#x8C03;&#x7528; sync&#x3001;apply&#x3002; &#x5728; App &#x542F;&#x52A8;&#x65F6;&#x521D;&#x59CB;&#x5316; MMKV&#xFF0C;&#x8BBE;&#x5B9A; MMKV &#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF08;files/mmkv/&#xFF09;&#xFF0C;&#x4F8B;&#x5982;&#x5728; MainActivity &#x91CC;&#xFF1A;</p>
+<pre><code class="lang-text">  protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+
+      String rootDir = MMKV.initialize(this);
+      System.out.println(&quot;mmkv root: &quot; + rootDir);
+      //&#x2026;&#x2026;
+  }
+</code></pre>
+<p>MMKV &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-text">  import com.tencent.mmkv.MMKV;
+  //&#x2026;&#x2026;
+
+  MMKV kv = MMKV.defaultMMKV();
+
+  kv.encode(&quot;bool&quot;, true);
+  boolean bValue = kv.decodeBool(&quot;bool&quot;);
+
+  kv.encode(&quot;int&quot;, Integer.MIN_VALUE);
+  int iValue = kv.decodeInt(&quot;int&quot;);
+
+  kv.encode(&quot;string&quot;, &quot;Hello from mmkv&quot;);
+  String str = kv.decodeString(&quot;string&quot;);
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x5B8C;&#x6BD5;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-text">      public native void clearAll();
+
+      // MMKV&apos;s size won&apos;t reduce after deleting key-values
+      // call this method after lots of deleting f you care about disk usage
+      // note that `clearAll` has the similar effect of `trim`
+      public native void trim();
+
+      // call this method if the instance is no longer needed in the near future
+      // any subsequent call to the instance is undefined behavior
+      public native void close();
+
+      // call on memory warning
+      // any subsequent call to the instance will load all key-values from file again
+      public native void clearMemoryCache();
+
+      // you don&apos;t need to call this, really, I mean it
+      // unless you care about out of battery
+      public void sync() {
+          sync(true);
+      }
+</code></pre>
+<h2 id="6-&#x8865;&#x5145;&#x9002;&#x7528;&#x5EFA;&#x8BAE;"><a name="6-&#x8865;&#x5145;&#x9002;&#x7528;&#x5EFA;&#x8BAE;" class="anchor-navigation-ex-anchor" href="#6-&#x8865;&#x5145;&#x9002;&#x7528;&#x5EFA;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. 6. &#x8865;&#x5145;&#x9002;&#x7528;&#x5EFA;&#x8BAE;</h2>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x8BF7;&#x52A1;&#x5FC5;&#x505A;code19&#x7248;&#x672C;&#x7684;&#x9002;&#x914D;&#xFF0C;&#x8FD9;&#x4E2A;&#x5728;github&#x5B98;&#x7F51;&#x6709;&#x8BF4;&#x660E;</p>
+<p>&#x4F9D;&#x8D56;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x5E93;&#xFF0C;&#x7136;&#x540E;&#x5BF9;19&#x533A;&#x5206;&#x5904;&#x7406;
+implementation &#x2018;com.getkeepsafe.relinker:relinker:1.3.1&#x2019;</p>
+<pre><code class="lang-text">  if (android.os.Build.VERSION.SDK_INT == 19) {
+      MMKV.initialize(relativePath, new MMKV.LibLoader() {
+          @Override
+          public void loadLibrary(String libName) {
+              ReLinker.loadLibrary(context, libName);
+          }
+      });
+  } else {
+      MMKV.initialize(context);
+  }
+</code></pre>
+<h2 id="7-&#x9650;&#x5236;"><a name="7-&#x9650;&#x5236;" class="anchor-navigation-ex-anchor" href="#7-&#x9650;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. 7 &#x9650;&#x5236;</h2>
+<p>&#x53EF;&#x770B;&#x5230;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x4F1A;&#x5B58;&#x5165;&#x591A;&#x5206;&#x5B9E;&#x4F8B;&#xFF0C;&#x6700;&#x540E;&#x5B58;&#x5165;&#x7684;&#x5C31;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;
+MMKV &#x5728;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x6027;&#x80FD;&#x5F3A;&#x52B2;&#xFF0C;key/value &#x7684;&#x6570;&#x91CF;&#x548C;&#x957F;&#x5EA6;&#x90FD;&#x6CA1;&#x6709;&#x9650;&#x5236;&#x3002;
+&#x7136;&#x800C; MMKV &#x5728;&#x5185;&#x5B58;&#x91CC;&#x7F13;&#x5B58;&#x4E86;&#x6240;&#x6709;&#x7684; key-value&#xFF0C;&#x5728;&#x603B;&#x5927;&#x5C0F;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x4F8B;&#x5982; 100M+&#xFF09;&#xFF0C;App &#x53EF;&#x80FD;&#x4F1A;&#x7206;&#x5185;&#x5B58;&#xFF0C;&#x89E6;&#x53D1;&#x91CD;&#x6574;&#x56DE;&#x5199;&#x65F6;&#xFF0C;&#x5199;&#x5165;&#x901F;&#x5EA6;&#x4E5F;&#x4F1A;&#x53D8;&#x6162;&#x3002;
+&#x652F;&#x6301;&#x5927;&#x6587;&#x4EF6;&#x7684; MMKV &#x6B63;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6709;&#x671B;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x5927;&#x7248;&#x672C;&#x53D1;&#x5E03;&#x3002;</p>
+<h2 id="8-&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;"><a name="8-&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#8-&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. 8 &#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;</h2>
+<h3 id="81&#x9501;-lock-unlock-trylock"><a name="81&#x9501;-lock-unlock-trylock" class="anchor-navigation-ex-anchor" href="#81&#x9501;-lock-unlock-trylock"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.1. 8.1&#x9501; lock unlock tryLock</h3>
+<p>&#x6CE8;&#x610F;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;lock&#x4F4F;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;mmkvWithID&#x83B7;&#x53D6;MMKV&#x65F6;&#x5C31;&#x963B;&#x585E;&#x4F4F;&#xFF0C;&#x76F4;&#x5230;&#x6301;&#x6709;&#x8FDB;&#x7A0B;&#x91CA;&#x653E;&#x3002;</p>
+<pre><code class="lang-java">          <span class="hljs-comment">// get the lock immediately</span>
+        MMKV mmkv2 = MMKV.mmkvWithID(LOCK_PHASE_2, MMKV.MULTI_PROCESS_MODE);
+        mmkv2.lock();
+        Log.d(<span class="hljs-string">&quot;locked in child&quot;</span>, LOCK_PHASE_2);
+
+        Runnable waiter = <span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-comment">//&#x963B;&#x585E;&#x4F4F; &#x76F4;&#x5230;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x91CA;&#x653E;</span>
+                MMKV mmkv1 = MMKV.mmkvWithID(LOCK_PHASE_1, MMKV.MULTI_PROCESS_MODE);
+                mmkv1.lock();
+                Log.d(<span class="hljs-string">&quot;locked in child&quot;</span>, LOCK_PHASE_1);
+            }
+        };
+</code></pre>
+<p> &#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x6709;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x89E6;&#x53D1;onContentChangedByOuterProcess&#xFF0C;
+checkLoadData&#x5982;&#x679C;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;clearMemoryState&#xFF0C;&#x91CD;&#x65B0;loadFromFile&#x3002;//&#x6570;&#x636E;&#x91CF;&#x5927;&#x65F6;&#x4E0D;&#x8981;&#x592A;&#x9891;&#x7E41;
+&#x8BFB;&#x53D6;decodeXXX&#x4F1A;&#x963B;&#x585E;&#x4F4F;&#xFF0C;&#x5148;&#x56DE;&#x8C03;onContentChangedByOuterProcess&#xFF0C;&#x518D;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x4FDD;&#x8BC1;&#x503C;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;</p>
+<h3 id="82-mmkvwithashmemid-&#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;"><a name="82-mmkvwithashmemid-&#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;" class="anchor-navigation-ex-anchor" href="#82-mmkvwithashmemid-&#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.2. 8.2 mmkvWithAshmemID &#x533F;&#x540D;&#x5171;&#x4EAB;&#x5185;&#x5B58;</h3>
+<p>&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;pageSize
+// a memory only MMKV, cleared on program exit
+// size cannot change afterward (because ashmem won&apos;t allow it)</p>
+<h3 id="83-&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;"><a name="83-&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;" class="anchor-navigation-ex-anchor" href="#83-&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.3. 8.3 &#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</h3>
+<blockquote>
+<p><strong>write&#x901F;&#x5EA6;&#xFF1A;</strong> mmkv &gt; cryptKV &gt;&gt; sp
+<strong>read&#x901F;&#x5EA6;&#xFF1A;</strong> sp &gt; cryptKV &gt; mmkv</p>
+</blockquote>
+<h2 id="9-binder-mmap&#xFF08;&#x4E00;&#x6B21;&#x62F7;&#x8D1D;&#xFF09;"><a name="9-binder-mmap&#xFF08;&#x4E00;&#x6B21;&#x62F7;&#x8D1D;&#xFF09;" class="anchor-navigation-ex-anchor" href="#9-binder-mmap&#xFF08;&#x4E00;&#x6B21;&#x62F7;&#x8D1D;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. 9 Binder MMAP&#xFF08;&#x4E00;&#x6B21;&#x62F7;&#x8D1D;&#xFF09;</h2>
+<p> Linux&#x7684;&#x5185;&#x5B58;&#x5206;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x8DDF;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#xFF0C;&#x540C;&#x65F6;&#x9875;&#x8868;&#x6709;&#x4E5F;&#x5206;&#x4E24;&#x7C7B;&#xFF0C;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x9875;&#x8868;&#x8DDF;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x9875;&#x8868;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x6709;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x9875;&#x8868;&#xFF0C;&#x4F46;&#x662F;&#x7CFB;&#x7EDF;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x9875;&#x8868;&#x3002;
+&#x800C;Binder mmap&#x7684;&#x5173;&#x952E;&#x662F;&#xFF1A;&#x66F4;&#x65B0;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x5BF9;&#x5E94;&#x7684;&#x9875;&#x8868;&#x7684;&#x540C;&#x65F6;&#x4E5F;&#x540C;&#x6B65;&#x6620;&#x5C04;&#x5185;&#x6838;&#x9875;&#x8868;&#xFF0C;&#x8BA9;&#x4E24;&#x4E2A;&#x9875;&#x8868;&#x90FD;&#x6307;&#x5411;&#x540C;&#x4E00;&#x5757;&#x5730;&#x5740;&#xFF0C;
+&#x200B; &#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x6570;&#x636E;&#x53EA;&#x9700;&#x8981;&#x4ECE;A&#x8FDB;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#xFF0C;&#x76F4;&#x63A5;&#x62F7;&#x8D1D;&#x5230;B&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#xFF0C;&#x800C;B&#x591A;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x5728;B&#x8FDB;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x4E5F;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x65E0;&#x9700;&#x4ECE;&#x5185;&#x6838;&#x62F7;&#x8D1D;&#x5230;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>copy_from_user() //&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x62F7;&#x8D1D;&#x5230;&#x5185;&#x6838;&#x7A7A;&#x95F4;
+copy_to_user() //&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x62F7;&#x8D1D;&#x5230;&#x7528;&#x6237;&#x7A7A;&#x95F4;</p>
+</blockquote>
+<h3 id="91-liunx&#x8FDB;&#x7A0B;&#x9694;&#x79BB;"><a name="91-liunx&#x8FDB;&#x7A0B;&#x9694;&#x79BB;" class="anchor-navigation-ex-anchor" href="#91-liunx&#x8FDB;&#x7A0B;&#x9694;&#x79BB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9.1. 9.1 Liunx&#x8FDB;&#x7A0B;&#x9694;&#x79BB;</h3>
+<p><img src="media/v2-f1dd4e5d20a3288a1d4d7a07fd03a8b4_1440w.jpg" alt="img" style="zoom:67%;"></p>
+<h3 id="92-&#x4F20;&#x7EDF;ipc"><a name="92-&#x4F20;&#x7EDF;ipc" class="anchor-navigation-ex-anchor" href="#92-&#x4F20;&#x7EDF;ipc"><i class="fa fa-link" aria-hidden="true"></i></a>1.9.2. 9.2 &#x4F20;&#x7EDF;IPC</h3>
+<p><img src="media/v2-5112c2f32f3981023d9aebd391990627_1440w.jpg" alt="img" style="zoom: 67%;"></p>
+<h3 id="93-binder&#x901A;&#x4FE1;"><a name="93-binder&#x901A;&#x4FE1;" class="anchor-navigation-ex-anchor" href="#93-binder&#x901A;&#x4FE1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9.3. 9.3 Binder&#x901A;&#x4FE1;</h3>
+<p><img src="media/v2-de2da542f0fe09c07afffe2bf5038235_1440w.jpg" alt="img" style="zoom: 50%;"></p>
+<h2 id="10-&#x666E;&#x901A;&#x6587;&#x4EF6;mmap&#x539F;&#x7406;"><a name="10-&#x666E;&#x901A;&#x6587;&#x4EF6;mmap&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#10-&#x666E;&#x901A;&#x6587;&#x4EF6;mmap&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. 10 &#x666E;&#x901A;&#x6587;&#x4EF6;mmap&#x539F;&#x7406;</h2>
+<p><strong>&#x666E;&#x901A;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;</strong>&#xFF1A;</p>
+<ol>
+<li>&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x901A;&#x8FC7;read/write&#x7CFB;&#x7EDF;&#x8C03;&#x8BBF;&#x95EE;&#xFF0C;&#x5148;&#x5728;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x4E00;&#x6BB5;buffer&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x8FDB;&#x5165;&#x5185;&#x6838;&#xFF0C;&#x5C06;&#x5185;&#x5BB9;&#x4ECE;&#x78C1;&#x76D8;&#x8BFB; &#x53D6;&#x5230;&#x5185;&#x6838;&#x7F13;&#x51B2;&#xFF0C;&#x6700;&#x540E;&#xFF0C;&#x62F7;&#x8D1D;&#x5230;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#x7A7A;&#x95F4;&#xFF0C;&#x81F3;&#x5C11;&#x7275;&#x626F;&#x5230;&#x4E24;&#x6B21;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#xFF1B;
+&#x540C;&#x65F6;&#xFF0C;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x5B58;&#x5728;&#x8D44;&#x6E90;&#x6D6A;&#x8D39;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li><p>&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x901A;&#x8FC7;mmap&#x6765;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#xFF0C;mmap()&#x5C06;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x6620;&#x5C04;&#x5230;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#xFF0C;&#x6587;&#x4EF6;&#x5728;mmap&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5185;&#x5B58;&#x5E76;&#x672A; &#x771F;&#x6B63;&#x5206;&#x914D;&#xFF0C;</p>
+<p>&#x53EA;&#x6709;&#x5728;<strong>&#x7B2C;&#x4E00;&#x6B21;</strong>&#x8BFB;&#x53D6;/&#x5199;&#x5165;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x5F15;&#x53D1;&#x7F3A;&#x9875;&#x4E2D;&#x65AD;&#xFF0C;&#x5728;&#x5904;&#x7406;&#x7F3A;&#x9875;&#x4E2D;&#x65AD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B8C;&#x6210;&#x5185;&#x5B58;&#x4E5F;&#x5206;&#x914D;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5B8C;&#x6210;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x7684;&#x62F7;&#x8D1D;&#x3002;
+&#x5E76;&#x4E14;&#xFF0C;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x5BF9;&#x5E94;&#x7684;&#x9875;&#x8868;&#xFF0C;&#x5B8C;&#x6210;&#x5230;&#x7269;&#x7406;&#x5185;&#x5B58;&#x5230;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x6B21;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#xFF0C;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#x3002;</p>
+</li>
+</ol>
+<p><strong>&#x540C;&#x65F6;&#x591A;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x8FC7;mmap&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4EC5;&#x9700;&#x8981;&#x4E00;&#x5757;&#x7269;&#x7406;&#x5185;&#x5B58;&#x5C31;&#x591F;&#x4E86;&#x3002;</strong></p>
+<p> Android&#x4E2D;&#x4F7F;&#x7528;mmap&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;RandomAccessFile&#x4E0E;MappedByteBuffer&#x6765;&#x914D;&#x5408;&#x3002;
+&#x901A;&#x8FC7;randomAccessFile.getChannel().map&#x83B7;&#x53D6;&#x5230;MappedByteBuffer&#x3002;&#x7136;&#x540E;&#x8C03;&#x7528;ByteBuffer&#x7684;put&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-java">  RandomAccessFile randomAccessFile = <span class="hljs-keyword">new</span> RandomAccessFile(<span class="hljs-string">&quot;path&quot;</span>,<span class="hljs-string">&quot;rw&quot;</span>);
+  MappedByteBuffer mappedByteBuffer= 
+  randomAccessFile.getChannel().map(FileChannel.MapMode.READ_WRITE,<span class="hljs-number">0</span>, 
+  mappedByteBuffer.putChar(<span class="hljs-string">&apos;c&apos;</span>);
+  mappedByteBuffer.getChar();
+</code></pre>
+<h2 id="11-&#x4EA4;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;"><a name="11-&#x4EA4;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#11-&#x4EA4;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. 11. &#x4EA4;&#x6362;&#x6570;&#x636E;&#x683C;&#x5F0F;</h2>
+<p>Google &#x63A8;&#x51FA;&#x7684; <a href="https://developers.google.com/protocol-buffers/" target="_blank">Protocal Buffers</a> &#x662F;&#x4E00;&#x79CD;&#x66F4;&#x8F7B;&#x4FBF;&#x9AD8;&#x6548;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x4F46;&#x6D88;&#x8017;&#x5185;&#x5B58;&#x8F83;&#x5927;&#x3002;</p>
+<p><a href="https://github.com/google/flatbuffers" target="_blank">FlatBuffers</a> &#x540C;&#x6837;&#x7531; Google &#x63A8;&#x51FA;&#xFF0C;&#x4E13;&#x6CE8;&#x6027;&#x80FD;&#xFF0C;&#x9002;&#x5408;&#x79FB;&#x52A8;&#x7AEF;&#x3002;&#x5360;&#x7528;&#x5B58;&#x50A8;&#x6BD4; Protocal &#x8981;&#x5927;&#x3002;</p>
+<h2 id="12-sharepreferences-&#x4F18;&#x5316;"><a name="12-sharepreferences-&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#12-sharepreferences-&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1.12. 12. SharePreferences &#x4F18;&#x5316;</h2>
+<ul>
+<li>&#x5F53; SharedPreferences &#x6587;&#x4EF6;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x8C03;&#x7528; getSharedPreferences &#x65B9;&#x6CD5;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x6587;&#x4EF6;&#x5E76;&#x8BFB;&#x5165;&#x5185;&#x5B58;&#xFF0C;&#x8FD9;&#x5BB9;&#x6613;&#x5BFC;&#x81F4; &#x8017;&#x65F6;&#x66F4;&#x957F;&#x3002;</li>
+<li>Editor &#x7684; commit &#x6216;&#x8005; apply &#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x540C;&#x6B65;&#x5199;&#x5165;&#x548C;&#x5F02;&#x6B65; &#x5199;&#x5165;&#xFF0C;&#x4EE5;&#x53CA;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x5728;&#x4E0D;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<strong>&#x4F7F;&#x7528; apply &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6781;&#x5927;&#x63D0;&#x9AD8;&#x6027;&#x80FD;</strong>&#x3002;</li>
+<li>SharedPreferences &#x7C7B; &#x4E2D;&#x7684; commitToMemory() &#x4F1A;&#x9501;&#x5B9A; SharedPreference &#x5BF9;&#x8C61;&#xFF0C;put() &#x548C; getEditor() &#x65B9;&#x6CD5;&#x4F1A;&#x9501;&#x5B9A; Editor &#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x65F6;&#x66F4;&#x4F1A;&#x9501;&#x5B9A;&#x4E00;&#x4E2A;&#x5199;&#x5165;&#x9501;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x4F18;&#x5316;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x907F;&#x514D;&#x9891;&#x7E41;&#x5730;&#x8BFB;&#x5199; SharedPreferences&#xFF0C;&#x51CF;&#x5C11;&#x65E0;&#x8C13;&#x7684;&#x8C03;&#x7528;&#x3002;&#x5BF9;&#x4E8E; SharedPreferences &#x7684;&#x6279;&#x91CF;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x597D;&#x5148;&#x83B7;&#x53D6;&#x4E00;&#x4E2A; editor &#x8FDB;&#x884C;&#x6279;&#x91CF;&#x64CD;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528; apply &#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<h2 id="13-&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;"><a name="13-&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#13-&#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1.13. 13. &#x6570;&#x636E;&#x5E93;&#x4F18;&#x5316;</h2>
+<ol>
+<li><p>&#x4F7F;&#x7528; StringBuilder &#x4EE3;&#x66FF; String</p>
+</li>
+<li><p>&#x67E5;&#x8BE2;&#x65F6;&#x8FD4;&#x56DE;&#x66F4;&#x5C11;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x53CA;&#x66F4;&#x5C11;&#x7684;&#x5B57;&#x6BB5;</p>
+<p>&#x67E5;&#x8BE2;&#x65F6;&#x53EA;&#x53D6;&#x9700;&#x8981;&#x7684;&#x5B57;&#x6BB5;&#x548C;&#x7ED3;&#x679C;&#x96C6;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x4F1A;&#x6D88;&#x8017;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x53CA;&#x5185;&#x5B58;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x5B57;&#x6BB5;&#x4F1A;&#x5BFC;&#x81F4;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x3002;</p>
+</li>
+<li><p>&#x5C11;&#x7528; cursor.getColumnIndex</p>
+<p>&#x6839;&#x636E;&#x6027;&#x80FD;&#x8C03;&#x4F18;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x89C2;&#x5BDF; cursor.getColumnIndex &#x7684;&#x65F6;&#x95F4;&#x6D88;&#x8017;&#x8DDF; cursor.getInt &#x76F8;&#x5DEE;&#x65E0;&#x51E0;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x5EFA;&#x8868;&#x7684;&#x65F6;&#x5019;&#x7528; static &#x53D8;&#x91CF;&#x8BB0;&#x4F4F;&#x67D0;&#x5217;&#x7684; index&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x76F8;&#x5E94; index &#x800C;&#x4E0D;&#x662F;&#x6BCF;&#x6B21;&#x67E5;&#x8BE2;&#x3002;</p>
+</li>
+<li><p>&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;</p>
+<p>Android &#x4E2D;&#x6570;&#x636E;&#x4E0D;&#x591A;&#x65F6;&#x8868;&#x67E5;&#x8BE2;&#x53EF;&#x80FD;&#x8017;&#x65F6;&#x4E0D;&#x591A;&#xFF0C;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4; ANR&#xFF0C;&#x4E0D;&#x8FC7;&#x5927;&#x4E8E; 100ms &#x65F6;&#x540C;&#x6837;&#x4F1A;&#x8BA9;&#x7528;&#x6237;&#x611F;&#x89C9;&#x5230;&#x5EF6;&#x65F6;&#x548C;&#x5361;&#x987F;&#xFF0C;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x4F46; sqlite &#x5728;&#x5E76;&#x53D1;&#x65B9;&#x9762;&#x5B58;&#x5728;&#x5C40;&#x9650;&#xFF0C;&#x591A;&#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x53EF;&#x4F7F;&#x7528;&#x5355;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5728;&#x4EFB;&#x52A1;&#x4E2D;&#x6267;&#x884C; db &#x64CD;&#x4F5C;&#xFF0C;&#x901A;&#x8FC7; handler &#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x548C; UI &#x7EBF;&#x7A0B;&#x4EA4;&#x4E92;&#xFF0C;&#x65E2;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD; UI &#x7EBF;&#x7A0B;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x80FD;&#x9632;&#x6B62;&#x5E76;&#x53D1;&#x5E26;&#x6765;&#x7684;&#x5F02;&#x5E38;&#x3002;</p>
+</li>
+<li><p>SQLiteOpenHelper <strong>&#x7EF4;&#x6301;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;</strong></p>
+<p>&#x56E0;&#x4E3A; SQLite &#x5BF9;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x652F;&#x6301;&#x5E76;&#x4E0D;&#x662F;&#x5F88;&#x5B8C;&#x5584;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x88AB;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5360;&#x7528;&#xFF0C; &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x62A5;&#x201C;Database is locked&#x201D; &#x7684;&#x5F02;&#x5E38;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x65E0;&#x8BBA;&#x5728;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;&#xFF0C;&#x90FD;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x6700;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;<strong>&#x64CD;&#x4F5C;&#x7EDF;&#x4E00;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x961F;&#x5217;&#x7BA1;&#x7406;</strong>&#xFF0C;&#x800C;&#x4E1A;&#x52A1;&#x5C42;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x540C;&#x6B65;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x907F;&#x514D;&#x591A;&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x5BFC;&#x81F4;&#x7684;&#x4E0D;&#x540C;&#x6B65;&#x548C;&#x6B7B;&#x9501;&#x95EE;&#x9898;&#x3002;</p>
+</li>
+<li><p>Application &#x4E2D;&#x521D;&#x59CB;&#x5316;</p>
+<ul>
+<li>&#x4F7F;&#x7528; Application &#x7684; Context &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5728; Application &#x751F;&#x547D;&#x5468;&#x671F;&#x7ED3;&#x675F;&#x65F6;&#x518D;&#x5173;&#x95ED;&#x3002;</li>
+<li>&#x5728;&#x5E94;&#x7528;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x4E2D;&#x6700;&#x5148;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x907F;&#x514D;&#x8FDB;&#x5165;&#x5E94;&#x7528;&#x540E;&#x518D;&#x521D;&#x59CB;&#x5316;&#x5BFC;&#x81F4;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#x65F6;&#x95F4;&#x53D8;&#x957F;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x5C11;&#x7528; AUTOINCREMENT</p>
+<p>&#x4E3B;&#x952E;&#x52A0;&#x4E0A; AUTOINCREMENT &#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x4E3B;&#x952E;&#x4E25;&#x683C;&#x9012;&#x589E;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6BCF;&#x6B21;&#x90FD;&#x52A0; 1&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x63D2;&#x5165;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x5931;&#x8D25;&#x7684;&#x884C;&#x53F7;&#x4E0D;&#x4F1A;&#x88AB;&#x590D;&#x7528;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x4E3B;&#x952E;&#x6709;&#x95F4;&#x9694;&#xFF0C;&#x7EE7;&#x800C;&#x4F7F; INSERT &#x8017;&#x65F6; 1 &#x500D;&#x4EE5;&#x4E0A;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A; AUTOINCREMENT &#x5173;&#x952E;&#x8BCD;&#x4F1A;&#x589E;&#x52A0; CPU&#xFF0C;&#x5185;&#x5B58;&#xFF0C;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x548C;&#x78C1;&#x76D8; I/O &#x7684;&#x8D1F;&#x62C5;&#xFF0C;&#x6240;&#x4EE5; &#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x7528;&#xFF0C;&#x9664;&#x975E;&#x5FC5;&#x9700;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x4E0D;&#x662F;&#x5FC5;&#x9700;&#x7684;&#x3002;</p>
+</li>
+</ol>
+<h3 id="131-&#x4E8B;&#x52A1;"><a name="131-&#x4E8B;&#x52A1;" class="anchor-navigation-ex-anchor" href="#131-&#x4E8B;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.13.1. 13.1 &#x4E8B;&#x52A1;</h3>
+<p>&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x7684;&#x4E24;&#x5927;&#x597D;&#x5904;&#x662F;&#x539F;&#x5B50;&#x63D0;&#x4EA4;&#x548C;&#x66F4;&#x4F18;&#x6027;&#x80FD;&#xFF1A;</p>
+<ul>
+<li>&#x539F;&#x5B50;&#x63D0;&#x4EA4;&#xFF1A;&#x610F;&#x5473;&#x7740;&#x540C;&#x4E00;&#x4E8B;&#x52A1;&#x5185;&#x7684;&#x6240;&#x6709;&#x4FEE;&#x6539;&#x8981;&#x4E48;&#x90FD;&#x5B8C;&#x6210;&#x8981;&#x4E48;&#x90FD;&#x4E0D;&#x505A;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x4FEE;&#x6539;&#x5931;&#x8D25;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x56DE;&#x6EDA;&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x4FEE;&#x6539;&#x4E0D;&#x751F;&#x6548;&#x3002;</li>
+<li>&#x66F4;&#x4F18;&#x6027;&#x80FD;&#xFF1A;Sqlite &#x9ED8;&#x8BA4;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x63D2;&#x5165;&#x3001;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6BCF;&#x6B21;&#x63D2;&#x5165;&#x3001;&#x66F4;&#x65B0;&#x540E;&#x7ACB;&#x5373;&#x63D0;&#x4EA4;&#x3002;&#x8FD9;&#x6837;&#x5982;&#x679C;&#x8FDE;&#x7EED;&#x63D2;&#x5165; 100 &#x6B21;&#x6570;&#x636E;&#x5B9E;&#x9645;&#x662F;&#x521B;&#x5EFA;&#x4E8B;&#x52A1;&#x3001;&#x6267;&#x884C;&#x8BED;&#x53E5;&#x3001;&#x63D0;&#x4EA4;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x88AB;&#x91CD;&#x590D;&#x6267;&#x884C;&#x4E86; 100 &#x6B21;&#x3002;&#x5982;&#x679C;&#x663E;&#x5F0F;&#x7684;&#x521B;&#x5EFA;&#x4E8B;&#x52A1;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x53EA;&#x505A;&#x4E00;&#x6B21;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x4E00;&#x6B21;&#x6027;&#x4E8B;&#x52A1;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x6027;&#x80FD;&#x5927;&#x5E45;&#x63D0;&#x5347;&#x3002;&#x5C24;&#x5176;&#x5F53;&#x6570;&#x636E;&#x5E93;&#x4F4D;&#x4E8E; sd &#x5361;&#x65F6;&#xFF0C;&#x65F6;&#x95F4;&#x4E0A;&#x80FD;&#x8282;&#x7701;&#x4E24;&#x4E2A;&#x6570;&#x91CF;&#x7EA7;&#x5DE6;&#x53F3;&#x3002;</li>
+</ul>
+<p>&#x4E3B;&#x8981;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;beginTransaction&#xFF0C;setTransactionSuccessful&#xFF0C;endTransaction&#x3002;</p>
+<h3 id="132-sqlitestatement"><a name="132-sqlitestatement" class="anchor-navigation-ex-anchor" href="#132-sqlitestatement"><i class="fa fa-link" aria-hidden="true"></i></a>1.13.2. 13.2 SQLiteStatement</h3>
+<p>&#x4F7F;&#x7528; Android &#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684; SQLiteStatement &#x6765;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x6027;&#x80FD;&#x4E0A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x63D0;&#x9AD8;&#xFF0C;&#x5E76;&#x4E14;&#x4E5F;&#x89E3;&#x51B3;&#x4E86; SQL &#x6CE8;&#x5165;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code class="lang-java">SQLiteStatement statement = dbOpenHelper.getWritableDatabase().compileStatement(<span class="hljs-string">&quot;INSERT INTO EMPERORS(name, dynasty, start_year) values(?,?,?)&quot;</span>); 
+statement.clearBindings();
+statement.bindString(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Max&quot;</span>); 
+statement.bindString(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Luk&quot;</span>); 
+statement.bindString(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;1998&quot;</span>); 
+statement.executeInsert();
+</code></pre>
+<p>SQLiteStatement &#x53EA;&#x80FD;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x63D2;&#x5165;&#x524D;&#x8981;&#x6E05;&#x9664;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="133-&#x7D22;&#x5F15;"><a name="133-&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#133-&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.13.3. 13.3 &#x7D22;&#x5F15;</h3>
+<p>&#x7D22;&#x5F15;&#x5C31;&#x50CF;&#x4E66;&#x672C;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x76EE;&#x5F55;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x6240;&#x5728;&#x9875;&#x6570;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF0C;&#x5408;&#x9002;&#x7684;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x4F18;&#x70B9;&#xFF1A;&#x5927;&#x5927;&#x52A0;&#x5FEB;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x68C0;&#x7D22;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x5305;&#x62EC;&#x5BF9;&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x3001;&#x8FDE;&#x8868;&#x67E5;&#x8BE2;&#x3001;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;&#x3001;&#x6392;&#x5E8F;&#x67E5;&#x8BE2;&#x3002;&#x7ECF;&#x5E38;&#x662F;&#x4E00;&#x5230;&#x4E24;&#x4E2A;&#x6570;&#x91CF;&#x7EA7;&#x7684;&#x6027;&#x80FD;&#x63D0;&#x5347;&#xFF0C;&#x4E14;&#x968F;&#x7740;&#x6570;&#x636E;&#x6570;&#x91CF;&#x7EA7;&#x589E;&#x957F;&#x3002;</p>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x7D22;&#x5F15;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x7EF4;&#x62A4;&#x5B58;&#x5728;&#x6D88;&#x8017;&#xFF0C;&#x7D22;&#x5F15;&#x4F1A;&#x5360;&#x7528;&#x7269;&#x7406;&#x7A7A;&#x95F4;&#xFF0C;&#x4E14;&#x968F;&#x7740;&#x6570;&#x636E;&#x91CF;&#x7684;&#x589E;&#x52A0;&#x800C;&#x589E;&#x52A0;&#x3002;</li>
+<li>&#x5728;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x65F6;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x7D22;&#x5F15;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x5BF9;&#x589E;&#x5220;&#x6539;&#x7684;&#x6027;&#x80FD;&#x5B58;&#x5728;&#x5F71;&#x54CD;&#x3002;</li>
+</ul>
+<p><strong>&#x5206;&#x7C7B;</strong></p>
+<ol>
+<li>&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x548C;&#x95F4;&#x63A5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;<ul>
+<li>&#x76F4;&#x63A5;&#x521B;&#x5EFA;: &#x4F7F;&#x7528; sql &#x8BED;&#x53E5;&#x521B;&#x5EFA;&#xFF0C;Android &#x4E2D;&#x53EF;&#x4EE5;&#x5728; SQLiteOpenHelper &#x7684; onCreate &#x6216;&#x662F; onUpgrade &#x4E2D;&#x76F4;&#x63A5; excuSql &#x521B;&#x5EFA;&#x8BED;&#x53E5;&#xFF0C;&#x5982; <code>CREATE INDEX mycolumn_index ON mytable (myclumn)</code></li>
+<li>&#x95F4;&#x63A5;&#x521B;&#x5EFA;: &#x5B9A;&#x4E49;&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#x6216;&#x8005;&#x552F;&#x4E00;&#x6027;&#x952E;&#x7EA6;&#x675F;&#xFF0C;&#x53EF;&#x4EE5;&#x95F4;&#x63A5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x4E3B;&#x952E;&#x9ED8;&#x8BA4;&#x4E3A;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x3002;</li>
+</ul>
+</li>
+<li>&#x666E;&#x901A;&#x7D22;&#x5F15;&#x548C;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;<ul>
+<li>&#x666E;&#x901A;&#x7D22;&#x5F15;&#xFF1A;<code>CREATEINDEXmycolumn_indexONmytable(myclumn)</code></li>
+<li>&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#xFF1A;&#x4FDD;&#x8BC1;&#x5728;&#x7D22;&#x5F15;&#x5217;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x5BF9;&#x805A;&#x7C07;&#x7D22;&#x5F15;&#x548C;&#x975E;&#x805A;&#x7C07;&#x7D22;&#x5F15;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x8BED;&#x53E5;&#x4E3A; <code>CREATE UNIQUE COUSTERED INDEX myclumn_cindex ON mytable(mycolumn)</code></li>
+</ul>
+</li>
+<li>&#x5355;&#x4E2A;&#x7D22;&#x5F15;&#x548C;&#x590D;&#x5408;&#x7D22;&#x5F15;<ul>
+<li>&#x5355;&#x4E2A;&#x7D22;&#x5F15;&#xFF1A;&#x7D22;&#x5F15;&#x5EFA;&#x7ACB;&#x8BED;&#x53E5;&#x4E2D;&#x4EC5;&#x5305;&#x542B;&#x5355;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x666E;&#x901A;&#x7D22;&#x5F15;&#x548C;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#x521B;&#x5EFA;&#x793A;&#x4F8B;&#x3002;</li>
+<li>&#x590D;&#x5408;&#x7D22;&#x5F15;&#xFF1A;&#x53C8;&#x53EB;&#x7EC4;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x5728;&#x7D22;&#x5F15;&#x5EFA;&#x7ACB;&#x8BED;&#x53E5;&#x4E2D;&#x540C;&#x65F6;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5982; <code>CREATEINDEXname_indexONusername(firstname,lastname)</code>&#xFF0C;&#x5176;&#x4E2D; firstname &#x4E3A;&#x524D;&#x5BFC;&#x5217;&#x3002;</li>
+</ul>
+</li>
+<li>&#x805A;&#x7C07;&#x7D22;&#x5F15;&#x548C;&#x975E;&#x805A;&#x7C07;&#x7D22;&#x5F15; (&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF0C;&#x7FA4;&#x96C6;&#x7D22;&#x5F15;)<ul>
+<li>&#x805A;&#x7C07;&#x7D22;&#x5F15;&#xFF1A;&#x7269;&#x7406;&#x7D22;&#x5F15;&#xFF0C;&#x4E0E;&#x57FA;&#x8868;&#x7684;&#x7269;&#x7406;&#x987A;&#x5E8F;&#x76F8;&#x540C;&#xFF0C;&#x6570;&#x636E;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x603B;&#x662F;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x5982; <code>CREATE CLUSTERED INDEX mycolumn_cindex ON mytable(mycolumn) WITH ALLOW_DUP_ROW</code>&#xFF0C;&#x5176;&#x4E2D; <code>WITH ALLOW_DUP_ROW</code> &#x8868;&#x793A;&#x5141;&#x8BB8;&#x6709;&#x91CD;&#x590D;&#x8BB0;&#x5F55;&#x7684;&#x805A;&#x7C07;&#x7D22;&#x5F15;</li>
+<li>&#x975E;&#x805A;&#x7C07;&#x7D22;&#x5F15;&#xFF1A;<code>CREATEUNCLUSTEREDINDEXmycolumn_cindexONmytable(mycolumn)</code>&#xFF0C;&#x7D22;&#x5F15;&#x9ED8;&#x8BA4;&#x4E3A;&#x975E;&#x805A;&#x7C07;&#x7D22;&#x5F15;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x4F7F;&#x7528;&#x573A;&#x666F;</strong></p>
+<ol>
+<li>&#x5F53;&#x67D0;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x9891;&#x7387;&#x8F83;&#x4F4E;&#xFF0C;&#x67E5;&#x8BE2;&#x9891;&#x7387;&#x8F83;&#x9AD8;&#xFF0C;&#x7ECF;&#x5E38;&#x6709;&#x8303;&#x56F4;&#x67E5;&#x8BE2; <code>(&gt;, &lt;, =,&gt;=, &lt;=)</code> &#x6216; <code>order by</code>&#x3001;<code>group by</code> &#x53D1;&#x751F;&#x65F6;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x3002;&#x5E76;&#x4E14;&#x9009;&#x62E9;&#x5EA6;&#xFF08;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x4E2D;&#x552F;&#x4E00;&#x503C;&#x7684;&#x6570;&#x91CF; / &#x603B;&#x7684;&#x6570;&#x91CF;&#xFF09;&#x8D8A;&#x5927;&#xFF0C;&#x5EFA;&#x7D22;&#x5F15;&#x8D8A;&#x6709;&#x4F18;&#x52BF;</li>
+<li>&#x7ECF;&#x5E38;&#x540C;&#x65F6;&#x5B58;&#x53D6;&#x591A;&#x5217;&#xFF0C;&#x4E14;&#x6BCF;&#x5217;&#x90FD;&#x542B;&#x6709;&#x91CD;&#x590D;&#x503C;&#x53EF;&#x8003;&#x8651;&#x5EFA;&#x7ACB;&#x590D;&#x5408;&#x7D22;&#x5F15;</li>
+</ol>
+<p><strong>&#x4F7F;&#x7528;&#x89C4;&#x5219;</strong></p>
+<ol>
+<li>&#x5BF9;&#x4E8E;&#x590D;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x628A;&#x4F7F;&#x7528;&#x6700;&#x9891;&#x7E41;&#x7684;&#x5217;&#x505A;&#x4E3A;&#x524D;&#x5BFC;&#x5217; (&#x7D22;&#x5F15;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;)&#x3002;&#x5982;&#x679C;&#x67E5;&#x8BE2;&#x65F6;&#x524D;&#x5BFC;&#x5217;&#x4E0D;&#x5728;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E2D;&#x5219;&#x8BE5;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x4E0D;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x3002;&#x5982; <code>create unique index PK_GRADE_CLASS on student (grade, class)</code>&#xFF0C;<code>select * from student where class = 2</code> &#x672A;&#x4F7F;&#x7528;&#x5230;&#x7D22;&#x5F15;&#xFF0C;<code>select * from dept where grade = 3</code> &#x4F7F;&#x7528;&#x5230;&#x4E86;&#x7D22;&#x5F15;</li>
+<li>&#x907F;&#x514D;&#x5BF9;&#x7D22;&#x5F15;&#x5217;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x5BF9; where &#x5B50;&#x53E5;&#x5217;&#x7684;&#x4EFB;&#x4F55;&#x8BA1;&#x7B97;&#x5982;&#x679C;&#x4E0D;&#x80FD;&#x88AB;&#x7F16;&#x8BD1;&#x4F18;&#x5316;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x67E5;&#x8BE2;&#x65F6;&#x7D22;&#x5F15;&#x5931;&#x6548; <code>select * from student where tochar(grade)=&#x2019;2</code></li>
+<li>&#x6BD4;&#x8F83;&#x503C;&#x907F;&#x514D;&#x4F7F;&#x7528; NULL</li>
+<li>&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x662F;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x8868;&#x505A;&#x4E3A;&#x5185;&#x8868;&#x3002;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x8981;&#x5145;&#x4EFD;&#x8003;&#x8651;&#x5E26;&#x6709;&#x7D22;&#x5F15;&#x7684;&#x8868;&#x3001;&#x884C;&#x6570;&#x591A;&#x7684;&#x8868;&#xFF0C;&#x5185;&#x5916;&#x8868;&#x7684;&#x9009;&#x62E9;&#x53EF;&#x7531;&#x516C;&#x5F0F;&#xFF1A;&#x5916;&#x5C42;&#x8868;&#x4E2D;&#x7684;&#x5339;&#x914D;&#x884C;&#x6570; <code>*</code> &#x5185;&#x5C42;&#x8868;&#x4E2D;&#x6BCF;&#x4E00;&#x6B21;&#x67E5;&#x627E;&#x7684;&#x6B21;&#x6570;&#x786E;&#x5B9A;&#xFF0C;&#x4E58;&#x79EF;&#x6700;&#x5C0F;&#x4E3A;&#x6700;&#x4F73;&#x65B9;&#x6848;&#x3002;&#x5B9E;&#x9645;&#x591A;&#x8868;&#x64CD;&#x4F5C;&#x5728;&#x88AB;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x524D;&#xFF0C;&#x67E5;&#x8BE2;&#x4F18;&#x5316;&#x5668;&#x4F1A;&#x6839;&#x636E;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#xFF0C;&#x5217;&#x51FA;&#x51E0;&#x7EC4;&#x53EF;&#x80FD;&#x7684;&#x8FDE;&#x63A5;&#x65B9;&#x6848;&#x5E76;&#x4ECE;&#x4E2D;&#x627E;&#x51FA;&#x7CFB;&#x7EDF;&#x5F00;&#x9500;&#x6700;&#x5C0F;&#x7684;&#x6700;&#x4F73;&#x65B9;&#x6848;</li>
+<li>&#x67E5;&#x8BE2;&#x5217;&#x4E0E;&#x7D22;&#x5F15;&#x5217;&#x6B21;&#x5E8F;&#x4E00;&#x81F4;</li>
+<li>&#x7528;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x4EE3;&#x66FF; EXISTS &#x5B50;&#x53E5;</li>
+<li>&#x628A;&#x8FC7;&#x6EE4;&#x8BB0;&#x5F55;&#x6570;&#x6700;&#x591A;&#x7684;&#x6761;&#x4EF6;&#x653E;&#x5728;&#x6700;&#x524D;&#x9762;</li>
+<li>&#x5584;&#x4E8E;&#x4F7F;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B83;&#x4F7F; sql &#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x548C;&#x9AD8;&#x6548; (Sqlite &#x4E0D;&#x652F;&#x6301;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;)</li>
+</ol>
+<h2 id="14-&#x5176;&#x5B83;&#x901A;&#x7528;&#x4F18;&#x5316;"><a name="14-&#x5176;&#x5B83;&#x901A;&#x7528;&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#14-&#x5176;&#x5B83;&#x901A;&#x7528;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1.14. 14. &#x5176;&#x5B83;&#x901A;&#x7528;&#x4F18;&#x5316;</h2>
+<ul>
+<li>&#x7ECF;&#x5E38;&#x7528;&#x7684;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x540E;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4EE5;&#x514D;&#x591A;&#x6B21;&#x91CD;&#x590D;&#x8BFB;&#x5199;&#x9020;&#x6210;&#x201C;&#x5199;&#x5165;&#x653E;&#x5927;&#x201D;</li>
+<li>&#x5B50;&#x7EBF;&#x7A0B;&#x8BFB;&#x5199;&#x6570;&#x636E;</li>
+<li>ObjectOutputStream &#x5728;&#x5E8F;&#x5217;&#x5316;&#x78C1;&#x76D8;&#x65F6;&#xFF0C;&#x4F1A;&#x628A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x5230;&#x78C1;&#x76D8;&#xFF0C;&#x5728;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#x7684; &#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x6210;&#x5458;&#x4F1A;&#x5E26;&#x6765;&#x4E00;&#x6B21; I/O &#x64CD;&#x4F5C;&#x3002;&#x5728; ObjectOutputStream &#x4E0A;&#x9762;&#x518D;&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x6D41; ByteArrayOutputStream &#x6216; BufferedOutputStream&#xFF0C;&#x5148;&#x5C06;&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684;&#x4FE1;&#x606F;&#x5199;&#x5230;&#x7F13;&#x5B58;&#x533A;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4E00;&#x6B21;&#x6027;&#x5730;&#x5199;&#x5230;&#x78C1;&#x76D8;&#x4E0A;&#xFF1B;&#x76F8;&#x5E94;&#x7684;&#xFF0C;&#x7528; ByteArrayInputStream &#x6216; BufferedInputStream &#x66FF;&#x4EE3; ObjectInputStream&#x3002;</li>
+<li>&#x5408;&#x7406;&#x9009;&#x62E9;&#x7F13;&#x51B2;&#x533A; Buffer &#x7684;&#x5927;&#x5C0F;&#x3002;&#x592A;&#x5C0F;&#x5BFC;&#x81F4; I/O &#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x589E;&#x591A;&#xFF0C;&#x592A;&#x5927;&#x5BFC;&#x81F4;&#x7533;&#x8BF7;&#x65F6;&#x95F4;&#x53D8;&#x957F;&#x3002;&#x6BD4;&#x5982; 4-8 KB&#x3002;</li>
+</ul>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>1.15. &#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000022360556" target="_blank">IO&#x4F18;&#x5316;&#x662F;&#x600E;&#x4E48;&#x505A;&#x7684;&#xFF0C;&#x4F7F;&#x7528; SharedPreferences&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x5361;&#xFF0C;mmkv&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tracyliu-FE 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-03-19 23:17:54
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.优化参考资料.html" class="navigation navigation-prev " aria-label="Previous page: 2.优化参考资料">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="21.Bug分析.html" class="navigation navigation-next " aria-label="Next page: 21.Bug分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"20.IO优化、mmkv原理","level":"1.9.14","depth":2,"next":{"title":"21.Bug分析","level":"1.9.15","depth":2,"path":"Performance/21.Bug分析.md","ref":"Performance/21.Bug分析.md","articles":[]},"previous":{"title":"2.优化参考资料","level":"1.9.13","depth":2,"path":"Performance/2.优化参考资料.md","ref":"Performance/2.优化参考资料.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex","tbfed-pagefooter"],"ignores":["docs","_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tracyliu-FE 2021","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"disableTitleFormatting":false,"variables":{},"title":"知识总结","gitbook":"*","outputfile":"SUMMARY.md"},"file":{"path":"Performance/20.IO优化、mmkv原理.md","mtime":"2021-03-19T15:17:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-24T07:11:48.594Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

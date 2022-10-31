@@ -1,0 +1,376 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git使用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Android Debug Tools.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Java/1-01.java内存分区.html">
+            
+                <a href="../Java/1-01.java内存分区.html">
+            
+                    
+                    Java内存分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Java/1-02.java 常量池相关 String Integer.html">
+            
+                <a href="../Java/1-02.java 常量池相关 String Integer.html">
+            
+                    
+                    Java 常量池相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    Tool
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="使用Gitpages发布GitBook.html">
+            
+                <a href="使用Gitpages发布GitBook.html">
+            
+                    
+                    Git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Android Debug Tools.html">
+            
+                <a href="Android Debug Tools.html">
+            
+                    
+                    Android Debug Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Git使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x4F7F;&#x7528;gitpages&#x53D1;&#x5E03;gitbook">&#x4F7F;&#x7528;Gitpages&#x53D1;&#x5E03;GitBook</h3>
+<h3 id="gitbook-&#x5B89;&#x88C5;">GitBook &#x5B89;&#x88C5;</h3>
+<h4 id="11&#x68C0;&#x6D4B;nodejs&#x662F;&#x5426;&#x5B89;&#x88C5;">1.1&#x68C0;&#x6D4B;node.js&#x662F;&#x5426;&#x5B89;&#x88C5;</h4>
+<pre><code>npm -v
+6.12.1
+</code></pre><h4 id="12-&#x5B89;&#x88C5;gitboot&#x548C;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;-g-&#x4EE3;&#x8868;&#x5168;&#x5C40;&#x5B89;&#x88C5;">1.2 &#x5B89;&#x88C5;gitboot&#x548C;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;(-g &#x4EE3;&#x8868;&#x5168;&#x5C40;&#x5B89;&#x88C5;)</h4>
+<pre><code>//&#x5B89;&#x88C5;
+sudo npm install -g gitbook
+sudo npm install -g gitbook-cli
+
+//&#x67E5;&#x770B;&#x7248;&#x672C;
+gitbook -V
+CLI version: 2.3.2
+GitBook version: 3.2.3
+
+
+//&#x66F4;&#x65B0;gitbook&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;
+sudo npm update gitbook-cli -g
+
+//&#x5378;&#x8F7D;gitbook&#x547D;&#x4EE4;
+sudo npm uninstall gitbook-cli -g
+</code></pre><h4 id="&#x5B89;&#x88C5;gitbook&#x7684;disqus&#x63D2;&#x4EF6;&#x3002;">&#x5B89;&#x88C5;Gitbook&#x7684;Disqus&#x63D2;&#x4EF6;&#x3002;</h4>
+<pre><code>npm install gitbook-plugin-disqus
+</code></pre><h3 id="2-gitbook&#x4F7F;&#x7528;">2 GitBook&#x4F7F;&#x7528;</h3>
+<h4 id="21-&#x521D;&#x59CB;&#x5316;">2.1 &#x521D;&#x59CB;&#x5316;</h4>
+<blockquote>
+<p>gitbook init   </p>
+</blockquote>
+<p>&#x6267;&#x884C;&#x4E4B;&#x540E;&#x4F1A;&#x751F;&#x6210;Readme &#x548C; summary&#x4E24;&#x4E2A;&#x6587;&#x4EF6;</p>
+<p>&#x4EE5;&#x4E0B;&#x4E3A;GitBook &#x7535;&#x5B50;&#x4E66;&#x57FA;&#x672C;&#x7ED3;&#x6784;</p>
+<pre><code>.
+&#x251C;&#x2500;&#x2500; book.json
+&#x251C;&#x2500;&#x2500; README.md
+&#x251C;&#x2500;&#x2500; SUMMARY.md
+&#x251C;&#x2500;&#x2500; chapter-1/
+|   &#x251C;&#x2500;&#x2500; README.md
+|   &#x2514;&#x2500;&#x2500; something.md
+&#x2514;&#x2500;&#x2500; chapter-2/
+    &#x251C;&#x2500;&#x2500; README.md
+    &#x2514;&#x2500;&#x2500; something.md
+</code></pre><h4 id="22-&#x672C;&#x5730;&#x9884;&#x89C8;">2.2 &#x672C;&#x5730;&#x9884;&#x89C8;</h4>
+<blockquote>
+<p>gitbook serve</p>
+</blockquote>
+<h4 id="&#x672C;&#x5730;&#x9884;&#x89C8;&#x751F;&#x6210;httplocalhost4000">&#x672C;&#x5730;&#x9884;&#x89C8;&#x751F;&#x6210;<a href="http://localhost:4000/" target="_blank">http://localhost:4000/</a></h4>
+<h4 id="23-&#x751F;&#x6210;&#x9759;&#x6001;&#x7F51;&#x9875;">2.3 &#x751F;&#x6210;&#x9759;&#x6001;&#x7F51;&#x9875;</h4>
+<blockquote>
+<p>gitbook build</p>
+</blockquote>
+<p>&#x9ED8;&#x8BA4;&#x751F;&#x6210;&#x5728;_book/&#x4E0B;&#xFF0C;&#x5E76;&#x5C06;&#x751F;&#x6210;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x6839;&#x76EE;&#x5F55;&#x6216;&#x8005;/docs&#xFF08;&#x9700;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#xFF09;</p>
+<blockquote>
+<p>cp -r _book/*  .</p>
+</blockquote>
+<h4 id="&#x8BBE;&#x7F6E;-github-pages-&#x9009;&#x9879;">&#x8BBE;&#x7F6E; <code>GitHub Pages</code> &#x9009;&#x9879;</h4>
+<p>&#x70B9;&#x51FB;&#x4ED3;&#x5E93;&#x9996;&#x9875;&#x53F3;&#x4E0A;&#x65B9;&#x8BBE;&#x7F6E;(<code>Settings</code>)&#x9009;&#x9879;&#x5361;,&#x5F80;&#x4E0B;&#x7FFB;&#x5230; <code>GitHub Pages</code> &#x9009;&#x9879;,&#x9009;&#x62E9;&#x6E90;&#x7801;&#x76EE;&#x5F55;,&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x9009;&#x62E9;&#x6E90;&#x7801;&#x6765;&#x6E90;&#x4E8E; <code>master</code> &#x5206;&#x652F;&#x8FD8;&#x662F;&#x5176;&#x4ED6;&#x5206;&#x652F;&#x6216;&#x8005;<code>docs/</code> &#x76EE;&#x5F55;.</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/8/169fd9bdffa52801?imageView2/0/w/1280/h/960" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Android Debug Tools.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Android Debug Tools">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git使用","level":"2.1.1","depth":2,"next":{"title":"Android Debug Tools","level":"2.1.2","depth":2,"path":"Tools/Android Debug Tools.md","ref":"Tools/Android Debug Tools.md","articles":[]},"previous":{"title":"Tool","level":"2.1","depth":1,"ref":"","articles":[{"title":"Git使用","level":"2.1.1","depth":2,"path":"Tools/使用Gitpages发布GitBook.md","ref":"Tools/使用Gitpages发布GitBook.md","articles":[]},{"title":"Android Debug Tools","level":"2.1.2","depth":2,"path":"Tools/Android Debug Tools.md","ref":"Tools/Android Debug Tools.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tools/使用Gitpages发布GitBook.md","mtime":"2020-08-26T16:26:39.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-30T15:42:05.558Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
