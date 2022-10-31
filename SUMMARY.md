@@ -37,6 +37,8 @@
   * [ANR分析](Debug/ANR分析.md)
   * [binder_sample日志](Debug/binder_sample日志.md)
   * [minicom 串口调试](Debug/minicom 串口调试.md)
+  * [MTK ubuntu刷机](Debug/MTK ubuntu刷机.md)
+  * [Seliunx](Debug/Seliunx.md)
   * [Systrace](Debug/Systrace.md)
   * [Tombstone](Debug/Tombstone.md)
   * [内存](Debug/内存.md)
