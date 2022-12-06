@@ -27,11 +27,11 @@
   * [3-04.自定义view CustomView](Android/3-04.自定义view CustomView.md)
   * [Android概述](Android/Android概述.md)
   * [Binder IPC](Android/Binder IPC.md)
-- Android Kernel
-  * [Android系统分区](Android kernel/Android系统分区.md)
-  * [Linux基础](Android kernel/Linux基础.md)
-  * [Zram](Android kernel/Zram.md)
-  * [安全](Android kernel/安全.md)
+- Android Favorites
+  * [Android系统分区](Android Favorites/Android系统分区.md)
+  * [Linux基础](Android Favorites/Linux基础.md)
+  * [Zram](Android Favorites/Zram.md)
+  * [安全](Android Favorites/安全.md)
 - Debug
   * [Activity启动速度分析](Debug/Activity启动速度分析.md)
   * [ADB](Debug/ADB.md)
