@@ -12,8 +12,8 @@ if [ $? -eq 0 ]; then
 		
 		git add README.md
 		git add SUMMARY.md		
-		git add /docs
-		git commit -m “update my note”
+		git add docs
+		git commit -m update my note
 		git push origin gh-pages:gh-pages
 		echo "push to GitHub"
 	fi

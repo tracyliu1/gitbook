@@ -33,6 +33,7 @@
   * [Zram](Android kernel/Zram.md)
   * [安全](Android kernel/安全.md)
 - Debug
+  * [Activity启动速度分析](Debug/Activity启动速度分析.md)
   * [ADB](Debug/ADB.md)
   * [ANR分析](Debug/ANR分析.md)
   * [binder_sample日志](Debug/binder_sample日志.md)
@@ -41,6 +42,7 @@
   * [Seliunx](Debug/Seliunx.md)
   * [Systrace](Debug/Systrace.md)
   * [Tombstone](Debug/Tombstone.md)
+  * [Untitled](Debug/Untitled.md)
   * [内存](Debug/内存.md)
   * [制作开机动画](Debug/制作开机动画.md)
 - Frame Work
